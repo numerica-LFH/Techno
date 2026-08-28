@@ -1,0 +1,121 @@
+site_name: Technologie & SNT
+site_description: Ressources de technologie (cycle 4) et de SNT, Lycée Français de Tegucigalpa
+site_author: Thierry Quicroit
+site_url: https://numerica-lfh.github.io/Techno/
+
+repo_url: https://github.com/numerica-LFH/Techno
+repo_name: numerica-LFH/Techno
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Lycée Français de Tegucigalpa
+
+theme:
+  name: material
+  language: fr
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Accueil: index.md
+  - Technologie:
+      - technologie/index.md
+      - 5e: technologie/5e.md
+      - 4e: technologie/4e.md
+      - 3e: technologie/3e.md
+  - SNT:
+      - snt/index.md
+      - Internet: snt/internet.md
+      - Le Web: snt/web.md
+      - Les réseaux sociaux: snt/reseaux-sociaux.md
+      - Données structurées: snt/donnees-structurees.md
+      - Localisation et cartographie: snt/localisation.md
+      - Objets connectés: snt/objets-connectes.md
+      - Photographie numérique: snt/photographie-numerique.md
+  - Projets d'établissement:
+      - projets-etablissement/index.md
+      - Développement durable: projets-etablissement/developpement-durable.md
+      - Concours et compétitions: projets-etablissement/concours.md
+      - Club robotique: projets-etablissement/club-robotique.md
+      - La Nuit du Code: projets-etablissement/nuit-du-code.md
+      - Semaine du numérique: projets-etablissement/semaine-numerique.md
+  - Programmes: programmes.md
+  - Ressources:
+      - Les outils: ressources/outils.md
+      - Liens utiles: ressources/liens.md
+      - Projets: ressources/projets.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search:
+      lang: fr
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://www.liceofrancohondureno.edu.hn
+      name: Lycée Français de Tegucigalpa
