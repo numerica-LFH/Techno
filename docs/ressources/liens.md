@@ -43,7 +43,7 @@ supprimés. L'outil retenu en remplacement est **Digipad**.
 
 ### Digipad
 
-[ladigitale.dev/digipad](https://ladigitale.dev/digipad/)
+[ladigitale.dev](https://ladigitale.dev)
 
 Un mur partagé où chacun dépose ses contributions sur la même page, en direct.
 Le professeur crée le pad et distribue le lien ou le code. Les élèves écrivent
