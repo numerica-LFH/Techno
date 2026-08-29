@@ -19,6 +19,28 @@ Créer un compte élève avec l'adresse de l'établissement. Les projets se
 retrouvent alors depuis n'importe quel poste. Sans compte, penser à télécharger
 le fichier `.sb3` en fin de séance, rien n'est conservé.
 
+## Écrire des pages web
+
+| Outil | Lien | Usage |
+|---|---|---|
+| Phoenix Code | [phcode.dev](https://phcode.dev/) | **L'éditeur utilisé en classe.** HTML et CSS dans le navigateur, aperçu en direct |
+| Codes couleurs | [htmlcolorcodes.com/fr](https://htmlcolorcodes.com/fr/) | Trouver le code hexadécimal d'une couleur |
+| La première page web | [info.cern.ch](http://info.cern.ch/hypertext/WWW/TheProject.html) | Mise en ligne en 1991, toujours accessible |
+
+### Phoenix Code, et pourquoi plus Brackets
+
+Adobe a arrêté le support de Brackets le 1<sup>er</sup> septembre 2021. Le
+projet a été repris sous le nom de Phoenix Code, qui tourne cette fois
+entièrement dans le navigateur : même ergonomie, même aperçu en direct, aucune
+installation. L'adresse `brackets.io` y redirige désormais.
+
+Phoenix Code ouvre un dossier du disque de l'élève, qui garde donc ses fichiers
+chez lui. Rien à installer, rien à créer comme compte : c'est ce qui en fait
+l'outil du cours, au lycée comme à la maison.
+
+Premier geste à chaque séance : **Open Folder**, puis choisir son dossier de
+travail. Sans ça, les fichiers ne se retrouvent pas d'une fois sur l'autre.
+
 ## Modélisation 3D et dessin
 
 | Outil | Lien | Usage |
@@ -70,6 +92,7 @@ exportés en PDF.
 | Excalidraw | [excalidraw.com](https://excalidraw.com/) | Schéma tracé à plusieurs, chaîne d'énergie au tableau |
 | Google Slides | [slides.google.com](https://slides.google.com/) | Une diapositive par groupe, quand le rendu doit être structuré |
 | Google Docs | [docs.google.com](https://docs.google.com/) | Rédaction commune d'un dossier de projet |
+| Google Forms | [forms.google.com](https://forms.google.com/) | Évaluations courtes corrigées automatiquement |
 
 ## Données et cartographie
 
