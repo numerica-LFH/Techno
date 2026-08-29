@@ -6,7 +6,7 @@ hide:
 # Technologie & SNT
 
 Bienvenue sur le site de ressources de technologie et de sciences numériques
-du Lycée Français de Tegucigalpa.
+du Lycée franco-hondurien de Tegucigalpa.
 
 Vous y trouverez les supports utilisés en classe : cours, fiches d'activité,
 tutoriels d'outils et sujets de projet. Certaines pages servent de trace écrite,
