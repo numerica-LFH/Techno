@@ -1,5 +1,5 @@
 site_name: Technologie & SNT
-site_description: Ressources de technologie (cycle 4) et de SNT, Lycée Français de Tegucigalpa
+site_description: Ressources de technologie (cycle 4) et de SNT, Lycée franco-hondurien de Tegucigalpa
 site_author: Thierry Quicroit
 site_url: https://numerica-lfh.github.io/Techno/
 
@@ -7,7 +7,7 @@ repo_url: https://github.com/numerica-LFH/Techno
 repo_name: numerica-LFH/Techno
 edit_uri: edit/main/docs/
 
-copyright: Copyright &copy; 2026 Lycée Français de Tegucigalpa
+copyright: Copyright &copy; 2026 Lycée franco-hondurien de Tegucigalpa
 
 theme:
   name: material
@@ -118,4 +118,4 @@ extra:
   social:
     - icon: fontawesome/solid/globe
       link: https://www.liceofrancohondureno.edu.hn
-      name: Lycée Français de Tegucigalpa
+      name: Lycée franco-hondurien
