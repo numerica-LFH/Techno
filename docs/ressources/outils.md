@@ -25,7 +25,7 @@ Le lien est donné en classe.
 
 Le thème [Le Web](../snt/web.md) demande d'écrire soi-même des fichiers `.html`
 et `.css`. L'outil retenu est **Phoenix Code**, à l'adresse
-[phcode.dev](https://phcode.dev/).
+[web.phcode.dev](https://web.phcode.dev/).
 
 Il tourne entièrement dans le navigateur : aucune installation, aucun compte,
 et il fonctionne à l'identique au lycée et à la maison. Il colore le code et
@@ -38,7 +38,7 @@ documents de cours écrits pour Brackets restent utilisables tels quels.
 
 ### Prise en main, en trois gestes
 
-1. Ouvrir [phcode.dev](https://phcode.dev/) et cliquer sur **Open Folder**.
+1. Ouvrir [web.phcode.dev](https://web.phcode.dev/) et cliquer sur **Open Folder**.
    Choisir, ou créer, le dossier de travail sur le disque. C'est le geste à ne
    pas sauter : sans dossier ouvert, chaque enregistrement repart de zéro.
 2. Créer les fichiers dans ce dossier. Ils restent sur le disque de l'élève,
