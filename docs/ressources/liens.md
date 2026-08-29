@@ -23,7 +23,7 @@ le fichier `.sb3` en fin de séance, rien n'est conservé.
 
 | Outil | Lien | Usage |
 |---|---|---|
-| Phoenix Code | [phcode.dev](https://phcode.dev/) | **L'éditeur utilisé en classe.** HTML et CSS dans le navigateur, aperçu en direct |
+| Phoenix Code | [web.phcode.dev](https://web.phcode.dev/) | **L'éditeur utilisé en classe.** HTML et CSS dans le navigateur, aperçu en direct |
 | Codes couleurs | [htmlcolorcodes.com/fr](https://htmlcolorcodes.com/fr/) | Trouver le code hexadécimal d'une couleur |
 | La première page web | [info.cern.ch](http://info.cern.ch/hypertext/WWW/TheProject.html) | Mise en ligne en 1991, toujours accessible |
 
