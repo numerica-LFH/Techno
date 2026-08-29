@@ -34,7 +34,7 @@ sur Internet » et « ouvrir une page » restent la même chose pour la plupart 
 
 ### Activité 1 : écrire une page
 
-Éditeur : **Phoenix Code**, à l'adresse [phcode.dev](https://phcode.dev/). Il
+Éditeur : **Phoenix Code**, à l'adresse [web.phcode.dev](https://web.phcode.dev/). Il
 tourne dans le navigateur, il n'y a rien à installer. Voir
 [Les outils](../ressources/outils.md#ecrire-des-pages-web).
 
