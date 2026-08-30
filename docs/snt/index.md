@@ -5,6 +5,10 @@ Enseignement commun de seconde. Au lycée, l'horaire est réparti en créneaux d
 deux semaines compte donc trois créneaux. Le programme comporte sept thèmes,
 chacun abordé par ses usages puis par ce qui le fait fonctionner.
 
+!!! tip "Espace de travail Drive — SNT"
+
+    [Ouvrir le dossier Drive de la SNT](https://drive.google.com/drive/folders/1OnoGNpQvQz6HLkT1TbqYAdFbUP0YiPQ6?usp=sharing)
+
 ## Les sept thèmes
 
 | Thème | Question de départ |
