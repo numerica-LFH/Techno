@@ -4,7 +4,7 @@
 
     Famille d'objets, principes techniques, fonction d'estime.
 
-    [Fiche élève à imprimer (Drive)](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link)
+    [Fiche élève à imprimer (PDF)](fiches/5e-seq1-seance2-eleve.pdf)
 
 ## AVANT — j'entre dans la question
 
@@ -38,11 +38,11 @@ Question : si quatre objets rendent le même service, qu'est-ce qui les sépare 
 
 J'observe les quatre cafetières ci-dessous.
 
-*Cafetière italienne**Cafetière thermos programmable**Cafetière expresso**Cafetière à piston*
+\*Cafetière italienne\*\*Cafetière thermos programmable\*\*Cafetière expresso\*\*Cafetière à piston\*
 
-a. J'écris la fonction d'usage commune aux quatre objets : ......... .
+a\. J'écris la fonction d'usage commune aux quatre objets : ......... .
 
-b. Je complète le tableau de comparaison.
+b\. Je complète le tableau de comparaison.
 
 <table>
 <colgroup>
@@ -89,7 +89,7 @@ b. Je complète le tableau de comparaison.
 </tbody>
 </table>
 
-c. Les quatre objets forment une ......... d'objets : ils rendent le ......... service.
+c\. Les quatre objets forment une ......... d'objets : ils rendent le ......... service.
 
 ### Activité 2 · Une même fonction technique, plusieurs principes
 
@@ -106,7 +106,7 @@ Je relie chaque fonction technique aux principes techniques possibles, puis je c
 | Ralentir un vélo       |                         |                            |                         |
 | Conserver des aliments |                         |                            |                         |
 
-d. Pour la fonction « produire de la lumière », quel principe technique consomme le moins d'énergie ? Sur quelle donnée est-ce que je m'appuie pour répondre ?
+d\. Pour la fonction « produire de la lumière », quel principe technique consomme le moins d'énergie ? Sur quelle donnée est-ce que je m'appuie pour répondre ?
 
 ### Activité 3 · Trier des objets du laboratoire
 
@@ -117,7 +117,7 @@ Le professeur affiche douze objets. Je les range en trois familles et je nomme c
 |                       |                       |                       |
 |                       |                       |                       |
 
-e. Des objets qui satisfont le même besoin ont forcément le même fonctionnement. □ a. Vrai    □ b. Faux    Je justifie : ......... .
+e\. Des objets qui satisfont le même besoin ont forcément le même fonctionnement. □ a. Vrai    □ b. Faux    Je justifie : ......... .
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -36,9 +36,9 @@ qu'il change pour ceux qui l'utilisent.
 
 ## Les niveaux
 
-- [5e](5e.md)
-- [4e](4e.md)
-- [3e](3e.md)
+- [5e](5e/index.md)
+- [4e](4e/index.md)
+- [3e](3e/index.md)
 
 ## Évaluation
 

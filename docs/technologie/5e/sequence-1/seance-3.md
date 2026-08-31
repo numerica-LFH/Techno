@@ -4,7 +4,7 @@
 
     Collecter, trier et analyser des données ; construire une frise.
 
-    [Fiche élève à imprimer (Drive)](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link)
+    [Fiche élève à imprimer (PDF)](fiches/5e-seq1-seance3-eleve.pdf)
 
 ## AVANT — j'entre dans la question
 
@@ -46,9 +46,9 @@ Je numérote les objets du plus ancien (1) au plus récent (5), puis je complèt
 |     | 1984               | Lecteur CD Sony               |                                            |                               |
 |     | 1998               | Lecteur numérique RIO PMP 300 |                                            |                               |
 
-a. Ces cinq objets rendent-ils le même service ? ......... . Ils forment donc une ......... d'objets.
+a\. Ces cinq objets rendent-ils le même service ? ......... . Ils forment donc une ......... d'objets.
 
-b. Une **performance** est un résultat que l'on peut mesurer. Je cite deux performances qui ont augmenté le long de cette lignée : ......... .
+b\. Une **performance** est un résultat que l'on peut mesurer. Je cite deux performances qui ont augmenté le long de cette lignée : ......... .
 
 ### Activité 2 · Construire la frise
 
@@ -56,19 +56,19 @@ Question : comment montrer d'un seul coup d'œil quarante ans d'évolution ?
 
 **Méthode.** 1. Choisir un début et une fin. 2. Choisir une échelle (exemple : 5 ans = 1 cm). 3. Placer les dates dans l'ordre. 4. Donner un titre. 5. Illustrer et aérer.
 
-c. Ma frise ira de ......... à ......... , soit ......... années. Avec une échelle de 5 ans = 1 cm, elle mesurera ......... cm.
+c\. Ma frise ira de ......... à ......... , soit ......... années. Avec une échelle de 5 ans = 1 cm, elle mesurera ......... cm.
 
-d. Je trace la frise ci-dessous et j'y place les cinq objets. J'écris le titre au-dessus.
+d\. Je trace la frise ci-dessous et j'y place les cinq objets. J'écris le titre au-dessus.
 
 ### Activité 3 · Analyser : ce qui change, ce qui reste
 
 Je relis ma frise et je réponds.
 
-e. Qu'est-ce qui n'a jamais changé entre 1979 et aujourd'hui ?
+e\. Qu'est-ce qui n'a jamais changé entre 1979 et aujourd'hui ?
 
-f. Qu'est-ce qui a le plus changé ?
+f\. Qu'est-ce qui a le plus changé ?
 
-g. Le téléphone connecté sert-il uniquement à écouter de la musique ? Que peut-on en conclure sur la place de cet objet dans la lignée ?
+g\. Le téléphone connecté sert-il uniquement à écouter de la musique ? Que peut-on en conclure sur la place de cet objet dans la lignée ?
 
 ### Exercices en ligne · Je m'entraîne
 

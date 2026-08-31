@@ -17,9 +17,9 @@ On part des besoins de la vie quotidienne pour arriver à la notion d'objet tech
 
 | N° | Séance | Ce qu'on y construit | À imprimer |
 |---|---|---|---|
-| 1 | [De quoi avons-nous besoin ?](seance-1.md) | Besoin, objet technique, fonction d'usage | [Drive](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link) |
-| 2 | [Plusieurs objets pour un même service](seance-2.md) | Famille d'objets, principes techniques, fonction d'estime | [Drive](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link) |
-| 3 | [La lignée d'un objet](seance-3.md) | Collecter, trier et analyser des données ; construire une frise | [Drive](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link) |
+| 1 | [De quoi avons-nous besoin ?](seance-1.md) | Besoin, objet technique, fonction d'usage | [PDF](fiches/5e-seq1-seance1-eleve.pdf) |
+| 2 | [Plusieurs objets pour un même service](seance-2.md) | Famille d'objets, principes techniques, fonction d'estime | [PDF](fiches/5e-seq1-seance2-eleve.pdf) |
+| 3 | [La lignée d'un objet](seance-3.md) | Collecter, trier et analyser des données ; construire une frise | [PDF](fiches/5e-seq1-seance3-eleve.pdf) |
 
 ## S'entraîner
 

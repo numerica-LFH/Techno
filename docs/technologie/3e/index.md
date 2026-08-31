@@ -7,6 +7,14 @@
 Thème directeur de l'année : **le projet**. L'année sert à mobiliser tout ce qui
 a été construit en 5e et en 4e sur une réalisation complète.
 
+## Séquences
+
+### 1. De la découverte à l'innovation, et ses effets sur la société
+
+Trois séances de 55 minutes. On distingue découverte, invention et innovation, on repère les innovations de rupture, on relie une découverte scientifique à ses effets sur la société, et on s'entraîne à l'argumentaire court dans les deux sens : l'objet sur la société, la société sur l'objet.
+
+[Ouvrir la séquence 1](sequence-1/index.md)
+
 ## Déroulé du projet annuel
 
 1. **Analyse du besoin** : qui utilisera l'objet, pour quoi faire, dans quelles

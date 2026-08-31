@@ -4,7 +4,7 @@
 
     Besoin, objet technique, fonction d'usage.
 
-    [Fiche élève à imprimer (Drive)](https://drive.google.com/drive/folders/1F39VO-nAmKMGnoSb0gqxQZzwy0s8M2_7?usp=drive_link)
+    [Fiche élève à imprimer (PDF)](fiches/5e-seq1-seance1-eleve.pdf)
 
 ## AVANT — j'entre dans la question
 
@@ -59,9 +59,9 @@ Avec mon voisin, je range les besoins trouvés à l'activité 1 dans les cases c
 | Se protéger, se soigner | Se distraire | S'instruire |
 |                         |              |             |
 
-a. Les besoins d'un élève de 5<sup>e</sup> à Tegucigalpa sont-ils les mêmes que ceux d'un élève de 5<sup>e</sup> dans un village de montagne ? Je donne un exemple de différence.
+a\. Les besoins d'un élève de 5<sup>e</sup> à Tegucigalpa sont-ils les mêmes que ceux d'un élève de 5<sup>e</sup> dans un village de montagne ? Je donne un exemple de différence.
 
-b. Mes besoins d'aujourd'hui seront-ils les mêmes à 50 ans ? Je donne un exemple.
+b\. Mes besoins d'aujourd'hui seront-ils les mêmes à 50 ans ? Je donne un exemple.
 
 ### Activité 3 · À chaque objet son service
 
@@ -78,11 +78,11 @@ La **fonction d'usage** répond à la question « à quoi ça sert ? ». Je l'é
 | Un casque de chantier |                                        |                  |
 | Une tondeuse          |                                        |                  |
 
-d. Le robot NAO peut se déplacer, vous reconnaître, vous entendre et même vous parler. D'après ce texte, à quel besoin répond-il ? Je coche une seule case.
+d\. Le robot NAO peut se déplacer, vous reconnaître, vous entendre et même vous parler. D'après ce texte, à quel besoin répond-il ? Je coche une seule case.
 
-□ Amuser les enfants    □ Tenir compagnie    □ Décorer la maison
+□ Amuser les enfants    □ Tenir compagnie    □ Décorer la maison
 
-e. Le besoin satisfait par un clavier d'ordinateur est :
+e\. Le besoin satisfait par un clavier d'ordinateur est :
 
 □ a. taper sur des touches de manière distincte et facile.  
 □ b. permettre à l'utilisateur de transmettre des informations à l'ordinateur.
