@@ -30,7 +30,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **principe technique** |                                      |
 | **fonction d'estime**  |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 ### Activité 1 · La famille des cafetières
 

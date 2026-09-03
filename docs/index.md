@@ -37,10 +37,15 @@ Les deux enseignements se répondent :
 | Rubrique | Contenu |
 |---|---|
 | [Technologie](technologie/index.md) | Progressions de la 5e à la 3e, activités, projets |
+| [Programmation annuelle](technologie/programmation-annuelle.md) | Les chapitres des trois niveaux, période par période |
+| [Objectifs et compétences](technologie/objectifs.md) | Ce qu'il faut savoir faire, et comment se situer |
+| [Applications interactives](technologie/apps.md) | Les chapitres jouables en ligne, en salle et à la maison |
 | [SNT](snt/index.md) | Les sept thèmes du programme de seconde |
 | [Projets d'établissement](projets-etablissement/index.md) | Actions menées à l'échelle du lycée |
 | [Programmes](programmes.md) | Résumé des textes officiels en vigueur |
 | [Les outils](ressources/outils.md) | Environnements, logiciels, prise en main |
+| [PIX](ressources/pix.md) | Le cadre de référence des compétences numériques |
+| [ASSR](ressources/assr.md) | Préparation des attestations de sécurité routière |
 | [Liens utiles](ressources/liens.md) | Accès direct aux services utilisés en classe |
 | [Projets](ressources/projets.md) | Sujets de projet et productions d'élèves |
 

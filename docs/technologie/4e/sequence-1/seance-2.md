@@ -30,7 +30,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **principe technique** |                                      |
 | **design**             |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 ### Activité 1 · L'ENIAC, premier ordinateur
 

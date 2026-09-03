@@ -48,6 +48,9 @@ nav:
   - Accueil: index.md
   - Technologie:
       - technologie/index.md
+      - Programmation annuelle: technologie/programmation-annuelle.md
+      - Objectifs et compétences: technologie/objectifs.md
+      - Applications interactives: technologie/apps.md
       - 5e:
           - technologie/5e/index.md
           - "Séquence 1 — Des besoins aux objets techniques":
@@ -71,6 +74,7 @@ nav:
               - "Séance 3 — Argumenter : l'objet et la société": technologie/3e/sequence-1/seance-3.md
   - SNT:
       - snt/index.md
+      - Prise en main et Python: snt/prise-en-main.md
       - Internet: snt/internet.md
       - Le Web: snt/web.md
       - Les réseaux sociaux: snt/reseaux-sociaux.md
@@ -78,6 +82,7 @@ nav:
       - Localisation et cartographie: snt/localisation.md
       - Objets connectés: snt/objets-connectes.md
       - Photographie numérique: snt/photographie-numerique.md
+      - Projet final: snt/projet-final.md
   - Projets d'établissement:
       - projets-etablissement/index.md
       - Développement durable: projets-etablissement/developpement-durable.md
@@ -88,6 +93,8 @@ nav:
   - Programmes: programmes.md
   - Ressources:
       - Les outils: ressources/outils.md
+      - PIX, compétences numériques: ressources/pix.md
+      - ASSR, sécurité routière: ressources/assr.md
       - Liens utiles: ressources/liens.md
       - Projets: ressources/projets.md
 

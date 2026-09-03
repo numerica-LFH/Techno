@@ -30,7 +30,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **contrainte sociétale** |                                      |
 | **argumentaire**         |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 ### Activité 1 · Mettre en place une veille technologique
 

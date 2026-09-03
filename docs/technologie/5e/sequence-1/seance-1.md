@@ -30,7 +30,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **objet technique**  |                                      |
 | **fonction d'usage** |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 ### Activité 1 · Ma journée en objets
 

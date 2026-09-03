@@ -30,7 +30,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **usage**             |                                      |
 | **besoin qui évolue** |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 **OST**Objet ou système technique. Le programme utilise ce sigle pour désigner aussi bien un objet isolé (une perceuse) qu'un ensemble organisé (un réseau de tramway).
 

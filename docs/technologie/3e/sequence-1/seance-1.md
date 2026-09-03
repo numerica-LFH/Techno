@@ -31,7 +31,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 | **innovation**            |                                      |
 | **innovation de rupture** |                                      |
 
-## PENDANT — j'investigue
+## PENDANT — je recherche
 
 **Trois verbes**Découverte : « je sais ».  
 Invention : « je sais faire ».  
