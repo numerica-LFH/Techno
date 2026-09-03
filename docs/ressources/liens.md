@@ -38,9 +38,6 @@ Phoenix Code ouvre un dossier du disque de l'élève, qui garde donc ses fichier
 chez lui. Rien à installer, rien à créer comme compte : c'est ce qui en fait
 l'outil du cours, au lycée comme à la maison.
 
-Premier geste à chaque séance : **Open Folder**, puis choisir son dossier de
-travail. Sans ça, les fichiers ne se retrouvent pas d'une fois sur l'autre.
-
 ## Modélisation 3D et dessin
 
 | Outil | Lien | Usage |
