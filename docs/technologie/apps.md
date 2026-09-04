@@ -42,6 +42,15 @@ directement l'effet du taux de remplissage sur le coût.
 Les applications de 3e sont en préparation. Le détail des chapitres figure sur la page
 [Technologie 3e](3e/index.md).
 
+## Transversal
+
+| Outil | À quoi il sert | Ouvrir |
+|---|---|---|
+| Positionnement CRCN | Se situer sur les 16 compétences du cadre de référence, repérer celles qui restent à travailler et les chapitres à reprendre | [Ouvrir](../apps/pix-positionnement.html){ target=_blank } |
+
+Cet outil accompagne la rubrique [PIX](../pix/index.md). Il ne remplace pas PIX et ne donne aucune
+note : il indique par où commencer.
+
 ## Comment elles sont faites
 
 Les applications sont des pages autonomes du site. Elles ne dépendent d'aucun service extérieur,

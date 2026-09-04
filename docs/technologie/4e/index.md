@@ -127,4 +127,4 @@ Sept chapitres, quatre à huit séances de 55 minutes. La progression complète 
 
 - [Objectifs et compétences du cycle 4](../objectifs.md)
 - [Les outils utilisés en classe](../../ressources/outils.md)
-- [PIX, compétences numériques](../../ressources/pix.md)
+- [PIX, se situer sur le CRCN](../../pix/index.md)

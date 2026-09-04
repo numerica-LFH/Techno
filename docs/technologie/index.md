@@ -53,7 +53,7 @@ fin de cycle, travaillées ensemble à l'intérieur de chaque séquence.
 L'étude passe par le triptyque **Matière, Énergie, Information**. La pensée informatique irrigue les
 trois thèmes autour de quatre piliers : les données et leurs représentations, les algorithmes, les
 langages, les machines. Chaque compétence est reliée au cadre de référence des compétences
-numériques, le **CRCN**, évalué sur [PIX](../ressources/pix.md).
+numériques, le **CRCN**, évalué sur [PIX](../pix/index.md).
 
 ## Par où commencer
 

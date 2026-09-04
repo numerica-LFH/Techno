@@ -44,7 +44,7 @@ Les deux enseignements se répondent :
 | [Projets d'établissement](projets-etablissement/index.md) | Actions menées à l'échelle du lycée |
 | [Programmes](programmes.md) | Résumé des textes officiels en vigueur |
 | [Les outils](ressources/outils.md) | Environnements, logiciels, prise en main |
-| [PIX](ressources/pix.md) | Le cadre de référence des compétences numériques |
+| [PIX](pix/index.md) | Le référentiel CRCN, les parcours par niveau, la certification |
 | [ASSR](ressources/assr.md) | Préparation des attestations de sécurité routière |
 | [Liens utiles](ressources/liens.md) | Accès direct aux services utilisés en classe |
 | [Projets](ressources/projets.md) | Sujets de projet et productions d'élèves |

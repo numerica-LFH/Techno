@@ -109,5 +109,5 @@ chaque fiche de dernière séance.
 | 4. Protection et sécurité | Traces numériques, mots de passe, cyberviolence, sécurité d'un objet connecté |
 | 5. Environnement numérique | Réseau du collège, périphériques, arborescence de fichiers, réparation |
 
-Le parcours PIX est présenté sur la page [PIX](../ressources/pix.md). Les attestations de sécurité
+Le parcours PIX est présenté dans la rubrique [PIX](../pix/index.md), et la correspondance détaillée entre les neuf compétences du programme et les seize compétences du CRCN figure sur la page [Le référentiel CRCN](../pix/crcn.md). Les attestations de sécurité
 routière ASSR 1 et ASSR 2 sont préparées en 5e et en 3e, voir la page [ASSR](../ressources/assr.md).
