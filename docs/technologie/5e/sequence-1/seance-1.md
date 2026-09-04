@@ -108,3 +108,10 @@ Je remonte en haut de la fiche et je coche ✔ ou ✘. J'écris ici ce qui m'a l
 #### La question de la prochaine séance
 
 Pour aller au collège, je peux prendre le bus, le vélo ou la trottinette. Trois objets très différents pour un seul service : comment est-ce possible ?
+
+## S'évaluer
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-1.html){ .md-button .md-button--primary target=_blank }
+
+Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

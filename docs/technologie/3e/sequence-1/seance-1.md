@@ -114,3 +114,10 @@ Je remonte en haut de la fiche et je coche ✔ ou ✘. J'écris ici ce qui m'a l
 #### La question de la prochaine séance
 
 Le four à micro-ondes est né d'un radar militaire, et il a mis vingt ans à entrer dans les cuisines. Pourquoi une invention attend-elle si longtemps avant de changer la vie des gens ?
+
+## S'évaluer
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-1.html){ .md-button .md-button--primary target=_blank }
+
+Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

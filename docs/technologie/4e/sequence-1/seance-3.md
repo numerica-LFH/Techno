@@ -112,3 +112,10 @@ Je remonte en haut de la fiche et je coche ✔ ou ✘. J'écris ici ce qui m'a l
 #### La question de la prochaine séance
 
 Le pneu de voiture est né d'une découverte sur la sève d'un arbre. Combien de temps faut-il, et combien d'étapes, pour qu'une connaissance nouvelle devienne un objet vendu en magasin ? C'est la question de la classe de 3<sup>e</sup>.
+
+## S'évaluer
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
+
+Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

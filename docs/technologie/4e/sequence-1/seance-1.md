@@ -126,3 +126,10 @@ Je remonte en haut de la fiche et je coche ✔ ou ✘. J'écris ici ce qui m'a l
 #### La question de la prochaine séance
 
 Si l'objet change, tout change-t-il en lui d'un seul coup ? Qu'est-ce qui reste, au juste, d'un objet à celui qui le remplace ?
+
+## S'évaluer
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-1.html){ .md-button .md-button--primary target=_blank }
+
+Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

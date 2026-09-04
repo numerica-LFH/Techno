@@ -128,3 +128,10 @@ Je remonte en haut de la fiche et je coche ✔ ou ✘. J'écris ici ce qui m'a l
 #### La question de la prochaine séance
 
 La séquence 2 ouvrira l'objet : ses interacteurs, ses contraintes de conception, et la façon dont un cahier des charges traduit tout cela en exigences mesurables.
+
+## S'évaluer
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
+
+Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

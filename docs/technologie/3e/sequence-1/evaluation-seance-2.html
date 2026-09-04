@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3e — Séance 2 — D'une découverte scientifique à ses effets sur la société — Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>3e · Séquence 1 — De la découverte à l'innovation, et ses effets sur la société — Séance 2 — D'une découverte scientifique à ses effets sur la société</h1>
+  <p class="sous">16 questions, 19 points. J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est envoyée au professeur.</p>
+</header>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="3eA" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 3e — Séance 2 — D'une découverte scientifique à ses effets sur la société — Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "3e", "sequence": "Séquence 1 — De la découverte à l'innovation, et ses effets sur la société", "seance": "Séance 2 — D'une découverte scientifique à ses effets sur la société", "exemple_classe": "3eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "enonce": "Combien d'années séparent la découverte des ondes chauffantes (1946) du micro-ondes grand public (1967) ?",
+  "choix": [
+   "7 ans",
+   "21 ans",
+   "50 ans"
+  ],
+  "bonne": 1,
+  "expl": "Vingt et un ans : le temps de miniaturiser, sécuriser et faire baisser le prix.",
+  "points": 1,
+  "reponse": "21 ans."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment appelle-t-on la période de forte croissance économique entre 1945 et 1975 ?",
+  "choix": [
+   "la révolution industrielle",
+   "les Trente Glorieuses",
+   "les Années folles"
+  ],
+  "bonne": 1,
+  "expl": "C'est pendant cette période que l'équipement ménager se généralise.",
+  "points": 1,
+  "reponse": "les Trente Glorieuses."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En 1882, le New-Yorkais Henry Seely invente :",
+  "choix": [
+   "le fer à repasser électrique",
+   "le lave-vaisselle",
+   "le four à micro-ondes"
+  ],
+  "bonne": 0,
+  "expl": "Les fers à thermostat et à vapeur arrivent dans les années 1930.",
+  "points": 1,
+  "reponse": "le fer à repasser électrique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Grâce à quel élément le fer à repasser de 1882 chauffe-t-il ?",
+  "choix": [
+   "une résistance électrique",
+   "des braises de charbon",
+   "un brûleur à gaz"
+  ],
+  "bonne": 0,
+  "expl": "Avant cela, les Chinois utilisaient des récipients en laiton remplis de braises.",
+  "points": 1,
+  "reponse": "une résistance électrique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Qui conçoit en 1886 un prototype de lave-vaisselle à pompe et casiers ?",
+  "choix": [
+   "Percy Spencer",
+   "Joséphine Cochrane",
+   "Henry Seely"
+  ],
+  "bonne": 1,
+  "expl": "L'appareil devient automatique en 1940 et entre dans les cuisines à partir de 1960.",
+  "points": 1,
+  "reponse": "Joséphine Cochrane."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En quelle année le lave-vaisselle devient-il automatique ?",
+  "choix": [
+   "1886",
+   "1940",
+   "1960"
+  ],
+  "bonne": 1,
+  "expl": "Il faudra encore vingt ans pour qu'il entre dans les maisons.",
+  "points": 1,
+  "reponse": "1940."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En 1946, chez Raytheon, Percy Spencer découvre par hasard que :",
+  "choix": [
+   "les ondes des radars dégagent de la chaleur",
+   "le verre supporte les chocs thermiques",
+   "l'électricité peut être stockée"
+  ],
+  "bonne": 0,
+  "expl": "Au point de faire éclater du pop-corn.",
+  "points": 1,
+  "reponse": "les ondes des radars dégagent de la chaleur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Combien pesait le premier four à micro-ondes breveté en 1948 ?",
+  "choix": [
+   "30 kilos",
+   "300 kilos",
+   "3 tonnes"
+  ],
+  "bonne": 1,
+  "expl": "Le poids et le prix expliquent une bonne part des dix-neuf années d'attente.",
+  "points": 1,
+  "reponse": "300 kilos."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La vitrocéramique a été mise au point en 1958 par :",
+  "choix": [
+   "l'industrie du verre",
+   "l'industrie automobile",
+   "l'armée américaine"
+  ],
+  "bonne": 0,
+  "expl": "Les tables de cuisson n'arrivent qu'en 1975, et l'induction en 1990.",
+  "points": 1,
+  "reponse": "l'industrie du verre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "À quoi la vitrocéramique a-t-elle d'abord servi ?",
+  "choix": [
+   "à fabriquer des canalisations",
+   "à fabriquer des tables de cuisson",
+   "à fabriquer des vitres de voiture"
+  ],
+  "bonne": 0,
+  "expl": "L'usage domestique est venu dix-sept ans plus tard.",
+  "points": 1,
+  "reponse": "à fabriquer des canalisations."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle est la principale propriété de la vitrocéramique ?",
+  "choix": [
+   "elle conduit l'électricité",
+   "elle supporte de violents changements de température",
+   "elle est transparente et souple"
+  ],
+  "bonne": 1,
+  "expl": "Matériau très dur, résistant aux chocs thermiques.",
+  "points": 1,
+  "reponse": "elle supporte de violents changements de température."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel effet sur la société l'arrivée de l'équipement ménager a-t-elle eu ?",
+  "choix": [
+   "la réduction du temps des tâches domestiques et l'émancipation féminine",
+   "la disparition des cuisines dans les logements",
+   "l'augmentation du temps consacré au ménage"
+  ],
+  "bonne": 0,
+  "expl": "Les effets d'un objet dépassent largement le service qu'il rend.",
+  "points": 1,
+  "reponse": "la réduction du temps des tâches domestiques et l'émancipation féminine."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le retard entre une invention et sa diffusion vient uniquement de la technique.",
+  "bonne": 1,
+  "expl": "Le prix, les usages, les normes et les habitudes comptent autant.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mot avec sa définition.",
+  "paires": [
+   {
+    "terme": "développement technologique",
+    "definition": "les essais, brevets et prototypes qui rendent une invention utilisable et abordable"
+   },
+   {
+    "terme": "diffusion",
+    "definition": "le moment où l'objet se répand largement dans la population"
+   },
+   {
+    "terme": "effet sociétal",
+    "definition": "la transformation de la vie des gens provoquée par l'objet, au-delà du service rendu"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "développement technologique = les essais, brevets et prototypes qui rendent une invention utilisable et abordable · diffusion = le moment où l'objet se répand largement dans la population · effet sociétal = la transformation de la vie des gens provoquée par l'objet, au-delà du service rendu",
+  "expl": ""
+ },
+ {
+  "type": "ordre",
+  "enonce": "Je remets la chaîne complète dans l'ordre.",
+  "elements": [
+   "Découverte scientifique",
+   "Invention",
+   "Développements technologiques",
+   "Innovation, mise sur le marché",
+   "Effets sur la société"
+  ],
+  "points": 2,
+  "expl": "C'est le fil suivi par le micro-ondes, de 1946 à aujourd'hui.",
+  "consigne": "Je numérote de 1 à 5. Tout doit être juste pour avoir les points.",
+  "reponse": "1. Découverte scientifique → 2. Invention → 3. Développements technologiques → 4. Innovation, mise sur le marché → 5. Effets sur la société"
+ },
+ {
+  "type": "vf",
+  "enonce": "Une découverte scientifique produit ses effets sur la société par elle-même.",
+  "bonne": 1,
+  "expl": "Sans développements technologiques ni mise sur le marché, elle reste une connaissance.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">— choisir —</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">—</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>
