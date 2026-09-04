@@ -166,10 +166,6 @@ qui n'obtient pas l'attestation peut se représenter à une session de rattrapag
 | Passager d'un véhicule | Ceinture, place, comportement |
 | Risques et conduites à tenir | Alerter, protéger, secourir |
 
-## Autres ressources
-
-- [Ressources de la Sécurité routière](https://www.securite-routiere.gouv.fr/){ target=_blank }
-
 L'ASSR n'est pas un chapitre de technologie, mais elle est organisée dans le cadre des enseignements
 et l'entraînement se fait souvent sur les postes de la salle. Elle est rappelée ici pour que les
 élèves et les familles trouvent les liens au même endroit que le reste.
