@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/4e-seq1-seance3-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-3.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -97,6 +99,13 @@ QCM de la séquence 1 sur le site de la classe, rubrique **4<sup>e</sup> › Sé
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Les évolutions technologiques et informatiques apportent des **avantages** : sécurité, confort, rapidité, accès à l'information, économies d'énergie.
 
 Elles apportent aussi des **inconvénients** : dépendance, perte d'attention, effets sur les relations et sur la santé, consommation de ressources, coût.
@@ -118,4 +127,5 @@ Le pneu de voiture est né d'une découverte sur la sève d'un arbre. Combien de
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.

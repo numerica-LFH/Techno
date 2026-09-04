@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/3e-seq1-seance3-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-3.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -113,6 +115,13 @@ QCM de la séquence 1 sur le site de la classe, rubrique **3<sup>e</sup> › Sé
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Une **veille technologique** consiste à se tenir informé en continu des nouveautés d'un domaine, à partir de sources choisies pour leur pertinence et leur fiabilité. Elle sert à ne pas réinventer ce qui existe et à fonder ses arguments sur des faits.
 
 Un OST a une **incidence sur la société** : il modifie les usages, le travail, les relations, l'environnement.
@@ -134,4 +143,5 @@ La séquence 2 ouvrira l'objet : ses interacteurs, ses contraintes de conception
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.

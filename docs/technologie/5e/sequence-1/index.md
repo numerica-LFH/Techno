@@ -15,11 +15,11 @@ On part des besoins de la vie quotidienne pour arriver à la notion d'objet tech
 
 ## Les trois séances
 
-| N° | Séance | Ce qu'on y construit | À imprimer |
-|---|---|---|---|
-| 1 | [De quoi avons-nous besoin ?](seance-1.md) | Besoin, objet technique, fonction d'usage | [PDF](fiches/5e-seq1-seance1-eleve.pdf) |
-| 2 | [Plusieurs objets pour un même service](seance-2.md) | Famille d'objets, principes techniques, fonction d'estime | [PDF](fiches/5e-seq1-seance2-eleve.pdf) |
-| 3 | [La lignée d'un objet](seance-3.md) | Collecter, trier et analyser des données ; construire une frise | [PDF](fiches/5e-seq1-seance3-eleve.pdf) |
+| N° | Séance | Ce qu'on y construit | Trace écrite | À imprimer |
+|---|---|---|---|---|
+| 1 | [De quoi avons-nous besoin ?](seance-1.md) | Besoin, objet technique, fonction d'usage | [Trace écrite](trace-ecrite-seance-1.md) | [PDF](fiches/5e-seq1-seance1-eleve.pdf) |
+| 2 | [Plusieurs objets pour un même service](seance-2.md) | Famille d'objets, principes techniques, fonction d'estime | [Trace écrite](trace-ecrite-seance-2.md) | [PDF](fiches/5e-seq1-seance2-eleve.pdf) |
+| 3 | [La lignée d'un objet](seance-3.md) | Collecter, trier et analyser des données ; construire une frise | [Trace écrite](trace-ecrite-seance-3.md) | [PDF](fiches/5e-seq1-seance3-eleve.pdf) |
 
 ## S'entraîner
 

@@ -16,11 +16,11 @@ On met en relation les objets et systèmes techniques avec leurs usages, on rep�
 
 ## Les trois séances
 
-| N° | Séance | Ce qu'on y construit | À imprimer |
-|---|---|---|---|
-| 1 | [Des usages qui changent, des objets qui suivent](seance-1.md) | Mettre en relation un OST et ses usages | [PDF](fiches/4e-seq1-seance1-eleve.pdf) |
-| 2 | [Qu'est-ce qui change dans un objet qui évolue ?](seance-2.md) | Fonction technique, principe technique, design | [PDF](fiches/4e-seq1-seance2-eleve.pdf) |
-| 3 | [Avantages et inconvénients des évolutions technologiques](seance-3.md) | Numérique, intelligence artificielle, usage raisonné | [PDF](fiches/4e-seq1-seance3-eleve.pdf) |
+| N° | Séance | Ce qu'on y construit | Trace écrite | À imprimer |
+|---|---|---|---|---|
+| 1 | [Des usages qui changent, des objets qui suivent](seance-1.md) | Mettre en relation un OST et ses usages | [Trace écrite](trace-ecrite-seance-1.md) | [PDF](fiches/4e-seq1-seance1-eleve.pdf) |
+| 2 | [Qu'est-ce qui change dans un objet qui évolue ?](seance-2.md) | Fonction technique, principe technique, design | [Trace écrite](trace-ecrite-seance-2.md) | [PDF](fiches/4e-seq1-seance2-eleve.pdf) |
+| 3 | [Avantages et inconvénients des évolutions technologiques](seance-3.md) | Numérique, intelligence artificielle, usage raisonné | [Trace écrite](trace-ecrite-seance-3.md) | [PDF](fiches/4e-seq1-seance3-eleve.pdf) |
 
 ## S'entraîner
 

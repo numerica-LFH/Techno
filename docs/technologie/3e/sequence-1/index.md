@@ -17,11 +17,11 @@ On distingue découverte, invention et innovation, on repère les innovations de
 
 ## Les trois séances
 
-| N° | Séance | Ce qu'on y construit | À imprimer |
-|---|---|---|---|
-| 1 | [Découverte, invention, innovation](seance-1.md) | Repérer les innovations de rupture | [PDF](fiches/3e-seq1-seance1-eleve.pdf) |
-| 2 | [D'une découverte scientifique à ses effets sur la société](seance-2.md) | Le temps long de l'innovation | [PDF](fiches/3e-seq1-seance2-eleve.pdf) |
-| 3 | [Argumenter : l'objet et la société](seance-3.md) | Veille technologique et argumentaire court | [PDF](fiches/3e-seq1-seance3-eleve.pdf) |
+| N° | Séance | Ce qu'on y construit | Trace écrite | À imprimer |
+|---|---|---|---|---|
+| 1 | [Découverte, invention, innovation](seance-1.md) | Repérer les innovations de rupture | [Trace écrite](trace-ecrite-seance-1.md) | [PDF](fiches/3e-seq1-seance1-eleve.pdf) |
+| 2 | [D'une découverte scientifique à ses effets sur la société](seance-2.md) | Le temps long de l'innovation | [Trace écrite](trace-ecrite-seance-2.md) | [PDF](fiches/3e-seq1-seance2-eleve.pdf) |
+| 3 | [Argumenter : l'objet et la société](seance-3.md) | Veille technologique et argumentaire court | [Trace écrite](trace-ecrite-seance-3.md) | [PDF](fiches/3e-seq1-seance3-eleve.pdf) |
 
 ## S'entraîner
 

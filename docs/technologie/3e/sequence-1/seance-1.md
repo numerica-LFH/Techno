@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/3e-seq1-seance1-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-1.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -99,6 +101,13 @@ Pour chaque cas, je coche et je justifie en quelques mots.
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Une **découverte** est une connaissance nouvelle, qui n'est pas utilisable telle quelle : « je sais ». Une **invention** est une technique ou un matériau mis au point à partir d'une découverte : « je sais faire ». Une **innovation** est la mise sur le marché d'un objet créé ou modifié grâce à une invention : « je fais ».
 
 Les innovations peuvent porter sur tous les niveaux de l'objet : son principe de fonctionnement, ses matériaux, ses énergies, son traitement de l'information, son design.
@@ -120,4 +129,5 @@ Le four à micro-ondes est né d'un radar militaire, et il a mis vingt ans à en
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-1.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.

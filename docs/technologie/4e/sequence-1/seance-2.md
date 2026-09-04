@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/4e-seq1-seance2-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-2.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -78,6 +80,13 @@ Je lis l'affirmation, je coche, je justifie en une phrase.
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Changer entièrement un objet est rare. Le plus souvent, on fait évoluer quelques **fonctions techniques** : on remplace un composant, on adopte un autre **principe technique**, on ajoute une fonctionnalité.
 
 Procéder par petites évolutions assure la **fiabilité** de l'objet et ne déroute pas les personnes qui l'utilisent déjà.
@@ -99,4 +108,5 @@ Un ordinateur portable consomme mille fois moins qu'un ENIAC, mais il y en a des
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-2.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.

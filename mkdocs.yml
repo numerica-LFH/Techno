@@ -58,6 +58,10 @@ nav:
               - "Séance 1 — De quoi avons-nous besoin ?": technologie/5e/sequence-1/seance-1.md
               - "Séance 2 — Plusieurs objets pour un même service": technologie/5e/sequence-1/seance-2.md
               - "Séance 3 — La lignée d'un objet": technologie/5e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — De quoi avons-nous besoin ?": technologie/5e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — Plusieurs objets pour un même service": technologie/5e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — La lignée d'un objet": technologie/5e/sequence-1/trace-ecrite-seance-3.md
       - 4e:
           - technologie/4e/index.md
           - "Séquence 1 — Pourquoi les objets techniques évoluent-ils ?":
@@ -65,6 +69,10 @@ nav:
               - "Séance 1 — Des usages qui changent, des objets qui suivent": technologie/4e/sequence-1/seance-1.md
               - "Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?": technologie/4e/sequence-1/seance-2.md
               - "Séance 3 — Avantages et inconvénients des évolutions technologiques": technologie/4e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Des usages qui changent, des objets qui suivent": technologie/4e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?": technologie/4e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — Avantages et inconvénients des évolutions technologiques": technologie/4e/sequence-1/trace-ecrite-seance-3.md
       - 3e:
           - technologie/3e/index.md
           - "Séquence 1 — De la découverte à l'innovation, et ses effets sur la société":
@@ -72,6 +80,10 @@ nav:
               - "Séance 1 — Découverte, invention, innovation": technologie/3e/sequence-1/seance-1.md
               - "Séance 2 — D'une découverte scientifique à ses effets sur la société": technologie/3e/sequence-1/seance-2.md
               - "Séance 3 — Argumenter : l'objet et la société": technologie/3e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Découverte, invention, innovation": technologie/3e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — D'une découverte scientifique à ses effets sur la société": technologie/3e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — Argumenter : l'objet et la société": technologie/3e/sequence-1/trace-ecrite-seance-3.md
   - SNT:
       - snt/index.md
       - Prise en main et Python: snt/prise-en-main.md

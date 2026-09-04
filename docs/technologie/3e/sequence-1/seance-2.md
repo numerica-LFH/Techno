@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/3e-seq1-seance2-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-2.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -99,6 +101,13 @@ Sources consultées : .........
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Une **découverte scientifique** ne produit pas d'effet par elle-même. Elle donne lieu à des **développements technologiques** : essais, brevets, prototypes, réduction de taille et de coût, avant qu'un objet soit vendu.
 
 Ce chemin prend souvent plusieurs décennies. Le retard vient rarement de la seule technique : le prix, les usages, les normes et les habitudes comptent autant.
@@ -120,4 +129,5 @@ Un objet transforme la société ; mais la société, de son côté, impose ses 
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-2.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.

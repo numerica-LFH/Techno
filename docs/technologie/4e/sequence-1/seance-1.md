@@ -6,6 +6,8 @@
 
     [Fiche élève à imprimer (PDF)](fiches/4e-seq1-seance1-eleve.pdf)
 
+    [Trace écrite de la séance](trace-ecrite-seance-1.md)
+
 ## AVANT — j'entre dans la question
 
 #### Ce qu'on cherche
@@ -111,6 +113,13 @@ Je choisis un OST de la liste : la trottinette, la montre, la voiture, le tablea
 
 #### À retenir
 
+!!! note "Deux documents, deux usages"
+
+    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
+    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md) reprend les mêmes
+    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
+    compétences évaluées. C'est elle qui se colle dans le cahier.
+
 Un **OST** (objet ou système technique) est toujours lié à un **usage** : ce que les gens en font réellement, dans un lieu et à une époque donnés.
 
 Les objets techniques évoluent pour deux grandes raisons : répondre à de nouveaux besoins, ou profiter de nouvelles possibilités techniques. Le plus souvent, les deux agissent ensemble.
@@ -132,4 +141,5 @@ Si l'objet change, tout change-t-il en lui d'un seul coup ? Qu'est-ce qui reste,
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-1.html){ .md-button .md-button--primary target=_blank }
 
 Seize questions reprenant les exercices de la séquence et les définitions de la fiche. J'indique
-mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.
+mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au
+professeur. Je relis la trace écrite avant de commencer.
