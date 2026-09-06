@@ -1,0 +1,53 @@
+# Extrait a inserer dans le mkdocs.yml existant du site de technologie.
+#
+# 1. Coller le bloc "nav" ci-dessous a la suite des sequences deja publiees,
+#    en respectant l'indentation du fichier d'origine.
+# 2. Verifier que les extensions markdown listees plus bas sont bien presentes,
+#    et les ajouter sinon. La page Telechargements utilise les onglets pymdownx.tabbed
+#    et les blocs d'admonition.
+
+  - Projet jardin sec:
+      - Présentation: technologie/projet-jardin-sec/index.md
+      - Besoins et matériel: technologie/projet-jardin-sec/besoins-et-materiel.md
+      - Pas à pas SketchUp:
+          - Vue d'ensemble: technologie/projet-jardin-sec/sketchup/index.md
+          - 5e, créer le bac: technologie/projet-jardin-sec/sketchup/5e.md
+          - 4e, le bac et les espaces: technologie/projet-jardin-sec/sketchup/4e.md
+          - 3e, l'espace complet: technologie/projet-jardin-sec/sketchup/3e.md
+      - 5e, concevoir la jardinière:
+          - Vue d'ensemble: technologie/projet-jardin-sec/5e/index.md
+          - Séance 1: technologie/projet-jardin-sec/5e/seance-1.md
+          - Séance 2: technologie/projet-jardin-sec/5e/seance-2.md
+          - Séance 3: technologie/projet-jardin-sec/5e/seance-3.md
+          - Séance 4: technologie/projet-jardin-sec/5e/seance-4.md
+          - Séance 5: technologie/projet-jardin-sec/5e/seance-5.md
+          - Séance 6: technologie/projet-jardin-sec/5e/seance-6.md
+      - 4e, automatiser l'arrosage:
+          - Vue d'ensemble: technologie/projet-jardin-sec/4e/index.md
+          - Séance 1: technologie/projet-jardin-sec/4e/seance-1.md
+          - Séance 2: technologie/projet-jardin-sec/4e/seance-2.md
+          - Séance 3: technologie/projet-jardin-sec/4e/seance-3.md
+          - Séance 4: technologie/projet-jardin-sec/4e/seance-4.md
+          - Séance 5: technologie/projet-jardin-sec/4e/seance-5.md
+          - Séance 6: technologie/projet-jardin-sec/4e/seance-6.md
+      - 3e, autonomie et bilan:
+          - Vue d'ensemble: technologie/projet-jardin-sec/3e/index.md
+          - Séance 1: technologie/projet-jardin-sec/3e/seance-1.md
+          - Séance 2: technologie/projet-jardin-sec/3e/seance-2.md
+          - Séance 3: technologie/projet-jardin-sec/3e/seance-3.md
+          - Séance 4: technologie/projet-jardin-sec/3e/seance-4.md
+          - Séance 5: technologie/projet-jardin-sec/3e/seance-5.md
+          - Séance 6: technologie/projet-jardin-sec/3e/seance-6.md
+      - Ressources techniques: technologie/projet-jardin-sec/ressources.md
+      - Téléchargements: technologie/projet-jardin-sec/telechargements.md
+
+# Extensions markdown utilisees par ces pages.
+# markdown_extensions:
+#   - admonition
+#   - attr_list
+#   - md_in_html
+#   - tables
+#   - pymdownx.details
+#   - pymdownx.superfences
+#   - pymdownx.tabbed:
+#       alternate_style: true
