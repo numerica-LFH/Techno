@@ -99,6 +99,20 @@ métadonnées.
 Une donnée sans descripteur ne vaut rien. La qualité du travail dépend d'abord
 de la qualité de la structure choisie au départ.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 3 — Les données structurées](sequence-3/index.md).
+
+- [Séance 0 — Ranger pour pouvoir chercher](sequence-3/seance-0.md)
+- [Séance 1 — Nettoyer un jeu de données](sequence-3/seance-1.md)
+- [Séance 2 — Croiser deux tables](sequence-3/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-3/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - Coût énergétique du stockage

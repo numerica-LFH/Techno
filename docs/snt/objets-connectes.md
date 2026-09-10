@@ -104,6 +104,20 @@ placement du capteur et sur les faiblesses classiques d'un objet connecté.
 Un objet connecté est un ordinateur avec un capteur et une liaison réseau. Ses
 faiblesses sont celles d'un ordinateur, avec en plus l'absence de mises à jour.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 5 — Les objets connectés](sequence-5/index.md).
+
+- [Séance 0 — L'objet qui décide](sequence-5/seance-0.md)
+- [Séance 1 — Piloter une carte](sequence-5/seance-1.md)
+- [Séance 2 — Réguler et sécuriser](sequence-5/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-5/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - Consommation énergétique et autonomie

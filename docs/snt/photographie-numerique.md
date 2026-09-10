@@ -97,6 +97,20 @@ sur la portée des données EXIF.
 Une photo transporte plus que son image. Date, appareil, réglages et parfois
 coordonnées GPS voyagent avec le fichier.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 6 — La photographie numérique](sequence-6/index.md).
+
+- [Séance 0 — Ce que la photo jette](sequence-6/seance-0.md)
+- [Séance 1 — Manipuler les pixels](sequence-6/seance-1.md)
+- [Séance 2 — Filtres et métadonnées](sequence-6/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-6/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - Pourquoi le JPEG dégrade, et où cela se voit

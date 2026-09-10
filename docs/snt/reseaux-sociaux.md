@@ -90,6 +90,20 @@ responsabilité de celui qui relaie.
 Le service est gratuit parce que l'attention est vendue. Le fil est classé pour
 maximiser le temps passé, pas pour informer.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 2 — Les réseaux sociaux](sequence-2/index.md).
+
+- [Séance 0 — Le fil n'est pas le monde](sequence-2/seance-0.md)
+- [Séance 1 — Mesurer un graphe](sequence-2/seance-1.md)
+- [Séance 2 — Ce que je laisse, ce que j'accepte](sequence-2/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-2/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - Modération : ce que fait un humain, ce que fait une machine

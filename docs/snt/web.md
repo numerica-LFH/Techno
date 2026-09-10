@@ -141,6 +141,20 @@ automatiquement. Dix questions couvrant les trois séances : origines d'Internet
 HTML et CSS, échange avec le serveur, rang d'une page. Chaque mauvaise réponse
 renvoie l'élève au passage de la fiche concerné.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 1 — D'Internet au Web](sequence-1/index.md).
+
+- [Séance 0 — Aux origines d'Internet](sequence-1/seance-0.md)
+- [Séance 1 — Écrire une page](sequence-1/seance-1.md)
+- [Séance 2 — Du serveur au rang d'une page](sequence-1/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-1/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - HTTPS et le chiffrement de la connexion

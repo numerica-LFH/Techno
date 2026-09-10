@@ -95,6 +95,36 @@ nav:
       - Objets connectés: snt/objets-connectes.md
       - Photographie numérique: snt/photographie-numerique.md
       - Projet final: snt/projet-final.md
+      - "Séquence 1 — D'Internet au Web":
+          - snt/sequence-1/index.md
+          - "Séance 0 — Aux origines d'Internet": snt/sequence-1/seance-0.md
+          - "Séance 1 — Écrire une page": snt/sequence-1/seance-1.md
+          - "Séance 2 — Du serveur au rang d'une page": snt/sequence-1/seance-2.md
+      - "Séquence 2 — Les réseaux sociaux":
+          - snt/sequence-2/index.md
+          - "Séance 0 — Le fil n'est pas le monde": snt/sequence-2/seance-0.md
+          - "Séance 1 — Mesurer un graphe": snt/sequence-2/seance-1.md
+          - "Séance 2 — Ce que je laisse, ce que j'accepte": snt/sequence-2/seance-2.md
+      - "Séquence 3 — Les données structurées":
+          - snt/sequence-3/index.md
+          - "Séance 0 — Ranger pour pouvoir chercher": snt/sequence-3/seance-0.md
+          - "Séance 1 — Nettoyer un jeu de données": snt/sequence-3/seance-1.md
+          - "Séance 2 — Croiser deux tables": snt/sequence-3/seance-2.md
+      - "Séquence 4 — Localisation et cartographie":
+          - snt/sequence-4/index.md
+          - "Séance 0 — Écouter le ciel": snt/sequence-4/seance-0.md
+          - "Séance 1 — Décoder une trame NMEA": snt/sequence-4/seance-1.md
+          - "Séance 2 — Cartes et plus court chemin": snt/sequence-4/seance-2.md
+      - "Séquence 5 — Les objets connectés":
+          - snt/sequence-5/index.md
+          - "Séance 0 — L'objet qui décide": snt/sequence-5/seance-0.md
+          - "Séance 1 — Piloter une carte": snt/sequence-5/seance-1.md
+          - "Séance 2 — Réguler et sécuriser": snt/sequence-5/seance-2.md
+      - "Séquence 6 — La photographie numérique":
+          - snt/sequence-6/index.md
+          - "Séance 0 — Ce que la photo jette": snt/sequence-6/seance-0.md
+          - "Séance 1 — Manipuler les pixels": snt/sequence-6/seance-1.md
+          - "Séance 2 — Filtres et métadonnées": snt/sequence-6/seance-2.md
   - PIX:
       - pix/index.md
       - Le référentiel CRCN: pix/crcn.md

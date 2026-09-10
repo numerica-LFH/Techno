@@ -100,6 +100,20 @@ carte libre et sur le plus court chemin de l'activité 3.
 Le récepteur écoute, il n'émet pas. Sa position vient du décalage entre les
 signaux de plusieurs satellites.
 
+
+## Traces écrites et évaluation
+
+Les traces écrites des trois séances sont réunies dans la [Séquence 4 — Localisation et cartographie](sequence-4/index.md).
+
+- [Séance 0 — Écouter le ciel](sequence-4/seance-0.md)
+- [Séance 1 — Décoder une trame NMEA](sequence-4/seance-1.md)
+- [Séance 2 — Cartes et plus court chemin](sequence-4/seance-2.md)
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-4/evaluation.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
+envoyée au professeur.
+
 ## Pour aller plus loin
 
 - Précision, sources d'erreur, correction différentielle

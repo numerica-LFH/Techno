@@ -27,6 +27,23 @@ remobilise l'ensemble.
 | 7 | [Photographie numérique](photographie-numerique.md) | De la lumière au fichier, que perd-on ? |
 | 8 | [Projet final](projet-final.md) | Que sais-je faire, seul, avec tout cela ? |
 
+
+## Les six séquences, séance par séance
+
+Chaque séquence tient dans un cycle de deux semaines : une séance d'introduction, deux séances
+d'activités, puis une évaluation. La trace écrite de chaque séance est publiée sur sa propre page,
+et chaque séquence a son évaluation de quarante questions, corrigée automatiquement et transmise au
+professeur.
+
+| # | Séquence | Séances | Évaluation |
+|---|---|---|---|
+| 1 | [D'Internet au Web](sequence-1/index.md) | [0](sequence-1/seance-0.md) · [1](sequence-1/seance-1.md) · [2](sequence-1/seance-2.md) | [40 questions](sequence-1/evaluation.html) |
+| 2 | [Les réseaux sociaux](sequence-2/index.md) | [0](sequence-2/seance-0.md) · [1](sequence-2/seance-1.md) · [2](sequence-2/seance-2.md) | [40 questions](sequence-2/evaluation.html) |
+| 3 | [Les données structurées](sequence-3/index.md) | [0](sequence-3/seance-0.md) · [1](sequence-3/seance-1.md) · [2](sequence-3/seance-2.md) | [40 questions](sequence-3/evaluation.html) |
+| 4 | [Localisation et cartographie](sequence-4/index.md) | [0](sequence-4/seance-0.md) · [1](sequence-4/seance-1.md) · [2](sequence-4/seance-2.md) | [40 questions](sequence-4/evaluation.html) |
+| 5 | [Les objets connectés](sequence-5/index.md) | [0](sequence-5/seance-0.md) · [1](sequence-5/seance-1.md) · [2](sequence-5/seance-2.md) | [40 questions](sequence-5/evaluation.html) |
+| 6 | [La photographie numérique](sequence-6/index.md) | [0](sequence-6/seance-0.md) · [1](sequence-6/seance-1.md) · [2](sequence-6/seance-2.md) | [40 questions](sequence-6/evaluation.html) |
+
 ## Les objectifs d'apprentissage, thème par thème
 
 Chaque thème est présenté avec les quatre mêmes verbes que dans les séquences de technologie :

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT - Séquence 3 — Les données structurées - Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+
+<style>
+.q pre { background:#0f172a; color:#e2e8f0; border-radius:5px; padding:11px 13px; margin:0 0 10px;
+  overflow-x:auto; font-size:.86rem; line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.q pre b { color:#fbbf24; font-weight:700; }
+.q code { background:#eef1f4; border:1px solid #d3dae1; border-radius:3px; padding:1px 4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+label.choix code { background:#fff; }
+.sommaire { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:12px 16px;
+  margin-bottom:18px; font-size:.9rem; color:#4a545e; }
+.sommaire b { color:#1d3557; }
+.partie { margin:22px 0 12px; padding:7px 12px; background:#1d3557; color:#fff; border-radius:4px;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>SNT · Séquence 3 — Les données structurées</h1>
+  <p class="sous">40 questions, 47 points, sur les trois séances de la séquence.
+  J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
+  envoyée au professeur.</p>
+</header>
+
+<div class="sommaire">
+  <b>Ce qui est évalué.</b> Séance 0 : ranger pour pouvoir chercher, donnée, descripteur, métadonnée. Séance 1 : nettoyer un jeu de données, les quatre défauts, trier et filtrer. Séance 2 : croiser deux tables par une clé, lire des données ouvertes.
+</div>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="2de A" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 3 — Les données structurées · Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "2de", "sequence": "Séquence 3 — Les données structurées", "seances": "Séances 0, 1 et 2"};
+const questions = [
+ {
+  "partie": "Partie A — Ranger pour pouvoir chercher",
+  "type": "qcm",
+  "enonce": "Le recensement américain de 1890 est resté célèbre en informatique parce que :",
+  "choix": [
+   "Il a été le premier fait à la main",
+   "Il a été dépouillé par des machines à cartes perforées",
+   "Il portait sur un million de personnes",
+   "Il n'a jamais été terminé"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il a été dépouillé par des machines à cartes perforées.",
+  "expl": "Le problème du rangement des données est plus vieux que l'informatique électronique."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets ces trois étapes dans l'ordre chronologique.",
+  "elements": [
+   "Les cartes perforées de Bouchon, pour les métiers à tisser",
+   "Le dépouillement mécanique du recensement de Hollerith",
+   "Le modèle des tables relationnelles de Codd"
+  ],
+  "points": 2,
+  "reponse": "Bouchon (1725), Hollerith (1890), Codd (1970).",
+  "expl": "La carte perforée sert d'abord à commander une machine, puis à ranger de l'information."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans un fichier CSV, à quoi sert la première ligne ?",
+  "choix": [
+   "Elle contient la première donnée",
+   "Elle donne les descripteurs, c'est-à-dire le nom de chaque colonne",
+   "Elle indique la taille du fichier"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle donne les descripteurs, c'est-à-dire le nom de chaque colonne.",
+  "expl": "Sans les descripteurs, les valeurs des lignes suivantes ne veulent rien dire."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La valeur 990, toute seule, dans un fichier :",
+  "choix": [
+   "Est une donnée exploitable telle quelle",
+   "Ne veut rien dire tant qu'on ne sait pas ce qu'elle décrit",
+   "Est forcément une altitude"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Ne veut rien dire tant qu'on ne sait pas ce qu'elle décrit.",
+  "expl": "990 peut être une altitude, une population, une année, un prix."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque mot sa définition.",
+  "paires": [
+   {
+    "terme": "Donnée",
+    "definition": "Une valeur, par exemple 31,2"
+   },
+   {
+    "terme": "Descripteur",
+    "definition": "Le nom d'une colonne, par exemple temp_max"
+   },
+   {
+    "terme": "Enregistrement",
+    "definition": "Une ligne complète de la table"
+   }
+  ],
+  "points": 3,
+  "reponse": "Donnée : une valeur. Descripteur : le nom d'une colonne. Enregistrement : une ligne.",
+  "expl": "Une table est un ensemble d'enregistrements décrits par les mêmes descripteurs."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que signifient les lettres CSV ?",
+  "choix": [
+   "Common Storage Version",
+   "Comma-Separated Values",
+   "Central Sorted Values",
+   "Column Set Variables"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Comma-Separated Values, valeurs séparées par des virgules.",
+  "expl": "Le séparateur est souvent un point-virgule en français, justement pour éviter la confusion avec la virgule décimale."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pourquoi préfère-t-on un format ouvert comme le CSV à un format propriétaire ?",
+  "choix": [
+   "Parce que le fichier est plus petit",
+   "Parce qu'il reste lisible sans un logiciel particulier",
+   "Parce qu'il est plus joli",
+   "Parce qu'il empêche les erreurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Parce qu'il reste lisible sans un logiciel particulier.",
+  "expl": "Un CSV s'ouvre dans un tableur, un éditeur de texte, un programme. Il survit au logiciel qui l'a produit."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel mot désigne les trois opérations qui structurent tout le thème, avec trier et filtrer ?",
+  "placeholder": "Un verbe",
+  "acceptees": [
+   "croiser",
+   "fusionner"
+  ],
+  "points": 1,
+  "reponse": "Croiser (ou fusionner).",
+  "expl": "Trier, filtrer, croiser : les trois gestes de base sur une table."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un fichier CSV peut contenir des couleurs et des formules de calcul.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le CSV ne contient que du texte et des valeurs. La mise en forme appartient au tableur qui l'affiche."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les fichiers que nous consultons sont physiquement stockés :",
+  "choix": [
+   "Uniquement sur nos téléphones",
+   "Dans des centres de données, alimentés et refroidis en permanence",
+   "Nulle part, ils sont recréés à chaque consultation"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Dans des centres de données, alimentés et refroidis en permanence.",
+  "expl": "Le stockage a un coût énergétique continu, même quand personne ne consulte les fichiers."
+ },
+ {
+  "partie": "Partie B — Nettoyer un jeu de données",
+  "consigne": "Les sept relevés de l'activité 1 sont rappelés ci-dessous.",
+  "code": "id;station;departement;date;temp_max;pluie_mm\n1;Tegucigalpa;FM;2025-03-01;31.2;0\n2;San Pedro Sula;CR;01/03/2025;34,1;2.5\n3;La Ceiba;AT;2025-03-01;;12\n4;Tegucigalpa;FM;2025-03-01;31.2;0\n5;Choluteca;CH;2025-03-02;38.9;0\n6;Roatan;IB;2025-03-02;30.4;-1\n7;Comayagua;CM;2025-03-02;327;0",
+  "type": "qcm",
+  "enonce": "Combien ce fichier compte-t-il d'enregistrements et de descripteurs ?",
+  "choix": [
+   "8 enregistrements et 6 descripteurs",
+   "7 enregistrements et 6 descripteurs",
+   "7 enregistrements et 7 descripteurs",
+   "6 enregistrements et 7 descripteurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "7 enregistrements et 6 descripteurs.",
+  "expl": "La première ligne porte les descripteurs, elle ne compte pas comme un enregistrement."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Combien de lignes posent problème dans ce fichier ?",
+  "choix": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "5 lignes, les numéros 2, 3, 4, 6 et 7.",
+  "expl": "Seules les lignes 1 et 5 sont correctes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel défaut porte la ligne 3 ?",
+  "choix": [
+   "Un doublon",
+   "Une valeur manquante",
+   "Une valeur aberrante",
+   "Une incohérence de format"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une valeur manquante : la température est vide.",
+  "expl": "Vide ne vaut pas zéro. C'est l'erreur la plus coûteuse : elle fausse toutes les moyennes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel défaut porte la ligne 4 ?",
+  "choix": [
+   "Un doublon de la ligne 1",
+   "Une valeur manquante",
+   "Une valeur aberrante",
+   "Aucun défaut"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Un doublon de la ligne 1, sous un identifiant différent.",
+  "expl": "L'identifiant change, le relevé est le même : le comptage est faussé."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quels défauts porte la ligne 2 ?",
+  "choix": [
+   "Une valeur manquante seulement",
+   "Deux incohérences de format : la date et le séparateur décimal",
+   "Un doublon",
+   "Aucun défaut"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Deux incohérences de format : 01/03/2025 au lieu de 2025-03-02, et 34,1 au lieu de 34.1.",
+  "expl": "Deux écritures de date et deux séparateurs décimaux dans la même colonne : le tri devient impossible."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une case vide dans une colonne « température » signifie :",
+  "choix": [
+   "Que la température valait 0",
+   "Que la valeur est manquante",
+   "Que la station était fermée"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Que la valeur est manquante.",
+  "expl": "Remplacer un vide par un zéro fait descendre toutes les moyennes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On lit 327 dans une colonne de températures maximales exprimées en degrés Celsius. C'est :",
+  "choix": [
+   "Une valeur manquante",
+   "Un doublon",
+   "Une valeur aberrante, probablement 32,7 mal saisi",
+   "Une valeur normale"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "Une valeur aberrante, probablement 32,7 mal saisi.",
+  "expl": "327 degrés est impossible pour une station météo : c'est une virgule oubliée."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La ligne 6 indique une pluie de -1 mm. Que peut-on en dire ?",
+  "choix": [
+   "C'est normal, il s'agit d'un déficit de pluie",
+   "C'est une valeur aberrante : une hauteur de pluie ne peut pas être négative",
+   "C'est une valeur manquante",
+   "C'est un doublon"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "C'est une valeur aberrante : une hauteur de pluie ne peut pas être négative.",
+  "expl": "Certains capteurs codent l'absence de mesure par -1. Reste à le savoir, ce qui suppose une documentation."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque défaut son exemple dans le fichier.",
+  "paires": [
+   {
+    "terme": "Valeur manquante",
+    "definition": "Ligne 3, température vide"
+   },
+   {
+    "terme": "Doublon",
+    "definition": "Ligne 4, identique à la ligne 1"
+   },
+   {
+    "terme": "Valeur aberrante",
+    "definition": "Ligne 7, 327 degrés"
+   }
+  ],
+  "points": 3,
+  "reponse": "Manquante : ligne 3. Doublon : ligne 4. Aberrante : ligne 7.",
+  "expl": "Le quatrième défaut, l'incohérence de format, se lit sur la ligne 2."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle opération fait apparaître le plus facilement les doublons d'une table ?",
+  "choix": [
+   "Le filtrage",
+   "Le tri",
+   "La fusion",
+   "La suppression des colonnes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le tri.",
+  "expl": "Trier place les lignes identiques les unes sous les autres, et ne perd aucune ligne."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Filtrer une table, c'est :",
+  "choix": [
+   "Changer l'ordre des lignes",
+   "Ne garder que les lignes qui vérifient une condition",
+   "Ajouter une colonne",
+   "Corriger les erreurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Ne garder que les lignes qui vérifient une condition.",
+  "expl": "Changer l'ordre, c'est trier."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On filtre les relevés du 2 mars sans pluie. Quelles lignes restent ?",
+  "choix": [
+   "Les lignes 5 et 6",
+   "Les lignes 5 et 7",
+   "Les lignes 6 et 7",
+   "La ligne 5 seulement"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Les lignes 5 et 7.",
+  "expl": "La ligne 6 est bien du 2 mars, mais sa pluie vaut -1 et non 0."
+ },
+ {
+  "type": "vf",
+  "enonce": "Trier une table peut faire disparaître des lignes.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le tri est la seule des trois opérations qui ne perd aucune ligne."
+ },
+ {
+  "partie": "Partie C — Croiser deux tables, lire des données ouvertes",
+  "type": "qcm",
+  "enonce": "Pour fusionner deux tables, il faut :",
+  "choix": [
+   "Qu'elles aient le même nombre de lignes",
+   "Qu'elles aient une colonne commune permettant de relier les lignes",
+   "Qu'elles soient dans le même fichier",
+   "Qu'elles aient le même nombre de colonnes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Qu'elles aient une colonne commune permettant de relier les lignes.",
+  "expl": "C'est la colonne commune, ici id_station, qui sert de point de jonction."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on la colonne commune qui permet de relier deux tables ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "cle",
+   "clé",
+   "cle de fusion",
+   "clé de fusion"
+  ],
+  "points": 1,
+  "reponse": "La clé.",
+  "expl": "Ici id_station est la clé de la fusion."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La table des stations compte 4 lignes, celle des relevés 6 lignes. Combien de lignes la table fusionnée compte-t-elle ?",
+  "choix": [
+   "4",
+   "6",
+   "10",
+   "24"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "6 lignes.",
+  "expl": "Une ligne par relevé, pas une par station : chaque relevé reçoit les informations de sa station."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans la table des relevés, un id_station qui n'existe pas dans la table des stations :",
+  "choix": [
+   "Est corrigé automatiquement",
+   "Laisse une ligne impossible à compléter lors de la fusion",
+   "Empêche d'ouvrir le fichier"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Laisse une ligne impossible à compléter lors de la fusion.",
+  "expl": "La ligne existe mais reste orpheline : impossible de lui associer une ville."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La station la plus haute est-elle la plus fraîche ? Que répond l'activité 2 ?",
+  "choix": [
+   "Oui, sans exception",
+   "Non, jamais",
+   "La tendance va dans ce sens, mais six lignes ne suffisent pas à conclure",
+   "La question n'a pas de sens"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "La tendance va dans ce sens, mais six lignes ne suffisent pas à conclure.",
+  "expl": "Un relevé contredit la tendance. Refuser de conclure sur un échantillon minuscule fait partie du travail."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le nom de l'auteur d'un jeu de données, sa date de publication et sa licence sont :",
+  "choix": [
+   "Des données",
+   "Des métadonnées",
+   "Des descripteurs",
+   "Des doublons"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Des métadonnées.",
+  "expl": "Ce sont des données sur les données. Elles n'apparaissent pas dans les lignes du fichier."
+ },
+ {
+  "type": "qcm",
+  "enonce": "À quoi sert la licence d'un jeu de données ouvert ?",
+  "choix": [
+   "À indiquer son prix",
+   "À dire ce que l'on a le droit d'en faire",
+   "À garantir qu'il ne contient aucune erreur",
+   "À préciser le nombre de lignes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "À dire ce que l'on a le droit d'en faire.",
+  "expl": "Réutiliser, modifier, redistribuer, avec ou sans mention de la source : tout cela dépend de la licence."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une question ne peut être traitée avec un jeu de données que si :",
+  "choix": [
+   "Le fichier compte plus de mille lignes",
+   "Elle ne mobilise que des descripteurs présents dans le fichier",
+   "Le fichier est récent",
+   "Le fichier est au format CSV"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle ne mobilise que des descripteurs présents dans le fichier.",
+  "expl": "C'est le point de l'activité 3 : formuler une question à laquelle le fichier ne répond pas est aussi instructif."
+ },
+ {
+  "type": "vf",
+  "enonce": "Anonymiser un jeu de données en retirant les noms suffit à empêcher toute ré-identification.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le croisement de plusieurs descripteurs, âge, code postal, date, peut désigner une seule personne."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque opération son effet sur la table.",
+  "paires": [
+   {
+    "terme": "Trier",
+    "definition": "Change l'ordre des lignes, n'en perd aucune"
+   },
+   {
+    "terme": "Filtrer",
+    "definition": "Ne conserve que les lignes qui vérifient une condition"
+   },
+   {
+    "terme": "Croiser",
+    "definition": "Ajoute des colonnes venues d'une autre table"
+   }
+  ],
+  "points": 3,
+  "reponse": "Trier réordonne, filtrer sélectionne, croiser enrichit.",
+  "expl": "Les trois se combinent : on nettoie, on croise, puis on filtre pour répondre à la question."
+ },
+ {
+  "partie": "Partie D — Rappels des séquences précédentes",
+  "type": "qcm",
+  "enonce": "On veut publier ce tableau de relevés sur une page web. Quelle balise ouvre un tableau en HTML ?",
+  "choix": [
+   "<code>&lt;table&gt;</code>",
+   "<code>&lt;csv&gt;</code>",
+   "<code>&lt;grid&gt;</code>",
+   "<code>&lt;ul&gt;</code>"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "La balise &lt;table&gt;.",
+  "expl": "&lt;tr&gt; ouvre une ligne, &lt;td&gt; une cellule, &lt;th&gt; une cellule d'en-tête."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Lis cette règle CSS. Que fait-elle sur le tableau publié ?",
+  "code": "table td {\n    border: 1px solid #4051b5;\n    padding: 6px;\n}",
+  "choix": [
+   "Elle colore le texte des cellules en indigo",
+   "Elle encadre chaque cellule d'un trait indigo et ajoute de l'espace autour du contenu",
+   "Elle centre le tableau",
+   "Elle masque les cellules vides"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle encadre chaque cellule d'un trait indigo et ajoute de l'espace autour du contenu.",
+  "expl": "border dessine le contour, padding est l'espace intérieur, entre le contour et le contenu."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le serveur qui héberge le fichier CSV répond 404 quand on demande son adresse. Que faut-il en conclure ?",
+  "choix": [
+   "Le fichier est trop lourd",
+   "L'adresse demandée ne correspond à aucune ressource",
+   "Le fichier est protégé par un mot de passe",
+   "La connexion n'est pas chiffrée"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "L'adresse demandée ne correspond à aucune ressource.",
+  "expl": "Un jeu de données ouvert peut changer d'adresse : c'est pour cela qu'on note toujours sa provenance."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un portail de données ouvertes est un site web. Qu'est-ce qui transporte le fichier jusqu'à ton ordinateur ?",
+  "choix": [
+   "Le Web, découpé en paquets par Internet",
+   "Internet, le réseau, en découpant le fichier en paquets",
+   "Le tableur",
+   "Le fichier CSV lui-même"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Internet, le réseau, en découpant le fichier en paquets.",
+  "expl": "Le Web est le service qui donne l'adresse et la page, le réseau fait le transport."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que retient-on de cette séquence en une phrase ?",
+  "choix": [
+   "Les tableurs sont plus rapides que les programmes",
+   "Une donnée sans descripteur ne vaut rien, et la qualité du travail dépend d'abord de la structure choisie au départ",
+   "Il faut toujours mille lignes pour conclure",
+   "Les métadonnées sont facultatives"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une donnée sans descripteur ne vaut rien, et la qualité du travail dépend d'abord de la structure choisie au départ.",
+  "expl": "C'est le « à retenir » de la séquence, identique sur le site, dans la fiche et dans le diaporama."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on une donnée qui décrit un fichier plutôt que son contenu, comme sa date ou son auteur ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "metadonnee",
+   "métadonnée",
+   "metadonnees",
+   "métadonnées"
+  ],
+  "points": 1,
+  "reponse": "Une métadonnée.",
+  "expl": "On les retrouvera en séquence 6, dans les données EXIF d'une photo."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un jeu de données publié par une administration est nécessairement exact et complet.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Les quatre défauts de l'activité 1 se rencontrent dans tous les jeux de données réels, quelle qu'en soit l'origine."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    if (q.partie) {
+      const p = document.createElement("div");
+      p.className = "partie";
+      p.textContent = q.partie;
+      zone.appendChild(p);
+    }
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+    if (q.code) h += '<pre>' + q.code + '</pre>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">- choisir -</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">-</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma reponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur.";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation SNT " + META.sequence + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seances,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>
