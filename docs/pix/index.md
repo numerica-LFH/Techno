@@ -7,6 +7,7 @@ programme de technologie du cycle 4.
 
 [Ouvrir PIX](https://pix.fr){ .md-button .md-button--primary target=_blank }
 [Se positionner sur les 16 compétences](../apps/pix-positionnement.html){ .md-button target=_blank }
+[Crear una cuenta (guía en español)](crear-cuenta.md){ .md-button }
 
 ## Ce qu'il faut savoir en trois points
 
@@ -42,8 +43,12 @@ Le détail des 16 compétences, avec ce qui les travaille dans nos cours, se tro
 | [Le référentiel CRCN](crcn.md) | Les 16 compétences, les 8 niveaux, et le chapitre du cours qui travaille chacune |
 | [Parcours par niveau](parcours.md) | Ce qui est visé en 5e, 4e, 3e et en seconde, et les campagnes associées |
 | [La certification](certification.md) | Conditions, format, durée, calendrier, et comment devenir certifiable |
+| [Crear una cuenta (español)](crear-cuenta.md) | Guide pas à pas en espagnol, pour les familles qui créent le premier compte |
 
 ## Créer son compte
+
+Les familles hispanophones trouveront le même mode d'emploi, détaillé et en espagnol, sur la page
+[Crear una cuenta](crear-cuenta.md).
 
 1. Aller sur [pix.fr](https://pix.fr){ target=_blank } et choisir « Je m'inscris ».
 2. Utiliser son adresse scolaire, celle du lycée, pas une adresse personnelle. C'est elle qui permet
