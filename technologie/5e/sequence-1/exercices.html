@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5e — Séquence 1 — Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>5e · Séquence 1 — Des besoins aux objets techniques</h1>
+  <p class="sous">Dix questions. Je réponds, je vérifie, je recommence autant de fois que nécessaire.
+  Le score ne compte pas dans la moyenne.</p>
+</header>
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 5e — Séquence 1 — Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Un objet technique est créé par son concepteur pour :",
+  "choix": [
+   "exprimer ses idées",
+   "répondre à un besoin",
+   "décorer une pièce"
+  ],
+  "bonne": 1,
+  "expl": "Un objet technique répond toujours à un besoin. Le service qu'il rend s'appelle sa fonction d'usage.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 42h44v26H22z\"/><path d=\"M66 50h16v10H66z\"/>\n<path d=\"M82 55h22\" stroke-width=\"4\"/><path d=\"M100 50l8 5-8 5\"/>\n<path d=\"M30 68l-6 26h18l4-26\"/><path d=\"M22 46h-8v18h8\"/></svg>"
+ },
+ {
+  "enonce": "Le besoin satisfait par un clavier d'ordinateur est :",
+  "choix": [
+   "taper sur des touches de manière distincte et facile",
+   "permettre à l'utilisateur de transmettre des informations à l'ordinateur",
+   "poser ses mains confortablement"
+  ],
+  "bonne": 1,
+  "expl": "La première réponse décrit ce que fait l'utilisateur, pas le service rendu.",
+  "illus": ""
+ },
+ {
+  "enonce": "La fonction d'usage d'un objet s'écrit :",
+  "choix": [
+   "par un nom commun",
+   "par un verbe à l'infinitif",
+   "par un adjectif"
+  ],
+  "bonne": 1,
+  "expl": "« Permettre de percer des trous » : verbe à l'infinitif.",
+  "illus": ""
+ },
+ {
+  "enonce": "Des objets qui satisfont le même besoin ont forcément le même fonctionnement.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "Les cafetières rendent le même service mais leurs principes techniques diffèrent.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M44 104h32l-4-34H48z\"/>\n<path d=\"M48 70l-4-30h32l-4 30\"/><path d=\"M44 40h32\"/><circle cx=\"60\" cy=\"34\" r=\"5\"/>\n<path d=\"M76 56c14 0 14 22 0 22\"/><path d=\"M44 46l-10-6\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 20h76v60H22z\"/><path d=\"M46 46h28v10H46z\"/>\n<path d=\"M56 56v8\"/><path d=\"M44 66h24v14H44z\"/><path d=\"M68 72h8\"/>\n<path d=\"M28 26h14v10H28z\"/><path d=\"M22 80h76v18H22z\"/></svg>"
+ },
+ {
+  "enonce": "Une famille d'objets réunit des objets qui :",
+  "choix": [
+   "ont la même forme",
+   "remplissent la même fonction d'usage",
+   "ont le même prix"
+  ],
+  "bonne": 1,
+  "expl": "C'est la fonction d'usage partagée qui définit la famille.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M38 34h44v62H38z\"/><path d=\"M60 34V16\"/>\n<circle cx=\"60\" cy=\"12\" r=\"6\"/><path d=\"M42 60h36\"/><path d=\"M82 50l14 8-14 8\"/>\n<path d=\"M38 88h44\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"24\" y=\"12\" width=\"72\" height=\"24\" rx=\"4\"/>\n<path d=\"M32 36v10h56V36\"/><path d=\"M44 54h34l6 44H38z\"/>\n<path d=\"M78 62l14 8-14 8\"/><path d=\"M38 82h46\" stroke-width=\"2.2\"/>\n<circle cx=\"38\" cy=\"24\" r=\"4\"/></svg>"
+ },
+ {
+  "enonce": "La fonction d'estime d'un objet dépend :",
+  "choix": [
+   "de son principe technique",
+   "des goûts de l'utilisateur",
+   "de sa consommation d'énergie"
+  ],
+  "bonne": 1,
+  "expl": "Design, taille, forme, couleur, marque : tout ce qui relève du goût.",
+  "illus": ""
+ },
+ {
+  "enonce": "« Produire de la lumière » avec une bougie, une ampoule à filament ou une LED, c'est :",
+  "choix": [
+   "une même fonction technique, trois principes techniques",
+   "trois fonctions techniques différentes",
+   "trois fonctions d'usage différentes"
+  ],
+  "bonne": 0,
+  "expl": "La fonction technique est la tâche à assurer ; le principe technique est la façon de s'y prendre.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M44 52h32v52H44z\"/><path d=\"M60 52V38\"/>\n<path d=\"M60 36c8-8 4-16 0-20-4 6-8 12 0 20z\" stroke-width=\"3\"/><path d=\"M44 104h32\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"48\" r=\"26\"/><path d=\"M48 74h24\"/><path d=\"M48 82h24\"/>\n<path d=\"M52 90h16\"/><path d=\"M50 48l6-10 4 14 4-14 6 10\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M42 60a18 18 0 0 1 36 0v18H42z\"/><path d=\"M50 78v26M70 78v18\"/>\n<path d=\"M60 30v-8M78 40l6-6M42 40l-6-6\"/></svg>"
+ },
+ {
+  "enonce": "Une lignée d'objets, c'est :",
+  "choix": [
+   "un ensemble d'objets de la même époque",
+   "une suite chronologique d'objets ayant la même fonction d'usage",
+   "un ensemble d'objets de la même marque"
+  ],
+  "bonne": 1,
+  "expl": "Du plus ancien au plus récent, tous rendant le même service.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"20\" y=\"34\" width=\"80\" height=\"52\" rx=\"5\"/>\n<rect x=\"32\" y=\"46\" width=\"56\" height=\"28\" rx=\"3\"/><circle cx=\"46\" cy=\"60\" r=\"7\"/>\n<circle cx=\"74\" cy=\"60\" r=\"7\"/><path d=\"M28 92h20\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"60\" r=\"38\"/><circle cx=\"60\" cy=\"60\" r=\"9\"/>\n<circle cx=\"60\" cy=\"60\" r=\"26\" stroke-dasharray=\"6 8\"/><path d=\"M96 74h14\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"38\" y=\"16\" width=\"44\" height=\"88\" rx=\"8\"/>\n<rect x=\"46\" y=\"26\" width=\"28\" height=\"20\" rx=\"2\"/><circle cx=\"60\" cy=\"72\" r=\"16\"/>\n<circle cx=\"60\" cy=\"72\" r=\"5\"/></svg>"
+ },
+ {
+  "enonce": "Une performance est :",
+  "choix": [
+   "un résultat mesurable obtenu par un objet",
+   "l'avis des utilisateurs",
+   "le prix de l'objet"
+  ],
+  "bonne": 0,
+  "expl": "Autonomie en heures, capacité, masse en grammes : des grandeurs mesurables.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"38\" y=\"16\" width=\"44\" height=\"88\" rx=\"8\"/>\n<rect x=\"46\" y=\"26\" width=\"28\" height=\"20\" rx=\"2\"/><circle cx=\"60\" cy=\"72\" r=\"16\"/>\n<circle cx=\"60\" cy=\"72\" r=\"5\"/></svg>"
+ },
+ {
+  "enonce": "Sur une frise chronologique, l'échelle sert à :",
+  "choix": [
+   "décorer la frise",
+   "respecter les proportions entre les durées",
+   "numéroter les objets"
+  ],
+  "bonne": 1,
+  "expl": "5 ans = 1 cm, par exemple. Sans échelle, la frise ne montre plus le rythme des évolutions.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"16\" y=\"24\" width=\"88\" height=\"72\" rx=\"4\"/>\n<path d=\"M16 42h88M16 60h88M16 78h88\" stroke-width=\"2\"/>\n<circle cx=\"34\" cy=\"42\" r=\"5\"/><circle cx=\"46\" cy=\"42\" r=\"5\"/>\n<circle cx=\"34\" cy=\"60\" r=\"5\"/><circle cx=\"78\" cy=\"60\" r=\"5\"/>\n<circle cx=\"34\" cy=\"78\" r=\"5\"/><circle cx=\"46\" cy=\"78\" r=\"5\"/><circle cx=\"58\" cy=\"78\" r=\"5\"/></svg>"
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>

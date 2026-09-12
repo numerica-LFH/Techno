@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 7. Données numériques, stockage et traitement - Technologie LFH</title>
+<meta name="description" content="Technologie 5e, thème 2 du programme. Cinq séances de 55 minutes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "5e",
+  "titre": "Chapitre 7. Données numériques, stockage et traitement",
+  "sousTitre": "Technologie 5e, thème 2 du programme. Cinq séances de 55 minutes.",
+  "question": "Comment les ordinateurs stockent-ils et traitent-ils tout ce que je leur confie ?",
+  "retour": "../technologie/5e/",
+  "competences": "Thème 2, structure et fonctionnement, et thème 1 pour les traces numériques. Compétences T2.1 et T1.2. CRCN domaines 1 information et données, et 5 environnement numérique.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Le langage binaire, le bit et l'octet."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Les supports de stockage et leurs ordres de grandeur."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "Une table de données au format CSV."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Trier, filtrer et calculer dans un tableur."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Je recherche",
+      "html": "\n<p>Chaque jour j'utilise des données sans y penser : mes contacts, mes notes, les résultats sportifs,\nles photos de la classe. Toutes tiennent dans des appareils qui ne connaissent que deux états.</p>\n<div class=\"app-encadre\">\n<p><b>Hypothèse.</b> Comment une machine qui ne sait dire que oui ou non peut-elle représenter une\nphoto en couleur ? J'écris ce que je crois, en deux lignes.</p>\n</div>\n"
+    },
+    {
+      "titre": "Le langage binaire",
+      "html": "\n<p>Un circuit électronique sait distinguer deux états : le courant passe, ou il ne passe pas. On les\nnote <b>1</b> et <b>0</b>. Chacun de ces chiffres s'appelle un <b>bit</b>.</p>\n<p>Un bit seul ne dit pas grand-chose. En les groupant, on multiplie les combinaisons possibles.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Nombre de bits</th><th>Combinaisons</th><th>Ce que cela permet</th></tr>\n<tr><td>1</td><td>2</td><td>Allumé ou éteint</td></tr>\n<tr><td>2</td><td>4</td><td>Quatre directions</td></tr>\n<tr><td>4</td><td>16</td><td>Seize niveaux de gris</td></tr>\n<tr><td>8, soit 1 octet</td><td>256</td><td>Un caractère, ou une nuance de rouge</td></tr>\n</table>\n</div>\n<p>Huit bits forment un <b>octet</b>. C'est l'unité de base : une lettre occupe un octet, une couleur\nd'image en occupe trois, un pour le rouge, un pour le vert, un pour le bleu.</p>\n<h3>Compter en binaire</h3>\n<p>Chaque position vaut le double de la précédente, en partant de la droite.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Position</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>\n<tr><th>Exemple : 1 0 0 1 0 1 1 0</th><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>\n</table>\n</div>\n<p>128 + 16 + 4 + 2 = 150. Le nombre binaire 10010110 vaut donc 150 en décimal.</p>\n"
+    },
+    {
+      "titre": "Le stockage",
+      "html": "\n<p>Les multiples de l'octet servent à mesurer ce que contient un support.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Unité</th><th>Valeur</th><th>Ordre de grandeur</th></tr>\n<tr><td>1 kilooctet (ko)</td><td>1 000 octets</td><td>Une page de texte</td></tr>\n<tr><td>1 mégaoctet (Mo)</td><td>1 000 ko</td><td>Une photo de téléphone</td></tr>\n<tr><td>1 gigaoctet (Go)</td><td>1 000 Mo</td><td>Deux heures de vidéo compressée</td></tr>\n<tr><td>1 téraoctet (To)</td><td>1 000 Go</td><td>Un disque dur d'ordinateur portable</td></tr>\n</table>\n</div>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Mémoire vive</b>Rapide, elle s'efface à l'extinction. Elle sert au travail en cours.</div>\n<div class=\"app-vignette\"><b>Disque et clé USB</b>Plus lents, ils conservent les données sans alimentation.</div>\n<div class=\"app-vignette\"><b>Serveur distant</b>Le fichier est chez quelqu'un d'autre. Il faut du réseau pour y accéder, et faire confiance.</div>\n</div>\n<div class=\"app-encadre\">\n<p><b>À retenir pour plus tard.</b> Un fichier déposé sur un service en ligne laisse une trace, même\naprès suppression. Ce point est repris au chapitre sur les réseaux.</p>\n</div>\n"
+    },
+    {
+      "titre": "Fichiers, tableaux et CSV",
+      "html": "\n<p>Une <b>donnée</b> seule ne veut rien dire. Ce qui lui donne un sens, c'est le <b>descripteur</b>\nqui la nomme. « 14 » ne signifie rien ; « note = 14 » signifie quelque chose.</p>\n<p>On range les données dans une <b>table</b> : une ligne par individu, une colonne par descripteur.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>prenom</th><th>niveau</th><th>projet</th><th>note</th></tr>\n<tr><td>Ana</td><td>5A</td><td>Pont</td><td>16</td></tr>\n<tr><td>Luis</td><td>5B</td><td>Maquette</td><td>13</td></tr>\n<tr><td>Sofia</td><td>5A</td><td>Pont</td><td>18</td></tr>\n</table>\n</div>\n<p>Le format <b>CSV</b> écrit cette table en texte simple, une ligne par enregistrement, les valeurs\nséparées par une virgule ou un point-virgule.</p>\n<div class=\"app-encadre\">\n<p style=\"font-family:monospace\">prenom;niveau;projet;note<br>Ana;5A;Pont;16<br>Luis;5B;Maquette;13<br>Sofia;5A;Pont;18</p>\n</div>\n<p>Un fichier CSV s'ouvre dans n'importe quel tableur et se lit dans n'importe quel programme. C'est\nsa force : il n'appartient à aucun logiciel en particulier.</p>\n<h3>Trier, filtrer, calculer</h3>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Trier</b>Ranger les lignes selon une colonne, par ordre croissant ou décroissant.</div>\n<div class=\"app-vignette\"><b>Filtrer</b>N'afficher que les lignes qui répondent à une condition, par exemple niveau = 5A.</div>\n<div class=\"app-vignette\"><b>Calculer</b>Obtenir une somme, une moyenne, un maximum sur une colonne.</div>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "Un octet vaut :",
+          "choix": [
+            "4 bits",
+            "8 bits",
+            "1 000 bits"
+          ],
+          "bonne": 1,
+          "explication": "Huit bits forment un octet, ce qui donne 256 combinaisons."
+        },
+        {
+          "enonce": "Combien de combinaisons différentes peut-on écrire avec 4 bits ?",
+          "choix": [
+            "8",
+            "16",
+            "32"
+          ],
+          "bonne": 1,
+          "explication": "Chaque bit ajouté double le nombre de combinaisons : 2, 4, 8, 16."
+        },
+        {
+          "enonce": "Le nombre binaire 1010 vaut, en décimal :",
+          "choix": [
+            "10",
+            "12",
+            "6"
+          ],
+          "bonne": 0,
+          "explication": "8 + 0 + 2 + 0 = 10."
+        },
+        {
+          "enonce": "Dans une table de données, une colonne correspond :",
+          "choix": [
+            "À un individu",
+            "À un descripteur",
+            "À un fichier"
+          ],
+          "bonne": 1,
+          "explication": "Une ligne décrit un individu, une colonne porte un descripteur."
+        },
+        {
+          "enonce": "L'intérêt principal du format CSV est :",
+          "choix": [
+            "Qu'il compresse les données",
+            "Qu'il est lisible par tous les logiciels",
+            "Qu'il protège les données"
+          ],
+          "bonne": 1,
+          "explication": "Le CSV est du texte simple, sans mise en forme et sans dépendance à un logiciel."
+        },
+        {
+          "enonce": "Je veux voir seulement les élèves de 5A. J'utilise :",
+          "choix": [
+            "Un tri",
+            "Un filtre",
+            "Un calcul de moyenne"
+          ],
+          "bonne": 1,
+          "explication": "Le tri réorganise toutes les lignes, le filtre en masque une partie."
+        },
+        {
+          "enonce": "La mémoire vive d'un ordinateur :",
+          "choix": [
+            "Conserve les fichiers après extinction",
+            "S'efface quand l'appareil s'éteint",
+            "Remplace le disque dur"
+          ],
+          "bonne": 1,
+          "explication": "Elle est rapide mais volatile. Le stockage durable passe par le disque, la clé ou le serveur."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Bit</b></td><td>Plus petite information : 0 ou 1</td></tr>\n<tr><td><b>Octet</b></td><td>Groupe de 8 bits, 256 combinaisons</td></tr>\n<tr><td><b>Donnée</b></td><td>Valeur qui ne prend un sens qu'avec son descripteur</td></tr>\n<tr><td><b>Descripteur</b></td><td>Nom de la colonne qui dit ce que contient la valeur</td></tr>\n<tr><td><b>Table</b></td><td>Une ligne par individu, une colonne par descripteur</td></tr>\n<tr><td><b>CSV</b></td><td>Table écrite en texte simple, valeurs séparées par un caractère</td></tr>\n</table>\n</div>\n<h3>Je me situe</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Je sais</th><th>Pas encore</th><th>Avec de l'aide</th><th>Seul</th><th>Je peux l'expliquer</th></tr>\n<tr><td>Comprendre : bit, octet, binaire</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Identifier : les supports et leurs ordres de grandeur</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Analyser : lire une table et un CSV</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Appliquer : trier, filtrer, calculer</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n</table>\n</div>\n<h3>La question de la prochaine séquence</h3>\n<p>Mes données sont sur un serveur du lycée, pas dans mon ordinateur. Comment y arrivent-elles ?</p>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>
