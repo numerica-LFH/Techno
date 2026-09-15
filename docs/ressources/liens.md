@@ -9,6 +9,7 @@ installation, sauf mention contraire.
 |---|---|---|
 | Scratch | [scratch.mit.edu](https://scratch.mit.edu/) | Programmation par blocs, 5e à 3e et Nuit du Code |
 | Scratch hors ligne | [scratch.mit.edu/download](https://scratch.mit.edu/download) | Version installable, utile quand la connexion est faible |
+| Scratch Lab | [lab.scratch.mit.edu](https://lab.scratch.mit.edu/) | Blocs expérimentaux du MIT (texte animé, webcam), sans compte |
 | MakeCode micro:bit | [makecode.microbit.org](https://makecode.microbit.org/) | Programmation des cartes micro:bit, blocs ou Python |
 | Thonny | [thonny.org](https://thonny.org/) | Environnement Python léger, à installer |
 | Vittascience | [vittascience.com](https://vittascience.com/) | Simulation de cartes et de capteurs |
@@ -18,6 +19,53 @@ installation, sauf mention contraire.
 Créer un compte élève avec l'adresse de l'établissement. Les projets se
 retrouvent alors depuis n'importe quel poste. Sans compte, penser à télécharger
 le fichier `.sb3` en fin de séance, rien n'est conservé.
+
+### Scratch Lab
+
+[lab.scratch.mit.edu](https://lab.scratch.mit.edu/)
+
+Scratch est un langage de programmation par blocs né au MIT et développé
+aujourd'hui par la Scratch Foundation. On assemble des blocs comme les pièces
+d'un puzzle pour faire bouger des lutins, compter des points, réagir au clavier
+ou à la caméra. C'est le langage de la Nuit du Code pour l'école, le collège et
+le lycée.
+
+Scratch Lab est l'espace d'essai de la Scratch Foundation. L'équipe y teste de
+nouveaux blocs avant de décider s'ils entreront dans Scratch. On y trouve
+actuellement :
+
+| Expérience | Ce qu'elle permet |
+|---|---|
+| Animated Text | Écrire un titre qui apparaît lettre par lettre, grossit ou passe en arc-en-ciel |
+| Video Sprites | Afficher l'image de la webcam à l'intérieur d'un lutin |
+| Face Sensing | Suivre le nez, les yeux ou la bouche du joueur avec la webcam |
+
+La détection de visage a quitté le Lab : elle fait partie de Scratch depuis
+octobre 2025, sous le nom Détection de visage.
+
+Avant de s'en servir :
+
+- Le Lab n'a pas de compte. En fin de séance, on télécharge le projet en
+  fichier `.sb3`, sinon il est perdu.
+- Les blocs du Lab s'affichent en anglais.
+- Un projet qui contient des blocs du Lab ne fonctionne ni dans Scratch en
+  ligne ni dans Scratch hors ligne. On le garde dans un fichier à part.
+- Le Lab peut changer ou présenter des bogues : on le réserve aux mini-projets
+  d'une ou deux séances.
+
+### Scratch Lab et la Nuit du Code
+
+Le jour du concours, les équipes programment dans Scratch à partir d'un univers
+imposé : lutins, décors et sons fournis, sans aucun script. Les blocs du Lab n'y
+ont pas leur place, et un jeu piloté à la webcam reste à éviter, car le jury
+doit pouvoir le tester au clavier.
+
+Le Lab sert à l'entraînement. Il donne envie de coder et fait découvrir la
+vision par ordinateur. Les réflexes du concours se travaillent ensuite dans
+Scratch : boucles, conditions, variables, clones, messages entre lutins et
+sauvegardes numérotées (`jeu-v1.sb3`, `jeu-v2.sb3`).
+
+Voir aussi la page [La Nuit du Code](../projets-etablissement/nuit-du-code.md).
 
 ## Écrire des pages web
 
