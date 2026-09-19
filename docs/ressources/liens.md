@@ -11,8 +11,48 @@ installation, sauf mention contraire.
 | Scratch hors ligne | [scratch.mit.edu/download](https://scratch.mit.edu/download) | Version installable, utile quand la connexion est faible |
 | Scratch Lab | [lab.scratch.mit.edu](https://lab.scratch.mit.edu/) | Blocs expérimentaux du MIT (texte animé, webcam), sans compte |
 | MakeCode micro:bit | [makecode.microbit.org](https://makecode.microbit.org/) | Programmation des cartes micro:bit, blocs ou Python |
-| Thonny | [thonny.org](https://thonny.org/) | Environnement Python léger, à installer |
+| Thonny | [thonny.org](https://thonny.org/) | Environnement Python à installer, version 5, Python inclus |
+| Basthon | [basthon.fr](https://basthon.fr/) | Console et notebooks Python dans le navigateur, sans compte |
+| Capytale | [capytale.fr](https://capytale.fr) | Activités de code distribuées à la classe, sous conditions d'accès |
 | Vittascience | [vittascience.com](https://vittascience.com/) | Simulation de cartes et de capteurs |
+
+### Python, à installer ou en ligne
+
+Deux chemins mènent au même Python, et le choix dépend du poste.
+
+**Thonny**, à installer, reste l'outil de référence sur un poste personnel.
+L'installateur contient Python, il n'y a donc rien d'autre à télécharger. La
+version actuelle est Thonny 5, disponible pour Windows 10 et 11, macOS Intel et
+Apple Silicon, et Linux. Une version portable existe pour les postes où
+l'installation est bloquée, elle se lance depuis une clé USB.
+
+**Basthon**, en ligne, ouvre une console ou un notebook dans le navigateur, sans
+compte et sans installation. Les bibliothèques utiles au lycée sont déjà là,
+Matplotlib et Folium notamment, et un notebook se partage par un lien. C'est la
+solution du poste du lycée, de la maison et de la séance de rattrapage.
+
+| Outil | Quand |
+|---|---|
+| Thonny | Poste personnel, travail suivi, fichiers `.py` gardés sur le disque |
+| Basthon console | Essai rapide, quelques lignes à tester |
+| Basthon notebook | Activité mêlant texte, code et graphiques, à rendre par lien |
+
+### Capytale, les conditions d'accès
+
+Capytale distribue des activités de code et récupère les copies des élèves. Le
+service passe normalement par un ENT français, que le lycée n'a pas. Une voie
+existe cependant pour les établissements sans ENT :
+
+1. L'enseignant crée un compte sur [capytale.fr](https://capytale.fr), rubrique
+   Connexion sans ENT. Une adresse professionnelle en `@ac-xxx.fr` ou
+   `@aefe.fr` est obligatoire, ainsi que le code UAI de l'établissement.
+2. Il génère ensuite un code Sésame de neuf caractères, qu'il donne à la classe.
+3. Les élèves créent leur compte sur la même page avec ce code.
+
+Deux réserves avant de s'en servir en collège : la création d'un compte élève
+suppose quinze ans révolus ou l'accord des parents, et l'accès dépend d'une
+adresse académique que tous les collègues n'ont pas. Basthon ne demande rien de
+tout cela, c'est l'outil à prendre par défaut.
 
 ### Scratch, mise en route
 
@@ -265,7 +305,6 @@ exportés en PDF.
 | OpenStreetMap | [openstreetmap.org](https://www.openstreetmap.org/) | Cartographie collaborative, SNT et projets |
 | uMap | [umap.openstreetmap.fr](https://umap.openstreetmap.fr/) | Création de cartes personnalisées |
 | data.gouv.fr | [data.gouv.fr](https://www.data.gouv.fr/) | Jeux de données ouverts français |
-| Capytale | [capytale2.ac-paris.fr](https://capytale2.ac-paris.fr/) | Activités Python en ligne, si l'établissement y a accès |
 
 ## Concours
 

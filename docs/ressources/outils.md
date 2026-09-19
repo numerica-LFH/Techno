@@ -9,17 +9,45 @@ bien à la maison qu'au lycée. Les adresses complètes sont regroupées sur la 
 | Outil | Usage | Niveau |
 |---|---|---|
 | Scratch | Programmation par blocs | 5e |
-| Python (Thonny) | Traitement de données, images | SNT |
+| Python (Thonny ou Basthon) | Traitement de données, images | SNT |
 | micro:bit (MakeCode) | Objets connectés, capteurs | 4e, 3e |
 
 ### Installer Python et Thonny
 
-*À venir.*
+**Thonny** est l'environnement retenu pour écrire du Python sur un poste
+personnel, à l'adresse [thonny.org](https://thonny.org/). L'installateur
+contient déjà Python, il n'y a donc qu'un seul fichier à télécharger.
+
+1. Sur [thonny.org](https://thonny.org/), choisir l'installateur qui correspond
+   au poste : Windows 10 ou 11, macOS Intel ou Apple Silicon, Linux. La version
+   actuelle est Thonny 5.
+2. Lancer l'installation, puis ouvrir Thonny. La fenêtre du haut sert à écrire
+   le programme, celle du bas exécute les lignes une par une.
+3. Enregistrer le fichier avec l'extension `.py`, dans un dossier de travail, et
+   l'exécuter avec la touche F5.
+
+!!! tip "Poste où l'installation est bloquée"
+
+    Une version portable de Thonny se lance depuis une clé USB, sans droits
+    d'administrateur. C'est la solution pour les salles où les postes sont
+    verrouillés.
 
 ### Travailler sans rien installer
 
-Un environnement Python en ligne suffit pour la plupart des activités de SNT.
-Le lien est donné en classe.
+**Basthon**, à l'adresse [basthon.fr](https://basthon.fr/), fait tourner Python
+dans le navigateur, sans compte et sans installation. La console sert aux essais
+de quelques lignes, le notebook aux activités qui mêlent texte, code et
+graphiques, avec Matplotlib et Folium déjà disponibles. Un notebook se partage
+par un lien, ce qui suffit pour rendre un travail.
+
+Capytale, qui distribue des activités et récupère les copies, demande de son
+côté un compte enseignant avec une adresse académique, puis un code Sésame pour
+les élèves. Les conditions sont détaillées sur la page [Liens utiles](liens.md).
+
+!!! warning "Un travail en ligne se perd vite"
+
+    Une console fermée oublie tout. En fin de séance, on télécharge le fichier
+    `.py` ou le notebook, ou on colle le code dans son dossier de travail.
 
 ## Écrire des pages web
 
