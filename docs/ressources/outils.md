@@ -59,7 +59,63 @@ exactement au nom du fichier, extension et majuscules comprises.
 
 ## Modélisation et dessin
 
-*À venir.*
+Le projet jardin sec demande de dessiner en trois dimensions avant de construire.
+L'outil retenu est **SketchUp Web**, à l'adresse
+[app.sketchup.com](https://app.sketchup.com/).
+
+Il s'ouvre dans un onglet du navigateur : rien à installer, un compte Trimble
+gratuit suffit, et on retrouve son modèle au lycée comme à la maison. La
+méthode tient en deux gestes, tracer une surface plane puis l'étirer en volume
+avec l'outil Pousser/Tirer. Les dimensions se tapent au clavier pendant le
+tracé, ce qui fait travailler aux cotes réelles du projet.
+
+### SketchUp, prise en main en trois gestes
+
+1. Ouvrir [app.sketchup.com](https://app.sketchup.com/), se connecter, puis
+   choisir un modèle de départ en mètres. C'est le geste à ne pas sauter :
+   changer d'unité en cours de dessin oblige à tout recoter.
+2. Tracer un rectangle, le tirer vers le haut avec Pousser/Tirer, et taper la
+   valeur au clavier au lieu de viser à la souris.
+3. Nommer le modèle dès la première minute, sous la forme `jardin-nom-classe`.
+   Sur un poste partagé, le télécharger en `.skp` en fin de séance.
+
+!!! warning "Ce que la version gratuite ne fait pas"
+
+    Elle modélise et cote sans limite, mais l'import de fichiers extérieurs est
+    réservé aux offres payantes et l'image exportée porte un filigrane. Le
+    téléchargement du modèle reste possible en `.skp`, et en `.stl` pour
+    l'impression 3D.
+
+Les trois pas à pas du projet, douze étapes chacun, se font entièrement dans
+cette version : [vue d'ensemble](../technologie/projet-jardin-sec/sketchup/index.md),
+[5e](../technologie/projet-jardin-sec/sketchup/5e.md),
+[4e](../technologie/projet-jardin-sec/sketchup/4e.md),
+[3e](../technologie/projet-jardin-sec/sketchup/3e.md).
+
+## Simuler un montage électronique
+
+Avant de câbler une carte micro:bit et ses composants, le montage se teste à
+l'écran avec **Tinkercad Circuits**, à l'adresse
+[tinkercad.com/circuits](https://www.tinkercad.com/circuits).
+
+On pose une plaque d'essai, on tire les fils, on branche une LED, une
+résistance, un moteur ou un capteur, puis on lance la simulation. Les cartes
+micro:bit et Arduino Uno y sont simulées et se programment en blocs, comme dans
+MakeCode. Un montage faux se voit tout de suite, sans composant grillé.
+
+### Tinkercad, prise en main en trois gestes
+
+1. Ouvrir [tinkercad.com/circuits](https://www.tinkercad.com/circuits) et se
+   connecter, avec le compte Autodesk ou par le code de classe donné en séance.
+2. Câbler le montage, écrire le programme dans le panneau Code, puis cliquer sur
+   Démarrer la simulation.
+3. Partager le lien du montage pour le rendre ou le reprendre à la maison.
+
+!!! warning "Le simulateur ne remplace pas le montage réel"
+
+    À l'écran, une LED branchée sans résistance s'allume quand même. Sur la
+    table, elle grille. Les règles de câblage, polarité et résistance de
+    protection, se vérifient sur le vrai montage.
 
 ## Travailler à plusieurs sur une même page
 
