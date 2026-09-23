@@ -23,15 +23,14 @@
 
 ## Pendant : je recherche
 
-### Activité 1 · je recherche : trois principes techniques pour la même fonction
+### Activité 1 · je recherche : comparer les principes techniques et écrire le cahier des charges
 
-Remplis le tableau de comparaison à partir des documents. Attribue à chaque principe une note de 1 à 3 sur chaque critère, 3 étant le meilleur.
+Remplis le tableau de comparaison des trois principes techniques à partir des documents, puis complète les quatre lignes du cahier des charges avec un critère mesurable et un niveau chiffré pour chacune.
 
 - Quelle fonction technique commune ces trois solutions assurent-elles ?
-- Quel principe retient le mieux l'eau, et pourquoi ?
-- Quel principe utilise le plus de matériaux de récupération ?
-- Quel principe est le moins cher ?
-- Quel principe retiens-tu pour notre projet ? Justifie avec deux critères du cahier des charges.
+- Quel principe utilise le plus de matériaux de récupération, et lequel est le moins cher ?
+- Fonctions contenir la terre, limiter l'évaporation, durer dehors : complète chaque ligne avec un critère et un niveau.
+- Fonction utiliser des matériaux de récupération : quel critère et quel niveau, à partir de ta réponse sur la jardinière en palettes ?
 
 ### Activité 2 · je recherche : quelles plantes tiendront la saison sèche ?
 
@@ -40,25 +39,15 @@ Le catalogue donne pour chaque plante son besoin en eau, sa disponibilité à Te
 - Cite trois plantes à besoin en eau très faible du catalogue.
 - Qu'ont en commun leurs feuilles ?
 - Pourquoi garder une jardinière de chile, plante à besoin moyen ?
-- Établis la liste des huit plantes retenues par la classe.
-
-### Activité 3 · je recherche : écrire le cahier des charges de la jardinière
-
-Complète les quatre lignes manquantes du cahier des charges, avec un critère mesurable et un niveau chiffré.
-
-- Fonction : contenir la terre. Critère et niveau ?
-- Fonction : être manipulable par un élève. Critère et niveau ?
-- Fonction : limiter l'évaporation. Critère et niveau ?
-- Fonction : durer dehors. Critère et niveau ?
 
 ## Après : ce que je retiens
 
-Une même _______________________ peut être assurée par plusieurs __________________________ différents.  
-Pour choisir, on compare les principes sur des __________ tirés du cahier des charges, et non selon son goût.  
-Nous retenons la jardinière en bois de _________, avec un paillage de ________ cm au minimum et ________ cm de terre.  
-Les plantes _____________ comme le romero, la sábila ou le maguey vivent avec très peu d'eau grâce à leurs feuilles __________ ou __________.  
-Une jardinière de ________ sert de ________ pour comparer les consommations.  
-Un cahier des charges associe toujours une fonction, un _________ et un ________ chiffré.
+Une même **fonction technique** peut être assurée par plusieurs **principes techniques** différents.  
+Pour choisir, on compare les principes sur des **critères** tirés du cahier des charges, et non selon son goût.  
+Nous retenons la jardinière en bois de **palette**, avec un paillage de **3** cm au minimum et **25** cm de terre.  
+Les plantes **xérophytes** comme le romero, la sábila ou le maguey vivent avec très peu d'eau grâce à leurs feuilles **épaisses** ou **cireuses**.  
+Une jardinière de **chile** sert de **témoin** pour comparer les consommations.  
+Un cahier des charges associe toujours une fonction, un **critère** et un **niveau** chiffré.
 
 **La question de la prochaine séance.** Le cahier des charges est écrit. Comment le transformer en un modèle 3D de jardinière que l'on pourra coter, puis construire ?
 
