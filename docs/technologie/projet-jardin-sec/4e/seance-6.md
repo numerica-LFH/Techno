@@ -30,37 +30,24 @@ Câble le montage selon le schéma, fais vérifier par le professeur, puis mets 
 - Sur quelles broches se branchent le capteur et le relais ?
 - Pourquoi faire vérifier le câblage avant la mise sous tension ?
 - Pourquoi réduire l'attente à 10 secondes pour l'essai ?
-- Tu enfonces le capteur dans un pot sec, puis tu verses de l'eau. Que doit-il se passer ?
-- Le système arrose alors que la terre est humide. Cite deux causes possibles.
 
-### Activité 2 · je recherche : ce que la semaine a consommé
+### Activité 2 · je recherche : la consommation réelle, et la comparaison avec l'arrosage manuel
 
-Le tableau donne le niveau du fût relevé chaque jour par les élèves de service. Complète les calculs.
+Le tableau donne le niveau du fût relevé chaque jour par les élèves de service. Complète les calculs, puis compare avec les jardinières témoins arrosées à la main.
 
-- Quel volume a été consommé en 7 jours ?
-- Quelle consommation moyenne par jour ?
-- Le calcul prévisionnel donnait 11,2 L pour la semaine. Quel est l'écart, en litres et en pourcentage ?
-- Cite deux causes possibles de cet écart.
-- La contrainte du cahier des charges était de moins de 6,2 L par jour. Est-elle respectée ?
-
-### Activité 3 · je recherche : comparer avec l'arrosage manuel
-
-Les jardinières témoins ont été arrosées à la main pendant la même semaine, par les élèves de service, avec un arrosoir gradué.
-
-- Les témoins ont reçu 6 L par jour. Quelle consommation sur la semaine ?
-- Quelle économie réalise le système automatique, en litres et en pourcentage ?
-- Sur les 180 jours de la saison sèche, quelle économie cela ferait-il ?
-- Le système coûte environ 2 000 lempiras. L'eau du réseau coûte environ 0,03 lempira le litre. Le système est-il rentable sur une saison ?
-- Écris en une phrase ce que les 3e devront améliorer.
+- Quel volume total et quelle consommation moyenne par jour le système a-t-il consommés en 7 jours ? La contrainte de moins de 6,2 L par jour est-elle respectée ?
+- Le calcul prévisionnel donnait 11,2 L pour la semaine. Quel est l'écart avec les 19 L mesurés, et cite deux causes possibles.
+- Les témoins ont reçu 6 L par jour à la main, soit 42 L sur la semaine. Quelle économie réalise le système, en litres et en pourcentage, et que représenterait-elle sur les 180 jours de la saison sèche ?
+- Le système coûte environ 2 000 lempiras, l'eau du réseau coûte environ 0,03 lempira le litre. Est-il rentable en argent sur une saison ?
 
 ## Après : ce que je retiens
 
-Après le câblage vient la ________________ : on fait des ________ en accéléré, on observe, on corrige le programme.  
-La consommation mesurée est de ________ litres par jour, contre ________ litres pour l'arrosage manuel des témoins, soit ________ % d'économie.  
-La prévision annonçait ________ litres pour la semaine, la mesure donne ________ litres : l'________ s'explique par le remplissage du tuyau et les ________ aux raccords.  
-Une prévision juste ne remplace jamais un ________ : on mesure toujours la performance réelle.  
-La contrainte de moins de ________ litres par jour est ___________.  
-Le système n'est pas rentable en ________, mais il économise la ___________ et donne au jardin son ___________ pendant les vacances.
+Après le câblage vient la **mise au point** : on fait des **essais** en accéléré, on observe, on corrige le programme.  
+La consommation mesurée est de **2,7** litres par jour, contre **6** litres pour l'arrosage manuel des témoins, soit **55** % d'économie.  
+La prévision annonçait **11,2** litres pour la semaine, la mesure donne **19** litres : l'**écart** s'explique par le remplissage du tuyau et les **fuites** aux raccords.  
+Une prévision juste ne remplace jamais un **relevé** : on mesure toujours la performance réelle.  
+La contrainte de moins de **6,2** litres par jour est **respectée**.  
+Le système n'est pas rentable en **argent**, mais il économise la **ressource** et donne au jardin son **autonomie** pendant les vacances.
 
 **La question de la prochaine séance.** La séquence de 4e est terminée. En 3e, la question devient : comment rendre ce système totalement autonome, et comment prouver, données à l'appui, qu'il tient ses promesses ?
 
