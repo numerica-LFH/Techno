@@ -27,41 +27,28 @@
 
 Complète le tableau du classeur avec les données mesurées, puis conclus sur l'objectif du cahier des charges.
 
-- Consommation du jardin sur la saison sèche ?
-- Consommation d'un potager classique de même surface ?
+- Consommation du jardin sur la saison sèche, et consommation d'un potager classique de même surface ?
 - Quelle économie, en litres et en pourcentage ?
-- Consommation ramenée au mètre carré et par jour ?
-- La contrainte FC1, moins de 1 L par m2 et par jour, est-elle respectée ?
-- Quel volume d'eau potable du réseau le jardin a-t-il consommé ?
+- Consommation ramenée au mètre carré et par jour, et la contrainte FC1, moins de 1 L par m2 et par jour, est-elle respectée ?
+- Quel volume d'eau potable du réseau le jardin a-t-il consommé, et que dit ce résultat sur la contrainte FC2 ?
 
-### Activité 2 · je recherche : et le reste du bilan ?
+### Activité 2 · je recherche : le reste du bilan et l'argumentaire
 
-Un système qui économise l'eau peut coûter cher ailleurs. Complète le tableau des impacts.
+Complète le tableau des impacts au-delà de l'eau, puis rédige deux argumentaires courts de six lignes destinés à la direction : le premier défend l'extension du dispositif à toute la cour, le second expose les raisons d'y renoncer. Chaque texte s'appuie sur trois chiffres du bilan.
 
-- Quelle part du jardin, en masse, est faite de matériaux récupérés ?
+- Quelle part du jardin, en masse, est faite de matériaux récupérés, et la contrainte FC5, 60 % minimum, est-elle respectée ?
 - Quels éléments poseront un problème en fin de vie ?
-- Le tuyau dure environ 8 ans. Quelle masse de plastique cela fait-il par an ?
-- Le bois de palette non traité dure 3 à 5 ans dehors. Que proposes-tu ?
-- Une phrase de conclusion sur le bilan global ?
-
-### Activité 3 · je recherche : deux argumentaires opposés
-
-Rédige deux textes de six lignes destinés à la direction : le premier défend l'extension du dispositif à toute la cour, le second expose les raisons d'y renoncer. Chaque texte s'appuie sur trois chiffres du bilan.
-
-- Trois chiffres utilisables pour le texte favorable ?
-- Trois chiffres utilisables pour le texte défavorable ?
-- Quel est l'argument le plus solide du côté favorable, selon toi ?
-- Quelle objection l'effet rebond, vu en séance 1, permet-elle de formuler ?
-- Quelle recommandation finale écris-tu ?
+- Rédige l'argumentaire défavorable à l'extension, en t'appuyant sur trois chiffres du bilan (coût du matériel, valeur de l'eau économisée, masse de plastique à traiter chaque année).
+- Rédige l'argumentaire favorable à l'extension, puis formule l'objection que l'effet rebond, vu en séance 1, permet d'ajouter.
 
 ## Après : ce que je retiens
 
-Le jardin a consommé ________ litres sur la saison sèche, contre ________ litres pour un potager classique de même surface, soit ________ % d'économie.  
-Ramené au mètre carré, cela fait ________ litre par jour, alors que le cahier des charges autorisait ________ litre : l'objectif est dépassé.  
-La part d'eau potable prélevée sur le réseau est de ________ litre, toute l'eau venant de la ________.  
-En masse, ________ % du jardin est fait de matériaux ___________.  
-Le bilan d'un système ne se limite pas à sa performance : il faut regarder tout son _______________, y compris la fin de vie du ___________ et de l'électronique.  
-L'effet ________ impose de fixer à l'avance un volume _________ prélevé, sinon l'économie sert seulement à agrandir le jardin.
+Le jardin a consommé **486** litres sur la saison sèche, contre **6 930** litres pour un potager classique de même surface, soit **93** % d'économie.  
+Ramené au mètre carré, cela fait **0,35** litre par jour, alors que le cahier des charges autorisait **1** litre : l'objectif est dépassé.  
+La part d'eau potable prélevée sur le réseau est de **zéro** litre, toute l'eau venant de la **pluie**.  
+En masse, **92** % du jardin est fait de matériaux **récupérés**.  
+Le bilan d'un système ne se limite pas à sa performance : il faut regarder tout son **cycle de vie**, y compris la fin de vie du **plastique** et de l'électronique.  
+L'effet **rebond** impose de fixer à l'avance un volume **maximal** prélevé, sinon l'économie sert seulement à agrandir le jardin.
 
 **La question de la prochaine séance.** Les chiffres sont établis. Il reste à les présenter : plan coté, images du modèle et dossier, pour la présentation devant la direction et les familles.
 

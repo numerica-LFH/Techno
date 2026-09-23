@@ -23,46 +23,33 @@
 
 ## Pendant : je recherche
 
-### Activité 1 · je recherche : mesurer ce que le système consomme
+### Activité 1 · je recherche : mesurer la consommation et calculer le besoin quotidien
 
-Insère le multimètre en série dans le circuit d'alimentation. Relève le courant en veille, puis pendant l'ouverture de la vanne.
+Insère le multimètre en série dans le circuit d'alimentation. Relève le courant en veille et pendant l'ouverture de la vanne, puis calcule l'énergie consommée par le système sur une journée complète (le système arrose 4 fois par jour pendant 90 secondes, le reste du temps il est en veille).
 
-- Comment branche-t-on un ampèremètre ?
-- Courant mesuré en veille, micro:bit seul avec capteur ?
-- Courant mesuré pendant l'ouverture de la vanne ?
-- Calcule la puissance en veille.
-- Calcule la puissance pendant l'arrosage.
+- Le courant mesuré en veille vaut environ 15 mA sous 3 V. Calcule la puissance en veille.
+- Pendant l'arrosage, le micro:bit consomme 0,045 W et la vanne 2,91 W. Quelle est la puissance totale ?
+- Calcule l'énergie totale consommée par jour (arrosage plus veille).
+- Quelle part la veille représente-t-elle dans ce total, et qu'en déduis-tu ?
 
-### Activité 2 · je recherche : le besoin d'une journée
+### Activité 2 · je recherche : dimensionner le panneau et l'accumulateur
 
-Le système arrose 4 fois par jour pendant 90 secondes. Le reste du temps, il est en veille.
+Le panneau solaire fait 2 W, Tegucigalpa compte environ 5 heures d'ensoleillement équivalentes par jour, et le cahier des charges impose 7 jours d'autonomie sans intervention. L'accumulateur 18650 fait 2 600 mAh sous 3,7 V.
 
-- Quelle durée totale d'arrosage par jour ?
-- Énergie consommée par l'arrosage ?
-- Énergie consommée par la veille sur 24 h ?
-- Besoin énergétique total par jour ?
-- Quelle part la veille représente-t-elle ?
-- Le panneau fait 2 W et Tegucigalpa compte environ 5 heures d'ensoleillement équivalentes par jour. Quelle énergie produit-il ?
-
-### Activité 3 · je recherche : quelle réserve pour tenir sans soleil ?
-
-Le cahier des charges impose 7 jours d'autonomie sans intervention. L'accumulateur 18650 fait 2 600 mAh sous 3,7 V.
-
+- Quelle énergie utile le panneau produit-il chaque jour ?
 - Convertis la capacité de l'accumulateur en wattheures.
-- Quelle autonomie donne-t-il, sans aucun soleil ?
-- La contrainte FP2 est-elle respectée ?
+- Quelle autonomie l'accumulateur donne-t-il sans aucun soleil, et la contrainte FP2 est-elle respectée ?
 - Le rapport production sur consommation vaut 7 / 1,37. Que vaut-il et que signifie-t-il ?
-- Réponds enfin à la question du jour.
 
 ## Après : ce que je retiens
 
-Le ______________________ compare l'énergie __________ et l'énergie ___________ sur une même durée.  
-Notre système consomme ________ milliwatts en veille et environ ________ watts pendant l'arrosage.  
-Sur une journée, cela fait ________ Wh de veille et ________ Wh d'arrosage, soit environ ________ Wh par jour.  
-La veille représente ________ % du total : c'est elle qu'il faudrait réduire en premier, en mettant le micro:bit en _________.  
-Un panneau de ________ W, sous ________ heures d'ensoleillement équivalentes, produit ________ Wh dont ________ Wh utiles après pertes de charge.  
-Un accumulateur de ________ mAh sous 3,7 V stocke ________ Wh et donne ________ jours d'autonomie sans soleil.  
-Le rapport production sur consommation vaut environ ________, la contrainte d'autonomie est ___________.
+Le **bilan énergétique** compare l'énergie **produite** et l'énergie **consommée** sur une même durée.  
+Notre système consomme **45** milliwatts en veille et environ **2,9** watts pendant l'arrosage.  
+Sur une journée, cela fait **1,08** Wh de veille et **0,29** Wh d'arrosage, soit environ **1,4** Wh par jour.  
+La veille représente **79** % du total : c'est elle qu'il faudrait réduire en premier, en mettant le micro:bit en **sommeil**.  
+Un panneau de **2** W, sous **5** heures d'ensoleillement équivalentes, produit **10** Wh dont **7** Wh utiles après pertes de charge.  
+Un accumulateur de **2 600** mAh sous 3,7 V stocke **9,6** Wh et donne **7** jours d'autonomie sans soleil.  
+Le rapport production sur consommation vaut environ **5**, la contrainte d'autonomie est **respectée**.
 
 **La question de la prochaine séance.** Le système est autonome. Mais comment prouver, à quelqu'un qui n'était pas là, qu'il a bien fonctionné pendant trois semaines ? Il va falloir enregistrer les données.
 

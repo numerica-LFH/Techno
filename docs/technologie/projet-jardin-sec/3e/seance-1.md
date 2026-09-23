@@ -30,37 +30,24 @@ Classe les neuf énoncés dans le tableau à trois colonnes, puis justifie deux 
 - Quels énoncés sont des découvertes ?
 - Quels énoncés sont des inventions ?
 - Quels énoncés sont des innovations ?
-- Justifie le classement de l'énoncé 8.
-- Une invention peut-elle rester sans devenir une innovation ? Donne un exemple du dossier.
 
-### Activité 2 · je recherche : le cas du goutte à goutte
+### Activité 2 · je recherche : le goutte à goutte, de l'observation à ses effets
 
-Lis le dossier documentaire et reconstitue la chronologie, de l'observation à la diffusion.
+Lis le document, reconstitue la chronologie de l'invention, puis rédige un argumentaire court de cinq lignes sur ses effets, avec une affirmation, deux faits chiffrés et une conclusion.
 
-- Quelle observation est à l'origine de l'idée ?
-- Qu'est-ce que cette observation a permis de comprendre ?
-- Quel progrès technique a rendu l'invention réalisable industriellement ?
-- Pourquoi peut-on parler d'innovation de rupture ?
-- Quel besoin de la société explique sa diffusion rapide ?
-
-### Activité 3 · je recherche : argumenter sur les effets
-
-Rédige deux argumentaires courts de cinq lignes, l'un sur un effet positif, l'autre sur un effet négatif du goutte à goutte sur la société. Chaque argumentaire comporte une affirmation, deux faits chiffrés et une conclusion.
-
-- Cite deux effets positifs chiffrables.
-- Cite deux effets négatifs.
+- Quelle observation est à l'origine de l'idée, et vers quelle époque ?
+- Quel progrès technique, dans les années 1960, a rendu l'invention réalisable industriellement ?
+- Cite un effet positif et un effet négatif chiffrables du goutte à goutte.
 - Effet paradoxal : dans certaines régions, l'irrigation économe a fait baisser les nappes phréatiques. Explique.
-- Quelle conséquence en tires-tu pour notre projet ?
-- Rédige ta conclusion en une phrase.
 
 ## Après : ce que je retiens
 
-Une _____________ met en évidence un fait qui existait déjà, une ___________ propose une solution technique nouvelle, une _____________ est une invention qui se _________ et change les usages.  
-Le goutte à goutte naît de l'______________ d'un arbre poussant près d'une conduite qui fuyait, dans les années ________.  
-Il devient une innovation lorsque les _____________ bon marché permettent de le produire en série, dans les années ________.  
-On parle d'innovation de _________ parce qu'elle rend obsolète l'irrigation par submersion et rend cultivables des terres ________.  
-Ses effets sur la société sont positifs, ________ à ________ % d'eau économisée, et négatifs, _________ plastiques et coût d'installation.  
-L'effet ________ montre qu'économiser par unité ne suffit pas : il faut aussi limiter le volume ________ prélevé.
+Une **découverte** met en évidence un fait qui existait déjà, une **invention** propose une solution technique nouvelle, une **innovation** est une invention qui se **diffuse** et change les usages.  
+Le goutte à goutte naît de l'**observation** d'un arbre poussant près d'une conduite qui fuyait, dans les années **1950**.  
+Il devient une innovation lorsque les **plastiques** bon marché permettent de le produire en série, dans les années **1960**.  
+On parle d'innovation de **rupture** parce qu'elle rend obsolète l'irrigation par submersion et rend cultivables des terres **arides**.  
+Ses effets sur la société sont positifs, **30** à **60** % d'eau économisée, et négatifs, **déchets** plastiques et coût d'installation.  
+L'effet **rebond** montre qu'économiser par unité ne suffit pas : il faut aussi limiter le volume **total** prélevé.
 
 **La question de la prochaine séance.** Notre système fonctionne, mais il consomme de l'électricité et dépend de piles. Comment le rendre totalement autonome, et combien d'énergie lui faut-il exactement ?
 

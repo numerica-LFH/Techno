@@ -27,40 +27,28 @@
 
 Complète le programme fourni. Les constantes sont déjà déclarées, tu écris la boucle principale.
 
-- Écris la condition qui démarre l'arrosage.
-- Écris la condition qui l'arrête.
+- Écris les conditions qui démarrent puis arrêtent l'arrosage, avec SEUIL_BAS et SEUIL_HAUT.
 - Pourquoi la variable arrosage est-elle nécessaire ?
-- Écris la ligne qui envoie la mesure.
-- Pourquoi utiliser le point-virgule comme séparateur ?
+- Écris la ligne qui envoie la mesure, avec le point-virgule comme séparateur. À quoi sert ce séparateur ?
 - Le filtre rejette les valeurs hors de 300 à 800. Que fait alors le programme ?
 
-### Activité 2 · je recherche : le programme récepteur
+### Activité 2 · je recherche : recevoir, décoder et vérifier
 
-Le récepteur reçoit les messages des huit jardinières et affiche l'humidité de celle qui est sélectionnée par le bouton A.
+Le récepteur reçoit les messages des huit jardinières et affiche l'humidité de celle qui est sélectionnée par le bouton A. Avec le binôme voisin, réglez deux identifiants différents et vérifiez la réception.
 
-- Que contient p après le découpage ?
-- Écris le test qui garde seulement la jardinière choisie.
 - Pourquoi les deux micro:bit doivent-ils avoir le même group ?
-- Que se passe-t-il si deux jardinières émettent exactement au même instant ?
-- Comment décaler simplement les émissions ?
-
-### Activité 3 · je recherche : essayer à deux cartes
-
-Avec le binôme voisin, réglez deux identifiants différents et vérifiez la réception.
-
+- Comment décaler simplement les émissions pour éviter les collisions entre jardinières ?
 - Le récepteur affiche la mesure des deux cartes alors que tu n'en veux qu'une. Pourquoi ?
 - Rien ne s'affiche. Cite trois causes possibles.
-- Comment vérifier rapidement que l'émetteur émet bien ?
-- Quelle amélioration proposes-tu pour la version installée dehors ?
 
 ## Après : ce que je retiens
 
-Le programme final réunit trois éléments : le ________ des valeurs aberrantes, l'_____________ à deux seuils et l'envoi ________ de la mesure.  
-La variable __________ mémorise l'état d'un cycle à l'autre : sans elle, l'hystérésis ne fonctionne pas.  
-Les valeurs fixes du programme sont écrites en _____________ au début, ce qui permet de les modifier en un seul endroit.  
-Le message envoyé est une ________, découpée par des ___________________ : identifiant, humidité, état.  
-Deux micro:bit ne communiquent que s'ils sont sur le même ________ radio.  
-Pour éviter les _____________, chaque carte décale son émission de ________ secondes par identifiant.
+Le programme final réunit trois éléments : le **filtre** des valeurs aberrantes, l'**hystérésis** à deux seuils et l'envoi **radio** de la mesure.  
+La variable **arrosage** mémorise l'état d'un cycle à l'autre : sans elle, l'hystérésis ne fonctionne pas.  
+Les valeurs fixes du programme sont écrites en **constantes** au début, ce qui permet de les modifier en un seul endroit.  
+Le message envoyé est une **trame**, découpée par des **points-virgules** : identifiant, humidité, état.  
+Deux micro:bit ne communiquent que s'ils sont sur le même **groupe** radio.  
+Pour éviter les **collisions**, chaque carte décale son émission de **5** secondes par identifiant.
 
 **La question de la prochaine séance.** Le système complet fonctionne et parle. Il reste à répondre à la question posée il y a trois ans en 5e : le jardin tient-il sa promesse d'économie d'eau ?
 
