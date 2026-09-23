@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SNT - Séquence 2 — Les réseaux sociaux - Évaluation</title>
+<title>SNT · Séquence 2 : les réseaux sociaux · Évaluation</title>
 <style>
 :root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
 * { box-sizing:border-box; }
@@ -94,14 +94,14 @@ label.choix code { background:#fff; }
 <div class="wrap">
 <header>
   <span class="etiquette">S'évaluer</span>
-  <h1>SNT · Séquence 2 — Les réseaux sociaux</h1>
-  <p class="sous">40 questions, 46 points, sur les trois séances de la séquence.
+  <h1>SNT · Séquence 2 : les réseaux sociaux</h1>
+  <p class="sous">40 questions, 48 points, sur les thèmes des trois séances de la séquence.
   J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
   envoyée au professeur.</p>
 </header>
 
 <div class="sommaire">
-  <b>Ce qui est évalué.</b> Séance 0 : de Milgram aux plateformes, sommets et arêtes, la chaîne de l'argent. Séance 1 : mesurer un graphe, degré, distance, diamètre. Séance 2 : réglages de confidentialité, conditions d'utilisation, droit à l'image.
+  <b>Ce qui est évalué.</b> Partie A, séance 0 : petit monde, sommets et arêtes, fil calculé. Partie B, séance 1 : degré, distance, diamètre, sommet pont. Partie C, séance 2 : modèle économique, confidentialité, conditions d'utilisation, droit à l'image. Partie D : rappels de la séquence 1 et synthèse.
 </div>
 
 <div class="carte">
@@ -136,117 +136,90 @@ label.choix code { background:#fff; }
 </div>
 
 <div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
-numerica-lfh.github.io/Techno · SNT · Séquence 2 — Les réseaux sociaux · Évaluation</footer></div>
+numerica-lfh.github.io/Techno · SNT · Séquence 2 : les réseaux sociaux · Évaluation</footer></div>
 
 <script>
 
 const CIBLE = "numerica@liceofranco.org";
-const META = {"niveau": "2de", "sequence": "Séquence 2 — Les réseaux sociaux", "seances": "Séances 0, 1 et 2"};
+const META = {"niveau": "2de", "sequence": "Séquence 2 : les réseaux sociaux", "seances": "Séances 0, 1 et 2"};
 const questions = [
  {
-  "partie": "Partie A — Le fil n'est pas le monde",
   "type": "qcm",
   "enonce": "L'expérience de Milgram (1967) suggère que :",
   "choix": [
-   "Deux personnes prises au hasard sont reliées par une longue chaîne de plusieurs centaines d'intermédiaires",
-   "Deux personnes prises au hasard sont souvent reliées par une chaîne courte, de l'ordre de cinq ou six intermédiaires",
-   "Tout le monde se connaît directement"
+   "deux personnes prises au hasard sont reliées par une chaîne de plusieurs centaines d'intermédiaires",
+   "deux personnes prises au hasard sont souvent reliées par une chaîne courte, d'environ six maillons",
+   "tout le monde se connaît directement"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Deux personnes prises au hasard sont souvent reliées par une chaîne courte.",
-  "expl": "C'est l'idée du petit monde. Moins d'un tiers des lettres sont arrivées : l'expérience suggère, elle ne prouve pas."
+  "reponse": "Une chaîne courte, environ six maillons.",
+  "expl": "C'est l'idée du petit monde, déjà imaginée par Karinthy en 1929.",
+  "partie": "Partie A · séance 0 : le fil n'est pas le monde"
  },
  {
   "type": "qcm",
-  "enonce": "Pourquoi l'expérience de Milgram ne prouve-t-elle pas les six degrés de séparation ?",
+  "enonce": "Pourquoi l'expérience de Milgram ne prouve-t-elle pas, à elle seule, les six degrés de séparation ?",
   "choix": [
-   "Parce qu'elle n'a jamais été réalisée",
-   "Parce que la grande majorité des lettres ne sont jamais arrivées",
-   "Parce qu'elle portait sur des ordinateurs",
-   "Parce qu'elle datait d'avant Internet"
+   "Parce qu'elle a été faite par courrier",
+   "Parce que beaucoup de lettres ne sont jamais arrivées",
+   "Parce qu'elle portait sur des ordinateurs"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Parce que la grande majorité des lettres ne sont jamais arrivées.",
-  "expl": "On ne compte que les chaînes qui ont abouti, ce qui écarte justement les plus longues."
+  "reponse": "Beaucoup de lettres ne sont jamais arrivées.",
+  "expl": "La moyenne ne porte que sur les chaînes complètes : l'expérience suggère, elle ne prouve pas."
  },
  {
   "type": "ordre",
-  "enonce": "Remets ces trois dates dans l'ordre chronologique.",
+  "enonce": "Remets ces événements dans l'ordre chronologique.",
   "elements": [
+   "Karinthy imagine la chaîne de connaissances",
    "L'expérience de Milgram",
-   "SixDegrees.com, premier réseau social en ligne",
-   "La création de Facebook"
+   "SixDegrees.com enregistre les relations",
+   "Facebook lance le fil d'actualité"
   ],
   "points": 2,
-  "reponse": "Milgram (1967), SixDegrees.com (1997), Facebook (2004).",
-  "expl": "L'idée du petit monde précède de trente ans le premier réseau social en ligne."
+  "reponse": "1929, 1967, 1997, 2006.",
+  "expl": "Soixante-dix ans séparent l'idée du petit monde du premier fil calculé par une plateforme."
  },
  {
   "type": "qcm",
-  "enonce": "Dans un graphe de relations, qu'appelle-t-on une arête ?",
+  "enonce": "Dans le graphe d'un réseau social, qu'appelle-t-on une arête ?",
   "choix": [
-   "Une personne",
-   "Une relation entre deux personnes",
-   "Le nombre total de personnes"
+   "Un compte",
+   "Une relation entre deux comptes",
+   "Une publication"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Une relation entre deux personnes.",
-  "expl": "Les personnes sont les sommets, les relations entre elles sont les arêtes."
+  "reponse": "Une relation entre deux comptes.",
+  "expl": "Les comptes sont les sommets, les relations les arêtes."
  },
  {
   "type": "assoc",
-  "enonce": "À chaque mot du graphe sa définition.",
+  "enonce": "À chaque élément sa place dans le graphe.",
   "paires": [
    {
-    "terme": "Sommet",
-    "definition": "Un des points du graphe, ici une personne"
+    "terme": "Le compte d'un élève",
+    "definition": "Un sommet"
    },
    {
-    "terme": "Degré",
-    "definition": "Le nombre de relations directes d'un sommet"
+    "terme": "Une demande d'ami acceptée",
+    "definition": "Une arête non orientée"
    },
    {
-    "terme": "Diamètre",
-    "definition": "La plus grande des distances entre deux sommets"
+    "terme": "Le bouton « suivre »",
+    "definition": "Une arête orientée"
    }
   ],
   "points": 3,
-  "reponse": "Sommet : un point. Degré : nombre de relations directes. Diamètre : la plus grande distance.",
-  "expl": "La distance entre deux sommets est le nombre minimal d'arêtes à emprunter pour aller de l'un à l'autre."
- },
- {
-  "type": "qcm",
-  "enonce": "Une plateforme dont le service est gratuit gagne principalement de l'argent :",
-  "choix": [
-   "Grâce aux dons des utilisateurs",
-   "En vendant l'attention des utilisateurs à des annonceurs",
-   "Grâce aux subventions des États",
-   "Elle ne gagne pas d'argent"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "En vendant l'attention des utilisateurs à des annonceurs.",
-  "expl": "Le temps passé produit des données, les données servent à cibler la publicité, l'annonceur paie."
- },
- {
-  "type": "ordre",
-  "enonce": "Remets la chaîne de l'argent dans l'ordre.",
-  "elements": [
-   "L'utilisateur passe du temps sur l'application",
-   "Ce temps produit des données sur lui",
-   "Les données servent à cibler la publicité",
-   "L'annonceur paie la plateforme"
-  ],
-  "points": 2,
-  "reponse": "Temps passé, données, ciblage, paiement de l'annonceur.",
-  "expl": "Chaque maillon explique le suivant : c'est pour cela que le service peut rester gratuit."
+  "reponse": "Compte : sommet. Ami : arête non orientée. Suivre : arête orientée.",
+  "expl": "Suivre peut être à sens unique : on le dessine par une flèche."
  },
  {
   "type": "vf",
-  "enonce": "Un compte privé n'est pas concerné par le modèle publicitaire de la plateforme.",
+  "enonce": "Le fil d'actualité est un sommet du graphe.",
   "choix": [
    "Vrai",
    "Faux"
@@ -254,21 +227,46 @@ const questions = [
   "bonne": 1,
   "points": 1,
   "reponse": "Faux.",
-  "expl": "Le réglage de visibilité concerne les autres utilisateurs, pas la plateforme, qui continue de mesurer l'activité."
+  "expl": "Ce n'est ni un sommet ni une arête : c'est le résultat d'un calcul fait par la plateforme."
  },
  {
   "type": "qcm",
-  "enonce": "Un fil d'actualité classé par un algorithme, pour deux personnes qui ouvrent l'application au même moment :",
+  "enonce": "Depuis 1997, qu'est-ce qui distingue un réseau social en ligne du réseau étudié par Milgram ?",
   "choix": [
-   "Affiche la même chose pour tout le monde",
-   "Affiche des contenus différents selon l'activité passée de chacun",
-   "Affiche les publications dans l'ordre chronologique",
-   "Affiche d'abord les publications des amis les plus anciens"
+   "Les relations sont déclarées et enregistrées par une machine",
+   "Les relations sont secrètes",
+   "Il n'y a plus de relations"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Les relations sont déclarées et enregistrées.",
+  "expl": "Le graphe devient une donnée que la plateforme peut parcourir et calculer."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En 2011, la distance moyenne mesurée entre deux comptes Facebook était d'environ 4,7. Quelle explication est recevable ?",
+  "choix": [
+   "Les gens se connaissent tous",
+   "Chacun déclare beaucoup de relations, parfois lointaines, et certains comptes très connectés servent de raccourcis",
+   "La plateforme supprime les comptes éloignés"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Affiche des contenus différents selon l'activité passée de chacun.",
-  "expl": "C'est la question de départ de la séquence : qui a décidé, et sur quels critères ?"
+  "reponse": "Beaucoup de relations, lointaines, et des comptes-raccourcis.",
+  "expl": "Attention : c'est la distance dans ce réseau-là, pas dans toute l'humanité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Deux personnes ouvrent la même application au même moment. Pour elles, un fil classé par algorithme :",
+  "choix": [
+   "est identique",
+   "est différent, calculé à partir de l'historique de chacune",
+   "est vide"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Différent pour chacune.",
+  "expl": "Le fil n'est pas le monde : c'est une sélection calculée."
  },
  {
   "type": "texte",
@@ -283,20 +281,19 @@ const questions = [
   "expl": "Les points sont les sommets, les traits les arêtes."
  },
  {
-  "partie": "Partie B — Mesurer un graphe",
-  "consigne": "Le graphe de l'activité 1 : Ana-Bruno, Ana-Carla, Bruno-Diego, Carla-Diego, Diego-Elsa, Elsa-Fabio, Fabio-Gabriela, Gabriela-Hugo, Elsa-Hugo.",
   "type": "qcm",
   "enonce": "Combien ce graphe compte-t-il de sommets et d'arêtes ?",
   "choix": [
-   "8 sommets et 9 arêtes",
-   "9 sommets et 8 arêtes",
-   "8 sommets et 8 arêtes",
-   "9 sommets et 9 arêtes"
+   "8 sommets, 9 arêtes",
+   "9 sommets, 8 arêtes",
+   "8 sommets, 8 arêtes"
   ],
   "bonne": 0,
   "points": 1,
-  "reponse": "8 sommets et 9 arêtes.",
-  "expl": "Huit prénoms, et neuf relations listées."
+  "reponse": "8 sommets, 9 arêtes.",
+  "expl": "Huit prénoms, neuf relations.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo",
+  "partie": "Partie B · séance 1 : mesurer un graphe"
  },
  {
   "type": "qcm",
@@ -304,13 +301,13 @@ const questions = [
   "choix": [
    "2",
    "3",
-   "4",
-   "5"
+   "4"
   ],
   "bonne": 1,
   "points": 1,
   "reponse": "3.",
-  "expl": "Diego est relié à Bruno, Carla et Elsa. Le degré compte les relations directes, pas les personnes atteignables."
+  "expl": "Bruno, Carla et Elsa.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
  },
  {
   "type": "qcm",
@@ -318,72 +315,73 @@ const questions = [
   "choix": [
    "1",
    "2",
-   "3",
-   "4"
+   "3"
   ],
   "bonne": 1,
   "points": 1,
   "reponse": "2.",
-  "expl": "Ana est reliée à Bruno et à Carla."
+  "expl": "Bruno et Carla.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
  },
  {
   "type": "qcm",
   "enonce": "Quelle est la distance entre Ana et Hugo ?",
   "choix": [
-   "2",
    "3",
    "4",
    "5"
   ],
-  "bonne": 2,
+  "bonne": 1,
   "points": 1,
   "reponse": "4.",
-  "expl": "Ana, Bruno, Diego, Elsa, Hugo : quatre arêtes. La distance est le nombre minimal d'arêtes."
+  "expl": "Ana, Bruno, Diego, Elsa, Hugo : quatre arêtes, aucun chemin plus court.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle est la distance entre Bruno et Gabriela ?",
+  "choix": [
+   "3",
+   "4",
+   "5"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "4.",
+  "expl": "Bruno, Diego, Elsa, Fabio, Gabriela.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
  },
  {
   "type": "qcm",
   "enonce": "Quel est le diamètre de ce graphe ?",
   "choix": [
-   "3",
    "4",
    "5",
-   "6"
+   "9"
   ],
-  "bonne": 2,
+  "bonne": 1,
   "points": 1,
   "reponse": "5.",
-  "expl": "La plus longue des distances minimales est celle qui sépare Ana de Gabriela."
+  "expl": "La plus grande distance, entre Ana et Gabriela.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
  },
  {
   "type": "qcm",
   "enonce": "Si Diego disparaît du réseau, que se passe-t-il ?",
   "choix": [
-   "Rien ne change",
-   "Le réseau se coupe en deux groupes qui ne peuvent plus se joindre",
-   "Tout le monde perd une relation"
+   "Rien",
+   "Le réseau se coupe en deux groupes",
+   "Seule Ana est isolée"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Le réseau se coupe en deux groupes qui ne peuvent plus se joindre.",
-  "expl": "Diego est le seul pont entre Ana, Bruno, Carla et le reste du graphe."
- },
- {
-  "type": "qcm",
-  "enonce": "Diego n'a que trois relations, et pourtant sa disparition coupe le réseau. Qu'est-ce que cela montre ?",
-  "choix": [
-   "Que le degré se calcule mal",
-   "Qu'avoir beaucoup de liens et occuper une position stratégique sont deux choses différentes",
-   "Que le graphe est mal dessiné",
-   "Que le diamètre est faux"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Qu'avoir beaucoup de liens et occuper une position stratégique sont deux choses différentes.",
-  "expl": "C'est le point de l'activité 1 : la position dans le graphe compte autant que le nombre de relations."
+  "reponse": "Le réseau se coupe en deux groupes.",
+  "expl": "Ana, Bruno, Carla d'un côté ; Elsa, Fabio, Gabriela, Hugo de l'autre.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
  },
  {
   "type": "vf",
-  "enonce": "Dans ce graphe, la distance entre deux personnes est toujours égale au nombre d'arêtes du premier chemin trouvé.",
+  "enonce": "Dans ce graphe, Diego est le seul sommet dont la disparition coupe le réseau en deux.",
   "choix": [
    "Vrai",
    "Faux"
@@ -391,269 +389,70 @@ const questions = [
   "bonne": 1,
   "points": 1,
   "reponse": "Faux.",
-  "expl": "La distance est le nombre minimal d'arêtes. Un chemin plus long existe presque toujours."
+  "expl": "Elsa aussi : l'arête Diego-Elsa est le seul lien entre les deux groupes."
  },
  {
-  "type": "vf",
-  "enonce": "Le graphe réel des relations de la classe a été construit pendant l'activité.",
-  "choix": [
-   "Vrai",
-   "Faux"
+  "type": "assoc",
+  "enonce": "À chaque mot sa définition.",
+  "paires": [
+   {
+    "terme": "Degré",
+    "definition": "Le nombre de relations directes d'un sommet"
+   },
+   {
+    "terme": "Distance",
+    "definition": "Le nombre d'arêtes du plus court chemin entre deux sommets"
+   },
+   {
+    "terme": "Diamètre",
+    "definition": "La plus grande distance entre deux sommets du graphe"
+   }
   ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Faux.",
-  "expl": "On travaille sur des prénoms fictifs. Le graphe de la classe n'est jamais construit."
- },
- {
-  "type": "qcm",
-  "enonce": "Une plateforme qui connaît le graphe de ses utilisateurs peut :",
-  "choix": [
-   "Deviner leur mot de passe",
-   "Suggérer des contacts que deux personnes ont en commun",
-   "Modifier leurs relations à leur place",
-   "Lire le contenu de leur téléphone"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Suggérer des contacts que deux personnes ont en commun.",
-  "expl": "Les amis communs sont des sommets à distance 2 : le calcul est immédiat sur un graphe."
- },
- {
-  "partie": "Partie C — Ce que je laisse, ce que j'accepte",
-  "type": "qcm",
-  "enonce": "Que cherche à maximiser un algorithme de recommandation ?",
-  "choix": [
-   "La vérité des informations affichées",
-   "Le temps passé sur l'application",
-   "La diversité des points de vue",
-   "Le nombre d'amis"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Le temps passé sur l'application.",
-  "expl": "Il optimise une mesure, pas une valeur. Il n'a aucune idée de ce qui est vrai."
- },
- {
-  "type": "qcm",
-  "enonce": "Parmi ces données, laquelle la plateforme connaît-elle sans que tu l'aies publiée ?",
-  "choix": [
-   "Le texte de tes commentaires",
-   "Les photos que tu mets en ligne",
-   "Le temps que tu passes à regarder chaque vidéo",
-   "Ton pseudonyme"
-  ],
-  "bonne": 2,
-  "points": 1,
-  "reponse": "Le temps que tu passes à regarder chaque vidéo.",
-  "expl": "Temps d'arrêt, heure de connexion, recherche abandonnée : ces traces ne sont pas publiées, et ce sont souvent les plus utiles."
- },
- {
-  "type": "qcm",
-  "enonce": "Les réglages de confidentialité proposés par défaut à l'inscription :",
-  "choix": [
-   "Sont neutres, choisis au hasard",
-   "Sont choisis par la plateforme, et servent son intérêt",
-   "Sont imposés par la loi",
-   "Sont les plus protecteurs possibles"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Sont choisis par la plateforme, et servent son intérêt.",
-  "expl": "C'est le constat de l'activité 2 : une valeur par défaut n'est jamais neutre."
- },
- {
-  "type": "qcm",
-  "enonce": "La rubrique « télécharger mes données » d'une plateforme sert à :",
-  "choix": [
-   "Sauvegarder ses photos uniquement",
-   "Voir la liste des catégories que la plateforme conserve sur soi",
-   "Supprimer son compte",
-   "Augmenter la vitesse de l'application"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Voir la liste des catégories que la plateforme conserve sur soi.",
-  "expl": "La liste est toujours plus longue que prévu."
- },
- {
-  "type": "qcm",
-  "enonce": "Publier la photo d'un camarade identifiable, sans lui demander son accord :",
-  "choix": [
-   "Est autorisé si la photo est flatteuse",
-   "Porte atteinte à son droit à l'image",
-   "Est autorisé si le compte est privé",
-   "N'est un problème que si la photo est modifiée"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Porte atteinte à son droit à l'image.",
-  "expl": "Le droit à l'image ne dépend ni du caractère flatteur de la photo, ni du réglage du compte."
- },
- {
-  "type": "qcm",
-  "enonce": "Dans une situation de harcèlement en ligne, celui qui se contente de relayer un message :",
-  "choix": [
-   "N'a rien à se reprocher, il n'a rien écrit",
-   "Participe au harcèlement",
-   "Est responsable seulement s'il ajoute un commentaire"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Participe au harcèlement.",
-  "expl": "Relayer, aimer, laisser tourner : cela participe. La loi ne regarde pas seulement l'auteur du premier message."
- },
- {
-  "type": "qcm",
-  "enonce": "Dans les conditions d'utilisation, la clause sur les photos publiées précise le plus souvent :",
-  "choix": [
-   "Que la plateforme devient propriétaire des photos",
-   "Que la plateforme obtient une licence d'utilisation large sur les photos",
-   "Que les photos sont effacées au bout d'un mois",
-   "Que les photos ne sortent jamais de la plateforme"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Que la plateforme obtient une licence d'utilisation large sur les photos.",
-  "expl": "L'auteur reste propriétaire, mais il accorde à la plateforme le droit de diffuser et d'adapter."
- },
- {
-  "type": "vf",
-  "enonce": "Supprimer son compte efface immédiatement et définitivement toutes les données conservées par la plateforme.",
-  "choix": [
-   "Vrai",
-   "Faux"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Faux.",
-  "expl": "Les conditions prévoient presque toujours un délai, et des données conservées pour d'autres motifs."
- },
- {
-  "type": "qcm",
-  "enonce": "Une conséquence discutable du classement par temps passé est que :",
-  "choix": [
-   "Les contenus les plus calmes remontent en premier",
-   "Les contenus qui provoquent une réaction forte sont favorisés",
-   "Les contenus les plus anciens disparaissent",
-   "Les contenus payants sont mieux classés"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Les contenus qui provoquent une réaction forte sont favorisés.",
-  "expl": "L'indignation retient l'attention aussi bien que l'intérêt, et l'algorithme ne fait pas la différence."
+  "points": 3,
+  "reponse": "Degré : relations directes. Distance : plus court chemin. Diamètre : plus grande distance.",
+  "expl": "La distance est un minimum, le diamètre un maximum de ces minimums."
  },
  {
   "type": "texte",
-  "enonce": "Comment appelle-t-on l'âge minimum en dessous duquel un compte ne peut pas être ouvert sans autorisation ?",
-  "placeholder": "Deux mots",
+  "enonce": "Quel nom donne-t-on à un sommet dont la disparition coupe le graphe en plusieurs morceaux ?",
+  "placeholder": "Un mot",
   "acceptees": [
-   "age minimum",
-   "âge minimum",
-   "age legal",
-   "âge légal"
+   "pont",
+   "sommet pont",
+   "un pont",
+   "point d'articulation",
+   "articulation"
   ],
   "points": 1,
-  "reponse": "L'âge minimum.",
-  "expl": "C'est l'un des quatre passages recherchés dans les conditions d'utilisation, activité 3."
+  "reponse": "Un sommet pont.",
+  "expl": "Les mathématiciens disent aussi point d'articulation."
  },
  {
-  "partie": "Partie D — Rappels de la séquence 1",
   "type": "qcm",
-  "enonce": "Sur quelle page d'un réseau social le navigateur récupère-t-il le contenu ?",
+  "enonce": "Une plateforme dont le service est gratuit gagne principalement de l'argent :",
   "choix": [
-   "Il le fabrique seul",
-   "Il le demande au serveur, qui répond",
-   "Il le lit sur la carte réseau",
-   "Il le trouve dans le fichier CSS"
+   "par des dons",
+   "en vendant à des annonceurs un accès ciblé à l'attention de ses utilisateurs",
+   "grâce à l'État"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Il le demande au serveur, qui répond.",
-  "expl": "Le navigateur demande, le serveur répond, le navigateur affiche."
+  "reponse": "En vendant un accès ciblé à l'attention.",
+  "expl": "L'utilisateur n'est pas le client : il fournit ce qui est vendu.",
+  "partie": "Partie C · séance 2 : ce que je laisse, ce que j'accepte"
  },
  {
-  "type": "qcm",
-  "enonce": "Cette règle CSS masque un bloc de la page. Que fait-elle ?",
-  "code": ".publicite {\n    display: none;\n}",
-  "choix": [
-   "Elle colore en gris tous les blocs de classe publicite",
-   "Elle retire de l'affichage tous les blocs de classe publicite",
-   "Elle supprime les blocs du fichier HTML",
-   "Elle empêche le serveur de les envoyer"
+  "type": "ordre",
+  "enonce": "Remets la chaîne de l'argent dans l'ordre.",
+  "elements": [
+   "Le temps passé sur l'application",
+   "Les traces collectées",
+   "Le profil construit",
+   "L'annonceur paie la plateforme"
   ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Elle retire de l'affichage tous les blocs de classe publicite.",
-  "expl": "Le CSS agit sur l'affichage. Le contenu est toujours arrivé du serveur et reste dans la page."
- },
- {
-  "type": "qcm",
-  "enonce": "Dans une page HTML, quelle balise entoure un paragraphe de texte ?",
-  "choix": [
-   "<code>&lt;p&gt;</code>",
-   "<code>&lt;par&gt;</code>",
-   "<code>&lt;text&gt;</code>",
-   "<code>&lt;div&gt;</code>"
-  ],
-  "bonne": 0,
-  "points": 1,
-  "reponse": "La balise &lt;p&gt;.",
-  "expl": "&lt;div&gt; existe aussi, mais c'est un conteneur général, pas un paragraphe."
- },
- {
-  "type": "qcm",
-  "enonce": "Un cookie publicitaire déposé sur un site :",
-  "choix": [
-   "Reste sur le serveur du site",
-   "Est stocké par le navigateur et relu à la visite suivante",
-   "Est envoyé par le routeur",
-   "Est écrit dans le fichier CSS"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "Est stocké par le navigateur et relu à la visite suivante.",
-  "expl": "C'est ce qui permet de reconnaître le visiteur d'une visite à l'autre, et de le suivre d'un site à l'autre."
- },
- {
-  "type": "qcm",
-  "enonce": "Une plateforme est accessible à l'adresse https://exemple.com/profil/ana. Que désigne /profil/ana ?",
-  "choix": [
-   "Le protocole",
-   "Le nom du serveur",
-   "Le chemin de la ressource",
-   "Le mot de passe"
-  ],
-  "bonne": 2,
-  "points": 1,
-  "reponse": "Le chemin de la ressource.",
-  "expl": "https est le protocole, exemple.com le serveur, /profil/ana la ressource demandée sur ce serveur."
- },
- {
-  "type": "vf",
-  "enonce": "Le nombre d'abonnés d'un compte est le degré de son sommet dans le graphe.",
-  "choix": [
-   "Vrai",
-   "Faux"
-  ],
-  "bonne": 0,
-  "points": 1,
-  "reponse": "Vrai.",
-  "expl": "Sur un réseau où l'abonnement est à sens unique, on parle plutôt de degré entrant."
- },
- {
-  "type": "qcm",
-  "enonce": "Qu'est-ce qui change quand on passe d'un fil chronologique à un fil classé par algorithme ?",
-  "choix": [
-   "La quantité de publications disponibles",
-   "L'ordre dans lequel elles sont montrées, et donc ce que l'on voit vraiment",
-   "La vitesse de la connexion",
-   "Le nombre d'amis"
-  ],
-  "bonne": 1,
-  "points": 1,
-  "reponse": "L'ordre dans lequel elles sont montrées, et donc ce que l'on voit vraiment.",
-  "expl": "Ce qui n'est pas montré n'existe pas pour l'utilisateur, même s'il est bien publié."
+  "points": 2,
+  "reponse": "Temps passé, traces, profil, paiement.",
+  "expl": "Chaque étape nourrit la suivante."
  },
  {
   "type": "assoc",
@@ -677,29 +476,225 @@ const questions = [
   "expl": "Le produit vendu n'est pas le service, c'est l'accès à l'attention."
  },
  {
+  "type": "qcm",
+  "enonce": "Que cherche à maximiser un algorithme de recommandation ?",
+  "choix": [
+   "La vérité des contenus",
+   "Le temps passé sur l'application",
+   "Le nombre de comptes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le temps passé.",
+  "expl": "Il optimise une mesure, pas une valeur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les réglages de confidentialité proposés par défaut :",
+  "choix": [
+   "sont neutres",
+   "sont souvent ouverts, dans l'intérêt de la plateforme",
+   "sont toujours les plus protecteurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Souvent ouverts, dans l'intérêt de la plateforme.",
+  "expl": "Une valeur par défaut est un choix de la plateforme, qu'il faut vérifier."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un compte privé n'est pas concerné par le modèle publicitaire de la plateforme.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le réglage de visibilité concerne les autres utilisateurs, pas la plateforme, qui continue de mesurer l'activité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Parmi ces données, laquelle la plateforme connaît-elle sans que tu l'aies publiée ?",
+  "choix": [
+   "Ta photo de profil",
+   "L'heure à laquelle tu te connectes chaque soir",
+   "Le texte de ta publication"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "L'heure de connexion.",
+  "expl": "Une donnée observée, jamais déclarée."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans les conditions d'utilisation, la clause sur les photos publiées précise le plus souvent que :",
+  "choix": [
+   "la plateforme devient propriétaire",
+   "l'utilisateur reste propriétaire mais accorde un droit d'usage étendu",
+   "les photos sont effacées après un mois"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "L'utilisateur reste propriétaire mais accorde un droit d'usage.",
+  "expl": "On parle de licence."
+ },
+ {
+  "type": "vf",
+  "enonce": "Supprimer son compte efface immédiatement toutes les données conservées par la plateforme.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Une partie des données peut être conservée un certain temps, souvent pour des raisons légales."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Publier la photo d'un camarade identifiable, sans son accord :",
+  "choix": [
+   "est permis si la photo est flatteuse",
+   "porte atteinte à son droit à l'image",
+   "est permis sur un compte privé"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Atteinte au droit à l'image.",
+  "expl": "Cela ne dépend ni de la photo, ni du réglage du compte."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans une situation de harcèlement en ligne, celui qui se contente de relayer un message :",
+  "choix": [
+   "n'a aucune responsabilité",
+   "participe au harcèlement",
+   "protège la victime"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il participe au harcèlement.",
+  "expl": "La responsabilité ne s'arrête pas à l'auteur du premier message."
+ },
+ {
   "type": "texte",
-  "enonce": "Quel mot désigne un sommet dont la disparition coupe le graphe en deux ?",
-  "placeholder": "Un mot",
+  "enonce": "Comment appelle-t-on le contrat que l'on accepte en créant un compte ?",
+  "placeholder": "Quelques mots",
   "acceptees": [
-   "pont"
+   "conditions d'utilisation",
+   "conditions generales d'utilisation",
+   "cgu",
+   "conditions d utilisation"
   ],
   "points": 1,
-  "reponse": "Un pont.",
-  "expl": "Diego joue ce rôle dans le graphe de l'activité 1."
+  "reponse": "Les conditions d'utilisation.",
+  "expl": "On les accepte d'un clic, rarement après les avoir lues."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour afficher le contenu d'un réseau social, le navigateur :",
+  "choix": [
+   "le fabrique seul",
+   "le demande au serveur, qui répond",
+   "le lit dans le fichier CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il le demande au serveur, qui répond.",
+  "expl": "Le navigateur demande, le serveur répond, le navigateur affiche.",
+  "partie": "Partie D · rappels de la séquence 1 et synthèse"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Cette règle CSS masque un bloc de la page. Que fait-elle ?",
+  "choix": [
+   "Elle colore en gris les blocs de classe publicite",
+   "Elle retire de l'affichage les blocs de classe publicite",
+   "Elle empêche le serveur de les envoyer"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle retire de l'affichage les blocs de classe publicite.",
+  "expl": "Le CSS agit sur l'affichage : le contenu est quand même arrivé du serveur.",
+  "code": ".publicite {\n    display: none;\n}"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans une page HTML, quelle balise crée un lien vers un profil ?",
+  "choix": [
+   "<code>&lt;link&gt;</code>",
+   "<code>&lt;a href=\"profil.html\"&gt;</code>",
+   "<code>&lt;p&gt;</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La balise &lt;a&gt; avec l'attribut href.",
+  "expl": "&lt;link&gt; sert à rattacher un fichier CSS, pas à créer un lien cliquable."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un cookie publicitaire déposé sur un site :",
+  "choix": [
+   "reste sur le serveur",
+   "est stocké par le navigateur et relu à la visite suivante",
+   "est écrit dans le fichier CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il est stocké par le navigateur.",
+  "expl": "C'est ce qui permet de reconnaître le visiteur, et de le suivre d'un site à l'autre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans l'adresse https://exemple.com/profil/ana, que désigne /profil/ana ?",
+  "choix": [
+   "Le protocole",
+   "Le nom du serveur",
+   "Le chemin de la ressource"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "Le chemin de la ressource.",
+  "expl": "https est le protocole, exemple.com le serveur."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le graphe des liens entre pages web et le graphe des abonnements sur un réseau social sont tous deux des graphes orientés.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "Un lien va d'une page vers une autre ; un abonnement va d'un compte vers un autre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour classer des pages, un moteur de recherche compte notamment les liens qui pointent vers elles. Sur un réseau social, l'équivalent est :",
+  "choix": [
+   "le nombre de publications",
+   "le nombre d'abonnés, c'est-à-dire le degré entrant du compte",
+   "la taille de la photo de profil"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le degré entrant.",
+  "expl": "Même idée, même limite : la popularité mesurée ne dit rien de la qualité."
  },
  {
   "type": "qcm",
   "enonce": "Que retient-on de cette séquence en une phrase ?",
   "choix": [
-   "Les réseaux sociaux sont dangereux",
-   "Le service est gratuit parce que l'attention est vendue, et le fil est classé pour maximiser le temps passé",
-   "Il faut fermer son compte",
-   "Les graphes servent surtout aux mathématiques"
+   "Les réseaux sociaux sont neutres",
+   "Le fil n'est pas le monde : c'est une sélection calculée sur un graphe, pour vendre de l'attention",
+   "Les réseaux sociaux n'utilisent pas de données"
   ],
   "bonne": 1,
   "points": 1,
-  "reponse": "Le service est gratuit parce que l'attention est vendue, et le fil est classé pour maximiser le temps passé.",
-  "expl": "C'est le « à retenir » de la séquence, repris à l'identique sur le site, dans la fiche et dans le diaporama."
+  "reponse": "Le fil n'est pas le monde.",
+  "expl": "Graphe, classement, modèle économique : les trois séances en une phrase."
  }
 ];
 
@@ -893,7 +888,7 @@ function terminer() {
   bilan.scrollIntoView({ behavior: "smooth", block: "start" });
 
   envoyer({
-    _subject: "Évaluation SNT " + META.sequence + " — " +
+    _subject: "Évaluation SNT " + META.sequence + " · " +
               nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
     _template: "table",
     _captcha: "false",

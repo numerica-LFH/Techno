@@ -79,11 +79,10 @@ lui paraît discutable.
 
 ## Évaluation
 
-Dix questions à choix unique, dix minutes, fiche autorisée, correction
-automatique. Elles portent sur le vocabulaire du graphe et son calcul sur
-l'exemple de l'activité 1, sur le modèle économique, sur ce que cherche à
-maximiser un algorithme de recommandation, sur le droit à l'image et sur la
-responsabilité de celui qui relaie.
+Quarante questions sur les thèmes des trois séances, en ligne, correction immédiate, note envoyée
+automatiquement au professeur. Elle se trouve en bas de la page de la
+[séquence 2](sequence-2/index.md#sevaluer). Chaque page de séance propose en plus des exercices à
+correction immédiate pour s'entraîner, sans note.
 
 ## À retenir
 
@@ -93,16 +92,16 @@ maximiser le temps passé, pas pour informer.
 
 ## Traces écrites et évaluation
 
-Les traces écrites des trois séances sont réunies dans la [Séquence 2 — Les réseaux sociaux](sequence-2/index.md).
+Les traces écrites des trois séances, à recopier dans le cahier de leçon, sont réunies dans la
+[séquence 2](sequence-2/index.md), avec les fiches élève en PDF.
 
-- [Séance 0 — Le fil n'est pas le monde](sequence-2/seance-0.md)
-- [Séance 1 — Mesurer un graphe](sequence-2/seance-1.md)
-- [Séance 2 — Ce que je laisse, ce que j'accepte](sequence-2/seance-2.md)
+- [Séance 0 : le fil n'est pas le monde](sequence-2/seance-0.md)
+- [Séance 1 : mesurer un graphe](sequence-2/seance-1.md)
+- [Séance 2 : ce que je laisse, ce que j'accepte](sequence-2/seance-2.md)
 
 [Ouvrir l'évaluation de la séquence :material-arrow-right:](sequence-2/evaluation.html){ .md-button .md-button--primary target=_blank }
 
-Quarante questions à correction immédiate. La note s'affiche à la fin et elle est
-envoyée au professeur.
+Quarante questions. La note s'affiche à la fin et elle est envoyée au professeur.
 
 ## Pour aller plus loin
 
