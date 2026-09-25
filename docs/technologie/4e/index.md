@@ -10,6 +10,13 @@ communiquent, on comprend comment ils traitent l'information, puis on leur ajout
 Sept chapitres, quatre à huit séances de 55 minutes. La progression complète figure sur la page
 [Programmation annuelle](../programmation-annuelle.md).
 
+## Séquences projet : programmer
+
+Deux séquences projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+
+- [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
+- [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances
+
 ## Chapitre 1. Pourquoi les objets techniques évoluent-ils ?
 
 !!! abstract "Question directrice"
@@ -42,6 +49,8 @@ Sept chapitres, quatre à huit séances de 55 minutes. La progression complète 
     | **Analyser** | Un programme qui ne fait pas ce qu'on attend et localiser l'erreur |
     | **Appliquer** | Écrire un programme qui réagit à un capteur |
 
+[Ouvrir la séquence « Inventer un jeu vidéo avec Scratch et Scratch Lab »](sequence-jeu-video/index.md)
+
 ## Chapitre 3. Les réseaux
 
 !!! abstract "Question directrice"
@@ -73,6 +82,8 @@ Sept chapitres, quatre à huit séances de 55 minutes. La progression complète 
     | **Appliquer** | Faire suivre une ligne au robot, puis lui faire résoudre un labyrinthe simple |
 
 [Application interactive](../../apps/algorithmique-mbot.html){ target=_blank }
+
+[Ouvrir la séquence « De la carte Arduino au robot mBot »](sequence-arduino-mbot/index.md)
 
 ## Chapitre 5. Données numériques et traitement de l'information
 
