@@ -1,6 +1,6 @@
 # Trace écrite — Séance 4 : Score, vies, fin de partie et chasse aux bogues
 
-!!! info "5e · Séquence 3 · Inventer un jeu vidéo · Séance 4 sur 8"
+!!! info "5e · Séquence projet · Inventer un jeu vidéo · Séance 4 sur 8"
 
     Question de la séance : *Comment le jeu compte-t-il les points et sait-il que la partie est finie ?*
 

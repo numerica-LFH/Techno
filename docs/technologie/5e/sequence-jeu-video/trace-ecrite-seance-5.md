@@ -1,6 +1,6 @@
 # Trace écrite — Séance 5 : Comment un ordinateur trouve-t-il un visage ?
 
-!!! info "5e · Séquence 3 · Inventer un jeu vidéo · Séance 5 sur 8"
+!!! info "5e · Séquence projet · Inventer un jeu vidéo · Séance 5 sur 8"
 
     Question de la séance : *Comment un ordinateur peut-il trouver un visage dans l'image d'une caméra ?*
 

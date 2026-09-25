@@ -1,6 +1,6 @@
 # Trace écrite — Séance 1 : Qu'est-ce qui fait marcher un jeu vidéo ?
 
-!!! info "5e · Séquence 3 · Inventer un jeu vidéo · Séance 1 sur 8"
+!!! info "5e · Séquence projet · Inventer un jeu vidéo · Séance 1 sur 8"
 
     Question de la séance : *Comment un jeu vidéo sait-il ce que fait le joueur, et comment lui répond-il ?*
 

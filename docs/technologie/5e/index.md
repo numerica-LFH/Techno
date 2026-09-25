@@ -11,6 +11,12 @@ apprend à leur donner des ordres et à construire.
 Dix chapitres, quatre à cinq séances de 55 minutes chacun. La progression complète figure sur la
 page [Programmation annuelle](../programmation-annuelle.md).
 
+## Séquence 3 · Les contraintes d'un objet et ses interacteurs
+
+Chapitre 3 du manuel Nathan, *Décrire les interactions entre un objet et son environnement*. Quatre séances de 45 minutes, avec fiches à imprimer, traces écrites, exercices autocorrectifs et une évaluation de fin de séquence en 40 questions.
+
+[Ouvrir la séquence 3](sequence-3/index.md)
+
 ## Séquence projet : programmer
 
 Une séquence projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
