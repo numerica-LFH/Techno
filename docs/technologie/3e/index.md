@@ -11,6 +11,13 @@ servir de support à l'oral du brevet.
 Sept chapitres, trois à dix séances de 55 minutes. La progression complète figure sur la page
 [Programmation annuelle](../programmation-annuelle.md).
 
+## Séquences projet : programmer
+
+Deux séquences projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+
+- [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
+- [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances
+
 ## Chapitre 1. De la découverte à l'innovation, et ses effets sur la société
 
 !!! abstract "Question directrice"
@@ -57,6 +64,8 @@ Sept chapitres, trois à dix séances de 55 minutes. La progression complète fi
     | **Identifier** | La fonctionnalité manquante d'un programme fourni |
     | **Analyser** | Le comportement du système quand une valeur de capteur varie |
     | **Appliquer** | Ajouter une fonctionnalité à un objet existant et la valider par un test |
+
+[Ouvrir la séquence « De la carte Arduino au robot mBot »](sequence-arduino-mbot/index.md)
 
 ## Chapitre 4. Réseaux, Internet et cybersécurité
 
@@ -120,6 +129,8 @@ Sept chapitres, trois à dix séances de 55 minutes. La progression complète fi
 
 Ce chapitre prépare la seconde. Il fait le lien avec le programme de
 [SNT](../../snt/index.md), où la programmation sert d'outil transversal.
+
+[Ouvrir la séquence « Inventer un jeu vidéo avec Scratch et Scratch Lab »](sequence-jeu-video/index.md)
 
 ## Ressources du niveau
 
