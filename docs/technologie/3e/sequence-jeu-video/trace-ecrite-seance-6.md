@@ -1,6 +1,6 @@
 # Trace écrite — Séance 6 : Le panier piloté au nez, l'écran titre dans Scratch Lab
 
-!!! info "3e · Séquence 3 · Inventer un jeu vidéo · Séance 6 sur 8"
+!!! info "3e · Séquence projet · Inventer un jeu vidéo · Séance 6 sur 8"
 
     Question de la séance : *Comment piloter le panier avec le nez, et que faire si la caméra ne marche pas ?*
 

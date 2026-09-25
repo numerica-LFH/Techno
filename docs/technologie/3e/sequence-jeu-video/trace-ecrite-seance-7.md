@@ -1,6 +1,6 @@
 # Trace écrite — Séance 7 : Entraînement à la Nuit du Code
 
-!!! info "3e · Séquence 3 · Inventer un jeu vidéo · Séance 7 sur 8"
+!!! info "3e · Séquence projet · Inventer un jeu vidéo · Séance 7 sur 8"
 
     Question de la séance : *Comment une équipe organise-t-elle six heures pour rendre un jeu qui marche ?*
 

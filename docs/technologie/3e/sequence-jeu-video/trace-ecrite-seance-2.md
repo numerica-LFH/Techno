@@ -1,6 +1,6 @@
 # Trace écrite — Séance 2 : Faire bouger un lutin au clavier
 
-!!! info "3e · Séquence 3 · Inventer un jeu vidéo · Séance 2 sur 8"
+!!! info "3e · Séquence projet · Inventer un jeu vidéo · Séance 2 sur 8"
 
     Question de la séance : *Comment un lutin sait-il où il est, et comment le faire bouger au clavier ?*
 

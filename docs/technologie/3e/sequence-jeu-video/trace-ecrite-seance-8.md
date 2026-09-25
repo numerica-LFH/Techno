@@ -1,6 +1,6 @@
 # Trace écrite — Séance 8 : Tester, améliorer et présenter son jeu
 
-!!! info "3e · Séquence 3 · Inventer un jeu vidéo · Séance 8 sur 8"
+!!! info "3e · Séquence projet · Inventer un jeu vidéo · Séance 8 sur 8"
 
     Question de la séance : *Comment savoir si mon jeu est bon, et comment l'améliorer ?*
 

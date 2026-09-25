@@ -1,6 +1,6 @@
 # Trace écrite — Séance 3 : Règles, algorithme et variables
 
-!!! info "3e · Séquence 3 · Inventer un jeu vidéo · Séance 3 sur 8"
+!!! info "3e · Séquence projet · Inventer un jeu vidéo · Séance 3 sur 8"
 
     Question de la séance : *Comment écrire les règles d'un jeu pour qu'un ordinateur puisse les appliquer ?*
 

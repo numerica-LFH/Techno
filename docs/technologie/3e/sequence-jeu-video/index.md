@@ -1,4 +1,4 @@
-# Séquence 3 — Inventer un jeu vidéo avec Scratch et Scratch Lab
+# Séquence projet — Inventer un jeu vidéo avec Scratch et Scratch Lab
 
 **3e · huit séances de 55 minutes · quatre semaines**
 

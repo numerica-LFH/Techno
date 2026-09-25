@@ -11,6 +11,12 @@ servir de support à l'oral du brevet.
 Sept chapitres, trois à dix séances de 55 minutes. La progression complète figure sur la page
 [Programmation annuelle](../programmation-annuelle.md).
 
+## Séquence 3 · Décrire l'expérience de l'utilisateur
+
+Chapitre 3 du manuel Nathan, *Décrire les interactions entre un objet et son environnement*. Quatre séances de 45 minutes, avec fiches à imprimer, traces écrites, exercices autocorrectifs et une évaluation de fin de séquence en 40 questions.
+
+[Ouvrir la séquence 3](sequence-3/index.md)
+
 ## Séquences projet : programmer
 
 Deux séquences projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
