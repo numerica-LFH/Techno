@@ -11,6 +11,12 @@ apprend à leur donner des ordres et à construire.
 Dix chapitres, quatre à cinq séances de 55 minutes chacun. La progression complète figure sur la
 page [Programmation annuelle](../programmation-annuelle.md).
 
+## Séquence projet : programmer
+
+Une séquence projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+
+- [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
+
 ## Chapitre 1. Les besoins humains et les objets techniques
 
 !!! abstract "Question directrice"
@@ -89,6 +95,8 @@ page [Programmation annuelle](../programmation-annuelle.md).
     | **Appliquer** | Programmer un dé numérique avec affichage et son |
 
 [Application interactive](../../apps/microbit-programmation.html){ target=_blank }
+
+[Ouvrir la séquence « Inventer un jeu vidéo avec Scratch et Scratch Lab »](sequence-jeu-video/index.md)
 
 ## Chapitre 6. Chaîne d'information et chaîne d'énergie
 
