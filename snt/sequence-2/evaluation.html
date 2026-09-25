@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT · Séquence 2 : les réseaux sociaux · Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+
+<style>
+.q pre { background:#0f172a; color:#e2e8f0; border-radius:5px; padding:11px 13px; margin:0 0 10px;
+  overflow-x:auto; font-size:.86rem; line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.q pre b { color:#fbbf24; font-weight:700; }
+.q code { background:#eef1f4; border:1px solid #d3dae1; border-radius:3px; padding:1px 4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+label.choix code { background:#fff; }
+.sommaire { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:12px 16px;
+  margin-bottom:18px; font-size:.9rem; color:#4a545e; }
+.sommaire b { color:#1d3557; }
+.partie { margin:22px 0 12px; padding:7px 12px; background:#1d3557; color:#fff; border-radius:4px;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>SNT · Séquence 2 : les réseaux sociaux</h1>
+  <p class="sous">40 questions, 48 points, sur les thèmes des trois séances de la séquence.
+  J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
+  envoyée au professeur.</p>
+</header>
+
+<div class="sommaire">
+  <b>Ce qui est évalué.</b> Partie A, séance 0 : petit monde, sommets et arêtes, fil calculé. Partie B, séance 1 : degré, distance, diamètre, sommet pont. Partie C, séance 2 : modèle économique, confidentialité, conditions d'utilisation, droit à l'image. Partie D : rappels de la séquence 1 et synthèse.
+</div>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="2de A" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 2 : les réseaux sociaux · Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "2de", "sequence": "Séquence 2 : les réseaux sociaux", "seances": "Séances 0, 1 et 2"};
+const questions = [
+ {
+  "type": "qcm",
+  "enonce": "L'expérience de Milgram (1967) suggère que :",
+  "choix": [
+   "deux personnes prises au hasard sont reliées par une chaîne de plusieurs centaines d'intermédiaires",
+   "deux personnes prises au hasard sont souvent reliées par une chaîne courte, d'environ six maillons",
+   "tout le monde se connaît directement"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une chaîne courte, environ six maillons.",
+  "expl": "C'est l'idée du petit monde, déjà imaginée par Karinthy en 1929.",
+  "partie": "Partie A · séance 0 : le fil n'est pas le monde"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pourquoi l'expérience de Milgram ne prouve-t-elle pas, à elle seule, les six degrés de séparation ?",
+  "choix": [
+   "Parce qu'elle a été faite par courrier",
+   "Parce que beaucoup de lettres ne sont jamais arrivées",
+   "Parce qu'elle portait sur des ordinateurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Beaucoup de lettres ne sont jamais arrivées.",
+  "expl": "La moyenne ne porte que sur les chaînes complètes : l'expérience suggère, elle ne prouve pas."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets ces événements dans l'ordre chronologique.",
+  "elements": [
+   "Karinthy imagine la chaîne de connaissances",
+   "L'expérience de Milgram",
+   "SixDegrees.com enregistre les relations",
+   "Facebook lance le fil d'actualité"
+  ],
+  "points": 2,
+  "reponse": "1929, 1967, 1997, 2006.",
+  "expl": "Soixante-dix ans séparent l'idée du petit monde du premier fil calculé par une plateforme."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans le graphe d'un réseau social, qu'appelle-t-on une arête ?",
+  "choix": [
+   "Un compte",
+   "Une relation entre deux comptes",
+   "Une publication"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une relation entre deux comptes.",
+  "expl": "Les comptes sont les sommets, les relations les arêtes."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque élément sa place dans le graphe.",
+  "paires": [
+   {
+    "terme": "Le compte d'un élève",
+    "definition": "Un sommet"
+   },
+   {
+    "terme": "Une demande d'ami acceptée",
+    "definition": "Une arête non orientée"
+   },
+   {
+    "terme": "Le bouton « suivre »",
+    "definition": "Une arête orientée"
+   }
+  ],
+  "points": 3,
+  "reponse": "Compte : sommet. Ami : arête non orientée. Suivre : arête orientée.",
+  "expl": "Suivre peut être à sens unique : on le dessine par une flèche."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le fil d'actualité est un sommet du graphe.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Ce n'est ni un sommet ni une arête : c'est le résultat d'un calcul fait par la plateforme."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Depuis 1997, qu'est-ce qui distingue un réseau social en ligne du réseau étudié par Milgram ?",
+  "choix": [
+   "Les relations sont déclarées et enregistrées par une machine",
+   "Les relations sont secrètes",
+   "Il n'y a plus de relations"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Les relations sont déclarées et enregistrées.",
+  "expl": "Le graphe devient une donnée que la plateforme peut parcourir et calculer."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En 2011, la distance moyenne mesurée entre deux comptes Facebook était d'environ 4,7. Quelle explication est recevable ?",
+  "choix": [
+   "Les gens se connaissent tous",
+   "Chacun déclare beaucoup de relations, parfois lointaines, et certains comptes très connectés servent de raccourcis",
+   "La plateforme supprime les comptes éloignés"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Beaucoup de relations, lointaines, et des comptes-raccourcis.",
+  "expl": "Attention : c'est la distance dans ce réseau-là, pas dans toute l'humanité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Deux personnes ouvrent la même application au même moment. Pour elles, un fil classé par algorithme :",
+  "choix": [
+   "est identique",
+   "est différent, calculé à partir de l'historique de chacune",
+   "est vide"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Différent pour chacune.",
+  "expl": "Le fil n'est pas le monde : c'est une sélection calculée."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on la représentation d'un réseau par des points reliés par des traits ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "graphe",
+   "un graphe"
+  ],
+  "points": 1,
+  "reponse": "Un graphe.",
+  "expl": "Les points sont les sommets, les traits les arêtes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Combien ce graphe compte-t-il de sommets et d'arêtes ?",
+  "choix": [
+   "8 sommets, 9 arêtes",
+   "9 sommets, 8 arêtes",
+   "8 sommets, 8 arêtes"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "8 sommets, 9 arêtes.",
+  "expl": "Huit prénoms, neuf relations.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo",
+  "partie": "Partie B · séance 1 : mesurer un graphe"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel est le degré de Diego ?",
+  "choix": [
+   "2",
+   "3",
+   "4"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "3.",
+  "expl": "Bruno, Carla et Elsa.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel est le degré d'Ana ?",
+  "choix": [
+   "1",
+   "2",
+   "3"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "2.",
+  "expl": "Bruno et Carla.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle est la distance entre Ana et Hugo ?",
+  "choix": [
+   "3",
+   "4",
+   "5"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "4.",
+  "expl": "Ana, Bruno, Diego, Elsa, Hugo : quatre arêtes, aucun chemin plus court.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle est la distance entre Bruno et Gabriela ?",
+  "choix": [
+   "3",
+   "4",
+   "5"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "4.",
+  "expl": "Bruno, Diego, Elsa, Fabio, Gabriela.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel est le diamètre de ce graphe ?",
+  "choix": [
+   "4",
+   "5",
+   "9"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "5.",
+  "expl": "La plus grande distance, entre Ana et Gabriela.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Si Diego disparaît du réseau, que se passe-t-il ?",
+  "choix": [
+   "Rien",
+   "Le réseau se coupe en deux groupes",
+   "Seule Ana est isolée"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le réseau se coupe en deux groupes.",
+  "expl": "Ana, Bruno, Carla d'un côté ; Elsa, Fabio, Gabriela, Hugo de l'autre.",
+  "code": "Ana - Bruno, Ana - Carla, Bruno - Diego, Carla - Diego, Diego - Elsa,\nElsa - Fabio, Elsa - Hugo, Fabio - Gabriela, Gabriela - Hugo"
+ },
+ {
+  "type": "vf",
+  "enonce": "Dans ce graphe, Diego est le seul sommet dont la disparition coupe le réseau en deux.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Elsa aussi : l'arête Diego-Elsa est le seul lien entre les deux groupes."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque mot sa définition.",
+  "paires": [
+   {
+    "terme": "Degré",
+    "definition": "Le nombre de relations directes d'un sommet"
+   },
+   {
+    "terme": "Distance",
+    "definition": "Le nombre d'arêtes du plus court chemin entre deux sommets"
+   },
+   {
+    "terme": "Diamètre",
+    "definition": "La plus grande distance entre deux sommets du graphe"
+   }
+  ],
+  "points": 3,
+  "reponse": "Degré : relations directes. Distance : plus court chemin. Diamètre : plus grande distance.",
+  "expl": "La distance est un minimum, le diamètre un maximum de ces minimums."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel nom donne-t-on à un sommet dont la disparition coupe le graphe en plusieurs morceaux ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "pont",
+   "sommet pont",
+   "un pont",
+   "point d'articulation",
+   "articulation"
+  ],
+  "points": 1,
+  "reponse": "Un sommet pont.",
+  "expl": "Les mathématiciens disent aussi point d'articulation."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une plateforme dont le service est gratuit gagne principalement de l'argent :",
+  "choix": [
+   "par des dons",
+   "en vendant à des annonceurs un accès ciblé à l'attention de ses utilisateurs",
+   "grâce à l'État"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "En vendant un accès ciblé à l'attention.",
+  "expl": "L'utilisateur n'est pas le client : il fournit ce qui est vendu.",
+  "partie": "Partie C · séance 2 : ce que je laisse, ce que j'accepte"
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets la chaîne de l'argent dans l'ordre.",
+  "elements": [
+   "Le temps passé sur l'application",
+   "Les traces collectées",
+   "Le profil construit",
+   "L'annonceur paie la plateforme"
+  ],
+  "points": 2,
+  "reponse": "Temps passé, traces, profil, paiement.",
+  "expl": "Chaque étape nourrit la suivante."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque acteur son rôle dans le modèle économique.",
+  "paires": [
+   {
+    "terme": "L'utilisateur",
+    "definition": "Apporte son attention et ses données"
+   },
+   {
+    "terme": "La plateforme",
+    "definition": "Classe les contenus et vend un ciblage"
+   },
+   {
+    "terme": "L'annonceur",
+    "definition": "Paie pour être vu par un public précis"
+   }
+  ],
+  "points": 3,
+  "reponse": "L'utilisateur apporte son attention, la plateforme vend un ciblage, l'annonceur paie.",
+  "expl": "Le produit vendu n'est pas le service, c'est l'accès à l'attention."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que cherche à maximiser un algorithme de recommandation ?",
+  "choix": [
+   "La vérité des contenus",
+   "Le temps passé sur l'application",
+   "Le nombre de comptes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le temps passé.",
+  "expl": "Il optimise une mesure, pas une valeur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les réglages de confidentialité proposés par défaut :",
+  "choix": [
+   "sont neutres",
+   "sont souvent ouverts, dans l'intérêt de la plateforme",
+   "sont toujours les plus protecteurs"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Souvent ouverts, dans l'intérêt de la plateforme.",
+  "expl": "Une valeur par défaut est un choix de la plateforme, qu'il faut vérifier."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un compte privé n'est pas concerné par le modèle publicitaire de la plateforme.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le réglage de visibilité concerne les autres utilisateurs, pas la plateforme, qui continue de mesurer l'activité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Parmi ces données, laquelle la plateforme connaît-elle sans que tu l'aies publiée ?",
+  "choix": [
+   "Ta photo de profil",
+   "L'heure à laquelle tu te connectes chaque soir",
+   "Le texte de ta publication"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "L'heure de connexion.",
+  "expl": "Une donnée observée, jamais déclarée."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans les conditions d'utilisation, la clause sur les photos publiées précise le plus souvent que :",
+  "choix": [
+   "la plateforme devient propriétaire",
+   "l'utilisateur reste propriétaire mais accorde un droit d'usage étendu",
+   "les photos sont effacées après un mois"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "L'utilisateur reste propriétaire mais accorde un droit d'usage.",
+  "expl": "On parle de licence."
+ },
+ {
+  "type": "vf",
+  "enonce": "Supprimer son compte efface immédiatement toutes les données conservées par la plateforme.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Une partie des données peut être conservée un certain temps, souvent pour des raisons légales."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Publier la photo d'un camarade identifiable, sans son accord :",
+  "choix": [
+   "est permis si la photo est flatteuse",
+   "porte atteinte à son droit à l'image",
+   "est permis sur un compte privé"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Atteinte au droit à l'image.",
+  "expl": "Cela ne dépend ni de la photo, ni du réglage du compte."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans une situation de harcèlement en ligne, celui qui se contente de relayer un message :",
+  "choix": [
+   "n'a aucune responsabilité",
+   "participe au harcèlement",
+   "protège la victime"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il participe au harcèlement.",
+  "expl": "La responsabilité ne s'arrête pas à l'auteur du premier message."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on le contrat que l'on accepte en créant un compte ?",
+  "placeholder": "Quelques mots",
+  "acceptees": [
+   "conditions d'utilisation",
+   "conditions generales d'utilisation",
+   "cgu",
+   "conditions d utilisation"
+  ],
+  "points": 1,
+  "reponse": "Les conditions d'utilisation.",
+  "expl": "On les accepte d'un clic, rarement après les avoir lues."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour afficher le contenu d'un réseau social, le navigateur :",
+  "choix": [
+   "le fabrique seul",
+   "le demande au serveur, qui répond",
+   "le lit dans le fichier CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il le demande au serveur, qui répond.",
+  "expl": "Le navigateur demande, le serveur répond, le navigateur affiche.",
+  "partie": "Partie D · rappels de la séquence 1 et synthèse"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Cette règle CSS masque un bloc de la page. Que fait-elle ?",
+  "choix": [
+   "Elle colore en gris les blocs de classe publicite",
+   "Elle retire de l'affichage les blocs de classe publicite",
+   "Elle empêche le serveur de les envoyer"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle retire de l'affichage les blocs de classe publicite.",
+  "expl": "Le CSS agit sur l'affichage : le contenu est quand même arrivé du serveur.",
+  "code": ".publicite {\n    display: none;\n}"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans une page HTML, quelle balise crée un lien vers un profil ?",
+  "choix": [
+   "<code>&lt;link&gt;</code>",
+   "<code>&lt;a href=\"profil.html\"&gt;</code>",
+   "<code>&lt;p&gt;</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La balise &lt;a&gt; avec l'attribut href.",
+  "expl": "&lt;link&gt; sert à rattacher un fichier CSS, pas à créer un lien cliquable."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un cookie publicitaire déposé sur un site :",
+  "choix": [
+   "reste sur le serveur",
+   "est stocké par le navigateur et relu à la visite suivante",
+   "est écrit dans le fichier CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il est stocké par le navigateur.",
+  "expl": "C'est ce qui permet de reconnaître le visiteur, et de le suivre d'un site à l'autre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans l'adresse https://exemple.com/profil/ana, que désigne /profil/ana ?",
+  "choix": [
+   "Le protocole",
+   "Le nom du serveur",
+   "Le chemin de la ressource"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "Le chemin de la ressource.",
+  "expl": "https est le protocole, exemple.com le serveur."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le graphe des liens entre pages web et le graphe des abonnements sur un réseau social sont tous deux des graphes orientés.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "Un lien va d'une page vers une autre ; un abonnement va d'un compte vers un autre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour classer des pages, un moteur de recherche compte notamment les liens qui pointent vers elles. Sur un réseau social, l'équivalent est :",
+  "choix": [
+   "le nombre de publications",
+   "le nombre d'abonnés, c'est-à-dire le degré entrant du compte",
+   "la taille de la photo de profil"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le degré entrant.",
+  "expl": "Même idée, même limite : la popularité mesurée ne dit rien de la qualité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que retient-on de cette séquence en une phrase ?",
+  "choix": [
+   "Les réseaux sociaux sont neutres",
+   "Le fil n'est pas le monde : c'est une sélection calculée sur un graphe, pour vendre de l'attention",
+   "Les réseaux sociaux n'utilisent pas de données"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le fil n'est pas le monde.",
+  "expl": "Graphe, classement, modèle économique : les trois séances en une phrase."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    if (q.partie) {
+      const p = document.createElement("div");
+      p.className = "partie";
+      p.textContent = q.partie;
+      zone.appendChild(p);
+    }
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+    if (q.code) h += '<pre>' + q.code + '</pre>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">- choisir -</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">-</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma reponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur.";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation SNT " + META.sequence + " · " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seances,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>

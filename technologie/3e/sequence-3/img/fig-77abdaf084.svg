@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 190" font-family="Liberation Sans, Arial, sans-serif">
+<rect width="600" height="190" fill="#fff"/>
+<g transform="translate(20,20)">
+ <rect width="160" height="120" rx="8" fill="#fff" stroke="#1d3557" stroke-width="2"/>
+ <path d="M72,30 A32,32 0 1 0 72,92" fill="none" stroke="#14181d" stroke-width="9"/>
+ <path d="M136,30 A32,32 0 1 0 136,92" fill="none" stroke="#14181d" stroke-width="9"/>
+ <line x1="106" y1="61" x2="130" y2="61" stroke="#14181d" stroke-width="9"/>
+ <text x="80" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#1d3557">Logo A</text>
+</g>
+<g transform="translate(220,20)">
+ <rect width="160" height="120" rx="8" fill="#fff" stroke="#1d3557" stroke-width="2"/>
+ <ellipse cx="80" cy="60" rx="58" ry="40" fill="none" stroke="#14181d" stroke-width="5"/>
+ <text x="80" y="76" text-anchor="middle" font-size="44" font-weight="700" fill="#14181d">NF</text>
+ <text x="80" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#1d3557">Logo B</text>
+</g>
+<g transform="translate(420,20)">
+ <rect width="160" height="120" rx="8" fill="#fff" stroke="#1d3557" stroke-width="2"/>
+ <rect x="56" y="34" width="48" height="58" rx="3" fill="none" stroke="#14181d" stroke-width="4"/>
+ <line x1="50" y1="32" x2="110" y2="32" stroke="#14181d" stroke-width="5"/>
+ <line x1="72" y1="44" x2="72" y2="84" stroke="#14181d" stroke-width="3"/>
+ <line x1="88" y1="44" x2="88" y2="84" stroke="#14181d" stroke-width="3"/>
+ <circle cx="62" cy="98" r="5" fill="#14181d"/><circle cx="98" cy="98" r="5" fill="#14181d"/>
+ <line x1="42" y1="22" x2="118" y2="104" stroke="#14181d" stroke-width="5"/>
+ <line x1="118" y1="22" x2="42" y2="104" stroke="#14181d" stroke-width="5"/>
+ <rect x="50" y="108" width="60" height="7" fill="#14181d"/>
+ <text x="80" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#1d3557">Logo C</text>
+</g>
+</svg>

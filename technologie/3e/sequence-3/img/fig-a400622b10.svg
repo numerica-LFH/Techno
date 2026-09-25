@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 200" font-family="Liberation Sans, Arial, sans-serif">
+<rect width="620" height="200" fill="#fff"/>
+<polygon points="40,160 540,160 540,60" fill="#e6f1e6" stroke="#1b7d4f" stroke-width="2.5"/>
+<line x1="40" y1="178" x2="540" y2="178" stroke="#1d3557" stroke-width="1.5"/>
+<line x1="40" y1="172" x2="40" y2="184" stroke="#1d3557" stroke-width="1.5"/>
+<line x1="540" y1="172" x2="540" y2="184" stroke="#1d3557" stroke-width="1.5"/>
+<text x="290" y="196" text-anchor="middle" font-size="15" fill="#1d3557">longueur horizontale : 100 cm</text>
+<line x1="560" y1="60" x2="560" y2="160" stroke="#1d3557" stroke-width="1.5"/>
+<line x1="554" y1="60" x2="566" y2="60" stroke="#1d3557" stroke-width="1.5"/>
+<line x1="554" y1="160" x2="566" y2="160" stroke="#1d3557" stroke-width="1.5"/>
+<text x="572" y="115" font-size="15" fill="#1d3557">20 cm</text>
+<text x="250" y="96" font-size="16" font-weight="700" fill="#1b7d4f" transform="rotate(-11 250 96)">pente de 20 %</text>
+</svg>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5e — Séance 3 — La lignée d'un objet — Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>5e · Séquence 1 — Des besoins aux objets techniques — Séance 3 — La lignée d'un objet</h1>
+  <p class="sous">16 questions, 19 points. J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est envoyée au professeur.</p>
+</header>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="5eA" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 5e — Séance 3 — La lignée d'un objet — Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "5e", "sequence": "Séquence 1 — Des besoins aux objets techniques", "seance": "Séance 3 — La lignée d'un objet", "exemple_classe": "5eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "enonce": "Une lignée d'objets, c'est :",
+  "choix": [
+   "un ensemble d'objets de la même époque",
+   "une suite chronologique d'objets ayant la même fonction d'usage",
+   "un ensemble d'objets de la même marque"
+  ],
+  "bonne": 1,
+  "expl": "Du plus ancien au plus récent, tous rendant le même service.",
+  "points": 1,
+  "reponse": "une suite chronologique d'objets ayant la même fonction d'usage."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une performance est :",
+  "choix": [
+   "un résultat mesurable obtenu par un objet",
+   "l'avis des utilisateurs",
+   "le prix de l'objet"
+  ],
+  "bonne": 0,
+  "expl": "Autonomie en heures, capacité, masse en grammes : des grandeurs mesurables.",
+  "points": 1,
+  "reponse": "un résultat mesurable obtenu par un objet."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Sur une frise chronologique, l'échelle sert à :",
+  "choix": [
+   "décorer la frise",
+   "respecter les proportions entre les durées",
+   "numéroter les objets"
+  ],
+  "bonne": 1,
+  "expl": "5 ans = 1 cm, par exemple. Sans échelle, la frise ne montre plus le rythme des évolutions.",
+  "points": 1,
+  "reponse": "respecter les proportions entre les durées."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Je remets la lignée de l'écoute nomade dans l'ordre, du plus ancien au plus récent.",
+  "elements": [
+   "Walkman Sony à cassette (1979)",
+   "Lecteur CD Sony (1984)",
+   "Lecteur numérique RIO PMP 300 (1998)",
+   "Lecteur MP3 Apple (2001)",
+   "Téléphone connecté (2010 à aujourd'hui)"
+  ],
+  "points": 2,
+  "expl": "Les dates figurent dans le tableau de l'activité 1.",
+  "consigne": "Je numérote de 1 à 5. Tout doit être juste pour avoir les points.",
+  "reponse": "1. Walkman Sony à cassette (1979) → 2. Lecteur CD Sony (1984) → 3. Lecteur numérique RIO PMP 300 (1998) → 4. Lecteur MP3 Apple (2001) → 5. Téléphone connecté (2010 à aujourd'hui)"
+ },
+ {
+  "type": "qcm",
+  "enonce": "En quelle année apparaît le Walkman Sony à cassette ?",
+  "choix": [
+   "1969",
+   "1979",
+   "1989"
+  ],
+  "bonne": 1,
+  "expl": "Il ouvre la lignée étudiée en classe.",
+  "points": 1,
+  "reponse": "1979."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Ces cinq objets rendent le même service. Ils forment donc :",
+  "choix": [
+   "une lignée d'objets",
+   "une fonction technique",
+   "une frise chronologique"
+  ],
+  "bonne": 0,
+  "expl": "Une lignée est aussi une famille, mais rangée dans le temps.",
+  "points": 1,
+  "reponse": "une lignée d'objets."
+ },
+ {
+  "type": "vf",
+  "enonce": "Tous les objets d'une même lignée rendent le même service.",
+  "bonne": 0,
+  "expl": "C'est la condition pour qu'ils appartiennent à la lignée.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Parmi ces éléments, lequel est une performance ?",
+  "choix": [
+   "la couleur du boîtier",
+   "l'autonomie en heures",
+   "la marque de l'appareil"
+  ],
+  "bonne": 1,
+  "expl": "Elle se mesure, elle se compare d'un objet à l'autre.",
+  "points": 1,
+  "reponse": "l'autonomie en heures."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une frise chronologique doit comporter :",
+  "choix": [
+   "un titre et une échelle",
+   "un prix et une marque",
+   "une photographie par objet, obligatoirement"
+  ],
+  "bonne": 0,
+  "expl": "Titre, échelle, dates dans l'ordre, et de l'air entre les repères.",
+  "points": 1,
+  "reponse": "un titre et une échelle."
+ },
+ {
+  "type": "texte",
+  "enonce": "Ma frise va de 1979 à 2019. Avec une échelle de 5 ans = 1 cm, combien de centimètres mesure-t-elle ?",
+  "acceptees": [
+   "8"
+  ],
+  "reponse": "8 cm.",
+  "expl": "2019 − 1979 = 40 ans, et 40 ÷ 5 = 8.",
+  "placeholder": "un nombre de cm",
+  "points": 1,
+  "consigne": "J'écris ma réponse en quelques mots."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Entre le Walkman et le téléphone connecté, qu'est-ce qui n'a pas changé ?",
+  "choix": [
+   "le support d'enregistrement",
+   "la fonction d'usage : écouter de la musique",
+   "la capacité de stockage"
+  ],
+  "bonne": 1,
+  "expl": "C'est ce qui permet de parler d'une seule et même lignée.",
+  "points": 1,
+  "reponse": "la fonction d'usage : écouter de la musique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Qu'est-ce qui a le plus changé le long de cette lignée ?",
+  "choix": [
+   "le support d'enregistrement et le nombre de morceaux",
+   "le fait d'écouter avec des écouteurs",
+   "le fait de transporter l'appareil"
+  ],
+  "bonne": 0,
+  "expl": "De la cassette au fichier en ligne, la capacité a été multipliée par des milliers.",
+  "points": 1,
+  "reponse": "le support d'enregistrement et le nombre de morceaux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le téléphone connecté sert uniquement à écouter de la musique.",
+  "bonne": 1,
+  "expl": "Il absorbe les fonctions de plusieurs objets : c'est pour cela que le lecteur MP3 a presque disparu.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mot avec sa définition.",
+  "paires": [
+   {
+    "terme": "lignée d'objets",
+    "definition": "la suite chronologique des évolutions d'un objet rendant le même service"
+   },
+   {
+    "terme": "performance",
+    "definition": "un résultat mesurable obtenu par un objet technique"
+   },
+   {
+    "terme": "frise chronologique",
+    "definition": "un schéma à échelle qui montre une succession d'événements dans le temps"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "lignée d'objets = la suite chronologique des évolutions d'un objet rendant le même service · performance = un résultat mesurable obtenu par un objet technique · frise chronologique = un schéma à échelle qui montre une succession d'événements dans le temps",
+  "expl": ""
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans une lignée, les objets sont classés :",
+  "choix": [
+   "par ordre de prix",
+   "par date, du plus ancien au plus récent",
+   "par ordre alphabétique"
+  ],
+  "bonne": 1,
+  "expl": "Et leurs performances augmentent généralement au fil du temps.",
+  "points": 1,
+  "reponse": "par date, du plus ancien au plus récent."
+ },
+ {
+  "type": "vf",
+  "enonce": "Une performance peut s'exprimer par un nombre et une unité.",
+  "bonne": 0,
+  "expl": "Douze heures d'autonomie, 180 grammes, 5 000 morceaux.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">— choisir —</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">—</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 5. Programmation par blocs avec micro:bit - Technologie LFH</title>
+<meta name="description" content="Technologie 5e, thèmes 2 et 3 du programme. Cinq séances de 55 minutes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "5e",
+  "titre": "Chapitre 5. Programmation par blocs avec micro:bit",
+  "sousTitre": "Technologie 5e, thèmes 2 et 3 du programme. Cinq séances de 55 minutes.",
+  "question": "Comment donner des ordres à un objet sans écrire une seule ligne de code ?",
+  "retour": "../technologie/5e/",
+  "competences": "Compétences T2.3 comprendre et modifier un programme associé à une fonctionnalité, et T3.3 concevoir, écrire, tester et mettre au point un programme. CRCN domaine 3, création de contenu numérique.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Ce qu'est un programme et à quoi servent les familles de blocs."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Les entrées et les sorties de la carte micro:bit."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "Ce que fait un programme donné avant de l'exécuter."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Programmer un dé numérique avec affichage et son."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Je recherche",
+      "html": "\n<p>La carte micro:bit est un petit ordinateur de la taille d'une carte bancaire. Elle ne fait rien\ntant qu'on ne lui a pas dit quoi faire, et elle ne comprend que ce qui est écrit sans ambiguïté.</p>\n<div class=\"app-encadre\">\n<p><b>Expérience de départ.</b> Deux élèves dos à dos. L'un décrit une figure, l'autre la dessine\nsans poser de question. On compare le résultat au modèle. La consigne était-elle assez précise ?</p>\n</div>\n<p>Un programme, c'est cette consigne, mais destinée à une machine qui n'interprète rien.</p>\n"
+    },
+    {
+      "titre": "La carte et ses entrées et sorties",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Élément</th><th>Entrée ou sortie</th><th>Ce qu'il fait</th></tr>\n<tr><td>Boutons A et B</td><td>Entrée</td><td>Détectent un appui</td></tr>\n<tr><td>Accéléromètre</td><td>Entrée</td><td>Détecte une secousse, une inclinaison</td></tr>\n<tr><td>Capteur de lumière</td><td>Entrée</td><td>Mesure la luminosité ambiante</td></tr>\n<tr><td>Capteur de température</td><td>Entrée</td><td>Mesure la température de la carte</td></tr>\n<tr><td>Matrice de 25 LED</td><td>Sortie</td><td>Affiche chiffres, lettres, images</td></tr>\n<tr><td>Broches et haut-parleur</td><td>Sortie</td><td>Produisent un son, commandent un actionneur</td></tr>\n<tr><td>Radio</td><td>Entrée et sortie</td><td>Échange avec une autre carte</td></tr>\n</table>\n</div>\n<div class=\"app-encadre\">\n<p><b>Lien avec le chapitre 6.</b> Les entrées sont les capteurs de la chaîne d'information, les\nsorties sont du côté communiquer et convertir. La carte micro:bit est le maillon « traiter ».</p>\n</div>\n"
+    },
+    {
+      "titre": "Les familles de blocs",
+      "html": "\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Événements</b>« au démarrage », « toujours », « lorsque le bouton A est pressé ». Ils déclenchent le reste.</div>\n<div class=\"app-vignette\"><b>Actions</b>« afficher », « jouer un son », « effacer l'écran ». Ce que la carte fait réellement.</div>\n<div class=\"app-vignette\"><b>Conditions</b>« si … alors … sinon ». La carte compare et choisit.</div>\n<div class=\"app-vignette\"><b>Boucles</b>« répéter 4 fois », « toujours ». Éviter d'écrire dix fois la même chose.</div>\n<div class=\"app-vignette\"><b>Variables</b>Une case mémoire nommée, dans laquelle on range une valeur qui change.</div>\n<div class=\"app-vignette\"><b>Entrées</b>Lire un bouton, un capteur, une inclinaison.</div>\n</div>\n<h3>Deux blocs à ne pas confondre</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Bloc</th><th>Quand s'exécute-t-il ?</th></tr>\n<tr><td><b>au démarrage</b></td><td>Une seule fois, à la mise sous tension</td></tr>\n<tr><td><b>toujours</b></td><td>En boucle, sans arrêt, tant que la carte est alimentée</td></tr>\n</table>\n</div>\n<p>Placer une initialisation dans « toujours » remet la valeur à zéro des centaines de fois par\nseconde. C'est l'erreur la plus fréquente.</p>\n"
+    },
+    {
+      "titre": "Le dé numérique",
+      "html": "\n<p>Objectif : quand je secoue la carte, elle affiche un nombre au hasard entre 1 et 6, puis émet un\nson court.</p>\n<h3>L'algorithme, avant les blocs</h3>\n<div class=\"app-encadre\">\n<p>1. Attendre une secousse.<br>\n2. Tirer un nombre entier au hasard entre 1 et 6.<br>\n3. Ranger ce nombre dans la variable <i>resultat</i>.<br>\n4. Afficher <i>resultat</i>.<br>\n5. Jouer un son court.<br>\n6. Revenir à l'étape 1.</p>\n</div>\n<h3>La traduction en blocs</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Étape</th><th>Bloc à utiliser</th><th>Famille</th></tr>\n<tr><td>1</td><td>lorsque secoué</td><td>Entrées</td></tr>\n<tr><td>2 et 3</td><td>définir resultat à nombre aléatoire de 1 à 6</td><td>Variables et Maths</td></tr>\n<tr><td>4</td><td>afficher nombre resultat</td><td>Actions</td></tr>\n<tr><td>5</td><td>jouer une note pendant 1 temps</td><td>Musique</td></tr>\n</table>\n</div>\n<h3>Trois améliorations à tester</h3>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Deux dés</b>Une variable de plus, et l'affichage de la somme.</div>\n<div class=\"app-vignette\"><b>Une animation</b>Faire défiler des images avant d'afficher le résultat.</div>\n<div class=\"app-vignette\"><b>Un compteur</b>Compter le nombre de lancers depuis le démarrage et l'afficher sur appui du bouton B.</div>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "Le bloc « au démarrage » s'exécute :",
+          "choix": [
+            "En boucle sans arrêt",
+            "Une seule fois à la mise sous tension",
+            "À chaque appui sur un bouton"
+          ],
+          "bonne": 1,
+          "explication": "La boucle sans fin, c'est le bloc « toujours »."
+        },
+        {
+          "enonce": "L'accéléromètre de la carte est :",
+          "choix": [
+            "Une entrée",
+            "Une sortie",
+            "Ni l'un ni l'autre"
+          ],
+          "bonne": 0,
+          "explication": "Il fournit une information à la carte : c'est un capteur, donc une entrée."
+        },
+        {
+          "enonce": "Une variable sert à :",
+          "choix": [
+            "Répéter une action",
+            "Ranger une valeur qui change et la retrouver",
+            "Déclencher un programme"
+          ],
+          "bonne": 1,
+          "explication": "C'est une case mémoire nommée."
+        },
+        {
+          "enonce": "Pour éviter d'écrire quatre fois le même bloc d'affichage, j'utilise :",
+          "choix": [
+            "Une condition",
+            "Une boucle",
+            "Une variable"
+          ],
+          "bonne": 1,
+          "explication": "La boucle répète. La condition choisit."
+        },
+        {
+          "enonce": "Dans le dé numérique, où doit se trouver le bloc « définir resultat » ?",
+          "choix": [
+            "Dans « au démarrage »",
+            "Après « lorsque secoué »",
+            "Dans « toujours »"
+          ],
+          "bonne": 1,
+          "explication": "Le tirage doit avoir lieu à chaque secousse, ni une seule fois, ni en permanence."
+        },
+        {
+          "enonce": "Mon programme affiche toujours 0. Que faut-il vérifier en premier ?",
+          "choix": [
+            "La pile de la carte",
+            "L'endroit où la variable est définie",
+            "La luminosité de la salle"
+          ],
+          "bonne": 1,
+          "explication": "Une variable réinitialisée en boucle garde sa valeur de départ. C'est l'erreur la plus courante."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Programme</b></td><td>Suite d'instructions exécutées par une machine, sans interprétation</td></tr>\n<tr><td><b>Algorithme</b></td><td>La suite des étapes, écrite avant d'être traduite en blocs</td></tr>\n<tr><td><b>Événement</b></td><td>Ce qui déclenche l'exécution d'une partie du programme</td></tr>\n<tr><td><b>Variable</b></td><td>Case mémoire nommée qui contient une valeur modifiable</td></tr>\n<tr><td><b>Condition</b></td><td>Structure qui choisit entre deux suites d'actions</td></tr>\n<tr><td><b>Boucle</b></td><td>Structure qui répète des actions</td></tr>\n</table>\n</div>\n<h3>Je me situe</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Je sais</th><th>Pas encore</th><th>Avec de l'aide</th><th>Seul</th><th>Je peux l'expliquer</th></tr>\n<tr><td>Comprendre : programme, algorithme, familles de blocs</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Identifier : les entrées et les sorties de la carte</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Analyser : prévoir ce que fait un programme donné</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Appliquer : écrire et corriger le dé numérique</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n</table>\n</div>\n<h3>La question de la prochaine séquence</h3>\n<p>La carte traite l'information. Mais où va l'énergie qui fait bouger un moteur ?</p>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT - Séquence 4 — Localisation et cartographie - Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+
+<style>
+.q pre { background:#0f172a; color:#e2e8f0; border-radius:5px; padding:11px 13px; margin:0 0 10px;
+  overflow-x:auto; font-size:.86rem; line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.q pre b { color:#fbbf24; font-weight:700; }
+.q code { background:#eef1f4; border:1px solid #d3dae1; border-radius:3px; padding:1px 4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+label.choix code { background:#fff; }
+.sommaire { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:12px 16px;
+  margin-bottom:18px; font-size:.9rem; color:#4a545e; }
+.sommaire b { color:#1d3557; }
+.partie { margin:22px 0 12px; padding:7px 12px; background:#1d3557; color:#fff; border-radius:4px;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>SNT · Séquence 4 — Localisation et cartographie</h1>
+  <p class="sous">40 questions, 45 points, sur les trois séances de la séquence.
+  J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
+  envoyée au professeur.</p>
+</header>
+
+<div class="sommaire">
+  <b>Ce qui est évalué.</b> Séance 0 : écouter le ciel, temps de vol et trilatération. Séance 1 : décoder une trame NMEA, convertir une latitude, lire l'heure UTC. Séance 2 : cartes collaboratives et plus court chemin dans un graphe pondéré.
+</div>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="2de A" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 4 — Localisation et cartographie · Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "2de", "sequence": "Séquence 4 — Localisation et cartographie", "seances": "Séances 0, 1 et 2"};
+const questions = [
+ {
+  "partie": "Partie A — Écouter le ciel",
+  "type": "qcm",
+  "enonce": "Pour calculer sa position, un récepteur GPS :",
+  "choix": [
+   "Envoie sa position aux satellites, qui la lui confirment",
+   "Écoute les signaux des satellites, sans rien émettre",
+   "Interroge une antenne de téléphonie",
+   "Utilise une boussole"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Écoute les signaux des satellites, sans rien émettre.",
+  "expl": "Un satellite ne sait pas combien de récepteurs l'écoutent."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que contient le message diffusé par un satellite ?",
+  "choix": [
+   "La position du récepteur",
+   "Sa propre position et l'heure exacte",
+   "La carte du secteur",
+   "Le nom de l'utilisateur"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Sa propre position et l'heure exacte.",
+  "expl": "Il dit seulement où il est et quelle heure il est. Tout le reste est calculé par le récepteur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment le récepteur obtient-il sa distance à un satellite ?",
+  "choix": [
+   "En mesurant la puissance du signal reçu",
+   "En multipliant le temps de vol du signal par la vitesse de la lumière",
+   "En comptant les satellites visibles",
+   "En mesurant un angle"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "En multipliant le temps de vol du signal par la vitesse de la lumière.",
+  "expl": "Distance égale vitesse fois temps. Le temps de vol est la différence entre l'heure d'émission et l'heure de réception."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Combien de satellites faut-il au minimum pour une position en trois dimensions, l'horloge du récepteur étant imparfaite ?",
+  "choix": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "4 satellites.",
+  "expl": "Trois donnent la position, un quatrième corrige l'horloge du récepteur, qui n'est pas atomique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le mot triangulation est d'usage courant, mais le calcul du GPS s'appelle en réalité :",
+  "choix": [
+   "Une triangulation",
+   "Une trilatération",
+   "Une interpolation",
+   "Une projection"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une trilatération.",
+  "expl": "On croise des distances, pas des angles."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets ces trois dates dans l'ordre chronologique.",
+  "elements": [
+   "Spoutnik et la mesure de l'effet Doppler",
+   "Le lancement des premiers satellites GPS",
+   "L'ouverture du GPS aux usages civils"
+  ],
+  "points": 2,
+  "reponse": "Spoutnik (1957), premiers satellites GPS (1978), ouverture civile (1983).",
+  "expl": "L'effet Doppler observé sur Spoutnik a donné l'idée : si l'on sait où est le satellite, on peut se situer."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Qui dit quoi ? Classe chaque information.",
+  "paires": [
+   {
+    "terme": "Sa position en orbite",
+    "definition": "Dit par le satellite"
+   },
+   {
+    "terme": "L'heure d'émission du signal",
+    "definition": "Dit par le satellite"
+   },
+   {
+    "terme": "La distance au satellite",
+    "definition": "Calculé par le récepteur"
+   }
+  ],
+  "points": 3,
+  "reponse": "Le satellite dit sa position et l'heure. Le récepteur calcule la distance, puis sa propre position.",
+  "expl": "Le satellite ne calcule jamais rien pour un utilisateur particulier."
+ },
+ {
+  "type": "vf",
+  "enonce": "Si un million de personnes utilisent le GPS en même temps, le système est ralenti.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le satellite diffuse, sans savoir qui écoute. Le nombre de récepteurs ne change rien."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une erreur d'un millionième de seconde sur l'horloge se traduit par une erreur de position d'environ :",
+  "choix": [
+   "30 centimètres",
+   "300 mètres",
+   "3 kilomètres",
+   "30 kilomètres"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "300 mètres environ.",
+  "expl": "La lumière parcourt 300 000 km par seconde, donc 300 m par microseconde. C'est pourquoi l'heure doit être si précise."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel mot désigne le temps que met le signal pour aller du satellite au récepteur ?",
+  "placeholder": "Trois mots",
+  "acceptees": [
+   "temps de vol"
+  ],
+  "points": 1,
+  "reponse": "Le temps de vol.",
+  "expl": "C'est la seule grandeur mesurée. Tout le reste en découle."
+ },
+ {
+  "partie": "Partie B — Décoder une trame NMEA",
+  "consigne": "La trame relevée à Tegucigalpa pendant l'activité 1 est rappelée ci-dessous.",
+  "code": "$GPGGA,141236.00,1406.2280,N,08712.7360,W,1,08,1.02,990.4,M,-8.7,M,,*55",
+  "type": "qcm",
+  "enonce": "Que vaut la latitude en degrés décimaux ?",
+  "choix": [
+   "14,06 °N",
+   "14,10 °N",
+   "1406,23 °N",
+   "14,23 °N"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "14,10 °N, soit 14,1038 °N.",
+  "expl": "1406.2280 se lit 14 degrés et 6,228 minutes. 6,228 divisé par 60 donne 0,1038."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que vaut la longitude en degrés décimaux ?",
+  "choix": [
+   "+87,21 °",
+   "-87,21 °",
+   "+8712,74 °",
+   "-8,71 °"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "-87,21 °, soit -87,21227 °.",
+  "expl": "087 degrés et 12,736 minutes, et la lettre W impose le signe négatif. Sans ce signe, le point tombe en Inde."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une latitude lue « 1406,2280 degrés » est impossible. Pourquoi ?",
+  "choix": [
+   "Parce qu'une latitude ne dépasse jamais 90 degrés",
+   "Parce qu'une latitude est toujours entière",
+   "Parce que la lettre N est absente",
+   "Parce que le format NMEA est décimal"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Parce qu'une latitude ne dépasse jamais 90 degrés.",
+  "expl": "C'est l'erreur la plus fréquente de l'activité : oublier que le format est ddmm.mmmm."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La trame indique 141236.00 en heure UTC. Quelle heure est-il au Honduras, à UTC moins 6 ?",
+  "choix": [
+   "20 h 12",
+   "14 h 12",
+   "08 h 12",
+   "06 h 12"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "08 h 12, précisément 8 h 12 min 36 s.",
+  "expl": "14 h 12 min 36 s UTC moins six heures."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans cette trame, combien de satellites étaient utilisés pour le calcul ?",
+  "choix": [
+   "1",
+   "8",
+   "14",
+   "990"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "8 satellites.",
+  "expl": "Le champ 08 vient juste après l'indicateur de qualité du point."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que vaut l'altitude relevée dans cette trame ?",
+  "choix": [
+   "1,02 m",
+   "8 m",
+   "990,4 m",
+   "-8,7 m"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "990,4 mètres.",
+  "expl": "La lettre M qui suit précise que l'unité est le mètre. C'est bien l'altitude de Tegucigalpa."
+ },
+ {
+  "type": "qcm",
+  "enonce": "À quoi servent les deux caractères qui suivent l'astérisque, ici 55 ?",
+  "choix": [
+   "À numéroter la trame",
+   "À vérifier que la trame n'a pas été abîmée pendant la transmission",
+   "À indiquer le fuseau horaire",
+   "À donner la précision du point"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "À vérifier que la trame n'a pas été abîmée pendant la transmission.",
+  "expl": "C'est une somme de contrôle. Si elle ne correspond pas, la trame est rejetée."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque champ de la trame son contenu.",
+  "paires": [
+   {
+    "terme": "141236.00",
+    "definition": "L'heure UTC"
+   },
+   {
+    "terme": "1406.2280,N",
+    "definition": "La latitude et son hémisphère"
+   },
+   {
+    "terme": "990.4,M",
+    "definition": "L'altitude en mètres"
+   }
+  ],
+  "points": 3,
+  "reponse": "Heure UTC, latitude et hémisphère, altitude en mètres.",
+  "expl": "Une trame NMEA est un simple texte séparé par des virgules, comme un CSV d'une seule ligne."
+ },
+ {
+  "type": "vf",
+  "enonce": "Une trame NMEA contient le nom ou l'identifiant du propriétaire du récepteur.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Elle ne contient que la position, l'heure et des indicateurs de qualité."
+ },
+ {
+  "partie": "Partie C — Cartes et plus court chemin",
+  "type": "qcm",
+  "enonce": "Sur OpenStreetMap, les données de la carte :",
+  "choix": [
+   "Appartiennent à une entreprise privée",
+   "Sont produites par des contributeurs et librement réutilisables",
+   "Sont fournies par les satellites",
+   "Ne peuvent pas être corrigées"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Sont produites par des contributeurs et librement réutilisables.",
+  "expl": "Chacun peut ajouter et corriger, et les données sont librement réutilisables."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment un projet de carte collaborative se protège-t-il des erreurs et du vandalisme ?",
+  "choix": [
+   "En interdisant les nouvelles contributions",
+   "Par l'historique complet, l'annulation possible et la relecture par la communauté",
+   "En vérifiant chaque contribution par satellite",
+   "Il ne s'en protège pas"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Par l'historique complet, l'annulation possible et la relecture par la communauté.",
+  "expl": "Chaque contribution est publique et signée, immédiatement."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une carte numérique est organisée en couches. À quoi cela sert-il ?",
+  "choix": [
+   "À réduire le poids du fichier",
+   "À afficher ou masquer séparément les routes, le relief, les commerces",
+   "À protéger les données",
+   "À accélérer le GPS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "À afficher ou masquer séparément les routes, le relief, les commerces.",
+  "expl": "Chaque couche est un jeu de données distinct, superposé aux autres."
+ },
+ {
+  "consigne": "Le graphe de l'activité 3, en minutes : A-B 4, A-C 2, B-C 1, B-D 5, C-D 8, C-E 10, D-E 2, D-F 6, E-F 3. A est le lycée, F l'aéroport.",
+  "type": "qcm",
+  "enonce": "Quel est le trajet le plus rapide de A à F ?",
+  "choix": [
+   "A-B-D-F, 15 minutes",
+   "A-C-B-D-E-F, 13 minutes",
+   "A-C-D-F, 16 minutes",
+   "A-C-E-F, 15 minutes"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "A-C-B-D-E-F, 13 minutes.",
+  "expl": "2 plus 1 plus 5 plus 2 plus 3 égale 13. Plus rapide que A-B-D-F, pourtant plus court en nombre d'étapes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel est le trajet qui passe par le moins de lieux, et combien de temps prend-il ?",
+  "choix": [
+   "A-B-D-F, 15 minutes",
+   "A-C-B-D-E-F, 13 minutes",
+   "A-C-D-F, 16 minutes",
+   "A-B-C-D-F, 14 minutes"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "A-B-D-F, 15 minutes.",
+  "expl": "Trois arêtes seulement, mais deux minutes de plus que le trajet en cinq étapes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le chemin le plus rapide passe donc :",
+  "choix": [
+   "Toujours par le moins d'étapes possible",
+   "Pas forcément par le moins d'étapes",
+   "Toujours par le plus d'étapes possible"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Pas forcément par le moins d'étapes.",
+  "expl": "Ce qui compte est la somme des poids, pas le nombre d'arêtes."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on le nombre écrit sur une arête, ici une durée de trajet ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "poids",
+   "le poids"
+  ],
+  "points": 1,
+  "reponse": "Le poids de l'arête.",
+  "expl": "Un graphe dont les arêtes portent un poids est dit pondéré."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment représente-t-on un sens unique dans le graphe ?",
+  "choix": [
+   "En augmentant le poids de l'arête",
+   "En orientant l'arête, qui ne se parcourt plus que dans un sens",
+   "En supprimant l'arête",
+   "En ajoutant un sommet"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "En orientant l'arête, qui ne se parcourt plus que dans un sens.",
+  "expl": "Le graphe devient orienté. La structure change, pas seulement les valeurs."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment représente-t-on un embouteillage sur une portion de trajet ?",
+  "choix": [
+   "En supprimant l'arête",
+   "En changeant le poids de l'arête, sans toucher au graphe",
+   "En orientant l'arête",
+   "En ajoutant un sommet"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "En changeant le poids de l'arête, sans toucher au graphe.",
+  "expl": "C'est exactement ce que font les calculateurs d'itinéraire en temps réel."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un historique de déplacements sans aucun nom :",
+  "choix": [
+   "Ne permet jamais d'identifier quelqu'un",
+   "Peut suffire à désigner une personne, par ses lieux de vie et d'activité",
+   "N'est pas une donnée personnelle"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Peut suffire à désigner une personne, par ses lieux de vie et d'activité.",
+  "expl": "Où l'on dort, où l'on travaille, qui l'on fréquente : l'historique désigne sans porter de nom."
+ },
+ {
+  "type": "vf",
+  "enonce": "Une application qui affiche une carte doit forcément envoyer la position de l'utilisateur à un serveur.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Le calcul de position est local. C'est l'affichage de la carte et le calcul d'itinéraire qui demandent le réseau."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Parmi ces situations, laquelle dégrade le plus la précision d'un point GPS ?",
+  "choix": [
+   "Un ciel dégagé en rase campagne",
+   "Une rue étroite entre deux immeubles hauts",
+   "Une journée froide",
+   "Un récepteur récent"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une rue étroite entre deux immeubles hauts.",
+  "expl": "Moins de satellites visibles, et des signaux qui arrivent après avoir rebondi sur les façades."
+ },
+ {
+  "partie": "Partie D — Rappels des séquences précédentes",
+  "type": "qcm",
+  "enonce": "Une trame NMEA ressemble beaucoup à un format vu en séquence 3. Lequel ?",
+  "choix": [
+   "Le HTML",
+   "Le CSV",
+   "Le CSS",
+   "Le JPEG"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le CSV.",
+  "expl": "Des valeurs séparées par un caractère, dans un ordre convenu à l'avance."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On veut afficher une carte dans une page web. Quelle balise HTML permet d'y insérer une page externe ?",
+  "choix": [
+   "<code>&lt;iframe&gt;</code>",
+   "<code>&lt;map&gt;</code>",
+   "<code>&lt;carte&gt;</code>",
+   "<code>&lt;link&gt;</code>"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "La balise &lt;iframe&gt;.",
+  "expl": "Elle ouvre une fenêtre sur une autre page à l'intérieur de la sienne. Le navigateur fait alors une requête de plus."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Lis cette règle CSS. Quel effet a-t-elle sur la carte insérée ?",
+  "code": "iframe {\n    width: 100%;\n    height: 400px;\n    border: 0;\n}",
+  "choix": [
+   "Elle rend la carte cliquable",
+   "Elle occupe toute la largeur disponible sur 400 pixels de haut, sans encadrement",
+   "Elle réduit la carte à 400 pixels de large",
+   "Elle empêche la carte de se charger"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle occupe toute la largeur disponible sur 400 pixels de haut, sans encadrement.",
+  "expl": "100 % se rapporte à la largeur de l'élément parent, alors que 400px est une valeur fixe."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le graphe des relations d'un réseau social et le graphe des trajets d'une ville se distinguent surtout par :",
+  "choix": [
+   "Le nombre de sommets",
+   "Le fait que les arêtes du second portent un poids",
+   "La couleur des arêtes",
+   "Rien, ce sont les mêmes objets"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le fait que les arêtes du second portent un poids.",
+  "expl": "En séquence 2 on comptait les arêtes, ici on additionne des durées."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le fond de carte affiché dans le navigateur arrive :",
+  "choix": [
+   "Du satellite GPS directement",
+   "D'un serveur, en réponse à des requêtes du navigateur",
+   "Du récepteur du téléphone",
+   "Du fichier CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "D'un serveur, en réponse à des requêtes du navigateur.",
+  "expl": "La carte est découpée en tuiles, et chaque tuile est une requête."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le calcul de la position et l'affichage de la carte sont deux opérations distinctes.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "Le récepteur calcule un couple de coordonnées. La carte, elle, vient du réseau."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel mot désigne une donnée qui décrit un fichier, comme la date d'un relevé ou sa licence ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "metadonnee",
+   "métadonnée",
+   "metadonnees",
+   "métadonnées"
+  ],
+  "points": 1,
+  "reponse": "Une métadonnée.",
+  "expl": "Vu en séquence 3, et repris en séquence 6 avec les données EXIF."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un calculateur d'itinéraire annonce un trajet plus long en distance mais plus court en durée. Comment l'expliquer ?",
+  "choix": [
+   "Il s'est trompé",
+   "Les poids du graphe sont des durées, pas des longueurs",
+   "La carte est mal à jour",
+   "Le GPS a perdu le signal"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Les poids du graphe sont des durées, pas des longueurs.",
+  "expl": "Changer ce que mesure le poids change le chemin optimal, sans toucher au graphe."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que retient-on de cette séquence en une phrase ?",
+  "choix": [
+   "Le GPS suit chaque récepteur en permanence",
+   "Le récepteur écoute, il n'émet pas, et sa position vient du décalage entre les signaux de plusieurs satellites",
+   "Une position ne se calcule qu'avec trois satellites",
+   "La carte et la position sont la même chose"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le récepteur écoute, il n'émet pas, et sa position vient du décalage entre les signaux de plusieurs satellites.",
+  "expl": "C'est le « à retenir » de la séquence, identique sur le site, dans la fiche et dans le diaporama."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    if (q.partie) {
+      const p = document.createElement("div");
+      p.className = "partie";
+      p.textContent = q.partie;
+      zone.appendChild(p);
+    }
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+    if (q.code) h += '<pre>' + q.code + '</pre>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">- choisir -</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">-</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma reponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur.";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation SNT " + META.sequence + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seances,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>

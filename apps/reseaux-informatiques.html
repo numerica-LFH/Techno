@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 8. Découvrir les réseaux informatiques - Technologie LFH</title>
+<meta name="description" content="Technologie 5e, thème 2 du programme. Quatre séances de 55 minutes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "5e",
+  "titre": "Chapitre 8. Découvrir les réseaux informatiques",
+  "sousTitre": "Technologie 5e, thème 2 du programme. Quatre séances de 55 minutes.",
+  "question": "Les ordinateurs travaillent-ils seuls ?",
+  "retour": "../technologie/5e/",
+  "competences": "Thème 2, structure et fonctionnement, et thème 1 pour les usages. Compétences T2.1 et T1.2. CRCN domaine 5, environnement numérique.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Pourquoi les machines travaillent en réseau."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Les composants d'un réseau local et le rôle des serveurs."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "Le trajet d'une trame entre deux machines."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Choisir entre WiFi et Bluetooth selon la situation."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Je recherche",
+      "html": "\n<p>Trois gestes ordinaires. Dans chacun, mon appareil fait-il tout seul ?</p>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>J'imprime</b>L'imprimante est un autre appareil, parfois à l'autre bout du bâtiment.</div>\n<div class=\"app-vignette\"><b>J'envoie un message</b>Il traverse plusieurs machines avant d'arriver, peut-être à l'autre bout du monde.</div>\n<div class=\"app-vignette\"><b>Je prends une photo</b>Je la retrouve sur la tablette de la maison sans l'avoir déplacée à la main.</div>\n</div>\n<div class=\"app-encadre\">\n<p><b>Réponse.</b> Presque plus jamais. Un ordinateur isolé est devenu l'exception. Reste à\ncomprendre comment les machines se parlent.</p>\n</div>\n"
+    },
+    {
+      "titre": "Les composants d'un réseau local",
+      "html": "\n<p>Un <b>réseau local</b> relie les machines d'un même lieu : une salle, un étage, le lycée.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Composant</th><th>Rôle</th></tr>\n<tr><td>Poste de travail</td><td>La machine de l'utilisateur</td></tr>\n<tr><td>Carte réseau</td><td>Elle donne à la machine son adresse et la relie au câble ou aux ondes</td></tr>\n<tr><td>Câble ou point d'accès WiFi</td><td>Le support par lequel circulent les signaux</td></tr>\n<tr><td>Commutateur (switch)</td><td>Il aiguille les messages vers la bonne machine du réseau local</td></tr>\n<tr><td>Routeur</td><td>Il fait sortir les messages du réseau local vers Internet</td></tr>\n<tr><td>Serveur</td><td>Il rend un service aux autres machines : fichiers, impression, identification</td></tr>\n</table>\n</div>\n<h3>Les serveurs du lycée</h3>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Serveur de fichiers</b>Il conserve les documents de classe et les rend accessibles depuis n'importe quel poste.</div>\n<div class=\"app-vignette\"><b>Serveur d'identification</b>Il vérifie l'identifiant et le mot de passe à l'ouverture de session.</div>\n<div class=\"app-vignette\"><b>Serveur d'impression</b>Il met les travaux en file d'attente et les envoie à l'imprimante.</div>\n</div>\n"
+    },
+    {
+      "titre": "Du signal à la trame",
+      "html": "\n<p>Dans un câble, l'information voyage sous forme de <b>signal électrique</b> : une suite de\nvariations de tension que la carte réseau relit comme des 0 et des 1. Dans le WiFi, le même travail\nse fait avec des ondes radio.</p>\n<p>Les bits ne partent pas en vrac. Ils sont regroupés en <b>trames</b>, des paquets construits\ntoujours de la même façon.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Partie de la trame</th><th>Ce qu'elle contient</th><th>À quoi elle sert</th></tr>\n<tr><td>En-tête</td><td>Adresse de départ, adresse d'arrivée</td><td>Savoir d'où vient le message et où il va</td></tr>\n<tr><td>Données</td><td>Le contenu utile</td><td>Le message lui-même</td></tr>\n<tr><td>Contrôle</td><td>Un code calculé sur les données</td><td>Vérifier que rien n'a été abîmé en route</td></tr>\n</table>\n</div>\n<p>Chaque machine possède une <b>adresse</b> unique sur le réseau. Le commutateur lit l'adresse\nd'arrivée et n'envoie la trame que sur le bon port, au lieu d'inonder tout le réseau.</p>\n<div class=\"app-encadre\">\n<p><b>Deux grandeurs à connaître.</b> Le <b>débit</b> mesure la quantité de données transmises par\nseconde. La <b>latence</b> mesure le temps d'aller-retour d'un message. Un débit élevé n'empêche pas\nune latence élevée, et c'est la latence qui gêne dans un appel vidéo.</p>\n</div>\n"
+    },
+    {
+      "titre": "WiFi et Bluetooth",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th></th><th>WiFi</th><th>Bluetooth</th></tr>\n<tr><td>Portée courante</td><td>Quelques dizaines de mètres</td><td>Quelques mètres</td></tr>\n<tr><td>Débit</td><td>Élevé</td><td>Faible</td></tr>\n<tr><td>Consommation</td><td>Importante</td><td>Faible</td></tr>\n<tr><td>Usage typique</td><td>Relier un appareil au réseau et à Internet</td><td>Relier deux appareils entre eux</td></tr>\n<tr><td>Exemple</td><td>Une tablette qui charge une page</td><td>Un casque relié au téléphone</td></tr>\n</table>\n</div>\n<p>Le choix se fait par la question : est-ce que je veux <b>rejoindre un réseau</b> ou\n<b>relier deux appareils</b> ? La première situation appelle le WiFi, la seconde le Bluetooth.</p>\n<div class=\"app-encadre\">\n<p><b>Sécurité.</b> Un réseau sans fil ouvert laisse passer tout le monde. Le mot de passe du WiFi\nsert à chiffrer les échanges, pas seulement à limiter l'accès.</p>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "Le composant qui aiguille les messages à l'intérieur du réseau local est :",
+          "choix": [
+            "Le routeur",
+            "Le commutateur",
+            "Le serveur de fichiers"
+          ],
+          "bonne": 1,
+          "explication": "Le routeur fait sortir du réseau local, le commutateur travaille à l'intérieur."
+        },
+        {
+          "enonce": "Une trame contient toujours :",
+          "choix": [
+            "Un en-tête, des données et un contrôle",
+            "Uniquement des données",
+            "Un mot de passe"
+          ],
+          "bonne": 0,
+          "explication": "L'en-tête porte les adresses, le contrôle permet de vérifier l'intégrité."
+        },
+        {
+          "enonce": "La latence mesure :",
+          "choix": [
+            "La quantité de données par seconde",
+            "Le temps d'aller-retour d'un message",
+            "La longueur du câble"
+          ],
+          "bonne": 1,
+          "explication": "Le débit mesure la quantité par seconde. La latence mesure un délai."
+        },
+        {
+          "enonce": "Pour relier un casque audio à un téléphone, on utilise plutôt :",
+          "choix": [
+            "Le WiFi",
+            "Le Bluetooth",
+            "Un câble réseau"
+          ],
+          "bonne": 1,
+          "explication": "Deux appareils proches, faible débit, faible consommation : c'est le domaine du Bluetooth."
+        },
+        {
+          "enonce": "À l'ouverture de session au lycée, la vérification du mot de passe est faite par :",
+          "choix": [
+            "Le poste de travail seul",
+            "Un serveur d'identification",
+            "L'imprimante"
+          ],
+          "bonne": 1,
+          "explication": "C'est ce qui permet de retrouver son compte depuis n'importe quel poste."
+        },
+        {
+          "enonce": "Le mot de passe du WiFi sert à :",
+          "choix": [
+            "Accélérer la connexion",
+            "Limiter l'accès et chiffrer les échanges",
+            "Attribuer les adresses"
+          ],
+          "bonne": 1,
+          "explication": "Sans chiffrement, les échanges sans fil sont lisibles par toute machine à portée."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Réseau local</b></td><td>Ensemble de machines reliées dans un même lieu</td></tr>\n<tr><td><b>Adresse</b></td><td>Identifiant unique d'une machine sur le réseau</td></tr>\n<tr><td><b>Trame</b></td><td>Paquet contenant en-tête, données et contrôle</td></tr>\n<tr><td><b>Commutateur</b></td><td>Aiguille les trames vers la bonne machine du réseau local</td></tr>\n<tr><td><b>Routeur</b></td><td>Relie le réseau local au reste d'Internet</td></tr>\n<tr><td><b>Serveur</b></td><td>Machine qui rend un service aux autres</td></tr>\n<tr><td><b>Débit et latence</b></td><td>Quantité par seconde, et délai d'aller-retour</td></tr>\n</table>\n</div>\n<p>La réponse à la question du chapitre : non, les ordinateurs ne travaillent presque jamais seuls.\nCe qu'ils échangent est découpé, adressé, vérifié, et transite par des équipements dont chacun a un\nrôle précis.</p>\n<h3>La question de la prochaine séquence</h3>\n<p>Je sais maintenant mesurer un espace et le décrire. Comment le dessiner à l'échelle, puis en\nvolume ?</p>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

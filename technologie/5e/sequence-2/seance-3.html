@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>5e &mdash; Bilan et évaluation &mdash; séance 3</title>
+<style>
+:root{
+  --nuit:#383e94; --nuit-fonce:#2c3178; --bleu:#3b45b0; --bleu-clair:#eef0fb;
+  --lavande:#e8eafc; --trait:#c9cef0; --gris:#6b7280; --gris-clair:#f6f7fd;
+  --encre:#1f2430; --reponse:#1d4ed8;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  font-family:"Source Sans 3","Open Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:10.4pt; line-height:1.42; color:var(--encre); margin:0;
+  background:#e9eaf1;
+}
+.page{
+  width:210mm; min-height:297mm; margin:8mm auto; padding:12mm 12mm 20mm 12mm;
+  background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.18); position:relative;
+}
+@page{size:A4; margin:12mm 12mm 20mm 12mm}
+@media print{
+  body{background:#fff}
+  .page{width:auto;min-height:0;margin:0;padding:0;box-shadow:none}
+  .page + .page{page-break-before:always}
+  .noprint{display:none}
+}
+.acte{page-break-inside:avoid;break-inside:avoid;page-break-after:avoid;break-after:avoid}
+.section{page-break-after:avoid;break-after:avoid}
+h3{page-break-after:avoid;break-after:avoid}
+tr{page-break-inside:avoid;break-inside:avoid}
+.retenir,.prof,.cadre,.q{page-break-inside:avoid;break-inside:avoid}
+
+/* ---------- bandeau ---------- */
+.bandeau{
+  display:flex; align-items:center; background:var(--nuit);
+  color:#fff; border-radius:7px; padding:9px 14px; margin-bottom:9px;
+}
+.logo{
+  width:40px;height:40px;flex:0 0 40px;background:#fff;border-radius:5px;margin-right:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:11pt;color:var(--nuit);letter-spacing:.5px;
+  overflow:hidden;
+}
+.logo img{width:100%;height:100%;object-fit:contain}
+.bandeau .titres{flex:1 1 auto}
+.bandeau h1{margin:0;font-size:15pt;font-weight:600;line-height:1.15}
+.bandeau .st{margin:1px 0 0;font-size:8.6pt;color:#c7cbf0}
+.badge-seance{
+  display:inline-block;background:#c9cdf3;color:var(--nuit-fonce);
+  font-size:8pt;font-weight:700;letter-spacing:.6px;
+  padding:2px 7px;border-radius:3px;margin-left:8px;vertical-align:2px;
+}
+.bandeau .droite{margin-left:12px;text-align:right;font-size:8.4pt;color:#c7cbf0;line-height:1.35;flex:0 0 auto}
+
+/* ---------- identite ---------- */
+.identite{display:flex;margin-bottom:11px}
+.identite div{
+  flex:1;margin-right:7px;border:1px solid #d3d6e4;border-radius:5px;
+  padding:6px 8px;font-size:9pt;color:var(--gris);height:26px;
+}
+
+/* ---------- sections ---------- */
+.section{
+  background:var(--bleu-clair);border-left:4px solid var(--bleu);
+  padding:5px 11px;margin:13px 0 8px;border-radius:0 4px 4px 0;
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.section h2{margin:0;font-size:11.2pt;color:var(--bleu);font-weight:700}
+.section .tag{font-size:8.4pt;color:#8b93c9}
+h3{margin:11px 0 4px;font-size:10.4pt;color:var(--bleu);font-weight:700}
+p{margin:5px 0}
+.mini{font-size:8.8pt;color:var(--gris);margin:3px 0}
+
+.cadre{
+  border:1px dashed #9aa2e0;border-radius:5px;padding:7px 10px;margin:5px 0;
+  font-style:italic;background:#fbfbff;
+}
+.cadre b{font-style:italic}
+
+/* ---------- tableaux ---------- */
+table{width:100%;border-collapse:collapse;margin:5px 0;font-size:9.6pt}
+th{
+  background:var(--lavande);color:var(--bleu);text-align:left;font-weight:700;
+  border:1px solid var(--trait);padding:5px 8px;
+}
+td{border:1px solid var(--trait);padding:5px 8px;vertical-align:top}
+td.vide{height:22px}
+.c{text-align:center}
+.identite div:last-child{margin-right:0}
+tr.h td{height:26px}
+
+/* ---------- activites ---------- */
+.acte{display:flex;align-items:center;margin:12px 0 4px}
+.pill{
+  background:var(--nuit);color:#fff;font-size:8.4pt;font-weight:700;margin-right:9px;
+  padding:2px 9px;border-radius:3px;white-space:nowrap;
+}
+.acte h4{margin:0;font-size:10.6pt;color:var(--bleu);font-weight:700}
+ol,ul{margin:5px 0 5px 18px;padding:0}
+li{margin:2px 0}
+code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:#f2f3fa;padding:0 3px;border-radius:3px}
+
+/* ---------- reponses ---------- */
+.line{
+  display:inline-block;min-width:38mm;border-bottom:1px dotted #8b93c9;
+  line-height:1.35;vertical-align:baseline;
+}
+.line.l{min-width:62mm}
+.line.xl{min-width:100%}
+.ecrire{border-bottom:1px solid #d3d6e4;height:19px;margin:7px 0}
+.ans{visibility:hidden}
+.corrige .ans{visibility:visible;color:var(--reponse);font-weight:600}
+.corrige .prof{display:block}
+.prof{
+  display:none;border:1px solid #b9c0e8;border-left:4px solid var(--bleu);
+  background:#f4f6ff;border-radius:0 5px 5px 0;padding:7px 10px;margin:8px 0;
+  font-size:9.2pt;
+}
+.prof b{color:var(--bleu)}
+
+/* ---------- a retenir ---------- */
+.retenir{
+  border:1.4px solid var(--bleu);border-radius:8px;background:#fafbff;
+  padding:9px 12px;margin:8px 0;
+}
+.retenir h3{margin:0 0 4px}
+.trace{
+  border:1.2px solid var(--trait);border-radius:6px;background:#fff;
+  padding:8px 11px 4px;margin:6px 0;page-break-inside:avoid;break-inside:avoid;
+}
+.trace .mots{
+  font-size:8.8pt;color:var(--bleu);font-weight:600;margin:0 0 5px;
+  border-bottom:1px solid var(--lavande);padding-bottom:4px;
+}
+.trace .ecrire{border-bottom:1px solid #c8ccdf;height:21px;margin:9px 0}
+.retenir .cle{font-weight:700;margin:0 0 5px}
+
+/* ---------- pied ---------- */
+.pied{
+  border-top:1px solid var(--trait);margin-top:14px;padding-top:6px;
+  font-size:8.2pt;color:var(--gris);text-align:center;
+}
+.pied b{color:var(--bleu)}
+
+/* ---------- evaluation autocorrective ---------- */
+.eval{max-width:190mm;margin:0 auto}
+.barre{
+  position:sticky;top:0;z-index:5;display:flex;align-items:center;
+  background:var(--nuit);color:#fff;padding:8px 12px;border-radius:6px;margin-bottom:10px;
+}
+.barre label{margin-right:10px}
+.barre #go{margin-right:10px}
+.barre input{
+  border:0;border-radius:4px;padding:5px 8px;font-size:10pt;min-width:140px;
+  font-family:inherit;
+}
+.chrono{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:700;font-size:12pt}
+.chrono.rouge{color:#ffd0d0}
+.q{border:1px solid var(--trait);border-radius:6px;padding:9px 12px;margin:8px 0;background:#fff}
+.q .num{font-weight:700;color:var(--bleu)}
+.q .enonce{font-weight:600;margin:2px 0 6px}
+.opt{display:block;margin:3px 0;cursor:pointer;padding:3px 5px;border-radius:4px}
+.opt:hover{background:var(--gris-clair)}
+.opt input{margin-right:7px}
+.q.juste{border-color:#3f9d5a;background:#f4fbf6}
+.q.faux{border-color:#c2453f;background:#fdf5f5}
+.verdict{margin-top:6px;font-size:9.4pt;border-top:1px dashed var(--trait);padding-top:5px}
+.verdict b{color:var(--bleu)}
+.btn{
+  background:var(--bleu);color:#fff;border:0;border-radius:5px;padding:8px 16px;
+  font-size:10.4pt;font-weight:600;cursor:pointer;font-family:inherit;
+}
+.btn.sec{background:#8b93c9}
+.actions{display:flex;margin:14px 0}
+.actions .btn{margin-right:9px}
+.score{
+  display:none;border:1.6px solid var(--bleu);border-radius:8px;background:#fafbff;
+  padding:12px 14px;margin:12px 0;
+}
+.score.on{display:block}
+.score .note{font-size:20pt;font-weight:800;color:var(--bleu)}
+.report{
+  border:1px dashed #9aa2e0;border-radius:5px;padding:8px 10px;margin-top:9px;
+  font-size:9.4pt;background:#fbfbff;
+}
+@media print{
+  .barre,.actions,.noprint{display:none}
+  body{background:#fff}
+  .eval{max-width:none}
+}
+@media (max-width:820px){
+  .page{width:auto;margin:0;padding:6mm;box-shadow:none}
+  body{font-size:11pt}
+}
+</style></head><body class=''>
+<div class='page'>
+<div class="bandeau">
+  <div class="logo"><img src="../../../assets/logo-lfh.png" alt="" onerror="this.replaceWith(document.createTextNode('LFH'))"></div>
+  <div class="titres">
+    <h1>Séquence 2 &mdash; Les systèmes d'information <span class="badge-seance">SÉANCE 3 / 3</span></h1>
+    <div class="st">Technologie &middot; 5e &middot; Bilan de séquence et évaluation</div>
+  </div>
+  <div class="droite">Thème&nbsp;1 : objets et systèmes techniques<br>Fiche 4 sur 4</div>
+</div>
+<div class="identite"><div>Nom :</div><div>Prénom :</div>
+<div>Classe :</div><div>Date :</div></div>
+<div class="section"><h2>AVANT &mdash; j'entre dans la question</h2>
+<span class="tag">remobilisation</span></div>
+<h3>Ce qu'on cherche</h3>
+<div class="cadre">Trois séances : ce qu'est un système d'information, comment il range ses données, comment il les protège.<br><b>Qu'est-ce que je sais vraiment faire, maintenant ?</b></div>
+<table><tr><th style="width:58%">Ce que je crois savoir</th><th style="width:42%">Vérifié en fin de séquence (&#10004; / &#10008;)</th></tr><tr class="h"><td>1.</td><td></td></tr><tr class="h"><td>2.</td><td></td></tr><tr class="h"><td>3.</td><td></td></tr></table>
+<h3>Vocabulaire à repérer</h3>
+<table><tr><th style="width:26%">Mot</th><th style="width:74%">Ce que j'en comprends, avec mes mots</th></tr><tr class="h"><td>système d'information</td><td><span class="line xl"><span class="ans">collecter, stocker, traiter, diffuser des informations</span></span></td></tr><tr class="h"><td>octet</td><td><span class="line xl"><span class="ans">unité de base de la mémoire numérique</span></span></td></tr><tr class="h"><td>arborescence</td><td><span class="line xl"><span class="ans">rangement en dossiers et sous-dossiers</span></span></td></tr><tr class="h"><td>cybersécurité</td><td><span class="line xl"><span class="ans">protection du système, côté matériel et côté logiciel</span></span></td></tr></table>
+<div class="section"><h2>PENDANT &mdash; j'investigue</h2>
+<span class="tag">activités</span></div>
+<div class="acte"><span class="pill">Activité 1</span><h4>Le vocabulaire, de mémoire (12 min)</h4></div>
+<p>J'écris d'abord de mémoire, stylo noir. Puis, à la correction, je complète ou je corrige en couleur. Je ne raye rien : je veux voir ce qui manquait.</p><table><tr><th style="width:24%">Mot</th><th style="width:44%">Ma définition, de mémoire</th><th style="width:32%">Correction en couleur</th></tr><tr class="h"><td>donnée personnelle</td><td></td><td></td></tr><tr class="h"><td>extension</td><td></td><td></td></tr><tr class="h"><td>certificat SSL</td><td></td><td></td></tr><tr class="h"><td>RGPD</td><td></td><td></td></tr><tr class="h"><td>droits d'accès</td><td></td><td></td></tr></table>
+<div class="prof"><b>Déroulé.</b> 6 min d'écriture silencieuse, 6 min de correction commentée. Insister sur la couleur : la trace de l'écart est l'objet même de l'exercice.</div>
+<div class="acte"><span class="pill">Activité 2</span><h4>Deux questions de remobilisation (8 min)</h4></div>
+<p><b>a.</b> J'ai 128 Go sur mon téléphone et des vidéos de 500 Mo. Combien puis-je en stocker, à peu près ?</p><div class="ecrire"></div><div class="ecrire"></div><p>Réponse : <span class="line"><span class="ans">128 000 Mo ÷ 500 Mo = 256 vidéos environ</span></span></p><p><b>b.</b> Un camarade me propose de me prêter son identifiant de l'ENT pour voir ses notes. Deux raisons de refuser.</p><div class="ecrire"></div><div class="ecrire"></div>
+<div class="prof"><b>b.</b> attendu : l'identifiant est une donnée personnelle, il est associé à des droits d'accès ; les actions faites avec ce compte lui seront attribuées.</div>
+<div class="acte"><span class="pill">Activité 3</span><h4>Évaluation en ligne (20 min)</h4></div>
+<p>J'ouvre la page <code>evaluation-sequence.html</code> depuis la page de la séquence sur le site de la classe. Je saisis mon nom, je clique sur <b>Démarrer</b>, je réponds aux dix questions, puis je remets ma copie. La correction s'affiche immédiatement, avec le pourquoi de chaque réponse.</p><p>Je recopie ici mon résultat :</p><table><tr><th style="width:22%">Note obtenue</th><th style="width:22%">Bonnes réponses</th><th style="width:56%">La question qui m'a le plus surpris</th></tr><tr class="h"><td>&nbsp; / 20</td><td>&nbsp; / 10</td><td></td></tr></table>
+<div class="prof"><b>Déroulé.</b> 20 min chronométrées par la page elle-même. Correction commentée collective de 8 min après la remise, en reprenant les deux questions les plus ratées. La page ne dépend d'aucun service en ligne : aucun compte, aucune donnée transmise.</div>
+<div class="section"><h2>APRÈS &mdash; je fixe ce que j'ai appris</h2>
+<span class="tag">institutionnalisation</span></div>
+<div class="retenir"><h3>À retenir</h3>
+<p class="cle">Un système d'information collecte, stocke, traite et diffuse des informations. Bien rangé, il est utile ; mal protégé, il devient dangereux pour les personnes.</p>
+<ul>
+<li>Ce que je retiens en premier de cette séquence : <span class="line xl"><span class="ans"></span></span></li>
+<li>Ce que je dois encore travailler : <span class="line xl"><span class="ans"></span></span></li>
+</ul></div>
+<h3>Ma trace écrite</h3>
+<p class="mini">J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots ci-dessous.</p>
+<div class="trace"><div class="mots">Mots à réemployer : système d'information, octet, arborescence, cybersécurité</div><div class="ecrire"></div><div class="ecrire"></div><div class="ecrire"></div><div class="ecrire"></div><div class="ecrire"></div></div>
+<div class="prof"><b>Trace attendue.</b> Un système d'information collecte, stocke, traite et diffuse des informations. Bien rangé, il fait gagner du temps ; mal protégé, il met en danger les personnes dont il contient les données. <i>Toute formulation personnelle qui contient l'idée et deux mots du vocabulaire est acceptée : c'est la reformulation qui est évaluée, pas la restitution.</i></div>
+<h3>Je reviens sur mes hypothèses</h3>
+<p class="mini">Je retourne en haut de la fiche et je coche &#10004; ou &#10008;. Ce qui m'a le plus surpris :</p>
+<div class="ecrire"></div><div class="ecrire"></div>
+<h3>Auto-évaluation <span style="font-weight:400;color:#6b7280">&mdash; sur la séquence entière</span></h3>
+<table><tr><th style="width:55%">Je suis capable de&hellip;</th><th style="width:15%">Oui</th><th style="width:15%">En partie</th><th style="width:15%">Pas encore</th></tr><tr class="h"><td>dire ce qu'est un système d'information et citer trois de ses ressources</td><td></td><td></td><td></td></tr><tr class="h"><td>distinguer une ressource matérielle d'une ressource logicielle</td><td></td><td></td><td></td></tr><tr class="h"><td>classer des fichiers par ordre de grandeur (Ko, Mo, Go, To)</td><td></td><td></td><td></td></tr><tr class="h"><td>lire un chemin dans une arborescence et retrouver un fichier</td><td></td><td></td><td></td></tr><tr class="h"><td>reconnaître un type de fichier à son extension</td><td></td><td></td><td></td></tr><tr class="h"><td>expliquer ce qu'est une donnée personnelle</td><td></td><td></td><td></td></tr><tr class="h"><td>juger si un mot de passe est solide, et dire pourquoi</td><td></td><td></td><td></td></tr></table>
+<div class="cadre"><b>Cinq évaluations autocorrectives</b> sont disponibles sur le site de la classe : une par séance (cinq questions, six minutes) et celle de la séquence entière (dix questions, vingt minutes). Elles peuvent être refaites autant de fois que voulu.</div>
+<h3>La question de la prochaine séance</h3>
+<p class="mini">Un système d'information consomme de l'électricité, du métal et de l'eau. Combien, exactement ? La question sera reprise en 3e.</p>
+<div class="pied"><b>Lycée franco-hondurien</b> &mdash; Technologie &amp; SNT &middot; numerica-lfh.github.io/Techno &middot; 5e &mdash; Séquence 2 : les systèmes d'information &mdash; Séance 3/3 &mdash; Fiche eleve</div>
+</div></body></html>

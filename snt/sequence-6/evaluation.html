@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT - Séquence 6 — La photographie numérique - Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+
+<style>
+.q pre { background:#0f172a; color:#e2e8f0; border-radius:5px; padding:11px 13px; margin:0 0 10px;
+  overflow-x:auto; font-size:.86rem; line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.q pre b { color:#fbbf24; font-weight:700; }
+.q code { background:#eef1f4; border:1px solid #d3dae1; border-radius:3px; padding:1px 4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+label.choix code { background:#fff; }
+.sommaire { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:12px 16px;
+  margin-bottom:18px; font-size:.9rem; color:#4a545e; }
+.sommaire b { color:#1d3557; }
+.partie { margin:22px 0 12px; padding:7px 12px; background:#1d3557; color:#fff; border-radius:4px;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>SNT · Séquence 6 — La photographie numérique</h1>
+  <p class="sous">40 questions, 45 points, sur les trois séances de la séquence.
+  J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
+  envoyée au professeur.</p>
+</header>
+
+<div class="sommaire">
+  <b>Ce qui est évalué.</b> Séance 0 : ce que la photo jette, du photosite au pixel, réversible ou non. Séance 1 : manipuler les pixels, négatif et seuillage. Séance 2 : appliquer un filtre de convolution, lire les métadonnées EXIF, comprendre la compression.
+</div>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="2de A" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 6 — La photographie numérique · Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "2de", "sequence": "Séquence 6 — La photographie numérique", "seances": "Séances 0, 1 et 2"};
+const questions = [
+ {
+  "partie": "Partie A — Ce que la photo jette",
+  "type": "qcm",
+  "enonce": "Quelle est la différence entre un photosite et un pixel ?",
+  "choix": [
+   "Ce sont deux mots pour la même chose",
+   "Le photosite est une case du capteur, le pixel une case de l'image enregistrée",
+   "Le photosite est plus grand que le pixel",
+   "Le pixel est sur le capteur, le photosite dans le fichier"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le photosite est une case du capteur, le pixel une case de l'image enregistrée.",
+  "expl": "Le photosite est physique, le pixel est numérique."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets ces trois dates dans l'ordre chronologique.",
+  "elements": [
+   "La première photographie de Niépce",
+   "L'invention du capteur CCD",
+   "Le premier appareil photo numérique"
+  ],
+  "points": 2,
+  "reponse": "Niépce (1826), le capteur CCD (1969), le premier appareil numérique (1975).",
+  "expl": "Le capteur précède de six ans l'appareil qui l'utilise pour enregistrer une image."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En RVB, chaque composante étant codée sur 8 bits, combien de couleurs un pixel peut-il prendre ?",
+  "choix": [
+   "256",
+   "768",
+   "16 777 216",
+   "1 024"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "16 777 216 couleurs.",
+  "expl": "256 fois 256 fois 256, soit 256 valeurs pour chacune des trois composantes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le pixel de composantes (255, 255, 0) est :",
+  "choix": [
+   "Blanc",
+   "Noir",
+   "Jaune",
+   "Bleu"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "Jaune.",
+  "expl": "Rouge au maximum, vert au maximum, bleu à zéro."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le pixel de composantes (0, 0, 0) est :",
+  "choix": [
+   "Blanc",
+   "Noir",
+   "Rouge",
+   "Transparent"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Noir.",
+  "expl": "Aucune des trois composantes n'est allumée."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une photo mesure 4 000 sur 3 000 pixels, codée sur trois octets par pixel. Quel est le poids théorique de l'image non compressée ?",
+  "choix": [
+   "12 mégaoctets environ",
+   "36 mégaoctets environ",
+   "3,6 mégaoctets environ",
+   "120 mégaoctets environ"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "36 mégaoctets environ.",
+  "expl": "4 000 fois 3 000 fois 3 octets égale 36 millions d'octets."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le fichier réel de cette photo pèse environ 3,6 mégaoctets. Qu'en conclut-on ?",
+  "choix": [
+   "L'appareil a réduit le nombre de pixels",
+   "Le fichier est compressé, et le rapport est d'environ un à dix",
+   "Le calcul théorique est faux",
+   "L'image est en noir et blanc"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le fichier est compressé, et le rapport est d'environ un à dix.",
+  "expl": "L'écart entre les deux nombres est l'amorce de toute la séquence."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on le nombre de pixels d'une image, largeur multipliée par hauteur ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "definition",
+   "définition",
+   "resolution",
+   "résolution"
+  ],
+  "points": 1,
+  "reponse": "La définition (souvent appelée résolution).",
+  "expl": "La résolution désigne à l'origine une densité de points, mais l'usage courant confond les deux."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Réversible ou non ?",
+  "paires": [
+   {
+    "terme": "Le négatif",
+    "definition": "Réversible, aucune information n'est perdue"
+   },
+   {
+    "terme": "Le seuillage",
+    "definition": "Non réversible, l'information est écrasée"
+   },
+   {
+    "terme": "La compression JPEG",
+    "definition": "Non réversible, des détails sont écartés"
+   }
+  ],
+  "points": 3,
+  "reponse": "Négatif réversible, seuillage et JPEG non réversibles.",
+  "expl": "Ce critère, posé en séance 1, sert tel quel pour la compression en séance 2."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le format PNG compresse sans perte, et pèse donc plus lourd qu'un JPEG de même image.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "Il conserve toute l'information, ce qui a un coût en octets."
+ },
+ {
+  "partie": "Partie B — Manipuler les pixels",
+  "type": "qcm",
+  "enonce": "On convertit le pixel (60, 120, 90) en niveau de gris par la moyenne des composantes. Que vaut-il ?",
+  "choix": [
+   "60",
+   "90",
+   "120",
+   "270"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "90.",
+  "expl": "60 plus 120 plus 90 égale 270, divisé par trois."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On applique un négatif à un pixel de valeur 90 en niveaux de gris. Que devient-il ?",
+  "choix": [
+   "0",
+   "90",
+   "165",
+   "255"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "165.",
+  "expl": "255 moins 90. En réappliquant le négatif, on retrouve 90."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On applique un seuillage à 128. Que devient un pixel de valeur 140 ?",
+  "choix": [
+   "0",
+   "128",
+   "140",
+   "255"
+  ],
+  "bonne": 3,
+  "points": 1,
+  "reponse": "255.",
+  "expl": "Tout ce qui dépasse le seuil devient 255, le reste devient 0."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle transformation fait perdre définitivement de l'information ?",
+  "choix": [
+   "Le négatif",
+   "Le seuillage",
+   "Ni l'un ni l'autre",
+   "Les deux également"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le seuillage.",
+  "expl": "Il écrase toutes les valeurs sur deux seulement : impossible de savoir si un pixel valait 140 ou 250."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Après un seuillage à 128, combien de valeurs différentes l'image contient-elle ?",
+  "choix": [
+   "2",
+   "128",
+   "129",
+   "256"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "2 valeurs, 0 et 255.",
+  "expl": "C'est bien pour cela que l'opération est irréversible."
+ },
+ {
+  "type": "vf",
+  "enonce": "Appliquer deux fois de suite un négatif redonne l'image de départ.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "255 moins (255 moins v) égale v."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une image de 4 sur 4 pixels en niveaux de gris contient combien de valeurs à traiter ?",
+  "choix": [
+   "4",
+   "8",
+   "16",
+   "48"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "16 valeurs.",
+  "expl": "Une seule valeur par pixel en niveaux de gris, contre trois en RVB."
+ },
+ {
+  "partie": "Partie C — Filtres, métadonnées et compression",
+  "consigne": "L'image de l'activité 2 fait 5 sur 5 pixels : trois colonnes sombres à 10, deux colonnes claires à 200, donc un bord net au milieu.",
+  "type": "qcm",
+  "enonce": "Un filtre de convolution calcule la nouvelle valeur d'un pixel :",
+  "choix": [
+   "À partir de ce seul pixel",
+   "À partir de ce pixel et de ses voisins, pondérés par un noyau",
+   "À partir de la moyenne de toute l'image",
+   "Au hasard"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "À partir de ce pixel et de ses voisins, pondérés par un noyau.",
+  "expl": "On multiplie le pixel et ses huit voisins par les coefficients du noyau, puis on additionne."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On applique le noyau de moyenne au pixel central d'une zone entièrement sombre, à 10. Que vaut le résultat ?",
+  "choix": [
+   "0",
+   "10",
+   "90",
+   "200"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "10.",
+  "expl": "La moyenne de neuf valeurs identiques vaut cette valeur : la zone uniforme ne bouge pas."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Sur la ligne du milieu, le noyau de moyenne donne successivement 10, puis 73,3, puis 136,7. Qu'est-il arrivé au bord ?",
+  "choix": [
+   "Il a disparu",
+   "Il a été remplacé par un dégradé : l'image devient floue",
+   "Il a été renforcé",
+   "Il s'est déplacé"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il a été remplacé par un dégradé : l'image devient floue.",
+  "expl": "Moyenner, c'est mélanger chaque pixel avec ses voisins."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Avec le noyau de contours (0 -1 0 / -1 4 -1 / 0 -1 0), que donne un pixel situé au milieu d'une zone parfaitement uniforme ?",
+  "choix": [
+   "Une grande valeur",
+   "Zéro",
+   "La valeur d'origine",
+   "255"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Zéro.",
+  "expl": "Quatre fois la valeur moins quatre fois la même valeur. Le compte tombe juste."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Sur la ligne du milieu, ce même noyau donne 0, puis -190, puis +190. Que représentent ces deux valeurs non nulles ?",
+  "choix": [
+   "Deux erreurs de calcul",
+   "Les deux côtés du bord entre la zone sombre et la zone claire",
+   "Le début et la fin de l'image",
+   "Deux pixels manquants"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Les deux côtés du bord entre la zone sombre et la zone claire.",
+  "expl": "200 moins 10 égale 190. Le contour n'est pas détecté : il est ce qui reste quand tout le reste s'annule."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pourquoi ne peut-on pas appliquer un noyau 3 sur 3 aux pixels du bord de l'image ?",
+  "choix": [
+   "Parce qu'ils sont toujours noirs",
+   "Parce qu'il leur manque des voisins",
+   "Parce que le calcul serait trop long",
+   "Parce que le format l'interdit"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Parce qu'il leur manque des voisins.",
+  "expl": "Le noyau déborde de l'image. On les laisse tels quels, ou on invente des voisins, ce qui se voit."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une machine qui applique un noyau de contours voit-elle une forme dans l'image ?",
+  "choix": [
+   "Oui, elle reconnaît les objets",
+   "Non, elle additionne des nombres, et le contour est ce qui ne s'annule pas",
+   "Oui, si l'image est en couleur",
+   "Non, elle recopie l'image"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Non, elle additionne des nombres, et le contour est ce qui ne s'annule pas.",
+  "expl": "C'est l'explication à faire formuler en séance 2."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La compression JPEG est dite « avec perte » parce que :",
+  "choix": [
+   "Le fichier peut être corrompu",
+   "Elle écarte définitivement des détails peu visibles à l'œil",
+   "Elle supprime les métadonnées",
+   "Elle réduit le nombre de pixels de moitié"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle écarte définitivement des détails peu visibles à l'œil.",
+  "expl": "L'information écartée ne revient jamais."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On enregistre douze fois de suite la même photo en JPEG. Que se passe-t-il ?",
+  "choix": [
+   "Rien, le fichier est identique",
+   "La qualité se dégrade un peu à chaque enregistrement",
+   "Le fichier grossit à chaque fois",
+   "L'image devient noire"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La qualité se dégrade un peu à chaque enregistrement.",
+  "expl": "Chaque passage écarte de nouveaux détails, et les défauts s'accumulent autour des contours nets."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les données EXIF d'une photo peuvent contenir :",
+  "choix": [
+   "Uniquement la taille du fichier",
+   "La date, le modèle d'appareil, les réglages et parfois les coordonnées GPS",
+   "Le nom du photographe et rien d'autre",
+   "Le texte des commentaires reçus"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La date, le modèle d'appareil, les réglages et parfois les coordonnées GPS.",
+  "expl": "Elles sont invisibles à l'écran et voyagent pourtant avec le fichier."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On publie une photo sur un service en ligne, on la retélécharge, et les coordonnées GPS ont disparu. Qu'en conclut-on ?",
+  "choix": [
+   "Le service ne les a jamais lues",
+   "Le service les a retirées du fichier public, ce qui ne dit rien de ce qu'il en a fait de son côté",
+   "La photo n'était pas géolocalisée",
+   "Le téléphone les a effacées"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le service les a retirées du fichier public, ce qui ne dit rien de ce qu'il en a fait de son côté.",
+  "expl": "Retirer une donnée de la copie diffusée n'est pas la supprimer."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel mot désigne une donnée qui décrit le fichier plutôt que son contenu, comme la date ou le modèle d'appareil ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "metadonnee",
+   "métadonnée",
+   "metadonnees",
+   "métadonnées"
+  ],
+  "points": 1,
+  "reponse": "Une métadonnée.",
+  "expl": "Le même mot qu'en séquence 3, appliqué cette fois à une image."
+ },
+ {
+  "type": "vf",
+  "enonce": "Pendant l'activité 3, chacun lit les métadonnées de la photo de son voisin.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Chacun travaille sur sa propre photo, ou sur celle fournie par le professeur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une série de photos géolocalisées prises sur un mois permet de :",
+  "choix": [
+   "Reconstituer un emploi du temps et des lieux fréquentés",
+   "Améliorer la qualité des images",
+   "Retrouver le mot de passe du compte",
+   "Rien de particulier"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Reconstituer un emploi du temps et des lieux fréquentés.",
+  "expl": "Comme l'historique de déplacements de la séquence 4 : la donnée désigne sans porter de nom."
+ },
+ {
+  "partie": "Partie D — Rappels des séquences précédentes",
+  "type": "qcm",
+  "enonce": "Quelle balise HTML insère une image dans une page ?",
+  "choix": [
+   "<code>&lt;img src=\"photo.jpg\" alt=\"Photo\"&gt;</code>",
+   "<code>&lt;image href=\"photo.jpg\"&gt;</code>",
+   "<code>&lt;picture&gt;photo.jpg&lt;/picture&gt;</code>",
+   "<code>&lt;link src=\"photo.jpg\"&gt;</code>"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "&lt;img src=\"photo.jpg\" alt=\"Photo\"&gt;.",
+  "expl": "L'attribut src donne le fichier, alt le texte affiché si l'image ne se charge pas."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Lis cette règle CSS. Que fait-elle sur les images de la page ?",
+  "code": "img {\n    max-width: 100%;\n    filter: grayscale(100%);\n}",
+  "choix": [
+   "Elle convertit définitivement les fichiers en niveaux de gris",
+   "Elle limite la largeur affichée et affiche les images en niveaux de gris, sans modifier les fichiers",
+   "Elle supprime les images",
+   "Elle applique un seuillage"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle limite la largeur affichée et affiche les images en niveaux de gris, sans modifier les fichiers.",
+  "expl": "Le CSS agit sur l'affichage. Le fichier envoyé par le serveur reste en couleur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une page contenant trente photos demande au serveur :",
+  "choix": [
+   "Une seule requête",
+   "Une requête pour la page, plus une par image",
+   "Trente requêtes en tout",
+   "Aucune, les images sont dans le HTML"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une requête pour la page, plus une par image.",
+  "expl": "C'est ce que montre l'onglet Réseau, vu en séquence 1 : une page n'est pas un fichier."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pourquoi une page avec des photos non compressées est-elle lente à charger ?",
+  "choix": [
+   "Parce que le navigateur les redessine",
+   "Parce que le réseau doit transporter dix fois plus d'octets",
+   "Parce que le CSS est plus long",
+   "Parce que le serveur les recalcule"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Parce que le réseau doit transporter dix fois plus d'octets.",
+  "expl": "Le rapport d'environ un à dix mesuré en activité 3 se paie en temps de chargement."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les données EXIF de mille photos, rassemblées dans un fichier, forment :",
+  "choix": [
+   "Une image",
+   "Une table de données, avec un descripteur par champ EXIF",
+   "Un graphe",
+   "Une page web"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une table de données, avec un descripteur par champ EXIF.",
+  "expl": "Date, appareil, latitude, longitude : les mêmes gestes qu'en séquence 3, trier, filtrer, croiser."
+ },
+ {
+  "type": "vf",
+  "enonce": "Une plateforme peut classer les photos d'un utilisateur par lieu sans lui demander où il était.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Vrai.",
+  "expl": "Les coordonnées GPS sont dans le fichier, et le classement est un simple tri sur deux descripteurs."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque étape ce qu'elle fait perdre.",
+  "paires": [
+   {
+    "terme": "Le capteur",
+    "definition": "Ramène la lumière continue à des valeurs discrètes"
+   },
+   {
+    "terme": "Le codage sur trois octets",
+    "definition": "Limite le nombre de couleurs représentables"
+   },
+   {
+    "terme": "La compression JPEG",
+    "definition": "Écarte des détails peu visibles à l'œil"
+   }
+  ],
+  "points": 3,
+  "reponse": "Chaque étape entre la lumière et le fichier écarte quelque chose.",
+  "expl": "C'est la question de départ de la séquence : que garde-t-on, et que jette-t-on ?"
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un capteur de 24 millions de photosites produit une image de combien de pixels environ ?",
+  "choix": [
+   "8 millions",
+   "24 millions",
+   "72 millions",
+   "24 mille"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "24 millions de pixels environ.",
+  "expl": "Un photosite donne un pixel, même si la couleur de chacun est reconstituée à partir de ses voisins."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que retient-on de cette séquence en une phrase ?",
+  "choix": [
+   "Une photo numérique est une copie fidèle de la réalité",
+   "Une photo transporte plus que son image : date, appareil, réglages et parfois coordonnées GPS voyagent avec le fichier",
+   "La compression ne change rien à l'image",
+   "Le pixel et le photosite sont la même chose"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Une photo transporte plus que son image : date, appareil, réglages et parfois coordonnées GPS voyagent avec le fichier.",
+  "expl": "C'est le « à retenir » de la séquence, identique sur le site, dans la fiche et dans le diaporama."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    if (q.partie) {
+      const p = document.createElement("div");
+      p.className = "partie";
+      p.textContent = q.partie;
+      zone.appendChild(p);
+    }
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+    if (q.code) h += '<pre>' + q.code + '</pre>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">- choisir -</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">-</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma reponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur.";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation SNT " + META.sequence + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seances,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>

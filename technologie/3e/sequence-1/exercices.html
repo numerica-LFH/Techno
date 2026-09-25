@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3e — Séquence 1 — Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>3e · Séquence 1 — De la découverte à l'innovation, et ses effets sur la société</h1>
+  <p class="sous">Dix questions. Je réponds, je vérifie, je recommence autant de fois que nécessaire.
+  Le score ne compte pas dans la moyenne.</p>
+</header>
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 3e — Séquence 1 — Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Invention et innovation sont deux notions identiques.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "L'invention est la mise au point d'une technique ; l'innovation est sa mise sur le marché.",
+  "illus": ""
+ },
+ {
+  "enonce": "La compréhension et la maîtrise de l'électricité a été :",
+  "choix": [
+   "une découverte",
+   "une invention",
+   "une innovation"
+  ],
+  "bonne": 0,
+  "expl": "Une connaissance nouvelle : « je sais ».",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"48\" r=\"26\"/><path d=\"M48 74h24\"/><path d=\"M48 82h24\"/>\n<path d=\"M52 90h16\"/><path d=\"M50 48l6-10 4 14 4-14 6 10\"/></svg>"
+ },
+ {
+  "enonce": "Un objet commercialisé avec un nouveau matériau biodégradable, c'est :",
+  "choix": [
+   "une découverte",
+   "une invention",
+   "une innovation"
+  ],
+  "bonne": 2,
+  "expl": "Le produit est vendu : « je fais ».",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M48 16h24\"/><path d=\"M54 16v28L34 92a8 8 0 0 0 7 12h38a8 8 0 0 0 7-12L66 44V16\"/>\n<path d=\"M41 76h38\" stroke-width=\"2.4\"/><circle cx=\"54\" cy=\"86\" r=\"3\" stroke-width=\"2\"/>\n<circle cx=\"68\" cy=\"92\" r=\"4\" stroke-width=\"2\"/></svg>"
+ },
+ {
+  "enonce": "Une innovation de rupture :",
+  "choix": [
+   "améliore l'objet sans changer sa logique",
+   "change le principe même de l'objet et rend l'ancien obsolète",
+   "concerne uniquement le design"
+  ],
+  "bonne": 1,
+  "expl": "Le passage du comptage mécanique au comptage électronique, par exemple.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"16\" y=\"24\" width=\"88\" height=\"72\" rx=\"4\"/>\n<path d=\"M16 42h88M16 60h88M16 78h88\" stroke-width=\"2\"/>\n<circle cx=\"34\" cy=\"42\" r=\"5\"/><circle cx=\"46\" cy=\"42\" r=\"5\"/>\n<circle cx=\"34\" cy=\"60\" r=\"5\"/><circle cx=\"78\" cy=\"60\" r=\"5\"/>\n<circle cx=\"34\" cy=\"78\" r=\"5\"/><circle cx=\"46\" cy=\"78\" r=\"5\"/><circle cx=\"58\" cy=\"78\" r=\"5\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"34\" y=\"14\" width=\"52\" height=\"92\" rx=\"6\"/>\n<rect x=\"42\" y=\"24\" width=\"36\" height=\"16\" rx=\"2\"/>\n<circle cx=\"48\" cy=\"56\" r=\"4\"/><circle cx=\"60\" cy=\"56\" r=\"4\"/><circle cx=\"72\" cy=\"56\" r=\"4\"/>\n<circle cx=\"48\" cy=\"72\" r=\"4\"/><circle cx=\"60\" cy=\"72\" r=\"4\"/><circle cx=\"72\" cy=\"72\" r=\"4\"/>\n<circle cx=\"48\" cy=\"88\" r=\"4\"/><circle cx=\"60\" cy=\"88\" r=\"4\"/><circle cx=\"72\" cy=\"88\" r=\"4\"/></svg>"
+ },
+ {
+  "enonce": "Le passage de l'appareil photo argentique au capteur numérique est :",
+  "choix": [
+   "une innovation incrémentale",
+   "une innovation de rupture"
+  ],
+  "bonne": 1,
+  "expl": "Le principe d'enregistrement change et toute la chaîne chimique disparaît.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 40h88v56H16z\"/><circle cx=\"60\" cy=\"68\" r=\"18\"/>\n<circle cx=\"60\" cy=\"68\" r=\"8\"/><path d=\"M40 40l6-10h28l6 10\"/><circle cx=\"90\" cy=\"52\" r=\"4\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"34\" y=\"10\" width=\"52\" height=\"100\" rx=\"8\"/>\n<rect x=\"40\" y=\"24\" width=\"40\" height=\"66\" rx=\"2\"/><path d=\"M52 17h16\"/>\n<circle cx=\"60\" cy=\"99\" r=\"5\"/><path d=\"M50 44l14-8v28l-14-8z\" stroke-width=\"2.6\"/></svg>"
+ },
+ {
+  "enonce": "Combien d'années séparent la découverte des ondes chauffantes (1946) du micro-ondes grand public (1967) ?",
+  "choix": [
+   "7 ans",
+   "21 ans",
+   "50 ans"
+  ],
+  "bonne": 1,
+  "expl": "Vingt et un ans : le temps de miniaturiser, sécuriser et faire baisser le prix.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M24 100h72\"/><path d=\"M60 100V62\"/>\n<path d=\"M36 40a30 30 0 0 1 48 0l-24 22z\"/>\n<path d=\"M92 24a26 26 0 0 1 0 30M102 16a38 38 0 0 1 0 46\" stroke-width=\"2.4\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"10\" y=\"32\" width=\"100\" height=\"56\" rx=\"5\"/>\n<rect x=\"18\" y=\"40\" width=\"60\" height=\"40\" rx=\"2\"/><path d=\"M86 44v30\" stroke-width=\"2.2\"/>\n<circle cx=\"94\" cy=\"50\" r=\"5\"/><path d=\"M30 70h36\" stroke-width=\"2.2\"/>\n<path d=\"M34 56c4-6 8 6 12 0s8 6 12 0\" stroke-width=\"2.2\"/></svg>"
+ },
+ {
+  "enonce": "Une veille technologique est le fait :",
+  "choix": [
+   "d'organiser discrètement un espionnage industriel",
+   "de se tenir informé légalement des nouvelles inventions",
+   "de surveiller les employés d'une entreprise"
+  ],
+  "bonne": 1,
+  "expl": "Elle exploite des informations mises à la disposition de tous.",
+  "illus": ""
+ },
+ {
+  "enonce": "L'abonnement à un flux RSS permet de faire une veille technologique.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 0,
+  "expl": "Le flux RSS signale automatiquement toute information nouvelle publiée sur un site.",
+  "illus": ""
+ },
+ {
+  "enonce": "Une information trouvée sur trois sites différents est forcément vraie.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "Trois sites peuvent reprendre la même dépêche. Il faut remonter à la source primaire.",
+  "illus": ""
+ },
+ {
+  "enonce": "L'indice de réparabilité affiché en magasin est un exemple :",
+  "choix": [
+   "d'incidence d'un OST sur la société",
+   "d'incidence d'une contrainte sociétale sur les OST"
+  ],
+  "bonne": 1,
+  "expl": "La société impose une règle qui oblige le concepteur à modifier l'objet.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"18\" y=\"20\" width=\"84\" height=\"80\" rx=\"6\"/>\n<path d=\"M34 44l14 14-14 14\" stroke-width=\"2.6\"/>\n<path d=\"M56 40h34M56 60h34M56 80h20\" stroke-width=\"2.6\"/>\n<path d=\"M18 34h84\" stroke-width=\"2.2\"/></svg>"
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>

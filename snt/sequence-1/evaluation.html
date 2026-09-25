@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT - Séquence 1 — D'Internet au Web - Évaluation</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+
+<style>
+.q pre { background:#0f172a; color:#e2e8f0; border-radius:5px; padding:11px 13px; margin:0 0 10px;
+  overflow-x:auto; font-size:.86rem; line-height:1.45;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+.q pre b { color:#fbbf24; font-weight:700; }
+.q code { background:#eef1f4; border:1px solid #d3dae1; border-radius:3px; padding:1px 4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.9em; }
+label.choix code { background:#fff; }
+.sommaire { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:12px 16px;
+  margin-bottom:18px; font-size:.9rem; color:#4a545e; }
+.sommaire b { color:#1d3557; }
+.partie { margin:22px 0 12px; padding:7px 12px; background:#1d3557; color:#fff; border-radius:4px;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>SNT · Séquence 1 — D'Internet au Web</h1>
+  <p class="sous">40 questions, 48 points, sur les trois séances de la séquence.
+  J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est
+  envoyée au professeur.</p>
+</header>
+
+<div class="sommaire">
+  <b>Ce qui est évalué.</b> Séance 0 : d'ARPANET au Web, ce qui relève du réseau et ce qui relève du service. Séance 1 : écrire une page en HTML, la mettre en forme en CSS. Séance 2 : l'échange entre le navigateur et le serveur, le classement d'une page par un moteur.
+</div>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="2de A" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien - Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 1 — D'Internet au Web · Évaluation</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "2de", "sequence": "Séquence 1 — D'Internet au Web", "seances": "Séances 0, 1 et 2"};
+const questions = [
+ {
+  "partie": "Partie A — Aux origines d'Internet et du Web",
+  "type": "qcm",
+  "enonce": "Lequel des deux est le plus ancien ?",
+  "choix": [
+   "Internet",
+   "Le Web",
+   "Ils sont nés la même année"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Internet.",
+  "expl": "Internet date de 1983, le Web de 1989. Le réseau existe avant le service."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quel a été le premier message transmis sur ARPANET, en octobre 1969 ?",
+  "choix": [
+   "HELLO",
+   "LO",
+   "LOGIN",
+   "ARPA"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "LO.",
+  "expl": "On tentait d'envoyer LOGIN de Los Angeles à Stanford : le système est tombé après deux lettres."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En quelle année le CERN a-t-il placé le Web dans le domaine public, le rendant gratuit pour tous ?",
+  "choix": [
+   "1969",
+   "1983",
+   "1993",
+   "2004"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "1993.",
+  "expl": "Le 30 avril 1993. C'est ce qui a fait décoller le nombre de sites."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que publient Vinton Cerf et Robert Kahn en 1974 ?",
+  "choix": [
+   "Le premier navigateur",
+   "Les principes de TCP/IP",
+   "Le langage HTML",
+   "Le premier moteur de recherche"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Les principes de TCP/IP.",
+  "expl": "Couper les messages en paquets numérotés, que la machine d'arrivée réassemble."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Qu'est-ce qui distingue le Minitel d'Internet ?",
+  "choix": [
+   "Le Minitel était plus rapide",
+   "Le Minitel était centralisé et fermé, Internet est décentralisé et ouvert",
+   "Le Minitel n'utilisait pas de câbles",
+   "Le Minitel ne permettait pas de consulter des informations"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le Minitel était centralisé et fermé, Internet est décentralisé et ouvert.",
+  "expl": "Sur le Minitel on consulte, on ne publie pas : les services sont choisis d'avance par le centre."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Qui propose en 1989, au CERN, un système de documents reliés par des liens ?",
+  "choix": [
+   "Vinton Cerf",
+   "Tim Berners-Lee",
+   "Robert Kahn",
+   "Marc Andreessen"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Tim Berners-Lee.",
+  "expl": "Le but était que les chercheurs cessent de se perdre dans leurs fichiers."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un routeur, c'est un élément :",
+  "choix": [
+   "d'Internet (le réseau)",
+   "du Web (un service)",
+   "ni de l'un ni de l'autre"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "d'Internet (le réseau).",
+  "expl": "Un routeur transporte des paquets : il appartient au réseau, pas au Web."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une URL comme https://numerica-lfh.github.io, c'est un élément :",
+  "choix": [
+   "d'Internet (le réseau)",
+   "du Web (un service)",
+   "ni de l'un ni de l'autre"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "du Web (un service).",
+  "expl": "L'URL désigne un document du Web. L'adresse du réseau, c'est l'adresse IP."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Réseau ou service ? Classe chaque élément.",
+  "consigne": "Trois éléments, trois réponses possibles. Le test : est-ce que ça sert à transporter, ou à afficher des documents liés entre eux ?",
+  "paires": [
+   {
+    "terme": "Un câble sous-marin",
+    "definition": "Internet, le réseau"
+   },
+   {
+    "terme": "Un lien hypertexte",
+    "definition": "Le Web, un service"
+   },
+   {
+    "terme": "Une clé USB",
+    "definition": "Ni l'un ni l'autre"
+   }
+  ],
+  "points": 3,
+  "reponse": "Câble sous-marin : Internet. Lien hypertexte : le Web. Clé USB : ni l'un ni l'autre.",
+  "expl": "La clé USB transporte des fichiers à la main, sans passer par aucun réseau."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un appel vidéo passe forcément par le Web.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Il passe par Internet. Il n'emprunte le Web que s'il se fait dans un navigateur."
+ },
+ {
+  "partie": "Partie B — Écrire une page : HTML et CSS",
+  "type": "qcm",
+  "enonce": "À quoi sert le HTML dans une page web ?",
+  "choix": [
+   "À décrire le contenu et la structure",
+   "À décrire les couleurs et la mise en forme",
+   "À transporter la page sur le réseau"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "À décrire le contenu et la structure.",
+  "expl": "Les couleurs, c'est le CSS. Le transport, c'est HTTP."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle balise permet de créer un lien hypertexte ?",
+  "choix": [
+   "<code>&lt;h1&gt;</code>",
+   "<code>&lt;a&gt;</code>",
+   "<code>&lt;link&gt;</code>",
+   "<code>&lt;p&gt;</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La balise &lt;a&gt;.",
+  "expl": "&lt;link&gt; sert à rattacher le fichier CSS, ce n'est pas un lien cliquable."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans un lien, où écrit-on l'adresse de destination ?",
+  "choix": [
+   "Dans le texte affiché du lien",
+   "Dans l'attribut <code>href</code>",
+   "Dans le fichier <code>style.css</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Dans l'attribut href.",
+  "expl": "Le texte affiché est ce que l'élève lit à l'écran, pas l'adresse."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Voici le début d'une page. Que manque-t-il pour que le titre de l'onglet s'affiche ?",
+  "code": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;h1&gt;Sciences Numériques et Technologie&lt;/h1&gt;\n    &lt;/body&gt;\n&lt;/html&gt;",
+  "choix": [
+   "<code>&lt;title&gt;page 1&lt;/title&gt;</code> dans le <code>head</code>",
+   "<code>&lt;h2&gt;page 1&lt;/h2&gt;</code> dans le <code>body</code>",
+   "<code>&lt;titre&gt;page 1&lt;/titre&gt;</code> dans le <code>head</code>",
+   "Rien, le <code>&lt;h1&gt;</code> suffit"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "&lt;title&gt;page 1&lt;/title&gt; dans le head.",
+  "expl": "Le titre de l'onglet est dans le head. Le &lt;h1&gt; est un titre affiché dans la page."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Cette ligne contient une erreur. Laquelle ?",
+  "code": "&lt;a href=https://www.meteofrance.com&gt;Météo France&lt;/a&gt;",
+  "choix": [
+   "La balise fermante est fausse",
+   "Il manque les guillemets autour de l'adresse",
+   "L'attribut devrait s'appeler <code>src</code>",
+   "Le texte du lien doit être avant la balise"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il manque les guillemets autour de l'adresse.",
+  "expl": "On écrit href=\"https://www.meteofrance.com\". Sans guillemets, une adresse contenant un espace casse la balise."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les fichiers page1.html et page2.html sont dans le même dossier. Quel lien écrit-on dans page1 pour aller vers page2 ?",
+  "choix": [
+   "<code>&lt;a href=\"page2.html\"&gt;Page 2&lt;/a&gt;</code>",
+   "<code>&lt;a href=\"https://page2.html\"&gt;Page 2&lt;/a&gt;</code>",
+   "<code>&lt;a href=\"/page2\"&gt;Page 2&lt;/a&gt;</code>",
+   "<code>&lt;link href=\"page2.html\"&gt;</code>"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "&lt;a href=\"page2.html\"&gt;Page 2&lt;/a&gt;.",
+  "expl": "Une adresse relative suffit entre deux fichiers du même dossier. Le https:// est réservé aux adresses absolues."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le lien vers page2.html ne fonctionne plus. Quelle est la cause la plus probable ?",
+  "choix": [
+   "Le navigateur est trop ancien",
+   "Les deux fichiers ne sont plus dans le même dossier",
+   "Le fichier style.css est absent",
+   "La page n'est pas en ligne"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Les deux fichiers ne sont plus dans le même dossier.",
+  "expl": "C'est la panne la plus fréquente de l'activité 1 : l'adresse relative ne retrouve plus son fichier."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Comment rattache-t-on la feuille de style à la page ?",
+  "code": "&lt;head&gt;\n    &lt;title&gt;page 1&lt;/title&gt;\n    <b>???</b>\n&lt;/head&gt;",
+  "choix": [
+   "<code>&lt;style href=\"style.css\"&gt;</code>",
+   "<code>&lt;link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\"&gt;</code>",
+   "<code>&lt;a href=\"style.css\"&gt;style&lt;/a&gt;</code>",
+   "<code>&lt;css src=\"style.css\"&gt;</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "&lt;link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\"&gt;.",
+  "expl": "La balise &lt;link&gt; se place dans le head, et il faut la répéter dans chaque page à mettre en forme."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle règle CSS donne à la page un fond rouge sombre ?",
+  "choix": [
+   "<code>body { background-color: #AB3016; }</code>",
+   "<code>body { color: #AB3016; }</code>",
+   "<code>page { fond: #AB3016; }</code>",
+   "<code>h1 { background-color: #AB3016; }</code>"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "body { background-color: #AB3016; }.",
+  "expl": "background-color colore le fond, color colore le texte. Le sélecteur body vise toute la page."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Lis cette règle. Que fait-elle exactement ?",
+  "code": "h1 {\n    color: white;\n    margin: 50px;\n}",
+  "choix": [
+   "Elle met le fond des titres de niveau 1 en blanc et les décale de 50 px",
+   "Elle met le texte des titres de niveau 1 en blanc et laisse 50 px de marge autour",
+   "Elle met tous les textes en blanc avec une marge de 50 px",
+   "Elle agrandit les titres de niveau 1 de 50 px"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Elle met le texte des titres de niveau 1 en blanc et laisse 50 px de marge autour.",
+  "expl": "color agit sur le texte. margin est l'espace laissé à l'extérieur de l'élément."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quelle règle centre les titres de niveau 2 ?",
+  "choix": [
+   "<code>h2 { align: center; }</code>",
+   "<code>h2 { text-align: center; }</code>",
+   "<code>h2 { center: true; }</code>",
+   "<code>h2 { margin: center; }</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "h2 { text-align: center; }.",
+  "expl": "text-align règle l'alignement horizontal du texte à l'intérieur de l'élément."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Cette règle CSS ne s'applique pas. Pourquoi ?",
+  "code": "a {\n    color: #2999E7\n    text-decoration: none;\n}",
+  "choix": [
+   "Le sélecteur <code>a</code> n'existe pas",
+   "Il manque le point-virgule après <code>#2999E7</code>",
+   "La couleur doit s'écrire en toutes lettres",
+   "<code>text-decoration</code> n'est pas une propriété CSS"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Il manque le point-virgule après #2999E7.",
+  "expl": "Chaque déclaration se termine par un point-virgule. Sans lui, le navigateur ignore le bloc à partir de l'erreur."
+ },
+ {
+  "type": "texte",
+  "enonce": "Dans une règle CSS, comment appelle-t-on le mot placé avant l'accolade, qui désigne les éléments visés ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "selecteur",
+   "sélecteur"
+  ],
+  "points": 1,
+  "reponse": "Le sélecteur.",
+  "expl": "body, h1, h2, a sont des sélecteurs : ils disent à quels éléments la règle s'applique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On veut que seuls les liens de la page deviennent bleus, sans toucher au reste du texte. Quel sélecteur ?",
+  "choix": [
+   "<code>body</code>",
+   "<code>a</code>",
+   "<code>href</code>",
+   "<code>link</code>"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le sélecteur a.",
+  "expl": "a vise les liens. href est un attribut, pas un sélecteur d'élément."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Que verra-t-on à l'écran avec ce code ?",
+  "code": "&lt;body&gt;\n    &lt;h1&gt;SNT&lt;/h1&gt;\n    &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"page1.html\"&gt;Page 1&lt;/a&gt;&lt;/li&gt;\n    &lt;/ul&gt;\n&lt;/body&gt;",
+  "choix": [
+   "Un titre, puis un lien présenté avec une puce",
+   "Un titre, puis un lien sans puce",
+   "Deux titres",
+   "Une liste vide"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Un titre, puis un lien présenté avec une puce.",
+  "expl": "&lt;ul&gt; ouvre une liste à puces, &lt;li&gt; est un élément de cette liste."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Remets ces quatre étapes dans l'ordre où on les fait en séance 1.",
+  "elements": [
+   "Créer page1.html et page2.html dans un même dossier",
+   "Ouvrir page1.html dans le navigateur et tester les liens",
+   "Créer style.css dans le même dossier",
+   "Ajouter la balise link dans le head des deux pages"
+  ],
+  "points": 2,
+  "reponse": "Créer les deux pages, les tester, créer style.css, puis ajouter la balise link.",
+  "expl": "On vérifie que le HTML fonctionne avant d'ajouter la mise en forme : une panne à la fois."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque fichier son rôle.",
+  "paires": [
+   {
+    "terme": "page1.html",
+    "definition": "Le contenu et la structure"
+   },
+   {
+    "terme": "style.css",
+    "definition": "La présentation, couleurs et disposition"
+   },
+   {
+    "terme": "Le navigateur",
+    "definition": "L'assemblage des deux, à l'écran"
+   }
+  ],
+  "points": 3,
+  "reponse": "HTML : contenu et structure. CSS : présentation. Navigateur : assemblage.",
+  "expl": "C'est la conclusion de la séance 1, et elle sert de fil pour toute la séquence."
+ },
+ {
+  "partie": "Partie C — Le navigateur, le serveur, le rang d'une page",
+  "type": "ordre",
+  "enonce": "Remets les trois temps dans le bon ordre.",
+  "elements": [
+   "Le navigateur demande",
+   "Le serveur répond",
+   "Le navigateur affiche"
+  ],
+  "points": 2,
+  "reponse": "Le navigateur demande, le serveur répond, le navigateur affiche.",
+  "expl": "Tout le reste est une variation sur ces trois temps."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le serveur répond avec le code 404. Cela veut dire :",
+  "choix": [
+   "La page a bien été envoyée",
+   "La ressource demandée n'existe pas",
+   "La connexion est chiffrée",
+   "Le serveur est en panne"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "La ressource demandée n'existe pas.",
+  "expl": "200 signale que tout va bien, 500 une erreur du serveur, 301 une redirection."
+ },
+ {
+  "type": "assoc",
+  "enonce": "À chaque code de réponse sa signification.",
+  "paires": [
+   {
+    "terme": "200",
+    "definition": "La ressource a été trouvée et envoyée"
+   },
+   {
+    "terme": "301",
+    "definition": "La ressource a changé d'adresse"
+   },
+   {
+    "terme": "500",
+    "definition": "Le serveur a rencontré une erreur"
+   }
+  ],
+  "points": 3,
+  "reponse": "200 trouvé, 301 redirigé, 500 erreur du serveur.",
+  "expl": "Les codes en 400 concernent la demande, ceux en 500 concernent le serveur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans l'URL https://numerica-lfh.github.io/Techno/snt/web/, que désigne numerica-lfh.github.io ?",
+  "choix": [
+   "Le protocole",
+   "Le nom du serveur",
+   "Le chemin de la ressource",
+   "Le port"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le nom du serveur.",
+  "expl": "https est le protocole, /Techno/snt/web/ est le chemin de la ressource sur ce serveur."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En ouvrant l'onglet Réseau des outils de développement sur un site courant, combien de fichiers voit-on demandés ?",
+  "choix": [
+   "Un seul, la page",
+   "Deux ou trois",
+   "Plusieurs dizaines, souvent des centaines",
+   "Aucun, tout est déjà dans le navigateur"
+  ],
+  "bonne": 2,
+  "points": 1,
+  "reponse": "Plusieurs dizaines, souvent des centaines.",
+  "expl": "Une page n'est pas un fichier : c'est le résultat de beaucoup de requêtes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un cookie déposé par un site sert à :",
+  "choix": [
+   "Accélérer la connexion réseau",
+   "Reconnaître le visiteur d'une visite à l'autre",
+   "Chiffrer la page",
+   "Stocker la page sur le serveur"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Reconnaître le visiteur d'une visite à l'autre.",
+  "expl": "C'est ce qui permet de retrouver un panier, une session, ou un profil publicitaire."
+ },
+ {
+  "type": "vf",
+  "enonce": "L'onglet Éléments des outils de développement montre exactement ce que le serveur a envoyé.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Faux.",
+  "expl": "Il montre le résultat assemblé, JavaScript compris. C'est l'onglet Réseau qui montre ce qui a été envoyé."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans le mini-site de l'activité 1, page1 pointe vers page2 et vers meteofrance.com, page2 pointe vers page1. Combien de liens entrants a chaque page ?",
+  "choix": [
+   "Un chacune",
+   "Deux pour page1, un pour les autres",
+   "Aucune n'en a",
+   "Trois pour meteofrance.com"
+  ],
+  "bonne": 0,
+  "points": 1,
+  "reponse": "Un lien entrant chacune.",
+  "expl": "C'est le ressort de l'activité 3 : le simple comptage ne départage rien."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour classer les pages, un moteur de recherche s'appuie surtout sur :",
+  "choix": [
+   "La longueur de la page",
+   "Le nombre et la qualité des liens qui pointent vers elle, et la pertinence du contenu",
+   "L'ordre alphabétique des adresses",
+   "La date de création du site"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Le nombre et la qualité des liens qui pointent vers elle, et la pertinence du contenu.",
+  "expl": "Le comptage seul est manipulable : n'importe qui peut fabriquer des pages qui pointent vers la sienne."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pourquoi le seul comptage des liens entrants est-il insuffisant pour classer des pages ?",
+  "choix": [
+   "Parce qu'il est trop long à calculer",
+   "Parce qu'un lien venant d'un site très visité ne vaut pas un lien venant d'une page inconnue",
+   "Parce que les liens changent tous les jours",
+   "Parce que les moteurs ne voient pas les liens"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Parce qu'un lien venant d'un site très visité ne vaut pas un lien venant d'une page inconnue.",
+  "expl": "La qualité du lien compte, et le contenu de la page n'entre pas du tout dans un simple comptage."
+ },
+ {
+  "type": "qcm",
+  "enonce": "On ajoute au graphe un quatrième site qui pointe vers page2. Que se passe-t-il ?",
+  "choix": [
+   "Rien, le classement reste indécidable",
+   "page2 passe devant, elle a deux liens entrants",
+   "meteofrance.com passe devant",
+   "Le graphe devient non orienté"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "page2 passe devant, elle a deux liens entrants.",
+  "expl": "La question qui suit est la bonne : qui a créé ce quatrième site ?"
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on le fait de relier des documents entre eux par des liens cliquables ?",
+  "placeholder": "Un mot",
+  "acceptees": [
+   "hypertexte",
+   "l hypertexte",
+   "lien hypertexte"
+  ],
+  "points": 1,
+  "reponse": "L'hypertexte.",
+  "expl": "C'est l'idée que Tim Berners-Lee propose en 1989, et qui fait du Web un Web."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une page web existe-t-elle comme un fichier fini quelque part sur le serveur ?",
+  "choix": [
+   "Oui, toujours",
+   "Non, elle est assemblée à chaque visite à partir de plusieurs fichiers",
+   "Oui, mais seulement pour les sites anciens",
+   "Non, elle est stockée dans le navigateur"
+  ],
+  "bonne": 1,
+  "points": 1,
+  "reponse": "Non, elle est assemblée à chaque visite à partir de plusieurs fichiers.",
+  "expl": "C'est la question de départ de la séquence, et la réponse tient dans les trois temps de l'échange."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+    return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    if (q.partie) {
+      const p = document.createElement("div");
+      p.className = "partie";
+      p.textContent = q.partie;
+      zone.appendChild(p);
+    }
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+    if (q.code) h += '<pre>' + q.code + '</pre>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">- choisir -</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">-</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma reponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur.";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation SNT " + META.sequence + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seances,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>

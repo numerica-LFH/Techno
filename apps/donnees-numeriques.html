@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 5. Données numériques et traitement de l'information - Technologie LFH</title>
+<meta name="description" content="Technologie 4e, thème 2 du programme. Cinq séances de 55 minutes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "4e",
+  "titre": "Chapitre 5. Données numériques et traitement de l'information",
+  "sousTitre": "Technologie 4e, thème 2 du programme. Cinq séances de 55 minutes.",
+  "question": "Comment une machine peut-elle tout représenter avec seulement deux chiffres ?",
+  "retour": "../technologie/4e/",
+  "competences": "Compétences T2.1 décrire l'organisation interne d'un objet et ses échanges, et T1.3 caractériser un objet selon différents critères. CRCN domaine 1, information et données.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Le langage binaire, le bit, l'octet et les multiples."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Une grandeur analogique et une grandeur numérique sur un objet."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "Une table de données, la trier et la filtrer pour répondre à une question."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Convertir entre binaire et décimal, additionner en binaire."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Je recherche",
+      "html": "\n<p>Le chapitre reprend et prolonge ce qui a été vu en 5e. Ce qui change cette année : on ne se\ncontente plus de lire des données, on les convertit, on les calcule et on les relie au monde réel.</p>\n<div class=\"app-encadre\">\n<p><b>Question de départ.</b> Un thermomètre à mercure et un thermomètre électronique mesurent la\nmême chose. Qu'est-ce qui les sépare vraiment ?</p>\n</div>\n"
+    },
+    {
+      "titre": "Analogique et numérique",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th></th><th>Grandeur analogique</th><th>Grandeur numérique</th></tr>\n<tr><td>Nature</td><td>Continue, toutes les valeurs sont possibles</td><td>Discrète, un nombre fini de valeurs</td></tr>\n<tr><td>Exemple</td><td>La hauteur du mercure dans le tube</td><td>La valeur 23,4 affichée à l'écran</td></tr>\n<tr><td>Copie</td><td>Se dégrade à chaque copie</td><td>Se copie à l'identique</td></tr>\n<tr><td>Traitement</td><td>Difficile à calculer</td><td>Calculable par un programme</td></tr>\n</table>\n</div>\n<p>Le passage de l'un à l'autre s'appelle la <b>numérisation</b>. Un capteur mesure une grandeur\nphysique continue, un convertisseur la transforme en nombre. Une partie de l'information est perdue\nau passage : c'est le prix à payer pour pouvoir la traiter.</p>\n"
+    },
+    {
+      "titre": "Binaire et conversions",
+      "html": "\n<p>Chaque position d'un nombre binaire vaut le double de la précédente.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Poids</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>\n</table>\n</div>\n<h3>Du binaire vers le décimal</h3>\n<div class=\"app-encadre\">\n<p>1 1 0 1 0 0 1 0 → 128 + 64 + 16 + 2 = <b>210</b></p>\n</div>\n<h3>Du décimal vers le binaire</h3>\n<p>On soustrait le plus grand poids possible, puis on recommence avec le reste.</p>\n<div class=\"app-encadre\">\n<p>Convertir 77.<br>\n77 − 64 = 13, on pose 1 sous 64.<br>\n13 est plus petit que 32 et que 16, on pose 0 sous chacun.<br>\n13 − 8 = 5, on pose 1 sous 8.<br>\n5 − 4 = 1, on pose 1 sous 4.<br>\n1 est plus petit que 2, on pose 0 sous 2.<br>\n1 − 1 = 0, on pose 1 sous 1.<br>\nRésultat : <b>0100 1101</b></p>\n</div>\n<h3>Additionner en binaire</h3>\n<p>Quatre cas seulement : 0+0 = 0, 0+1 = 1, 1+0 = 1, et 1+1 = 0 avec une retenue de 1.</p>\n<div class=\"app-encadre\">\n<p>&nbsp;&nbsp;1 0 1 1<br>+ 0 1 1 0<br>= 1 0 0 0 1&nbsp;&nbsp;&nbsp;soit 11 + 6 = 17</p>\n</div>\n"
+    },
+    {
+      "titre": "Données structurées",
+      "html": "\n<p>Une <b>table</b> range les données : une ligne par individu, une colonne par descripteur. Le\nformat <b>CSV</b> l'écrit en texte simple.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>modele</th><th>autonomie_h</th><th>masse_g</th><th>prix_eur</th></tr>\n<tr><td>Alpha</td><td>18</td><td>240</td><td>79</td></tr>\n<tr><td>Beta</td><td>32</td><td>310</td><td>129</td></tr>\n<tr><td>Gamma</td><td>24</td><td>195</td><td>99</td></tr>\n<tr><td>Delta</td><td>12</td><td>180</td><td>59</td></tr>\n</table>\n</div>\n<h3>Répondre à une question par un traitement</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Question</th><th>Traitement</th><th>Réponse</th></tr>\n<tr><td>Quel est le modèle le plus léger ?</td><td>Trier sur masse_g par ordre croissant</td><td>Delta</td></tr>\n<tr><td>Lesquels tiennent plus de 20 h ?</td><td>Filtrer autonomie_h supérieur à 20</td><td>Beta et Gamma</td></tr>\n<tr><td>Quel est le prix moyen ?</td><td>Moyenne de la colonne prix_eur</td><td>91,50 euros</td></tr>\n<tr><td>Quel est le meilleur rapport autonomie sur prix ?</td><td>Colonne calculée, puis tri</td><td>Beta, 0,248 h par euro</td></tr>\n</table>\n</div>\n<div class=\"app-encadre\">\n<p><b>Le point important.</b> Le tri et le filtre ne créent aucune information nouvelle. Ils rendent\nvisible ce qui était déjà dans la table. La colonne calculée, elle, produit une donnée nouvelle à\npartir des autres.</p>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "Le nombre binaire 1101 vaut en décimal :",
+          "choix": [
+            "11",
+            "13",
+            "14"
+          ],
+          "bonne": 1,
+          "explication": "8 + 4 + 0 + 1 = 13."
+        },
+        {
+          "enonce": "Le nombre 20 s'écrit en binaire :",
+          "choix": [
+            "10100",
+            "10010",
+            "11000"
+          ],
+          "bonne": 0,
+          "explication": "16 + 4 = 20, soit 1 0 1 0 0."
+        },
+        {
+          "enonce": "En binaire, 1 + 1 donne :",
+          "choix": [
+            "2",
+            "0 avec une retenue de 1",
+            "11"
+          ],
+          "bonne": 1,
+          "explication": "Le chiffre 2 n'existe pas en binaire."
+        },
+        {
+          "enonce": "Une grandeur analogique est :",
+          "choix": [
+            "Continue",
+            "Discrète",
+            "Toujours électrique"
+          ],
+          "bonne": 0,
+          "explication": "La grandeur numérique prend un nombre fini de valeurs."
+        },
+        {
+          "enonce": "Numériser une grandeur physique :",
+          "choix": [
+            "Conserve toute l'information",
+            "Perd une partie de l'information",
+            "Augmente la précision de la mesure"
+          ],
+          "bonne": 1,
+          "explication": "La conversion arrondit. En échange, la valeur devient calculable et copiable sans perte."
+        },
+        {
+          "enonce": "Ajouter une colonne rapport autonomie sur prix, c'est :",
+          "choix": [
+            "Un filtre",
+            "Un tri",
+            "Une donnée calculée à partir des autres"
+          ],
+          "bonne": 2,
+          "explication": "Le tri et le filtre ne créent rien, ils réorganisent ou masquent."
+        },
+        {
+          "enonce": "Un octet permet de coder :",
+          "choix": [
+            "8 valeurs",
+            "64 valeurs",
+            "256 valeurs"
+          ],
+          "bonne": 2,
+          "explication": "Huit bits, donc 2 puissance 8, soit 256 combinaisons."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Bit</b></td><td>0 ou 1, plus petite information</td></tr>\n<tr><td><b>Octet</b></td><td>8 bits, 256 combinaisons</td></tr>\n<tr><td><b>Analogique</b></td><td>Grandeur continue</td></tr>\n<tr><td><b>Numérique</b></td><td>Grandeur discrète, calculable, copiable sans perte</td></tr>\n<tr><td><b>Numérisation</b></td><td>Passage de l'analogique au numérique, avec perte</td></tr>\n<tr><td><b>Descripteur</b></td><td>Nom de la colonne d'une table</td></tr>\n<tr><td><b>CSV</b></td><td>Table écrite en texte simple</td></tr>\n</table>\n</div>\n<h3>Je me situe</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Je sais</th><th>Pas encore</th><th>Avec de l'aide</th><th>Seul</th><th>Je peux l'expliquer</th></tr>\n<tr><td>Comprendre : binaire, bit, octet</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Identifier : analogique ou numérique sur un objet</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Analyser : trier et filtrer pour répondre à une question</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n<tr><td>Appliquer : convertir et additionner en binaire</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>\n</table>\n</div>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

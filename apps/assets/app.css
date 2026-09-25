@@ -1,0 +1,352 @@
+/* Applications interactives de technologie - Lycée franco-hondurien
+   Feuille de style autonome, sans dépendance externe. */
+
+:root {
+  --fond: #f6f7fb;
+  --carte: #ffffff;
+  --texte: #1a1c25;
+  --texte-doux: #555a6b;
+  --trait: #e2e5ee;
+  --primaire: #3f51b5;
+  --primaire-clair: #e8eaf6;
+  --accent: #ff8f00;
+  --juste: #1b7f4b;
+  --juste-fond: #e6f4ec;
+  --faux: #b3261e;
+  --faux-fond: #fbeae9;
+  --rayon: 12px;
+  --ombre: 0 1px 2px rgba(16, 20, 40, .06), 0 8px 24px rgba(16, 20, 40, .06);
+  --police: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #14161f;
+    --carte: #1d2029;
+    --texte: #eef0f6;
+    --texte-doux: #a9aec0;
+    --trait: #2e3341;
+    --primaire: #9fa8da;
+    --primaire-clair: #262b3d;
+    --juste-fond: #12301f;
+    --faux-fond: #35181a;
+    --ombre: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.lecture-facilitee {
+  font-family: "Comic Sans MS", "Trebuchet MS", Verdana, sans-serif;
+  letter-spacing: .04em;
+  word-spacing: .12em;
+  line-height: 1.95;
+}
+
+body.lecture-facilitee .app-contenu { max-width: 60ch; }
+
+/* En-tête */
+
+.app-entete {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--carte);
+  border-bottom: 1px solid var(--trait);
+}
+
+.app-entete-interne {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: .7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.app-retour {
+  color: var(--texte-doux);
+  text-decoration: none;
+  font-size: .85rem;
+  white-space: nowrap;
+}
+.app-retour:hover { color: var(--primaire); text-decoration: underline; }
+
+.app-niveau {
+  background: var(--primaire-clair);
+  color: var(--primaire);
+  font-weight: 700;
+  font-size: .75rem;
+  padding: .15rem .6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.app-titre-court {
+  font-weight: 600;
+  font-size: .95rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-outils { display: flex; gap: .4rem; margin-left: auto; }
+
+.app-bouton-outil {
+  border: 1px solid var(--trait);
+  background: var(--carte);
+  color: var(--texte-doux);
+  border-radius: 8px;
+  padding: .3rem .6rem;
+  font-size: .78rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.app-bouton-outil:hover { border-color: var(--primaire); color: var(--primaire); }
+.app-bouton-outil[aria-pressed="true"] {
+  background: var(--primaire-clair);
+  border-color: var(--primaire);
+  color: var(--primaire);
+}
+
+/* Barre de progression */
+
+.app-progression { height: 4px; background: var(--trait); }
+.app-progression span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--primaire);
+  transition: width .25s ease;
+}
+
+/* Onglets */
+
+.app-onglets {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: .6rem 1rem 0;
+  display: flex;
+  gap: .35rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.app-onglet {
+  border: 1px solid var(--trait);
+  background: var(--carte);
+  color: var(--texte-doux);
+  font-family: inherit;
+  font-size: .8rem;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.app-onglet[aria-current="true"] {
+  background: var(--primaire);
+  border-color: var(--primaire);
+  color: #fff;
+  font-weight: 600;
+}
+.app-onglet.fait::before { content: "✓ "; }
+
+/* Contenu */
+
+.app-contenu {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+}
+
+.app-carte {
+  background: var(--carte);
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app-carte h1 { font-size: 1.6rem; margin: 0 0 .2rem; letter-spacing: -.02em; }
+.app-carte h2 { font-size: 1.15rem; margin: 1.6rem 0 .5rem; }
+.app-carte h3 { font-size: 1rem; margin: 1.2rem 0 .4rem; }
+.app-carte > :first-child { margin-top: 0; }
+.app-sous-titre { color: var(--texte-doux); margin: 0 0 1rem; }
+
+.app-question {
+  border-left: 4px solid var(--accent);
+  background: var(--primaire-clair);
+  padding: .9rem 1.1rem;
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  margin: 1rem 0 1.4rem;
+}
+.app-question .etiquette {
+  display: block;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--texte-doux);
+  margin-bottom: .2rem;
+}
+.app-question p { margin: 0; font-size: 1.05rem; font-weight: 600; }
+
+/* Objectifs */
+
+.app-objectifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .7rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.app-objectif {
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon);
+  padding: .8rem .9rem;
+  background: var(--fond);
+}
+.app-objectif b {
+  display: block;
+  color: var(--primaire);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .25rem;
+}
+
+/* Tableaux et listes */
+
+.app-carte table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: .8rem 0; }
+.app-carte th, .app-carte td { border: 1px solid var(--trait); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+.app-carte th { background: var(--fond); font-weight: 600; }
+.app-tableau-defilant { overflow-x: auto; }
+
+.app-encadre {
+  border: 1px dashed var(--trait);
+  border-radius: var(--rayon);
+  padding: .8rem 1rem;
+  background: var(--fond);
+  margin: 1rem 0;
+}
+.app-encadre p:last-child { margin-bottom: 0; }
+
+.app-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: .7rem;
+  margin: 1rem 0;
+}
+.app-vignette {
+  border: 1px solid var(--trait);
+  border-radius: var(--rayon);
+  padding: .8rem .9rem;
+  background: var(--fond);
+}
+.app-vignette b { display: block; margin-bottom: .2rem; }
+
+/* Quiz */
+
+.app-quiz-question { border-top: 1px solid var(--trait); padding-top: 1rem; margin-top: 1rem; }
+.app-quiz-question:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.app-quiz-enonce { font-weight: 600; margin: 0 0 .6rem; }
+.app-quiz-choix { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.app-quiz-choix label {
+  display: flex;
+  gap: .55rem;
+  align-items: flex-start;
+  border: 1px solid var(--trait);
+  border-radius: 10px;
+  padding: .55rem .7rem;
+  cursor: pointer;
+  background: var(--carte);
+}
+.app-quiz-choix label:hover { border-color: var(--primaire); }
+.app-quiz-choix input { margin-top: .3rem; }
+.app-quiz-choix label.juste { border-color: var(--juste); background: var(--juste-fond); }
+.app-quiz-choix label.faux { border-color: var(--faux); background: var(--faux-fond); }
+
+.app-quiz-retour {
+  margin-top: .5rem;
+  font-size: .88rem;
+  color: var(--texte-doux);
+  display: none;
+}
+.app-quiz-retour.visible { display: block; }
+
+.app-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+.app-bouton {
+  border: 0;
+  border-radius: 10px;
+  padding: .6rem 1.1rem;
+  font-family: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primaire);
+  color: #fff;
+}
+.app-bouton:hover { filter: brightness(1.08); }
+.app-bouton.secondaire {
+  background: var(--carte);
+  color: var(--texte);
+  border: 1px solid var(--trait);
+}
+.app-bouton:disabled { opacity: .45; cursor: not-allowed; }
+
+.app-score {
+  margin-top: 1rem;
+  font-weight: 600;
+  padding: .7rem .9rem;
+  border-radius: var(--rayon);
+  background: var(--primaire-clair);
+  display: none;
+}
+.app-score.visible { display: block; }
+
+/* Navigation bas de page */
+
+.app-nav-bas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.2rem;
+}
+.app-position { color: var(--texte-doux); font-size: .82rem; }
+
+.app-pied {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+  color: var(--texte-doux);
+  font-size: .78rem;
+}
+
+/* Impression */
+
+@media print {
+  .app-entete, .app-onglets, .app-nav-bas, .app-actions, .app-progression { display: none !important; }
+  body { background: #fff; }
+  .app-carte { box-shadow: none; border-color: #999; page-break-inside: avoid; }
+  .app-section { display: block !important; }
+}
+
+/* Le focus programmatique sur la section active ne doit pas dessiner de contour */
+.app-section:focus { outline: none; }
+.app-section:focus-visible { outline: 2px solid var(--primaire); outline-offset: 2px; }
