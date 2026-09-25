@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4e — Séquence 3 — Contraintes, exigences et expérience de l&#x27;utilisateur — Évaluation de fin de séquence</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>4e · Séquence 3 — Contraintes, exigences et expérience de l&#x27;utilisateur — Évaluation de fin de séquence</h1>
+  <p class="sous">40 questions, 45 points. J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est envoyée au professeur.</p>
+</header>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="4eA" autocomplete="off"></div>
+  </div>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 4e — Séquence 3 · Contraintes, exigences et expérience de l&#x27;utilisateur — Évaluation de fin de séquence</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const META = {"niveau": "4e", "sequence": "Séquence 3 — Contraintes, exigences et expérience de l'utilisateur", "seance": "Évaluation de fin de séquence", "exemple_classe": "4eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "enonce": "Le manuel utilisateur :",
+  "choix": [
+   "permet d'indiquer toutes les contraintes à un utilisateur",
+   "ne parle que du besoin satisfait par un objet"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "permet d'indiquer toutes les contraintes à un utilisateur."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le manuel utilisateur est forcément un document imprimé sur du papier.",
+  "bonne": 1,
+  "expl": "Il peut être téléchargé.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Dans un manuel utilisateur, on ne met jamais d'information sur les normes environnementales.",
+  "bonne": 1,
+  "expl": "Le logo poubelle barrée en est un exemple.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Pour décrire le fonctionnement d'un objet, on peut utiliser un algorithme.",
+  "bonne": 0,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "vf",
+  "enonce": "La sécurité n'a rien à faire dans un manuel utilisateur, car ce n'est pas une contrainte.",
+  "bonne": 1,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Utiliser du texte est interdit dans un manuel utilisateur, à l'époque du numérique.",
+  "bonne": 1,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Ce n'est pas la peine de fournir un manuel utilisateur pour les objets très simples à utiliser.",
+  "bonne": 1,
+  "expl": "Il faut au moins indiquer les contraintes de sécurité.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "On peut mettre en téléchargement un manuel utilisateur afin de faciliter sa consultation.",
+  "bonne": 0,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La sécurité évoquée dans un manuel ne concerne que celle des utilisateurs :",
+  "choix": [
+   "non, on peut aussi évoquer la préservation de l'intégrité de l'objet",
+   "oui, c'est elle qui compte avant tout"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "non, on peut aussi évoquer la préservation de l'intégrité de l'objet."
+ },
+ {
+  "type": "vf",
+  "enonce": "Dans un manuel, on doit aussi s'adresser à des personnes qui ne connaissent pas parfaitement le fonctionnement de l'objet.",
+  "bonne": 0,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "« Exister en plusieurs couleurs » est une contrainte :",
+  "choix": [
+   "esthétique",
+   "de norme",
+   "de sécurité"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "esthétique."
+ },
+ {
+  "type": "qcm",
+  "enonce": "« Consommer peu d'énergie » est une contrainte :",
+  "choix": [
+   "environnementale",
+   "esthétique",
+   "de vitesse"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "environnementale."
+ },
+ {
+  "type": "texte",
+  "enonce": "Quel organisme fixe les normes en France ?",
+  "acceptees": [
+   "afnor"
+  ],
+  "reponse": "L'AFNOR.",
+  "expl": "",
+  "placeholder": "un sigle",
+  "points": 1,
+  "consigne": "J'écris ma réponse en quelques mots."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La taille des cartes bancaires est fixée par :",
+  "choix": [
+   "une norme",
+   "chaque banque",
+   "le client"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "une norme."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une exigence est une contrainte :",
+  "choix": [
+   "chiffrée ou vérifiable",
+   "impossible à mesurer",
+   "esthétique"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "chiffrée ou vérifiable."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La fiabilité est :",
+  "choix": [
+   "la capacité à fonctionner sans panne pendant la durée prévue",
+   "la beauté de l'objet",
+   "le prix de l'objet"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "la capacité à fonctionner sans panne pendant la durée prévue."
+ },
+ {
+  "type": "vf",
+  "enonce": "Les contraintes d'un objet peuvent s'opposer entre elles.",
+  "bonne": 0,
+  "expl": "Autonomie et légèreté, par exemple.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un appareil qui ne respecte pas les normes du réseau électrique peut :",
+  "choix": [
+   "provoquer un court-circuit",
+   "consommer moins",
+   "devenir plus joli"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "provoquer un court-circuit."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La voiture télécommandée est légère pour :",
+  "choix": [
+   "aller vite et limiter les dégâts d'un choc",
+   "changer de couleur",
+   "respecter la norme de la carte bancaire"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "aller vite et limiter les dégâts d'un choc."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les grosses roues répondent à une contrainte :",
+  "choix": [
+   "d'utilisation : franchir les obstacles",
+   "esthétique uniquement",
+   "environnementale"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "d'utilisation : franchir les obstacles."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le logo poubelle barrée est lié à une contrainte :",
+  "choix": [
+   "environnementale",
+   "de vitesse",
+   "esthétique"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "environnementale."
+ },
+ {
+  "type": "texte",
+  "enonce": "Comment appelle-t-on les déchets d'équipements électriques et électroniques (sigle) ?",
+  "acceptees": [
+   "deee",
+   "d3e"
+  ],
+  "reponse": "DEEE.",
+  "expl": "",
+  "placeholder": "un sigle",
+  "points": 1,
+  "consigne": "J'écris ma réponse en quelques mots."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le dessin du bébé qui attrape la voiture indique :",
+  "choix": [
+   "tenir hors de portée des jeunes enfants",
+   "que le jouet est pour bébé",
+   "comment changer les piles"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "tenir hors de portée des jeunes enfants."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour rendre l'antenne moins dangereuse, le concepteur la fait :",
+  "choix": [
+   "souple et à bout arrondi",
+   "pointue",
+   "plus longue"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "souple et à bout arrondi."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un choix de conception est :",
+  "choix": [
+   "une décision prise pour respecter une contrainte",
+   "une panne",
+   "un prix"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "une décision prise pour respecter une contrainte."
+ },
+ {
+  "type": "vf",
+  "enonce": "Le moteur chaud après usage est un risque que le manuel peut signaler.",
+  "bonne": 0,
+  "expl": "Risque de brûlure.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "L'expérience de l'utilisateur, c'est :",
+  "choix": [
+   "son ressenti et la facilité d'usage de l'objet",
+   "son âge",
+   "le prix payé"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "son ressenti et la facilité d'usage de l'objet."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le schéma de la tondeuse avec « 50 cm » et « 2 m » est :",
+  "choix": [
+   "un schéma coté",
+   "un algorigramme",
+   "une photo"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "un schéma coté."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une procédure étape par étape se représente de préférence par :",
+  "choix": [
+   "un algorigramme",
+   "un logo",
+   "une couleur"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "un algorigramme."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Dans un algorigramme, une question oui ou non se dessine dans :",
+  "choix": [
+   "un losange",
+   "un rectangle",
+   "un ovale"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "un losange."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Je remets dans l'ordre le réglage de la minuterie de l'imprimante.",
+  "elements": [
+   "ouvrir le menu général",
+   "choisir « Maintenance »",
+   "choisir « Minuterie »",
+   "choisir 3, 5 ou 10 minutes et valider"
+  ],
+  "points": 2,
+  "expl": "",
+  "consigne": "Je numérote les étapes dans l'ordre (tout juste : 2 points).",
+  "reponse": "1. ouvrir le menu général ; 2. choisir « Maintenance » ; 3. choisir « Minuterie » ; 4. choisir 3, 5 ou 10 minutes et valider."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La tondeuse robot ne doit pas tondre les pentes de plus de :",
+  "choix": [
+   "20 %",
+   "80 %",
+   "2 %"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "20 %."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un manuel utilise beaucoup de dessins parce que :",
+  "choix": [
+   "ils se comprennent vite, par tous",
+   "c'est obligatoire",
+   "ils coûtent moins cher"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "ils se comprennent vite, par tous."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mode de représentation avec son exemple.",
+  "paires": [
+   {
+    "terme": "croquis",
+    "definition": "dessin rapide de la station fixée au sol"
+   },
+   {
+    "terme": "schéma coté",
+    "definition": "câble avec 50 cm et 2 m"
+   },
+   {
+    "terme": "algorigramme",
+    "definition": "étapes du réglage de la minuterie"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "croquis = dessin rapide de la station fixée au sol · schéma coté = câble avec 50 cm et 2 m · algorigramme = étapes du réglage de la minuterie",
+  "expl": ""
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un brainstorming sert à :",
+  "choix": [
+   "trouver des idées en groupe sans les juger",
+   "choisir le prix",
+   "rédiger la norme"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "trouver des idées en groupe sans les juger."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour une coque, « protéger en cas de chute » relie l'objet :",
+  "choix": [
+   "au sol",
+   "au brassard",
+   "au vendeur"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "au sol."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une coque qui cache la caméra ne respecte pas :",
+  "choix": [
+   "l'adaptation au téléphone",
+   "l'esthétique",
+   "la norme AFNOR"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "l'adaptation au téléphone."
+ },
+ {
+  "type": "vf",
+  "enonce": "Une innovation doit elle aussi respecter les contraintes de sécurité et d'environnement.",
+  "bonne": 0,
+  "expl": "",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un interacteur est :",
+  "choix": [
+   "tout ce qui est en lien avec l'objet à un moment de sa vie",
+   "une pièce interne",
+   "une norme"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "tout ce qui est en lien avec l'objet à un moment de sa vie."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mot avec sa définition.",
+  "paires": [
+   {
+    "terme": "norme",
+    "definition": "une règle qui s'impose à tous"
+   },
+   {
+    "terme": "contrainte",
+    "definition": "une obligation imposée à l'objet"
+   },
+   {
+    "terme": "fiabilité",
+    "definition": "fonctionner sans panne"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "norme = une règle qui s'impose à tous · contrainte = une obligation imposée à l'objet · fiabilité = fonctionner sans panne",
+  "expl": ""
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">— choisir —</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">—</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>
