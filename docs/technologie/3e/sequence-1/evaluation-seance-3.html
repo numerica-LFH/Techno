@@ -120,6 +120,7 @@ numerica-lfh.github.io/Techno · 3e — Séance 3 — Argumenter : l'objet et la
 <script>
 
 const CIBLE = "numerica@liceofranco.org";
+const URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
 const META = {"niveau": "3e", "sequence": "Séquence 1 — De la découverte à l'innovation, et ses effets sur la société", "seance": "Séance 3 — Argumenter : l'objet et la société", "exemple_classe": "3eA"};
 const questions = [
  {
@@ -462,9 +463,9 @@ function envoyer(donnees) {
   const boite = document.getElementById("envoi");
   boite.className = "envoi attente";
   boite.textContent = "Envoi du résultat au professeur…";
-  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+  fetch(URL_ENVOI, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(donnees)
   })
   .then(r => r.json())

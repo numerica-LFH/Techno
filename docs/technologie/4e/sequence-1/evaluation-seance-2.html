@@ -120,6 +120,7 @@ numerica-lfh.github.io/Techno · 4e — Séance 2 — Qu'est-ce qui change dans 
 <script>
 
 const CIBLE = "numerica@liceofranco.org";
+const URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
 const META = {"niveau": "4e", "sequence": "Séquence 1 — Pourquoi les objets techniques évoluent-ils ?", "seance": "Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?", "exemple_classe": "4eA"};
 const questions = [
  {
@@ -461,9 +462,9 @@ function envoyer(donnees) {
   const boite = document.getElementById("envoi");
   boite.className = "envoi attente";
   boite.textContent = "Envoi du résultat au professeur…";
-  fetch("https://formsubmit.co/ajax/" + CIBLE, {
+  fetch(URL_ENVOI, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(donnees)
   })
   .then(r => r.json())
