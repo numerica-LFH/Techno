@@ -11,6 +11,8 @@ participation reste volontaire.
 Épreuve courte, sans prérequis de programmation, sur la logique et le
 raisonnement. Ouverte du collège au lycée.
 
+Site officiel : [concours.castor-informatique.fr](https://concours.castor-informatique.fr/){ target=_blank }
+
 *Période : novembre.*
 
 ### Algoréa
@@ -18,7 +20,19 @@ raisonnement. Ouverte du collège au lycée.
 Prolongement du Castor, avec de la programmation effective. Plusieurs tours,
 niveau croissant.
 
+Site officiel : [algorea.org](https://www.algorea.org/){ target=_blank }
+
 *Période : janvier à mars.*
+
+### Alkindi
+
+Concours national de cryptographie et de cryptanalyse, organisé par Animath et France-ioi avec le soutien de la DGSE. Les élèves apprennent à casser des codes secrets et à retrouver des clés de chiffrement à travers des énigmes de logique et d'informatique.
+
+Le concours se déroule en plusieurs tours sur ordinateur, seul ou en équipe. Les épreuves consistent à décoder des messages chiffrés de plus en plus complexes.
+
+Site officiel : [concours-alkindi.fr](https://concours-alkindi.fr/){ target=_blank }
+
+*Niveaux : 4e, 3e et 2de.*
 
 ### La Nuit du Code
 

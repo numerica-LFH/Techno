@@ -311,8 +311,9 @@ exportés en PDF.
 | Concours | Lien |
 |---|---|
 | La Nuit du Code | [nuitducode.net](https://www.nuitducode.net) |
-| Castor informatique | [castor-informatique.fr](https://castor-informatique.fr/) |
+| Castor informatique | [concours.castor-informatique.fr](https://concours.castor-informatique.fr/) |
 | Algoréa | [algorea.org](https://www.algorea.org/) |
+| Alkindi | [concours-alkindi.fr](https://concours-alkindi.fr/) |
 
 ## Textes officiels
 

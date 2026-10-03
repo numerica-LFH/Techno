@@ -66,13 +66,13 @@ numériques, le **CRCN**, évalué sur [PIX](../pix/index.md).
 
 ## Comment se déroule une séance
 
-Toutes les séances durent **40 minutes** et suivent la même trame.
+Toutes les séances suivent la même trame.
 
 | Moment | Ce que fait l'élève | Durée indicative |
 |---|---|---|
-| **AVANT** | Il lit la question du jour, écrit trois hypothèses, repère le vocabulaire | 10 min |
-| **PENDANT** | Il mène les activités de recherche, seul puis à deux | 35 min |
-| **APRÈS** | Il complète la trace écrite, revient sur ses hypothèses, découvre la question suivante | 10 min |
+| **AVANT** | Il lit la question du jour, écrit trois hypothèses, repère le vocabulaire | 7 min |
+| **PENDANT** | Il mène les activités de recherche, seul puis à deux | 28 min |
+| **APRÈS** | Il complète la trace écrite, revient sur ses hypothèses, découvre la question suivante | 5 min |
 
 La semaine comporte deux créneaux : un en **classe entière**, un en **demi-groupe**. Les activités
 de manipulation, de mesure et de programmation sont placées en demi-groupe, les mises en commun et
