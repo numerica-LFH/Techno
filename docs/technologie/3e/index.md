@@ -8,7 +8,7 @@ Thème directeur de l'année : **de la découverte scientifique au projet d'ing�
 termine par un projet de groupe complet, mené sur une thématique de développement durable, qui peut
 servir de support à l'oral du brevet.
 
-Sept chapitres, trois à dix séances de 55 minutes. La progression complète figure sur la page
+Sept chapitres, trois à dix séances de 40 minutes. La progression complète figure sur la page
 [Programmation annuelle](../programmation-annuelle.md).
 
 ## Séquence 3 · Décrire l'expérience de l'utilisateur
@@ -19,7 +19,7 @@ Chapitre 3 du manuel Nathan, *Décrire les interactions entre un objet et son en
 
 ## Séquences projet : programmer
 
-Deux séquences projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+Deux séquences projet, en séances de 40 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
 
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 - [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances

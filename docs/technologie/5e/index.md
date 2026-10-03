@@ -8,7 +8,7 @@ Thème directeur de l'année : **l'habitat et les ouvrages**. On part des besoin
 quotidienne, on regarde de quoi les objets sont faits et comment ils sont alimentés, puis on
 apprend à leur donner des ordres et à construire.
 
-Dix chapitres, quatre à cinq séances de 55 minutes chacun. La progression complète figure sur la
+Dix chapitres, quatre à cinq séances de 40 minutes chacun. La progression complète figure sur la
 page [Programmation annuelle](../programmation-annuelle.md).
 
 ## Séquence 3 · Les contraintes d'un objet et ses interacteurs
@@ -19,7 +19,7 @@ Chapitre 3 du manuel Nathan, *Décrire les interactions entre un objet et son en
 
 ## Séquence projet : programmer
 
-Une séquence projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+Une séquence projet, en séances de 40 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
 
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 

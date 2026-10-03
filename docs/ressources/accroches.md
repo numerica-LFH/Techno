@@ -21,14 +21,14 @@ est prévu pour l'extrait de *Dr. Stone* : au moment de la séance, on charge le
 fichier depuis son propre ordinateur, ou on colle un lien. Rien n'est envoyé ni
 stocké en ligne.
 
-**Déroulé conseillé (55 min)**
+**Déroulé conseillé (40 min)**
 
 | Temps | Ce qu'on fait |
 |---|---|
 | 5 min | Extrait vidéo, sans commentaire |
-| 10 min | Diapositives 1 à 9, questions ouvertes |
-| 15 min | Fiche élève : trois hypothèses, chacun écrit les siennes |
-| 20 min | Remise des six étapes dans l'ordre, correction collective |
+| 8 min | Diapositives 1 à 9, questions ouvertes |
+| 10 min | Fiche élève : trois hypothèses, chacun écrit les siennes |
+| 12 min | Remise des six étapes dans l'ordre, correction collective |
 | 5 min | Trace écrite : une invention dépend de celles qui la précèdent |
 
 La fiche élève est distribuée en classe. La fiche corrigée reste au professeur

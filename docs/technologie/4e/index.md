@@ -7,7 +7,7 @@
 Thème directeur de l'année : **confort, information et communication**. On regarde des objets qui
 communiquent, on comprend comment ils traitent l'information, puis on leur ajoute une fonction.
 
-Sept chapitres, quatre à huit séances de 55 minutes. La progression complète figure sur la page
+Sept chapitres, quatre à huit séances de 40 minutes. La progression complète figure sur la page
 [Programmation annuelle](../programmation-annuelle.md).
 
 ## Séquence 3 · Contraintes, exigences et expérience de l'utilisateur
@@ -18,7 +18,7 @@ Chapitre 3 du manuel Nathan, *Décrire les interactions entre un objet et son en
 
 ## Séquences projet : programmer
 
-Deux séquences projet, en séances de 55 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
+Deux séquences projet, en séances de 40 minutes, avec fiches à imprimer, traces écrites et évaluations en ligne :
 
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 - [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances

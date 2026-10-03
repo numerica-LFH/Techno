@@ -1,7 +1,7 @@
 # Programmation annuelle
 
 Vue d'ensemble des trois années. Chaque ligne est un chapitre, avec le thème du programme qu'il
-travaille, les compétences de fin de cycle visées et le nombre de séances de 55 minutes.
+travaille, les compétences de fin de cycle visées et le nombre de séances de 40 minutes.
 
 Les codes de compétences renvoient à la page [Objectifs et compétences](objectifs.md).
 La colonne *App* indique les chapitres qui disposent d'une
@@ -10,7 +10,7 @@ La colonne *App* indique les chapitres qui disposent d'une
 !!! info "Lecture du tableau"
 
     Une période vaut environ six semaines. La semaine comporte deux créneaux, un en classe entière
-    et un en demi-groupe, ce qui donne deux séances de 55 minutes par semaine et par élève.
+    et un en demi-groupe, ce qui donne deux séances de 40 minutes par semaine et par élève.
 
 ## 5e · L'habitat et les ouvrages
 

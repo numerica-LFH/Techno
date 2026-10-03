@@ -68,6 +68,11 @@ nav:
               - "Séance 1 — Stocker et classer les données": technologie/5e/sequence-2/seance-1.md
               - "Séance 2 — Sécuriser le système, protéger les personnes": technologie/5e/sequence-2/seance-2.md
               - "Séance 3 — Bilan et évaluation": technologie/5e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Qu'est-ce qu'un système d'information ?": technologie/5e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Stocker, classer, retrouver": technologie/5e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Cybersécurité et données personnelles": technologie/5e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/5e/sequence-2/trace-ecrite-seance-3.md
           - "Séquence 3 — Les contraintes d'un objet et ses interacteurs":
               - technologie/5e/sequence-3/index.md
               - "Séance 1 — Un objet peut-il se fabriquer comme on veut ?": technologie/5e/sequence-3/seance-1.md
@@ -115,6 +120,11 @@ nav:
               - "Séance 1 — Sécuriser les échanges et les accès": technologie/4e/sequence-2/seance-1.md
               - "Séance 2 — Traces, cookies et droits": technologie/4e/sequence-2/seance-2.md
               - "Séance 3 — Bilan, règles d'usage et évaluation": technologie/4e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Le système d'information et mes données": technologie/4e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Certificat SSL, mots de passe, hameçonnage": technologie/4e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Témoins de connexion, e-réputation, RGPD": technologie/4e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/4e/sequence-2/trace-ecrite-seance-3.md
           - "Séquence 3 — Contraintes, exigences et expérience de l'utilisateur":
               - technologie/4e/sequence-3/index.md
               - "Séance 1 — Les familles de contraintes": technologie/4e/sequence-3/seance-1.md
@@ -185,6 +195,11 @@ nav:
               - "Séance 1 — Le numérique comme choix stratégique": technologie/3e/sequence-2/seance-1.md
               - "Séance 2 — Les deux coûts : l'environnement et la santé": technologie/3e/sequence-2/seance-2.md
               - "Séance 3 — Bilan, argumentaire et évaluation": technologie/3e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Ce que le réseau garde de moi": technologie/3e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Entreprises, métiers, données": technologie/3e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ce que consomme le système, ce qu'il fait au corps": technologie/3e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/3e/sequence-2/trace-ecrite-seance-3.md
           - "Séquence 3 — Décrire l'expérience de l'utilisateur":
               - technologie/3e/sequence-3/index.md
               - "Séance 1 — Du besoin au manuel de l'utilisateur": technologie/3e/sequence-3/seance-1.md

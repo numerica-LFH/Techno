@@ -66,7 +66,7 @@ numériques, le **CRCN**, évalué sur [PIX](../pix/index.md).
 
 ## Comment se déroule une séance
 
-Toutes les séances durent **55 minutes** et suivent la même trame.
+Toutes les séances durent **40 minutes** et suivent la même trame.
 
 | Moment | Ce que fait l'élève | Durée indicative |
 |---|---|---|
