@@ -1,0 +1,83 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Test SketchUp 5e</title><style>
+:root { --v:#1f5c4d; --o:#a8613c; --f:#f7faf9; --b:#dfe6e3; --t:#14181c; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,"Segoe UI",Arial,sans-serif; color:var(--t); background:#fff; line-height:1.5; }
+.wrap { max-width:820px; margin:0 auto; padding:24px 18px 60px; }
+header { border-left:5px solid var(--v); background:var(--f); padding:14px 18px; border-radius:6px; }
+header .k { font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#6f8b83; }
+h1 { font-size:22px; margin:6px 0 4px; color:var(--v); }
+header p { margin:4px 0 0; font-size:14px; color:#4a5a55; }
+.q { border:1px solid var(--b); border-radius:6px; padding:14px 16px; margin-top:16px; }
+.q h2 { font-size:15px; margin:0 0 10px; color:var(--t); }
+.q h2 span { color:var(--o); font-weight:700; margin-right:6px; }
+button.opt { display:block; width:100%; text-align:left; font:inherit; font-size:14px; background:#fff;
+  border:1px solid var(--b); border-radius:5px; padding:9px 12px; margin-bottom:7px; cursor:pointer; }
+button.opt:hover:not(:disabled) { border-color:var(--v); background:var(--f); }
+button.opt:disabled { cursor:default; }
+button.opt.juste { border-color:#2e7d4f; background:#eaf6ee; font-weight:600; }
+button.opt.faux { border-color:#a02c1f; background:#fbeceb; }
+.expl { display:none; font-size:13.5px; background:var(--f); border-left:3px solid var(--v);
+  padding:9px 12px; border-radius:0 4px 4px 0; margin-top:4px; }
+.expl.on { display:block; }
+#score { position:sticky; bottom:0; background:#fff; border-top:1px solid var(--b); padding:12px 0;
+  margin-top:22px; font-size:15px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+#score b { color:var(--v); font-size:20px; }
+#rejouer { font:inherit; font-size:14px; border:1px solid var(--v); background:#fff; color:var(--v);
+  border-radius:5px; padding:7px 14px; cursor:pointer; }
+#rejouer:hover { background:var(--v); color:#fff; }
+.bilan { font-size:14px; color:#4a5a55; }
+footer { margin-top:26px; font-size:12px; color:#7d8d88; border-top:1px solid var(--b); padding-top:10px; }
+@media (prefers-color-scheme: dark) {
+  :root { --f:#16211e; --b:#2c3a36; --t:#e7edea; }
+  body { background:#0f1614; } button.opt { background:#131c1a; color:var(--t); }
+  h1, #score b { color:#7ec6ac; } #score { background:#0f1614; }
+  button.opt.juste { background:#14301f; } button.opt.faux { background:#331715; }
+  #rejouer { background:#131c1a; color:#7ec6ac; border-color:#7ec6ac; }
+}
+</style></head><body><div class="wrap"><header><div class="k">Technologie 5e &middot; Projet jardin sec</div><h1>Test en ligne : Créer le bac dans SketchUp Free</h1><p>Huit questions. Clique une réponse, la correction et l'explication apparaissent aussitôt. Rien n'est enregistré, tu peux recommencer autant de fois que tu veux.</p></header><div id="questions"></div><div id="score"><span class="bilan">Score : <b id="n">0</b> / <span id="d">8</span> &nbsp;<span id="msg"></span></span><button id="rejouer" type="button">Recommencer</button></div><footer>Liceo Franco Hondureño &middot; Technologie cycle 4 &middot; Projet jardin sec</footer></div><script>
+// Les questions sont encodees, pour que les reponses n'apparaissent pas en clair dans le
+// code source de la page. C'est une gene, pas une protection : un test qui se corrige dans
+// le navigateur porte toujours ses reponses avec lui.
+var D = "W3sicSI6ICJRdWVsIG1vZMOobGUgZmF1dC1pbCBjaG9pc2lyIGVuIG91dnJhbnQgU2tldGNoVXAgRnJlZSA/IiwgIm8iOiBbIk4naW1wb3J0ZSBsZXF1ZWwsIG9uIGNvbnZlcnRpdCBhcHLDqHMiLCAiTGUgbW9kw6hsZSBNw6h0cmVzIiwgIkxlIG1vZMOobGUgUGllZHMgZXQgcG91Y2VzIl0sICJyIjogMSwgImUiOiAiTGVzIHVuaXTDqXMgZHUgbW9kw6hsZSBuZSBzZSBjaGFuZ2VudCBwYXMgc2FucyByZWZhaXJlIGxlcyBjb3Rlcy4gT24gY2hvaXNpdCBsZXMgbcOodHJlcyBkw6hzIGxlIGTDqXBhcnQuIn0sIHsicSI6ICJBcHLDqHMgYXZvaXIgdGFww6kgMSwyIDsgMCw4IGF2ZWMgbCdvdXRpbCBSZWN0YW5nbGUsIHF1ZSBtZXN1cmUgbGEgc3VyZmFjZSA/IiwgIm8iOiBbIjAsOTYgbTIiLCAiMiBtMiIsICIxLDIgbTIiXSwgInIiOiAwLCAiZSI6ICIxLDIwIHggMCw4MCA9IDAsOTYgbTIuIEMnZXN0IGxhIHN1cmZhY2UgYXUgc29sIGQndW4gYmFjLiJ9LCB7InEiOiAiUXVlbCBvdXRpbCBkb25uZSB1bmUgw6lwYWlzc2V1ciDDoCB1bmUgc3VyZmFjZSBwbGFuZSA/IiwgIm8iOiBbIk3DqHRyZSIsICJEw6lwbGFjZXIiLCAiUG91c3Nlci9UaXJlciJdLCAiciI6IDIsICJlIjogIlBvdXNzZXIvVGlyZXIgdHJhbnNmb3JtZSB1bmUgZmFjZSBlbiB2b2x1bWUuIETDqXBsYWNlciBkw6lwbGFjZSwgTcOodHJlIG1lc3VyZS4ifSwgeyJxIjogIlBvdXJxdW9pIGxlcyBwYXJvaXMgY291cnRlcyBtZXN1cmVudC1lbGxlcyAwLDc2IG0gZXQgbm9uIDAsODAgbSA/IiwgIm8iOiBbIklsIGZhdXQgcmV0aXJlciBsZXMgZGV1eCDDqXBhaXNzZXVycyBkZSAwLDAyIG0iLCAiUGFyY2UgcXVlIGxlIGJhYyBlc3QgbMOpZ8OocmVtZW50IHRyYXDDqXpvw69kYWwiLCAiUG91ciBmYWlyZSBkZXMgw6ljb25vbWllcyBkZSBib2lzIl0sICJyIjogMCwgImUiOiAiMCw4MCBtb2lucyBkZXV4IGZvaXMgMCwwMiDDqWdhbGUgMCw3Ni4gTGVzIHBhcm9pcyBjb3VydGVzIHNlIGxvZ2VudCBlbnRyZSBsZXMgcGFyb2lzIGxvbmd1ZXMuIn0sIHsicSI6ICJRdWVsbGUgZXN0IGxhIGhhdXRldXIgdG90YWxlIGR1IGJhYyB0ZXJtaW7DqSA/IiwgIm8iOiBbIjAsMzAgbSIsICIwLDI4IG0iLCAiMCwzMiBtIl0sICJyIjogMiwgImUiOiAiMCwwMiBtIGRlIGZvbmQgcGx1cyAwLDMwIG0gZGUgcGFyb2kgw6lnYWxlIDAsMzIgbS4ifSwgeyJxIjogIkxlIGNhaGllciBkZXMgY2hhcmdlcyBpbXBvc2UgMCwyNSBtIGRlIHRlcnJlLiBMYSBjb250cmFpbnRlIGVzdC1lbGxlIHJlc3BlY3TDqWUgPyIsICJvIjogWyJPbiBuZSBwZXV0IHBhcyBsZSBzYXZvaXIiLCAiT3VpLCBsYSBoYXV0ZXVyIGludMOpcmlldXJlIGZhaXQgMCwzMCBtIiwgIk5vbiwgaWwgbWFucXVlIDAsMDUgbSJdLCAiciI6IDEsICJlIjogIkxhIGhhdXRldXIgaW50w6lyaWV1cmUgZGUgMCwzMCBtIHBlcm1ldCAwLDI1IG0gZGUgdGVycmUgZXQgMCwwMyBtIGRlIHBhaWxsYWdlLCBhdmVjIHVuIHBldSBkZSBtYXJnZS4ifSwgeyJxIjogIlF1ZWxsZSBkaWZmw6lyZW5jZSBlbnRyZSB1biBncm91cGUgZXQgdW4gY29tcG9zYW50ID8iLCAibyI6IFsiVW4gZ3JvdXBlIGVzdCB0b3Vqb3VycyBwbHVzIGzDqWdlciIsICJVbiBjb21wb3NhbnQgbmUgcGV1dCBwYXMgw6p0cmUgZMOpcGxhY8OpIiwgIk1vZGlmaWVyIHVuIGNvbXBvc2FudCBtb2RpZmllIHRvdXRlcyBzZXMgY29waWVzIl0sICJyIjogMiwgImUiOiAiQydlc3QgdG91dCBsJ2ludMOpcsOqdCBkdSBjb21wb3NhbnQgOiB1bmUgc2V1bGUgY29ycmVjdGlvbiBtZXQgw6Agam91ciBsZXMgaHVpdCBiYWNzLiJ9LCB7InEiOiAiVW4gw6lsw6h2ZSB0YXBlIDMwIGF1IGxpZXUgZGUgMCwzIHBvdXIgbGEgaGF1dGV1ciBkZSBwYXJvaS4gUXVlIHNlIHBhc3NlLXQtaWwgPyIsICJvIjogWyJMZSBsb2dpY2llbCByZWZ1c2UgbGEgdmFsZXVyIiwgIlJpZW4sIFNrZXRjaFVwIGNvcnJpZ2UiLCAiTGEgcGFyb2kgZmFpdCAzMCBtw6h0cmVzIGRlIGhhdXQiXSwgInIiOiAyLCAiZSI6ICJTa2V0Y2hVcCBhY2NlcHRlIGxhIHZhbGV1ciB0ZWxsZSBxdWVsbGUuIExhIHZpcmd1bGUgZMOpY2ltYWxlIHNlIHbDqXJpZmllIGF2YW50IGQnYXBwdXllciBzdXIgRW50csOpZS4ifV0=";
+var Q = JSON.parse(decodeURIComponent(Array.prototype.map.call(atob(D), function (c) {
+  return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+}).join('')));
+var total = Q.length, repondu = 0, justes = 0;
+var wrap = document.getElementById('questions');
+Q.forEach(function (q, i) {
+  var d = document.createElement('div'); d.className = 'q';
+  var h = document.createElement('h2');
+  h.innerHTML = '<span>' + (i + 1) + '.</span>';
+  h.appendChild(document.createTextNode(q.q));
+  d.appendChild(h);
+  q.o.forEach(function (texte, j) {
+    var b = document.createElement('button');
+    b.className = 'opt'; b.type = 'button'; b.textContent = texte;
+    b.onclick = function () {
+      if (d.dataset.fait) return;
+      d.dataset.fait = '1'; repondu++;
+      var boutons = d.querySelectorAll('button.opt');
+      for (var k = 0; k < boutons.length; k++) boutons[k].disabled = true;
+      boutons[q.r].classList.add('juste');
+      if (j === q.r) { justes++; } else { b.classList.add('faux'); }
+      d.querySelector('.expl').classList.add('on');
+      maj();
+    };
+    d.appendChild(b);
+  });
+  var e = document.createElement('div'); e.className = 'expl'; e.textContent = q.e; d.appendChild(e);
+  wrap.appendChild(d);
+});
+function maj() {
+  document.getElementById('n').textContent = justes;
+  document.getElementById('d').textContent = total;
+  var m = document.getElementById('msg');
+  if (repondu < total) { m.textContent = repondu + ' question(s) sur ' + total + ' traitée(s).'; return; }
+  var p = Math.round(100 * justes / total);
+  m.textContent = p >= 88 ? 'Le pas à pas est maîtrisé.'
+    : p >= 63 ? 'Relis les étapes concernées, puis refais le test.'
+    : 'Reprends le pas à pas depuis le début, avec le modèle ouvert.';
+}
+document.getElementById('rejouer').onclick = function () { location.reload(); };
+maj();
+</script></body></html>
