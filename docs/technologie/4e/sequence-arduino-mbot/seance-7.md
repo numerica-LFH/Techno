@@ -1,6 +1,6 @@
 # Séance 7 — Le robot mBot
 
-!!! info "Séance 7 sur 10 · 55 minutes · Classe entière"
+!!! info "Séance 7 sur 10 · 40 minutes · Classe entière"
 
     Je découvre le robot mBot, je programme un camarade « robot » puis je passe de Scratch à mBlock.
 
@@ -83,6 +83,8 @@ d\. Pour le défi du robot livreur, où le robot devra rouler seul sur une piste
 !!! example "Mon défi · 4e"
 
     J'écris, en blocs, un programme qui fait parcourir au robot un triangle équilatéral.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

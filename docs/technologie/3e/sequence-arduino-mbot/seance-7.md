@@ -1,6 +1,6 @@
 # Séance 7 — Le robot mBot
 
-!!! info "Séance 7 sur 10 · 55 minutes · Classe entière"
+!!! info "Séance 7 sur 10 · 40 minutes · Classe entière"
 
     Je découvre le robot mBot, je programme un camarade « robot » puis je passe de Scratch à mBlock.
 
@@ -85,6 +85,8 @@ e\. En mode téléversé, mBlock traduit les blocs en langage Arduino avant de l
 !!! example "Mon défi · 3e"
 
     J'explique pourquoi un robot programmé « au temps » (pendant 1 seconde) ne refait jamais exactement le même carré.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

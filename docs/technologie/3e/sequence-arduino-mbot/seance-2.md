@@ -1,6 +1,6 @@
 # Séance 2 — Une LED sur plaque d'essai
 
-!!! info "Séance 2 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 2 sur 10 · 40 minutes · Demi-groupe"
 
     Je câble une LED avec sa résistance, je téléverse mon premier programme dans la carte et je corrige les erreurs.
 
@@ -102,6 +102,8 @@ e\. Pourquoi une LED éteinte sans `delay()` semble-t-elle toujours allumée ?
 !!! example "Mon défi · 3e"
 
     Je câble trois LED (rouge 8, orange 9, verte 10) et je programme un feu tricolore : vert 5 s, orange 1 s, rouge 5 s.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

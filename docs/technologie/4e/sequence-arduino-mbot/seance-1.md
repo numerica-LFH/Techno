@@ -1,6 +1,6 @@
 # Séance 1 — De Scratch à Arduino
 
-!!! info "Séance 1 sur 10 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 1 sur 10 · 40 minutes · Classe entière (salle info)"
 
     Je passe d'un programme qui agit sur un écran à un programme qui agit sur un objet réel.
 
@@ -97,6 +97,8 @@ d\. Dans quelle unité `delay()` compte-t-il le temps ?
 !!! example "Mon défi · 4e"
 
     Je fais clignoter la LED deux fois vite (0,2 s), puis je laisse une pause d'une seconde, et ainsi de suite.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

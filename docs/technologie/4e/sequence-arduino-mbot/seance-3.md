@@ -1,6 +1,6 @@
 # Séance 3 — Un bouton pour commander
 
-!!! info "Séance 3 sur 10 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 3 sur 10 · 40 minutes · Classe entière (salle info)"
 
     Je lis l'état d'un bouton, je l'affiche au moniteur série et j'allume une LED selon cet état.
 
@@ -97,6 +97,8 @@ d\. Pourquoi faut-il attendre que le bouton soit relâché avant de lire un nouv
 !!! example "Mon défi · 4e"
 
     Je fais afficher « appui » au moniteur série seulement quand le bouton est enfoncé.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

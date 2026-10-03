@@ -1,6 +1,6 @@
 # Séance 5 — Mesurer la lumière
 
-!!! info "Séance 5 sur 10 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 5 sur 10 · 40 minutes · Classe entière (salle info)"
 
     Je mesure la lumière avec une photorésistance et j'allume une veilleuse sous un seuil.
 
@@ -103,6 +103,8 @@ e\. Je choisis un seuil adapté à la classe à partir de mes mesures. Lequel, e
 !!! example "Mon défi · 4e"
 
     Je règle le seuil pour que la veilleuse s'allume quand je couvre le capteur avec ma main, et pas avant. J'écris la valeur choisie et comment je l'ai trouvée.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

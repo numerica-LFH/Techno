@@ -1,6 +1,6 @@
 # Séance 8 — Étalonner les déplacements du robot
 
-!!! info "Séance 8 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 8 sur 10 · 40 minutes · Demi-groupe"
 
     Je mesure ce que fait vraiment le robot, j'en déduis les bons réglages, puis je le fais s'arrêter devant un obstacle.
 
@@ -80,6 +80,8 @@ e\. Le robot s'arrête à 6 cm au lieu de 10. Pourquoi ? Que modifier ?
 !!! example "Mon défi · 3e"
 
     Je fais reculer le robot de 20 cm après l'arrêt devant l'obstacle, puis tourner de 90° et repartir.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

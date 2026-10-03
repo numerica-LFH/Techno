@@ -1,6 +1,6 @@
 # Séance 4 — Le jeu « attrape la lumière »
 
-!!! info "Séance 4 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 4 sur 10 · 40 minutes · Demi-groupe"
 
     Je joue à un jeu de réflexe programmé sur la carte, je découvre une triche et je propose une correction.
 
@@ -126,6 +126,8 @@ c\. Quel test faut-il refaire après la correction ?
 !!! example "Mon défi · 4e"
 
     Je fais afficher au moniteur série le temps de réaction du joueur quand il réussit.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 10 — Le défi du robot livreur
 
-!!! info "Séance 10 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 10 sur 10 · 40 minutes · Demi-groupe"
 
     Je programme un robot livreur qui suit la ligne, s'arrête devant chaque colis et compte ses livraisons, puis je le fais tester.
 
@@ -83,6 +83,8 @@ Je termine par le QCM de fin de séquence sur 10 questions, dans « S'évaluer �
 !!! example "Mon défi · 4e"
 
     Le robot doit s'arrêter définitivement après trois livraisons. J'écris la condition et l'endroit où je la place.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

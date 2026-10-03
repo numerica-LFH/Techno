@@ -1,6 +1,6 @@
 # Séance 6 — Le radar de recul
 
-!!! info "Séance 6 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 6 sur 10 · 40 minutes · Demi-groupe"
 
     Je mesure une distance avec un capteur à ultrasons, je vérifie la mesure à la règle et je construis un radar de recul.
 
@@ -159,6 +159,8 @@ c\. À quoi sert la fonction `mesurerDistance()` ?
 !!! example "Mon défi · 4e"
 
     J'ajoute une LED sur la broche 8 qui s'allume quand l'obstacle est à moins de 10 cm.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

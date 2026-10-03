@@ -1,6 +1,6 @@
 # Séance 9 — Suivre une ligne
 
-!!! info "Séance 9 sur 10 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 9 sur 10 · 40 minutes · Classe entière (salle info)"
 
     Je comprends comment le robot détecte une ligne noire, j'écris l'algorithme du suiveur et je choisis la puissance.
 
@@ -81,6 +81,8 @@ d\. Quelle puissance retenir ? Je justifie par un compromis.
 !!! example "Mon défi · 3e"
 
     Dans les virages serrés, le robot sort de la piste. Je propose deux modifications et j'explique laquelle je teste en premier.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

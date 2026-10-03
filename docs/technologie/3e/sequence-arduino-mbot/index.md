@@ -1,6 +1,6 @@
 # Séquence 4 — De la carte Arduino au robot mBot
 
-**3e · dix séances de 55 minutes · cinq semaines**
+**3e · dix séances de 40 minutes · cinq semaines**
 
 Après le jeu vidéo, le programme quitte l'écran pour agir sur des objets réels. On simule dans Tinkercad, on câble et on programme en langage Arduino les composants du kit, on étalonne les capteurs, puis on programme le robot mBot jusqu'au défi du robot livreur, en faisant le lien entre les blocs et le code.
 

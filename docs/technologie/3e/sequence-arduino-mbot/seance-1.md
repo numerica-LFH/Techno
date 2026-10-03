@@ -1,6 +1,6 @@
 # Séance 1 — De Scratch à Arduino
 
-!!! info "Séance 1 sur 10 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 1 sur 10 · 40 minutes · Classe entière (salle info)"
 
     Je passe d'un programme qui agit sur un écran à un programme qui agit sur un objet réel.
 
@@ -99,6 +99,8 @@ e\. Quelle ligne choisit si la broche est une entrée ou une sortie ?
 !!! example "Mon défi · 3e"
 
     J'écris en texte un programme qui envoie « SOS » en morse avec la LED : trois signaux courts, trois longs, trois courts.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

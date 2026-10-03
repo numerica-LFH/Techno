@@ -1,6 +1,6 @@
 # Séance 10 — Le défi du robot livreur
 
-!!! info "Séance 10 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 10 sur 10 · 40 minutes · Demi-groupe"
 
     Je programme un robot livreur qui suit la ligne, s'arrête devant chaque colis et compte ses livraisons, puis je le fais tester.
 
@@ -99,6 +99,8 @@ Je termine par le QCM de fin de séquence sur 10 questions, dans « S'évaluer �
 !!! example "Mon défi · 3e"
 
     J'écris en langage Arduino la condition « si livraisons = 3, arrêter les moteurs et jouer trois notes ».
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

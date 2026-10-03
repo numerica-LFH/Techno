@@ -1,6 +1,6 @@
 # Séance 2 — Une LED sur plaque d'essai
 
-!!! info "Séance 2 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 2 sur 10 · 40 minutes · Demi-groupe"
 
     Je câble une LED avec sa résistance, je téléverse mon premier programme dans la carte et je corrige les erreurs.
 
@@ -100,6 +100,8 @@ Chaque binôme reçoit une étiquette avec une panne. Je trouve la cause et la c
 !!! example "Mon défi · 4e"
 
     J'ajoute une deuxième LED sur la broche 9 et je la fais clignoter en alternance avec la première.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

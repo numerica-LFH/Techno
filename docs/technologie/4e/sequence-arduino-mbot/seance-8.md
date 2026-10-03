@@ -1,6 +1,6 @@
 # Séance 8 — Étalonner les déplacements du robot
 
-!!! info "Séance 8 sur 10 · 55 minutes · Demi-groupe"
+!!! info "Séance 8 sur 10 · 40 minutes · Demi-groupe"
 
     Je mesure ce que fait vraiment le robot, j'en déduis les bons réglages, puis je le fais s'arrêter devant un obstacle.
 
@@ -78,6 +78,8 @@ d\. Pourquoi cette méthode est-elle plus sûre que « avancer pendant 2 seconde
 !!! example "Mon défi · 4e"
 
     Je fais faire au robot un aller-retour de 50 cm : avancer, faire demi-tour, revenir au point de départ.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 
