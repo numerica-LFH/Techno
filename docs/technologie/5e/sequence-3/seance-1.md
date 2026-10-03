@@ -1,6 +1,6 @@
 # Séance 1 — Un objet peut-il se fabriquer comme on veut ?
 
-!!! info "Séance 1 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 1 sur 4 · 40 minutes · Classe entière"
 
     Je repère ce que les utilisateurs demandent à un objet et je découvre qu'il doit respecter des contraintes.
 
@@ -74,6 +74,8 @@ d\. J'écris trois éléments sur lesquels le concepteur peut jouer pour rendre 
 !!! example "Mon défi · 5e"
 
     Je choisis un objet de ma trousse. J'écris deux contraintes d'utilisation et une contrainte esthétique.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 2 — Normes, sécurité et environnement
 
-!!! info "Séance 2 sur 4 · 45 minutes · Demi-groupe"
+!!! info "Séance 2 sur 4 · 40 minutes · Demi-groupe"
 
     Je repère sur de vrais objets les logos et les normes, puis les contraintes liées à la sécurité et à l'environnement.
 
@@ -76,6 +76,8 @@ b\. J'écris une contrainte environnementale pour une trottinette électrique.
 !!! example "Mon défi · 5e"
 
     Je retourne ma calculatrice ou ma trousse. Je relève un logo ou une inscription et j'explique quelle contrainte elle montre.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

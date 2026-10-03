@@ -1,6 +1,6 @@
 # Séance 3 — Décrire l'expérience de l'utilisateur : le manuel
 
-!!! info "Séance 3 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 3 sur 4 · 40 minutes · Classe entière"
 
     Je découvre comment un manuel décrit l'utilisation d'un objet, du texte au dessin puis à l'algorigramme.
 
@@ -81,6 +81,8 @@ b\. Pour l'utilisateur, qu'apporte l'algorigramme par rapport au texte ?
 !!! example "Mon défi · 4e"
 
     J'écris en cinq étapes numérotées, sans phrase inutile, comment allumer un ordinateur de la salle et ouvrir la session.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

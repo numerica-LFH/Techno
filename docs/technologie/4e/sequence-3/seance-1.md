@@ -1,6 +1,6 @@
 # Séance 1 — Les familles de contraintes
 
-!!! info "Séance 1 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 1 sur 4 · 40 minutes · Classe entière"
 
     Je classe les contraintes d'un objet en familles et j'explique pourquoi le concepteur doit toutes les respecter.
 
@@ -82,6 +82,8 @@ e\. Comment un fabricant peut-il prouver qu'une trottinette est fiable ?
 !!! example "Mon défi · 4e"
 
     Je choisis un objet de mon sac. J'écris une contrainte de chaque famille : utilisation, esthétique, norme ou sécurité, environnement.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

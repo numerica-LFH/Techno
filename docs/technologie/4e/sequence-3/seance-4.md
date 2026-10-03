@@ -1,6 +1,6 @@
 # Séance 4 — Bilan : concevoir une coque de smartphone, puis l'évaluation
 
-!!! info "Séance 4 sur 4 · 45 minutes · Demi-groupe (salle informatique)"
+!!! info "Séance 4 sur 4 · 40 minutes · Demi-groupe (salle informatique)"
 
     Je mobilise la séquence pour concevoir une coque de smartphone innovante, puis je passe l'évaluation.
 
@@ -71,6 +71,8 @@ Sur le poste, j'ouvre la page de la séquence et je clique sur **Évaluation de 
 !!! example "Mon défi · 4e"
 
     Si j'ai terminé l'évaluation en avance : je dessine un croquis de notre coque, avec trois flèches qui montrent trois contraintes respectées.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

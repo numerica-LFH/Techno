@@ -1,6 +1,6 @@
 # Séance 2 — La sécurité dans le manuel de l'utilisateur
 
-!!! info "Séance 2 sur 4 · 45 minutes · Demi-groupe"
+!!! info "Séance 2 sur 4 · 40 minutes · Demi-groupe"
 
     J'analyse comment un manuel signale les risques, par niveau de gravité, puis je rédige une consigne de sécurité.
 
@@ -90,6 +90,8 @@ c\. À partir de la notice de mon binôme, je rédige une consigne de sécurité
 !!! example "Mon défi · 3e"
 
     J'écris pour la trottinette électrique une consigne DANGER et une consigne ATTENTION, chacune en une phrase à l'impératif.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

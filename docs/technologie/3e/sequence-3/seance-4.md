@@ -1,6 +1,6 @@
 # Séance 4 — Vers le brevet : le robot explorateur, puis l'évaluation
 
-!!! info "Séance 4 sur 4 · 45 minutes · Demi-groupe (salle informatique)"
+!!! info "Séance 4 sur 4 · 40 minutes · Demi-groupe (salle informatique)"
 
     Je traite un sujet de type brevet sur un robot explorateur, puis je passe l'évaluation de la séquence.
 
@@ -69,6 +69,8 @@ Sur le poste, j'ouvre la page de la séquence et je clique sur **Évaluation de 
 !!! example "Mon défi · 3e"
 
     Si j'ai terminé l'évaluation en avance : je représente par un croquis coté le robot que j'imagine, en indiquant deux contraintes qu'il respecte.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 2 — La sécurité d'un jouet : la voiture télécommandée
 
-!!! info "Séance 2 sur 4 · 45 minutes · Demi-groupe"
+!!! info "Séance 2 sur 4 · 40 minutes · Demi-groupe"
 
     J'explique les choix de conception d'une voiture télécommandée et les contraintes de sécurité que son manuel décrit.
 
@@ -89,6 +89,8 @@ Je complète les contraintes du diagramme de la voiture télécommandée.
 !!! example "Mon défi · 4e"
 
     Je dessine sur ma fiche, en croquis simple, le quatrième dessin de sécurité (moteur chaud), avec un pictogramme compréhensible sans texte.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

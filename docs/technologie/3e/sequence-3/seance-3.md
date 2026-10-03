@@ -1,6 +1,6 @@
 # Séance 3 — Paramétrer un objet : l'algorithme
 
-!!! info "Séance 3 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 3 sur 4 · 40 minutes · Classe entière"
 
     Je décris par un algorithme la façon de paramétrer un objet, puis je programme en langage naturel le salut d'un robot.
 
@@ -74,6 +74,8 @@ e\. Pourquoi faire appel à un rédacteur qui n'a pas participé à la conceptio
 !!! example "Mon défi · 3e"
 
     Nao doit aussi dire au revoir. Je modifie mon algorithme pour qu'il salue en arrivant et dise au revoir quand la personne s'éloigne, en utilisant une condition.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

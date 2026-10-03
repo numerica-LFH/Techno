@@ -1,6 +1,6 @@
 # Séquence 3 — Les contraintes d'un objet et ses interacteurs
 
-**5e · 4 séances de 45 minutes · deux semaines**
+**5e · 4 séances de 40 minutes · deux semaines**
 
 Un objet technique ne se fabrique pas comme on veut : il doit respecter de nombreuses contraintes. On les repère sur des objets du quotidien (trottinette, lampe, carte bancaire, tablette), on les classe par familles, puis on apprend à toutes les lister avec un diagramme des interacteurs. Chapitre 3 du manuel Nathan.
 

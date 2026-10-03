@@ -1,6 +1,6 @@
 # Séance 3 — Le diagramme des interacteurs
 
-!!! info "Séance 3 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 3 sur 4 · 40 minutes · Classe entière"
 
     J'apprends à lister tout ce qui est en lien avec un objet pour n'oublier aucune contrainte.
 
@@ -91,6 +91,8 @@ Pour mon défi : voici le diagramme des interacteurs d'une brosse à dents élec
 !!! example "Mon défi · 5e"
 
     Brosse à dents électrique : je lis le diagramme, j'écris la contrainte C4 (liée au lavabo), puis j'explique pourquoi la brosse se recharge par induction, sans contact électrique.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

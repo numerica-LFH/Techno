@@ -1,6 +1,6 @@
 # Séquence 3 — Contraintes, exigences et expérience de l'utilisateur
 
-**4e · 4 séances de 45 minutes · deux semaines**
+**4e · 4 séances de 40 minutes · deux semaines**
 
 Un objet doit répondre aux attentes de ses utilisateurs : il est soumis à des contraintes d'usage, d'esthétique, de sécurité, de normes et d'environnement. On les repère et on les explique sur une voiture télécommandée, on décrit l'expérience de l'utilisateur d'une imprimante, du texte jusqu'à l'algorigramme, puis on conçoit la coque d'un smartphone. Chapitre 3 du manuel Nathan.
 

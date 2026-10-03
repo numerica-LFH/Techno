@@ -1,6 +1,6 @@
 # Séquence 3 — Décrire l'expérience de l'utilisateur
 
-**3e · 4 séances de 45 minutes · deux semaines**
+**3e · 4 séances de 40 minutes · deux semaines**
 
 Quand un objet est conçu, il reste à expliquer à ses utilisateurs comment s'en servir sans danger. On étudie le manuel de l'utilisateur d'une tondeuse robot : ses modes de représentation, ses règles de sécurité, l'algorithme de paramétrage. On programme en langage naturel le salut du robot Nao, puis on traite un sujet de type brevet sur un robot explorateur. Chapitre 3 du manuel Nathan.
 

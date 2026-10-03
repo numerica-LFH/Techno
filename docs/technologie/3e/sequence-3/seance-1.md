@@ -1,6 +1,6 @@
 # Séance 1 — Du besoin au manuel de l'utilisateur
 
-!!! info "Séance 1 sur 4 · 45 minutes · Classe entière"
+!!! info "Séance 1 sur 4 · 40 minutes · Classe entière"
 
     Je retrouve le travail du concepteur, du besoin au manuel, et j'analyse les modes de représentation d'un manuel.
 
@@ -81,6 +81,8 @@ e\. Pour chaque information, je choisis le mode de représentation le plus adapt
 !!! example "Mon défi · 3e"
 
     Je dessine un schéma coté qui explique à un utilisateur à quelle distance minimale d'un mur placer une imprimante 3D (10 cm à l'arrière, 20 cm au-dessus).
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 
