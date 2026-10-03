@@ -1,6 +1,6 @@
 # Séquence projet — Inventer un jeu vidéo avec Scratch et Scratch Lab
 
-**5e · huit séances de 55 minutes · quatre semaines**
+**5e · huit séances de 40 minutes · quatre semaines**
 
 On reconstruit, pas à pas, le jeu « La cueillette des mangues » : un panier qui se déplace au clavier ou au nez, des mangues à attraper, des scarabées à éviter. Les scripts sont fournis et on les comprend en les modifiant. La séquence prépare la Nuit du Code.
 
@@ -30,7 +30,7 @@ On reconstruit, pas à pas, le jeu « La cueillette des mangues » : un panier q
 | 4 | Demi-groupe | [Score, vies, fin de partie et chasse aux bogues](seance-4.md) | Variables, fin de partie, test et correction ; CUEILLETTE-v2 | [Trace écrite](trace-ecrite-seance-4.md) | [PDF](fiches/5e-jeu-video-seance4-eleve.pdf) |
 | 5 | Classe entière | [Comment un ordinateur trouve-t-il un visage ?](seance-5.md) | Pixels, apprentissage supervisé, biais, donnée personnelle | [Trace écrite](trace-ecrite-seance-5.md) | [PDF](fiches/5e-jeu-video-seance5-eleve.pdf) |
 | 6 | Demi-groupe | [Le panier piloté au nez, l'écran titre dans Scratch Lab](seance-6.md) | Détection de visage, mode clavier de secours, texte animé ; CUEILLETTE-v3 | [Trace écrite](trace-ecrite-seance-6.md) | [PDF](fiches/5e-jeu-video-seance6-eleve.pdf) |
-| 7 | Classe entière (salle info) | [Entraînement à la Nuit du Code](seance-7.md) | Règles du concours, planning de 6 h, sprint de 30 min | [Trace écrite](trace-ecrite-seance-7.md) | [PDF](fiches/5e-jeu-video-seance7-eleve.pdf) |
+| 7 | Classe entière (salle info) | [Entraînement à la Nuit du Code](seance-7.md) | Règles du concours, planning de 6 h, sprint de 20 min | [Trace écrite](trace-ecrite-seance-7.md) | [PDF](fiches/5e-jeu-video-seance7-eleve.pdf) |
 | 8 | Demi-groupe | [Tester, améliorer et présenter son jeu](seance-8.md) | Mode d'emploi, test croisé avec la grille du jury, QCM de fin de séquence | [Trace écrite](trace-ecrite-seance-8.md) | [PDF](fiches/5e-jeu-video-seance8-eleve.pdf) |
 
 ## Scratch, Scratch Lab et la Nuit du Code

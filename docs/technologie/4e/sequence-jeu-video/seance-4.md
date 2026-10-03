@@ -1,6 +1,6 @@
 # Séance 4 — Score, vies, fin de partie et chasse aux bogues
 
-!!! info "Séance 4 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 4 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais compter les points et les vies, j'arrête la partie au bon moment et je corrige des bogues.
 
@@ -87,6 +87,8 @@ J'enregistre mon projet sous le nom **CUEILLETTE-v2**.
 !!! example "Mon défi · 4e"
 
     J'ajoute au scarabée le script qui fait perdre une vie, puis je teste que la partie s'arrête au bout de trois scarabées.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 2 — Faire bouger un lutin au clavier
 
-!!! info "Séance 2 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 2 sur 8 · 40 minutes · Demi-groupe"
 
     Je programme le panier pour qu'il se déplace avec les flèches, puis la mangue pour qu'elle tombe.
 
@@ -67,6 +67,8 @@ e\. Que se passe-t-il si je remplace 10 par 20 ?
 !!! example "Mon défi · 5e"
 
     Je change la vitesse du panier : j'essaie 5, puis 15. J'écris la valeur que je préfère et pourquoi.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

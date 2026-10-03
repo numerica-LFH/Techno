@@ -1,6 +1,6 @@
 # Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab
 
-!!! info "Séance 6 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 6 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais suivre le nez par le panier, je prévois un mode clavier si la caméra échoue et je crée un écran titre.
 
@@ -80,6 +80,8 @@ f\. Le jour de la Nuit du Code, pourra-t-on utiliser cet écran titre ? Pourquoi
 !!! example "Mon défi · 4e"
 
     Je fais afficher « Mode clavier » par le panier quand aucun visage n'est détecté.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

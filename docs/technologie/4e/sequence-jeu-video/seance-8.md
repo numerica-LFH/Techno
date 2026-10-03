@@ -1,6 +1,6 @@
 # Séance 8 — Tester, améliorer et présenter son jeu
 
-!!! info "Séance 8 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 8 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais tester mon jeu par un autre binôme avec la grille du jury, j'écris son mode d'emploi et je l'améliore.
 
@@ -77,6 +77,8 @@ J'enregistre la version finale et je passe l'évaluation de fin de séquence (S'
 !!! example "Mon défi · 4e"
 
     Je calcule la note moyenne des trois jeux testés dans mon demi-groupe pour la jouabilité, et je dis ce qu'elle montre.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

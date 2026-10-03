@@ -1,6 +1,6 @@
 # Séance 5 — Comment un ordinateur trouve-t-il un visage ?
 
-!!! info "Séance 5 sur 8 · 55 minutes · Classe entière"
+!!! info "Séance 5 sur 8 · 40 minutes · Classe entière"
 
     Je comprends comment la détection de visage de Scratch fonctionne, ses limites et les précautions à prendre.
 
@@ -65,6 +65,8 @@ e\. Le calcul se fait dans mon navigateur. L'image de ma caméra est-elle envoy�
 !!! example "Mon défi · 5e"
 
     J'explique à un camarade absent, en deux phrases, comment Scratch a « appris » à trouver un visage.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

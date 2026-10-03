@@ -1,6 +1,6 @@
 # Séance 4 — Score, vies, fin de partie et chasse aux bogues
 
-!!! info "Séance 4 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 4 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais compter les points et les vies, j'arrête la partie au bon moment et je corrige des bogues.
 
@@ -71,6 +71,8 @@ c\. Quelles sont les deux façons de finir la partie ?
 !!! example "Mon défi · 5e"
 
     Je fais perdre une vie quand le scarabée touche le panier : j'écris le bloc qu'il faut ajouter dans le script du scarabée.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

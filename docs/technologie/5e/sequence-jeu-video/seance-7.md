@@ -1,6 +1,6 @@
 # Séance 7 — Entraînement à la Nuit du Code
 
-!!! info "Séance 7 sur 8 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 7 sur 8 · 40 minutes · Classe entière (salle info)"
 
     Je découvre les règles du concours, je planifie six heures de travail en équipe et je fais un premier sprint.
 
@@ -71,6 +71,8 @@ b\. Pourquoi garder la dernière heure pour les tests ?
 !!! example "Mon défi · 5e"
 
     Je répartis les rôles de mon équipe : qui programme, qui teste, qui surveille l'heure ?
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

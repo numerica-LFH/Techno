@@ -1,6 +1,6 @@
 # Séance 8 — Tester, améliorer et présenter son jeu
 
-!!! info "Séance 8 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 8 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais tester mon jeu par un autre binôme avec la grille du jury, j'écris son mode d'emploi et je l'améliore.
 
@@ -91,6 +91,8 @@ J'enregistre la version finale et je passe l'évaluation de fin de séquence (S'
 !!! example "Mon défi · 3e"
 
     Je traduis en Python la règle « si la mangue touche le panier, ajouter 1 au score ».
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

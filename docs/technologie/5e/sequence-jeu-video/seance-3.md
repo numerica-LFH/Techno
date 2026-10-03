@@ -1,6 +1,6 @@
 # Séance 3 — Règles, algorithme et variables
 
-!!! info "Séance 3 sur 8 · 55 minutes · Classe entière"
+!!! info "Séance 3 sur 8 · 40 minutes · Classe entière"
 
     J'écris les règles du jeu de façon assez précise pour qu'une machine puisse les suivre.
 
@@ -62,6 +62,8 @@ d\. Dans le script de la mangue, quel bloc Scratch correspond au losange ?
 !!! example "Mon défi · 5e"
 
     J'écris, en trois phrases courtes et précises, la règle du scarabée.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

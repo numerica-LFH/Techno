@@ -1,6 +1,6 @@
 # Séance 3 — Règles, algorithme et variables
 
-!!! info "Séance 3 sur 8 · 55 minutes · Classe entière"
+!!! info "Séance 3 sur 8 · 40 minutes · Classe entière"
 
     J'écris les règles du jeu de façon assez précise pour qu'une machine puisse les suivre.
 
@@ -72,6 +72,8 @@ e\. Quelle règle met fin à la partie ?
 !!! example "Mon défi · 3e"
 
     J'invente une nouvelle règle (bonus, niveau, temps limité). J'écris son algorigramme et la variable dont elle a besoin.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 7 — Entraînement à la Nuit du Code
 
-!!! info "Séance 7 sur 8 · 55 minutes · Classe entière (salle info)"
+!!! info "Séance 7 sur 8 · 40 minutes · Classe entière (salle info)"
 
     Je découvre les règles du concours, je planifie six heures de travail en équipe et je fais un premier sprint.
 
@@ -66,15 +66,14 @@ b\. Quelles tâches deux élèves peuvent-ils mener en même temps sans se gêne
 
 c\. Pourquoi garder la dernière heure pour les tests ?
 
-### Activité 3 · Sprint de 30 minutes
+### Activité 3 · Sprint de 20 minutes
 
-Le professeur distribue un univers d'entraînement sans script. En binôme, j'ai 30 minutes pour faire un jeu avec **une seule règle**. J'enregistre **NOMDUJEU-v1** toutes les 10 minutes.
+Le professeur distribue un univers d'entraînement sans script. En binôme, j'ai 20 minutes pour faire un jeu avec **une seule règle**. J'enregistre **NOMDUJEU-v1** toutes les 10 minutes.
 
 | Minute | Ce que nous devons avoir | Fait ? |
 |---|---|---|
-| 10 | le héros bouge au clavier |   |
-| 20 | la règle fonctionne (point ou vie) |   |
-| 30 | le jeu démarre et s'arrête proprement |   |
+| 10 | le héros bouge au clavier et la règle fonctionne (point ou vie) |   |
+| 20 | le jeu démarre et s'arrête proprement |   |
 
 d\. Qu'est-ce qui nous a fait perdre du temps ?
 
@@ -83,6 +82,8 @@ d\. Qu'est-ce qui nous a fait perdre du temps ?
 !!! example "Mon défi · 4e"
 
     Je place deux jalons dans le planning de six heures et j'écris ce qui doit fonctionner à chacun.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

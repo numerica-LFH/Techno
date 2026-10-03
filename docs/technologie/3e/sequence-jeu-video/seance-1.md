@@ -1,6 +1,6 @@
 # Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?
 
-!!! info "Séance 1 sur 8 · 55 minutes · Classe entière"
+!!! info "Séance 1 sur 8 · 40 minutes · Classe entière"
 
     Je joue au jeu de démonstration, je repère ce qui entre dans le programme et ce qui en sort.
 
@@ -80,6 +80,8 @@ e\. Un projet qui contient des blocs du Lab peut-il s'ouvrir dans Scratch ? Qu'e
 !!! example "Mon défi · 3e"
 
     J'imagine une nouvelle entrée pour la cueillette des mangues (caméra, micro, souris). J'explique en deux phrases ce qu'elle change pour le joueur.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

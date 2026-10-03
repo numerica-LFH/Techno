@@ -1,6 +1,6 @@
 # Séance 2 — Faire bouger un lutin au clavier
 
-!!! info "Séance 2 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 2 sur 8 · 40 minutes · Demi-groupe"
 
     Je programme le panier pour qu'il se déplace avec les flèches, puis la mangue pour qu'elle tombe.
 
@@ -78,6 +78,8 @@ h\. Quel nombre faut-il changer pour que la mangue tombe plus vite ?
 !!! example "Mon défi · 3e"
 
     Je crée une variable **vitesse** (valeur 10) et je l'utilise à la place des nombres 10 et -10 du script du panier.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

@@ -1,6 +1,6 @@
 # Séance 2 — Faire bouger un lutin au clavier
 
-!!! info "Séance 2 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 2 sur 8 · 40 minutes · Demi-groupe"
 
     Je programme le panier pour qu'il se déplace avec les flèches, puis la mangue pour qu'elle tombe.
 
@@ -80,6 +80,8 @@ i\. Quand ce script tourne, quelle donnée change à chaque tour de boucle ?
 !!! example "Mon défi · 4e"
 
     Le panier sort de la scène par les côtés. J'ajoute une condition pour l'en empêcher.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

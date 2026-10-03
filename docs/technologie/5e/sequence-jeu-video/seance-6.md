@@ -1,6 +1,6 @@
 # Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab
 
-!!! info "Séance 6 sur 8 · 55 minutes · Demi-groupe"
+!!! info "Séance 6 sur 8 · 40 minutes · Demi-groupe"
 
     Je fais suivre le nez par le panier, je prévois un mode clavier si la caméra échoue et je crée un écran titre.
 
@@ -69,6 +69,8 @@ Je teste avec et sans visage devant la caméra, puis j'enregistre **CUEILLETTE-v
 !!! example "Mon défi · 5e"
 
     Je fais grossir le panier quand je m'approche de la caméra : quel bloc de la Détection de visage utiliser ?
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 

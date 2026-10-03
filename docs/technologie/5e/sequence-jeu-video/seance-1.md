@@ -1,6 +1,6 @@
 # Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?
 
-!!! info "Séance 1 sur 8 · 55 minutes · Classe entière"
+!!! info "Séance 1 sur 8 · 40 minutes · Classe entière"
 
     Je joue au jeu de démonstration, je repère ce qui entre dans le programme et ce qui en sort.
 
@@ -69,6 +69,8 @@ d\. Dans Scratch, chaque lutin a ses propres scripts. Combien de lutins compte l
 !!! example "Mon défi · 5e"
 
     Je choisis un jeu que je connais. J'écris deux entrées et deux sorties de ce jeu.
+
+    *Prolongement : en fin d'heure si le temps le permet, sinon à la maison.*
 
 ## APRÈS — je fixe ce que j'ai appris
 
