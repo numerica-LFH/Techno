@@ -1,6 +1,6 @@
 # Séance 3 — Argumenter : l'objet et la société
 
-!!! info "Séance 3 sur 3 · 55 minutes"
+!!! info "Séance 3 sur 3 · 40 minutes"
 
     Veille technologique et argumentaire court.
 
@@ -85,16 +85,16 @@ En huit à dix lignes, j'explique en quoi l'OST que j'ai choisi modifie la vie d
 
 **Structure attendue.** Une phrase qui annonce ma position. Deux ou trois faits, avec leur source. Un effet positif et un effet négatif. Une phrase de conclusion qui assume une position.
 
-### Activité 3 · Argumentaire n° 2 : l'incidence des contraintes sociétales sur l'OST
+### Activité 3 · Argumentaire n° 2 : l'incidence des contraintes sociétales sur l'OST (prolongement)
 
 Je choisis une contrainte et j'explique, en huit à dix lignes, comment elle oblige les concepteurs à modifier l'objet.
 
 | Contrainte sociétale                                 | Ce qu'elle impose au concepteur |
 |------------------------------------------------------|---------------------------------|
-| Indice de réparabilité affiché en magasin            |                                 |
-| Protection des données personnelles                  |                                 |
+| <img src="img/3e3-p1-0.png" alt="" style="height:20.9pt;vertical-align:middle"/> Indice de réparabilité affiché en magasin            |                                 |
+| <img src="img/3e3-p1-1.png" alt="" style="height:21.8pt;vertical-align:middle"/> Protection des données personnelles                  |                                 |
 | Interdiction de certains matériaux ou substances     |                                 |
-| Attente de sobriété énergétique                      |                                 |
+| <img src="img/3e3-p1-2.png" alt="" style="height:23.7pt;vertical-align:middle"/> Attente de sobriété énergétique                      |                                 |
 | Accessibilité aux personnes en situation de handicap |                                 |
 
 ### Auto-évaluation · Ma grille

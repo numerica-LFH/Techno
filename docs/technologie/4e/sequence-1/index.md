@@ -1,6 +1,6 @@
 # Séquence 1 — Pourquoi les objets techniques évoluent-ils ?
 
-**4e · trois séances de 55 minutes**
+**4e · trois séances de 40 minutes**
 
 On met en relation les objets et systèmes techniques avec leurs usages, on repère ce qui change réellement dans un objet qui évolue, et on pèse les avantages et les inconvénients des évolutions technologiques et informatiques, intelligence artificielle comprise.
 

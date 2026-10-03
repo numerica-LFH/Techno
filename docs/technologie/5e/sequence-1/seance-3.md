@@ -1,6 +1,6 @@
 # Séance 3 — La lignée d'un objet
 
-!!! info "Séance 3 sur 3 · 55 minutes"
+!!! info "Séance 3 sur 3 · 40 minutes"
 
     Collecter, trier et analyser des données ; construire une frise.
 
@@ -42,11 +42,11 @@ Je numérote les objets du plus ancien (1) au plus récent (5), puis je complèt
 
 | N°  | Date               | Objet                         | Sur quoi la musique est-elle enregistrée ? | Combien de morceaux environ ? |
 |-----|--------------------|-------------------------------|--------------------------------------------|-------------------------------|
-|     | 2001               | Lecteur MP3 Apple             |                                            |                               |
-|     | 1979               | Walkman Sony (cassette)       |                                            |                               |
-|     | 2010 à aujourd'hui | Téléphone connecté            |                                            |                               |
-|     | 1984               | Lecteur CD Sony               |                                            |                               |
-|     | 1998               | Lecteur numérique RIO PMP 300 |                                            |                               |
+|     | 2001               | <img src="img/5e3-p0-0.png" alt="" style="height:22.8pt;vertical-align:middle"/> Lecteur MP3 Apple             |                                            |                               |
+|     | 1979               | <img src="img/5e3-p0-1.png" alt="" style="height:15.7pt;vertical-align:middle"/> Walkman Sony (cassette)       |                                            |                               |
+|     | 2010 à aujourd'hui | <img src="img/5e3-p0-2.png" alt="" style="height:25.6pt;vertical-align:middle"/> Téléphone connecté            |                                            |                               |
+|     | 1984               | <img src="img/5e3-p0-3.png" alt="" style="height:19.9pt;vertical-align:middle"/> Lecteur CD Sony               |                                            |                               |
+|     | 1998               | <img src="img/5e3-p0-4.png" alt="" style="height:20.9pt;vertical-align:middle"/> Lecteur numérique RIO PMP 300 |                                            |                               |
 
 a\. Ces cinq objets rendent-ils le même service ? ......... . Ils forment donc une ......... d'objets.
 
@@ -68,9 +68,9 @@ Je relis ma frise et je réponds.
 
 e\. Qu'est-ce qui n'a jamais changé entre 1979 et aujourd'hui ?
 
-f\. Qu'est-ce qui a le plus changé ?
+f\. *(Prolongement : à la maison si le temps manque.)* Qu'est-ce qui a le plus changé ?
 
-g\. Le téléphone connecté sert-il uniquement à écouter de la musique ? Que peut-on en conclure sur la place de cet objet dans la lignée ?
+g\. *(Prolongement : à la maison si le temps manque.)* Le téléphone connecté sert-il uniquement à écouter de la musique ? Que peut-on en conclure sur la place de cet objet dans la lignée ?
 
 ### Exercices en ligne · Je m'entraîne
 

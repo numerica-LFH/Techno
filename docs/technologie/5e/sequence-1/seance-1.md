@@ -1,6 +1,6 @@
 # Séance 1 — De quoi avons-nous besoin ?
 
-!!! info "Séance 1 sur 3 · 55 minutes"
+!!! info "Séance 1 sur 3 · 40 minutes"
 
     Besoin, objet technique, fonction d'usage.
 
@@ -63,7 +63,7 @@ Avec mon voisin, je range les besoins trouvés à l'activité 1 dans les cases c
 
 a\. Les besoins d'un élève de 5<sup>e</sup> à Tegucigalpa sont-ils les mêmes que ceux d'un élève de 5<sup>e</sup> dans un village de montagne ? Je donne un exemple de différence.
 
-b\. Mes besoins d'aujourd'hui seront-ils les mêmes à 50 ans ? Je donne un exemple.
+b\. *(Prolongement : à la maison si le temps manque.)* Mes besoins d'aujourd'hui seront-ils les mêmes à 50 ans ? Je donne un exemple.
 
 ### Activité 3 · À chaque objet son service
 
@@ -73,12 +73,12 @@ La **fonction d'usage** répond à la question « à quoi ça sert ? ». Je l'é
 
 | Objet technique       | Fonction d'usage (verbe à l'infinitif) | Besoin satisfait |
 |-----------------------|----------------------------------------|------------------|
-| Une perceuse          |                                        |                  |
-| Un stéthoscope        |                                        |                  |
-| Un pont               |                                        |                  |
-| Un extincteur         |                                        |                  |
-| Un casque de chantier |                                        |                  |
-| Une tondeuse          |                                        |                  |
+| <img src="img/5e1-p1-0.png" alt="" style="height:14.3pt;vertical-align:middle"/> Une perceuse          |                                        |                  |
+| <img src="img/5e1-p1-1.png" alt="" style="height:21.2pt;vertical-align:middle"/> Un stéthoscope        |                                        |                  |
+| <img src="img/5e1-p1-2.png" alt="" style="height:20.0pt;vertical-align:middle"/> Un pont               |                                        |                  |
+| <img src="img/5e1-p1-3.png" alt="" style="height:22.8pt;vertical-align:middle"/> Un extincteur         |                                        |                  |
+| <img src="img/5e1-p1-4.png" alt="" style="height:13.3pt;vertical-align:middle"/> Un casque de chantier |                                        |                  |
+| <img src="img/5e1-p1-5.png" alt="" style="height:19.0pt;vertical-align:middle"/> Une tondeuse          |                                        |                  |
 
 d\. Le robot NAO peut se déplacer, vous reconnaître, vous entendre et même vous parler. D'après ce texte, à quel besoin répond-il ? Je coche une seule case.
 

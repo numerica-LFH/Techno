@@ -1,6 +1,6 @@
 # Séance 1 — Découverte, invention, innovation
 
-!!! info "Séance 1 sur 3 · 55 minutes"
+!!! info "Séance 1 sur 3 · 40 minutes"
 
     Repérer les innovations de rupture.
 
@@ -35,9 +35,12 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 
 ## PENDANT — je recherche
 
-**Trois verbes**Découverte : « je sais ».  
-Invention : « je sais faire ».  
-Innovation : « je fais », et je le mets sur le marché.
+!!! note "Trois verbes"
+
+    Découverte : « je sais ».
+    Invention : « je sais faire ».
+    Innovation : « je fais », et je le mets sur le marché.
+
 
 ### Activité 1 · Trier neuf énoncés
 
@@ -47,9 +50,9 @@ J'écris dans la bonne colonne le numéro de chaque énoncé.
 
 | N°  | Énoncé                                                                         |
 |-----|--------------------------------------------------------------------------------|
-| 1   | La sève de l'hévéa donne un caoutchouc naturel appelé latex.                   |
-| 2   | Des procédés chimiques permettent de transformer le latex en matière première. |
-| 3   | Le caoutchouc est utilisé pour fabriquer un pneu de voiture vendu au public.   |
+| 1   | <img src="img/3e1-p0-0.png" alt="" style="height:23.4pt;vertical-align:middle"/> La sève de l'hévéa donne un caoutchouc naturel appelé latex.                   |
+| 2   | <img src="img/3e1-p0-1.png" alt="" style="height:22.8pt;vertical-align:middle"/> Des procédés chimiques permettent de transformer le latex en matière première. |
+| 3   | <img src="img/3e1-p0-2.png" alt="" style="height:22.8pt;vertical-align:middle"/> Le caoutchouc est utilisé pour fabriquer un pneu de voiture vendu au public.   |
 | 4   | On comprend et on maîtrise les lois de l'électricité.                          |
 | 5   | On met au point la lampe à filament.                                           |
 | 6   | Les villes s'éclairent à l'électricité et les foyers s'abonnent au réseau.     |
@@ -63,7 +66,7 @@ J'écris dans la bonne colonne le numéro de chaque énoncé.
 
 a\. Invention et innovation sont deux notions identiques. □ Vrai   □ Faux. Je justifie en une phrase : .........
 
-b\. Si un objet est commercialisé avec un nouveau matériau biodégradable, s'agit-il d'une invention ou d'une innovation ? .........
+b\. *(Prolongement : à la maison si le temps manque.)* Si un objet est commercialisé avec un nouveau matériau biodégradable, s'agit-il d'une invention ou d'une innovation ? .........
 
 ### Activité 2 · La calculatrice, huit siècles d'innovations
 
@@ -73,17 +76,17 @@ Je complète le tableau à partir du document projeté.
 
 | Objet et date                    | Matériau | Principe de comptage | Énergie |
 |----------------------------------|----------|----------------------|---------|
-| Le boulier, XII<sup>e</sup> s.   |          |                      |         |
-| La Pascaline, 1642               |          |                      |         |
-| Machine à calculer, 1954         |          |                      |         |
-| Calculette de poche, années 1970 |          |                      |         |
-| Calculatrice graphique, 2015     |          |                      |         |
+| <img src="img/3e1-p1-0.png" alt="" style="height:19.0pt;vertical-align:middle"/> Le boulier, XII<sup>e</sup> s.   |          |                      |         |
+| <img src="img/3e1-p1-1.png" alt="" style="height:14.8pt;vertical-align:middle"/> La Pascaline, 1642               |          |                      |         |
+| <img src="img/3e1-p1-2.png" alt="" style="height:14.7pt;vertical-align:middle"/> Machine à calculer, 1954         |          |                      |         |
+| <img src="img/3e1-p1-3.png" alt="" style="height:23.7pt;vertical-align:middle"/> Calculette de poche, années 1970 |          |                      |         |
+| <img src="img/3e1-p1-4.png" alt="" style="height:25.6pt;vertical-align:middle"/> Calculatrice graphique, 2015     |          |                      |         |
 
 Une **innovation incrémentale** améliore un objet sans changer sa logique : un écran plus grand, une batterie qui dure plus longtemps. Une **innovation de rupture** change le principe même de l'objet, rend l'ancien obsolète et ouvre des usages inaccessibles auparavant.
 
 c\. Dans la lignée de la calculatrice, je repère deux innovations de rupture et je dis pourquoi.
 
-d\. Je repère une innovation incrémentale : .........
+d\. *(Prolongement : à la maison si le temps manque.)* Je repère une innovation incrémentale : .........
 
 ### Activité 3 · Rupture ou pas ?
 

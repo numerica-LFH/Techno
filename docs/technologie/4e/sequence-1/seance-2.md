@@ -1,6 +1,6 @@
 # Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?
 
-!!! info "Séance 2 sur 3 · 55 minutes"
+!!! info "Séance 2 sur 3 · 40 minutes"
 
     Fonction technique, principe technique, design.
 
@@ -38,13 +38,13 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 
 Pendant la Guerre froide, période de tension entre les États-Unis et l'URSS, l'armée américaine a eu besoin de calculer la trajectoire des missiles et d'améliorer leur précision. Pour cela, il a fallu construire une machine capable d'effectuer de nombreuses opérations arithmétiques. L'ENIAC est la première machine programmée et électronique, ce qui fait d'elle le premier ordinateur. Avant l'ENIAC, les machines à calculer étaient mécanisées.
 
-*ENIAC, 1946. Poids : 30 tonnes. Taille : 167 m². Consommation : 150 kilowatts.*
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:4pt;text-align:center"><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e2-p0-0.png" alt="" style="height:53.0pt;vertical-align:middle"/><br/><small>ENIAC, 1946. Poids : 30 tonnes. Taille : 167 m². Consommation : 150 kilowatts.</small></span></div>
 
 a\. Quels sont les inconvénients de l'ENIAC ?
 
-b\. Je relève les deux passages du texte qui font référence au contexte historique et politique.
+b\. *(Prolongement : à la maison si le temps manque.)* Je relève les deux passages du texte qui font référence au contexte historique et politique.
 
-c\. Je relève les deux passages qui font référence au contexte technique et scientifique.
+c\. *(Prolongement : à la maison si le temps manque.)* Je relève les deux passages qui font référence au contexte technique et scientifique.
 
 d\. Quel composant inventé en 1971 a permis de réduire la taille des ordinateurs au point d'en faire des ordinateurs personnels ? .........
 
@@ -54,7 +54,7 @@ Question : sur quels éléments d'un objet les évolutions portent-elles réelle
 
 Je compare l'ENIAC et un ordinateur portable actuel. Pour chaque ligne, j'écris si l'élément a changé, et comment.
 
-| Niveau de l'objet               | ENIAC (1946) | Ordinateur portable actuel |
+| Niveau de l'objet               | <img src="img/4e2-p1-0.png" alt="" style="height:19.0pt;vertical-align:middle"/> ENIAC (1946) | <img src="img/4e2-p1-1.png" alt="" style="height:18.0pt;vertical-align:middle"/> Ordinateur portable actuel |
 |---------------------------------|--------------|----------------------------|
 | Fonction d'usage                |              |                            |
 | Fonction technique « calculer » |              |                            |

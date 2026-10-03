@@ -1,6 +1,6 @@
 # Séquence 1 — De la découverte à l'innovation, et ses effets sur la société
 
-**3e · trois séances de 55 minutes**
+**3e · trois séances de 40 minutes**
 
 On distingue découverte, invention et innovation, on repère les innovations de rupture, on relie une découverte scientifique à ses effets sur la société, et on s'entraîne à l'argumentaire court dans les deux sens : l'objet sur la société, la société sur l'objet.
 

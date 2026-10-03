@@ -1,6 +1,6 @@
 # Séance 3 — Avantages et inconvénients des évolutions technologiques
 
-!!! info "Séance 3 sur 3 · 55 minutes"
+!!! info "Séance 3 sur 3 · 40 minutes"
 
     Numérique, intelligence artificielle, usage raisonné.
 
@@ -40,23 +40,7 @@ Question : que fait exactement le programme, et sur quoi peut-il se tromper ?
 
 J'observe le schéma, puis je remets les quatre étapes dans l'ordre en les numérotant.
 
-  
-la caméra filme la route
-
-→
-
-  
-le programme analyse les images
-
-→
-
-  
-il repère et affiche le panneau
-
-→
-
-  
-il indique la vitesse au conducteur
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:4pt;text-align:center"><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e3-p0-3.png" alt="" style="height:19.3pt;vertical-align:middle"/><br/><small>la caméra filme la route</small></span><span style="display:inline-block;vertical-align:top;margin-top:14pt">→</span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e3-p0-2.png" alt="" style="height:21.2pt;vertical-align:middle"/><br/><small>le programme analyse les images</small></span><span style="display:inline-block;vertical-align:top;margin-top:14pt">→</span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e3-p0-0.png" alt="" style="height:32.5pt;vertical-align:middle"/><br/><small>il repère et affiche le panneau</small></span><span style="display:inline-block;vertical-align:top;margin-top:14pt">→</span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e3-p0-1.png" alt="" style="height:23.9pt;vertical-align:middle"/><br/><small>il indique la vitesse au conducteur</small></span></div>
 
 | N°  | Étape                                                                                                       |
 |-----|-------------------------------------------------------------------------------------------------------------|
@@ -85,7 +69,7 @@ Je classe dans le tableau, en m'appuyant sur le texte et sur l'activité 1.
 
 d\. Je me reconnais dans une des situations décrites ? Laquelle, et dans quelle circonstance ?
 
-e\. Je cite une attitude concrète qui permet de se prémunir d'un des inconvénients cités.
+e\. *(Prolongement : à la maison si le temps manque.)* Je cite une attitude concrète qui permet de se prémunir d'un des inconvénients cités.
 
 ### Activité 3 · Mon argumentaire court
 

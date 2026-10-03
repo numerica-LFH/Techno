@@ -1,6 +1,6 @@
 # Séance 2 — D'une découverte scientifique à ses effets sur la société
 
-!!! info "Séance 2 sur 3 · 55 minutes"
+!!! info "Séance 2 sur 3 · 40 minutes"
 
     Le temps long de l'innovation.
 
@@ -50,7 +50,7 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 
 a\. Quels sont les impacts de l'arrivée des équipements ménagers sur la société ?
 
-b\. Quel nom donne-t-on à la période de forte croissance qui a favorisé la société de consommation ? .........
+b\. *(Prolongement : à la maison si le temps manque.)* Quel nom donne-t-on à la période de forte croissance qui a favorisé la société de consommation ? .........
 
 c\. En quelle année apparaît le premier fer à repasser électrique, et grâce à quelle invention ? .........
 
@@ -58,24 +58,13 @@ d\. Vingt ans séparent l'automatisation du lave-vaisselle de son arrivée dans 
 
 e\. Dans quel domaine le micro-ondes d'aujourd'hui a-t-il été amélioré par rapport au premier breveté ? .........
 
-f\. Quelle est la principale propriété physique de la vitrocéramique ? .........
+f\. *(Prolongement : à la maison si le temps manque.)* Quelle est la principale propriété physique de la vitrocéramique ? .........
 
-g\. Quel secteur industriel a bénéficié en premier de l'invention de la vitrocéramique ? .........
+g\. *(Prolongement : à la maison si le temps manque.)* Quel secteur industriel a bénéficié en premier de l'invention de la vitrocéramique ? .........
 
 ### Activité 2 · La chaîne complète du micro-ondes
 
-  
-1946 : les ondes du radar chauffent
-
-→
-
-  
-1948 : premier four breveté, 300 kg
-
-→
-
-  
-1967 : le micro-ondes grand public
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:4pt;text-align:center"><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/3e2-p1-0.png" alt="" style="height:25.9pt;vertical-align:middle"/><br/><small>1946 : les ondes du radar chauffent</small></span><span style="display:inline-block;vertical-align:top;margin-top:14pt">→</span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/3e2-p1-1.png" alt="" style="height:27.6pt;vertical-align:middle"/><br/><small>1948 : premier four breveté, 300 kg</small></span><span style="display:inline-block;vertical-align:top;margin-top:14pt">→</span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/3e2-p1-2.png" alt="" style="height:18.1pt;vertical-align:middle"/><br/><small>1967 : le micro-ondes grand public</small></span></div>
 
 Question : comment une observation faite dans un laboratoire militaire finit-elle dans une cuisine ?
 

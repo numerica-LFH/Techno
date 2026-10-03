@@ -1,6 +1,6 @@
 # Séance 2 — Plusieurs objets pour un même service
 
-!!! info "Séance 2 sur 3 · 55 minutes"
+!!! info "Séance 2 sur 3 · 40 minutes"
 
     Famille d'objets, principes techniques, fonction d'estime.
 
@@ -40,7 +40,7 @@ Question : si quatre objets rendent le même service, qu'est-ce qui les sépare 
 
 J'observe les quatre cafetières ci-dessous.
 
-\*Cafetière italienne\*\*Cafetière thermos programmable\*\*Cafetière expresso\*\*Cafetière à piston\*
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:4pt;text-align:center"><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/5e2-p0-3.png" alt="" style="height:44.6pt;vertical-align:middle"/><br/><small>Cafetière italienne</small></span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/5e2-p0-0.png" alt="" style="height:50.8pt;vertical-align:middle"/><br/><small>Cafetière thermos programmable</small></span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/5e2-p0-1.png" alt="" style="height:46.3pt;vertical-align:middle"/><br/><small>Cafetière expresso</small></span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/5e2-p0-2.png" alt="" style="height:53.0pt;vertical-align:middle"/><br/><small>Cafetière à piston</small></span></div>
 
 a\. J'écris la fonction d'usage commune aux quatre objets : ......... .
 
@@ -65,25 +65,25 @@ b\. Je complète le tableau de comparaison.
 </thead>
 <tbody>
 <tr class="odd">
-<td>Italienne</td>
+<td><img src="img/5e2-p0-4.png" alt="" style="height:19.8pt;vertical-align:middle"/> Italienne</td>
 <td class="vide"></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thermos programmable</td>
+<td><img src="img/5e2-p1-0.png" alt="" style="height:22.3pt;vertical-align:middle"/> Thermos programmable</td>
 <td class="vide"></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Expresso design</td>
+<td><img src="img/5e2-p1-1.png" alt="" style="height:20.4pt;vertical-align:middle"/> Expresso design</td>
 <td class="vide"></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>À piston</td>
+<td><img src="img/5e2-p1-2.png" alt="" style="height:23.3pt;vertical-align:middle"/> À piston</td>
 <td class="vide"></td>
 <td></td>
 <td></td>
@@ -103,12 +103,12 @@ Je relie chaque fonction technique aux principes techniques possibles, puis je c
 
 | Fonction technique     | Principe technique n° 1 | Principe technique n° 2    | Principe technique n° 3 |
 |------------------------|-------------------------|----------------------------|-------------------------|
-| Produire de la lumière | flamme d'une bougie     | filament chauffé (ampoule) |                         |
+| Produire de la lumière | <img src="img/5e2-p1-3.png" alt="" style="height:22.8pt;vertical-align:middle"/> flamme d'une bougie     | <img src="img/5e2-p1-4.png" alt="" style="height:18.1pt;vertical-align:middle"/> filament chauffé (ampoule) |                         |
 | Chauffer de l'eau      |                         |                            |                         |
 | Ralentir un vélo       |                         |                            |                         |
 | Conserver des aliments |                         |                            |                         |
 
-d\. Pour la fonction « produire de la lumière », quel principe technique consomme le moins d'énergie ? Sur quelle donnée est-ce que je m'appuie pour répondre ?
+d\. *(Prolongement : à la maison si le temps manque.)* Pour la fonction « produire de la lumière », quel principe technique consomme le moins d'énergie ? Sur quelle donnée est-ce que je m'appuie pour répondre ?
 
 ### Activité 3 · Trier des objets du laboratoire
 

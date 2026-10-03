@@ -1,6 +1,6 @@
 # Séance 1 — Des usages qui changent, des objets qui suivent
 
-!!! info "Séance 1 sur 3 · 55 minutes"
+!!! info "Séance 1 sur 3 · 40 minutes"
 
     Mettre en relation un OST et ses usages.
 
@@ -34,7 +34,10 @@ J'écris trois choses que je crois savoir. Je n'ai pas besoin d'avoir raison : j
 
 ## PENDANT — je recherche
 
-**OST**Objet ou système technique. Le programme utilise ce sigle pour désigner aussi bien un objet isolé (une perceuse) qu'un ensemble organisé (un réseau de tramway).
+!!! note "OST"
+
+    Objet ou système technique. Le programme utilise ce sigle pour désigner aussi bien un objet isolé (une perceuse) qu'un ensemble organisé (un réseau de tramway).
+
 
 ### Activité 1 · Quatre situations, quatre évolutions
 
@@ -57,25 +60,25 @@ Je complète le tableau. La colonne du milieu est la plus importante : elle doit
 </thead>
 <tbody>
 <tr class="odd">
-<td>→<br />
+<td><img src="img/4e1-p0-1.png" alt="" style="height:19.0pt;vertical-align:middle"/> → <img src="img/4e1-p0-0.png" alt="" style="height:25.6pt;vertical-align:middle"/><br />
 Le téléphone fixe est devenu un téléphone portable, puis un téléphone connecté.</td>
 <td class="vide"></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>→<br />
+<td><img src="img/4e1-p0-2.png" alt="" style="height:17.1pt;vertical-align:middle"/> → <img src="img/4e1-p0-3.png" alt="" style="height:14.8pt;vertical-align:middle"/><br />
 Le vélo classique est devenu un vélo à assistance électrique.</td>
 <td class="vide"></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>→<br />
+<td><img src="img/4e1-p0-4.png" alt="" style="height:17.6pt;vertical-align:middle"/> → <img src="img/4e1-p0-5.png" alt="" style="height:25.6pt;vertical-align:middle"/><br />
 L'appareil photo argentique est devenu numérique, puis s'est fondu dans le téléphone.</td>
 <td class="vide"></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>→<br />
+<td><img src="img/4e1-p1-0.png" alt="" style="height:17.1pt;vertical-align:middle"/> → <img src="img/4e1-p1-1.png" alt="" style="height:15.7pt;vertical-align:middle"/><br />
 Le VTT est devenu un fatbike à pneus ultralarges.</td>
 <td class="vide"></td>
 <td></td>
@@ -89,7 +92,7 @@ Question : que révèle la comparaison d'un objet avec son ancêtre direct ?
 
 J'observe les deux réfrigérateurs ci-dessous, puis je complète.
 
-\*Réfrigérateur des années 1970\*\*Réfrigérateur actuel\*
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:4pt;text-align:center"><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e1-p1-2.png" alt="" style="height:45.1pt;vertical-align:middle"/><br/><small>Réfrigérateur des années 1970</small></span><span style="display:inline-block;text-align:center;margin:0 5pt;vertical-align:top;max-width:34%"><img src="img/4e1-p1-3.png" alt="" style="height:47.0pt;vertical-align:middle"/><br/><small>Réfrigérateur actuel</small></span></div>
 
 | Ce que je compare                      | Années 1970 | Aujourd'hui |
 |----------------------------------------|-------------|-------------|
@@ -101,7 +104,7 @@ J'observe les deux réfrigérateurs ci-dessous, puis je complète.
 
 a\. La fonction d'usage a-t-elle changé ? ......... . Qu'est-ce qui a changé, alors ?
 
-b\. Je formule en une phrase le besoin nouveau auquel répond le réfrigérateur actuel et auquel celui des années 1970 ne répondait pas.
+b\. *(Prolongement : à la maison si le temps manque.)* Je formule en une phrase le besoin nouveau auquel répond le réfrigérateur actuel et auquel celui des années 1970 ne répondait pas.
 
 ### Activité 3 · Justifier une évolution
 

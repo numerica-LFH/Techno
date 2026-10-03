@@ -1,6 +1,6 @@
 # Séquence 1 — Des besoins aux objets techniques
 
-**5e · trois séances de 55 minutes**
+**5e · trois séances de 40 minutes**
 
 On part des besoins de la vie quotidienne pour arriver à la notion d'objet technique, de famille d'objets et de lignée. L'élève collecte, trie et analyse des données, et compare des principes techniques répondant à une même fonction technique.
 
