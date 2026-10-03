@@ -50,7 +50,7 @@ a. Dans deux cas sur trois, la trace vient d'un tiers. Quelle conséquence cela 
 
 a. Formule en une phrase ce que protège réellement la navigation privée.
 Réponse : ……………………
-b. Quels modes de représentation choisirais-tu pour expliquer ce mécanisme à un élève de 5e : un texte, un croquis, un schéma, un graphique ? Justifie ton choix.
+b. *(Prolongement : à la maison si le temps manque.)* Quels modes de représentation choisirais-tu pour expliquer ce mécanisme à un élève de 5e : un texte, un croquis, un schéma, un graphique ? Justifie ton choix.
 
 ## APRÈS
 
@@ -62,7 +62,7 @@ b. Quels modes de représentation choisirais-tu pour expliquer ce mécanisme à 
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : e-réputation, trace numérique, témoin de connexion.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : e-réputation, trace numérique, témoin de connexion.
 
 ### Question de la séance suivante
 

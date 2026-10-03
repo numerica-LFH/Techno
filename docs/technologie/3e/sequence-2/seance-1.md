@@ -26,7 +26,7 @@ Le texte de l'enquête indique : « il y a quelques années, lorsqu'une entrepri
 a. Je relève dans les chiffres deux éléments concrets améliorés par le numérique.
 1. ……………………
 2. ……………………
-b. Que se passe-t-il aujourd'hui pour une entreprise qui ne s'y met pas ?
+b. *(Prolongement : à la maison si le temps manque.)* Que se passe-t-il aujourd'hui pour une entreprise qui ne s'y met pas ?
 Réponse : ……………………
 
 | Règle à respecter | Pourquoi | Ce qui arrive si on l'ignore |
@@ -41,7 +41,7 @@ Réponse : ……………………
 
 La chaîne commerciale décrite par le manuel : de petits fichiers surveillent la navigation -> le profil est affiné -> des courtiers de données le vendent aux annonceurs -> certaines données partent sur des bourses de données, où elles sont combinées et revendues aux enchères -> la publicité revient vers l'utilisateur.
 a. Je décris en quelques phrases la manière dont s'y prennent ces entreprises.
-b. Argumentaire court (dix lignes) : « le développement du numérique au sein des entreprises est un progrès pour la société. » Je construis un avantage documenté, une limite documentée, puis ma position.
+b. *(Prolongement : à la maison si le temps manque.)* Argumentaire court (dix lignes) : « le développement du numérique au sein des entreprises est un progrès pour la société. » Je construis un avantage documenté, une limite documentée, puis ma position.
 
 | Un avantage, avec un chiffre ou un fait | Une limite, avec un chiffre ou un fait |
 | --- | --- |
@@ -57,7 +57,7 @@ b. Argumentaire court (dix lignes) : « le développement du numérique au sein 
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : visibilité, plateforme de visibilité, courtier de données.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : visibilité, plateforme de visibilité, courtier de données.
 
 ### Question de la séance suivante
 

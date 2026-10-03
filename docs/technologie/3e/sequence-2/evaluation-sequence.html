@@ -197,12 +197,12 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 <div class="bandeau">
   <div class="logo"><img src="../../../assets/logo-lfh.png" alt="" onerror="this.replaceWith(document.createTextNode('LFH'))"></div>
   <div class="titres"><h1>Évaluation de la séquence 2</h1><div class="st">Technologie &middot; 3e &middot; Le numérique : atout stratégique et coût réel</div></div>
-  <div class="droite">10 questions &middot; 20 min<br>correction immédiate</div>
+  <div class="droite">10 questions &middot; 15 min<br>correction immédiate</div>
 </div>
 <div class="barre noprint">
   <label>Nom : <input id="nom" placeholder="Nom et prénom"></label>
   <button class="btn sec" id="go">Démarrer</button>
-  <span class="chrono" id="chrono">20:00</span>
+  <span class="chrono" id="chrono">15:00</span>
 </div>
 <p class="mini">Une seule bonne réponse par question. Le chronomètre démarre au clic sur <b>Démarrer</b> ; à zéro, la copie est remise automatiquement. La correction s'affiche après la remise, avec le pourquoi de chaque réponse.</p>
 <div id="liste"></div>
@@ -213,7 +213,7 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 </div></div>
 <script>
 const Q = [{"q": "L'e-réputation d'une personne est construite :", "options": ["seulement par ce qu'elle publie", "aussi par ce que d'autres publient sur elle", "seulement par les moteurs de recherche"], "bonne": 1, "pourquoi": "Dans deux situations sur trois du document, la trace vient d'un tiers."}, {"q": "Une photo de moi publiée par quelqu'un d'autre est :", "options": ["la propriété de celui qui l'a prise, sans recours", "une donnée personnelle me concernant", "une donnée publique"], "bonne": 1, "pourquoi": "L'image est une donnée personnelle : le retrait peut être demandé."}, {"q": "D'après l'enquête citée, la part d'entreprises estimant que les nouvelles technologies ont amélioré leurs rendements internes est de :", "options": ["72 %", "77 %", "84 %"], "bonne": 2, "pourquoi": "84 % pour les rendements, 77 % pour la réduction des coûts, 72 % pour la collaboration."}, {"q": "Aujourd'hui, une entreprise qui adopte le numérique :", "options": ["prend de l'avance sur ses concurrents", "évite surtout de prendre du retard", "n'y gagne rien"], "bonne": 1, "pourquoi": "Le texte est explicite : ce qui était un avantage est devenu un impératif économique."}, {"q": "Quand une entreprise crée un site Internet :", "options": ["cela améliore sa visibilité", "cela lui permet de signaler des actes de cybermalveillance", "cela la dispense de plateformes"], "bonne": 0, "pourquoi": "Visibilité et relation client sont les deux apports cités."}, {"q": "La consommation d'électricité liée au numérique représente environ :", "options": ["0,2 % du total mondial", "3,8 % du total mondial", "5,5 % du total mondial"], "bonne": 2, "pourquoi": "5,5 % pour l'électricité à l'usage, 3,8 % pour les émissions de gaz à effet de serre, 0,2 % pour l'empreinte sur l'eau."}, {"q": "Un centre de données consomme autant d'électricité que :", "options": ["une ville de 3 000 habitants", "une ville de 30 000 habitants", "une ville de 300 000 habitants"], "bonne": 1, "pourquoi": "Autre comparaison du document : 82 millions de radiateurs de 1 000 W allumés en permanence."}, {"q": "Fabriquer une puce de 2 grammes demande :", "options": ["32 grammes de matières premières", "32 kilogrammes de matières premières", "3,2 kilogrammes de matières premières"], "bonne": 1, "pourquoi": "Le rapport est de l'ordre de 16 000 pour 1, avec raréfaction et pollution des sols et des eaux."}, {"q": "Un argumentaire court tient si :", "options": ["il affirme fortement une position", "il cite un fait de chaque côté avant de conclure", "il évite de conclure"], "bonne": 1, "pourquoi": "Deux faits exacts, un lien explicite avec la position, une conclusion qui ne contredit pas les faits."}, {"q": "Le déploiement d'un système d'information dans une entreprise :", "options": ["est utile, ne serait-ce que pour organiser le travail", "fait perdre du temps aux employés", "ne concerne que les grandes structures"], "bonne": 0, "pourquoi": "Organisation interne et visibilité externe sont les deux bénéfices documentés."}];
-const DUREE = 20 * 60;
+const DUREE = 15 * 60;
 const liste = document.getElementById('liste');
 let reste = DUREE, tic = null, remis = false;
 

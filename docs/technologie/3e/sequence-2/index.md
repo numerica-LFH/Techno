@@ -8,7 +8,7 @@ title: Séquence 2 — Les systèmes d'information
 
 Chapitre 2 du manuel Nathan, thème 1 : les objets et les systèmes techniques, leurs usages et leurs interactions. Programmation du BO n° 9 du 29 février 2024.
 
-Quatre séances de 55 minutes. Même trame que la séquence 1 : AVANT (question du jour, hypothèses écrites, vocabulaire), PENDANT (activités), APRÈS (trace écrite à compléter, retour sur les hypothèses, question qui ouvre la séance suivante).
+Quatre séances de 40 minutes. Même trame que la séquence 1 : AVANT (question du jour, hypothèses écrites, vocabulaire), PENDANT (activités), APRÈS (trace écrite à compléter, retour sur les hypothèses, question qui ouvre la séance suivante).
 
 ## Compétences travaillées
 
@@ -17,16 +17,16 @@ Quatre séances de 55 minutes. Même trame que la séquence 1 : AVANT (question 
 
 ## Les séances
 
-| Séance | Titre | Fiche élève | Évaluation autocorrective |
-| --- | --- | --- | --- |
-| 0 | Traces, e-réputation et navigation | [fiche](seance-0.html) · [version imprimable](seance-0.md) | [6 questions, 8 min](evaluation-seance-0.html) |
-| 1 | Le numérique comme choix stratégique | [fiche](seance-1.html) · [version imprimable](seance-1.md) | [6 questions, 8 min](evaluation-seance-1.html) |
-| 2 | Les deux coûts : l'environnement et la santé | [fiche](seance-2.html) · [version imprimable](seance-2.md) | [6 questions, 8 min](evaluation-seance-2.html) |
-| 3 | Bilan, argumentaire et évaluation | [fiche](seance-3.html) · [version imprimable](seance-3.md) | [6 questions, 8 min](evaluation-seance-3.html) |
+| Séance | Titre | Fiche élève | Trace écrite | Évaluation autocorrective |
+| --- | --- | --- | --- | --- |
+| 0 | Traces, e-réputation et navigation | [fiche](seance-0.html) · [version imprimable](seance-0.md) · [PDF](fiches/3e-seq2-seance0-eleve.pdf) | [Trace écrite](trace-ecrite-seance-0.md) | [6 questions, 8 min](evaluation-seance-0.html) |
+| 1 | Le numérique comme choix stratégique | [fiche](seance-1.html) · [version imprimable](seance-1.md) · [PDF](fiches/3e-seq2-seance1-eleve.pdf) | [Trace écrite](trace-ecrite-seance-1.md) | [6 questions, 8 min](evaluation-seance-1.html) |
+| 2 | Les deux coûts : l'environnement et la santé | [fiche](seance-2.html) · [version imprimable](seance-2.md) · [PDF](fiches/3e-seq2-seance2-eleve.pdf) | [Trace écrite](trace-ecrite-seance-2.md) | [6 questions, 8 min](evaluation-seance-2.html) |
+| 3 | Bilan, argumentaire et évaluation | [fiche](seance-3.html) · [version imprimable](seance-3.md) · [PDF](fiches/3e-seq2-seance3-eleve.pdf) | [Trace écrite](trace-ecrite-seance-3.md) | [6 questions, 8 min](evaluation-seance-3.html) |
 
 ## Évaluation de fin de séquence
 
-[Évaluation de la séquence entière](evaluation-sequence.html) : dix questions, vingt minutes, correction commentée immédiate, note sur 20 à recopier sur la fiche de la séance 3.
+[Évaluation de la séquence entière](evaluation-sequence.html) : dix questions, quinze minutes, correction commentée immédiate, note sur 20 à recopier sur la fiche de la séance 3.
 
 Toutes les évaluations fonctionnent hors ligne, dans le navigateur : aucun compte, aucune donnée transmise, aucun service extérieur. Elles se refont autant de fois que voulu.
 

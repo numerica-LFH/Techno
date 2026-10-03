@@ -197,12 +197,12 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 <div class="bandeau">
   <div class="logo"><img src="../../../assets/logo-lfh.png" alt="" onerror="this.replaceWith(document.createTextNode('LFH'))"></div>
   <div class="titres"><h1>Évaluation de la séquence 2</h1><div class="st">Technologie &middot; 5e &middot; Où vont mes données ?</div></div>
-  <div class="droite">10 questions &middot; 20 min<br>correction immédiate</div>
+  <div class="droite">10 questions &middot; 15 min<br>correction immédiate</div>
 </div>
 <div class="barre noprint">
   <label>Nom : <input id="nom" placeholder="Nom et prénom"></label>
   <button class="btn sec" id="go">Démarrer</button>
-  <span class="chrono" id="chrono">20:00</span>
+  <span class="chrono" id="chrono">15:00</span>
 </div>
 <p class="mini">Une seule bonne réponse par question. Le chronomètre démarre au clic sur <b>Démarrer</b> ; à zéro, la copie est remise automatiquement. La correction s'affiche après la remise, avec le pourquoi de chaque réponse.</p>
 <div id="liste"></div>
@@ -213,7 +213,7 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 </div></div>
 <script>
 const Q = [{"q": "Un système d'information sert à :", "options": ["stocker, traiter et diffuser des informations", "voler des données", "empêcher les élèves d'utiliser Internet"], "bonne": 0, "pourquoi": "Quatre verbes à retenir dans l'ordre : collecter, stocker, traiter, diffuser."}, {"q": "Un système d'information concerne :", "options": ["seulement les grandes entreprises", "aussi bien un établissement scolaire qu'une entreprise", "seulement les services de l'État"], "bonne": 1, "pourquoi": "Dès qu'une organisation manipule beaucoup d'informations partagées, elle a un système d'information."}, {"q": "L'unité de base de la mémoire numérique est :", "options": ["le kilo-octet", "l'octet", "le bit par seconde"], "bonne": 1, "pourquoi": "Un caractère tapé au clavier occupe environ un octet. Le kilo-octet en vaut mille."}, {"q": "1 Go vaut :", "options": ["1 000 Ko", "1 000 Mo", "1 000 To"], "bonne": 1, "pourquoi": "L'échelle monte de mille en mille : octet, Ko, Mo, Go, To."}, {"q": "La protection de l'ensemble d'un système d'information, matériel et logiciel, s'appelle :", "options": ["la cybersécurité", "la cybermalveillance", "le RGPD"], "bonne": 0, "pourquoi": "La cybermalveillance est l'attaque, la cybersécurité est la défense."}, {"q": "Un bon mot de passe doit surtout être :", "options": ["facile à retenir", "long et composé de caractères variés", "changé chaque jour"], "bonne": 1, "pourquoi": "La longueur compte plus que la complexité seule. Un mot de passe court reste faible même avec des symboles."}, {"q": "Le cadenas affiché à côté de l'adresse d'un site garantit :", "options": ["que le site est honnête", "que la communication est chiffrée", "que le site ne dépose pas de cookies"], "bonne": 1, "pourquoi": "Il atteste le certificat SSL, donc le chiffrement du transport. Un site frauduleux peut très bien l'afficher."}, {"q": "Un système d'information regroupe :", "options": ["seulement des ordinateurs", "des ressources matérielles et logicielles", "seulement des données"], "bonne": 1, "pourquoi": "Matériel, logiciels, réseau, règles de sécurité et personnes : tout cela en fait partie."}, {"q": "Pour retrouver un fichier sur un ordinateur, on utilise :", "options": ["un moteur de recherche", "un gestionnaire de fichiers", "un navigateur"], "bonne": 1, "pourquoi": "Le moteur de recherche cherche sur le Web ; le gestionnaire de fichiers cherche sur la machine."}, {"q": "128 Go de mémoire et des vidéos de 500 Mo : combien de vidéos environ ?", "options": ["26", "256", "2 560"], "bonne": 1, "pourquoi": "128 000 Mo divisés par 500 Mo font 256."}];
-const DUREE = 20 * 60;
+const DUREE = 15 * 60;
 const liste = document.getElementById('liste');
 let reste = DUREE, tic = null, remis = false;
 

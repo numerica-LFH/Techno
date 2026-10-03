@@ -61,7 +61,7 @@ a. Deux personnes différentes ouvrent le même service. Voient-elles la même c
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : système d'information, ressource matérielle, ressource logicielle.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : système d'information, ressource matérielle, ressource logicielle.
 
 ### Question de la séance suivante
 

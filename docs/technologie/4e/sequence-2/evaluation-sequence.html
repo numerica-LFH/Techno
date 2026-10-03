@@ -197,12 +197,12 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 <div class="bandeau">
   <div class="logo"><img src="../../../assets/logo-lfh.png" alt="" onerror="this.replaceWith(document.createTextNode('LFH'))"></div>
   <div class="titres"><h1>Évaluation de la séquence 2</h1><div class="st">Technologie &middot; 4e &middot; Mes données m'échappent-elles ?</div></div>
-  <div class="droite">10 questions &middot; 20 min<br>correction immédiate</div>
+  <div class="droite">10 questions &middot; 15 min<br>correction immédiate</div>
 </div>
 <div class="barre noprint">
   <label>Nom : <input id="nom" placeholder="Nom et prénom"></label>
   <button class="btn sec" id="go">Démarrer</button>
-  <span class="chrono" id="chrono">20:00</span>
+  <span class="chrono" id="chrono">15:00</span>
 </div>
 <p class="mini">Une seule bonne réponse par question. Le chronomètre démarre au clic sur <b>Démarrer</b> ; à zéro, la copie est remise automatiquement. La correction s'affiche après la remise, avec le pourquoi de chaque réponse.</p>
 <div id="liste"></div>
@@ -213,7 +213,7 @@ code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:
 </div></div>
 <script>
 const Q = [{"q": "Une donnée personnelle est une information qui permet d'identifier une personne :", "options": ["directement seulement", "directement ou indirectement", "seulement avec son nom"], "bonne": 1, "pourquoi": "L'identification indirecte, par croisement de plusieurs données, compte autant que l'identification directe."}, {"q": "Mon adresse IP est :", "options": ["une donnée personnelle", "une donnée technique sans lien avec moi", "une donnée personnelle seulement en Wi-Fi"], "bonne": 0, "pourquoi": "Elle permet de remonter à un abonnement, donc à une personne : c'est bien une donnée personnelle."}, {"q": "Un certificat SSL permet :", "options": ["de s'assurer que les échanges sont chiffrés", "de payer avec une carte bancaire", "de vérifier l'honnêteté du site"], "bonne": 0, "pourquoi": "Il porte sur le transport de l'information, pas sur les intentions du site."}, {"q": "Un site frauduleux peut-il afficher le cadenas et « https » ?", "options": ["non, c'est impossible", "oui, un certificat s'obtient facilement", "seulement dans certains pays"], "bonne": 1, "pourquoi": "C'est pourquoi il faut lire le nom de domaine, et le lire de droite à gauche."}, {"q": "Pour choisir un bon mot de passe, il faut :", "options": ["qu'il soit facile à retenir", "qu'il contienne différents types de caractères", "qu'il change chaque semaine"], "bonne": 1, "pourquoi": "Longueur et variété. Un prénom ou une date de naissance visibles sur un profil tombent en quelques secondes."}, {"q": "Un témoin de connexion (cookie) est enregistré :", "options": ["sur le serveur du site", "sur mon appareil", "chez mon fournisseur d'accès"], "bonne": 1, "pourquoi": "C'est mon appareil qui le renvoie ensuite au serveur, et c'est ainsi que le site me reconnaît."}, {"q": "Un avantage du cookie :", "options": ["il accélère la connexion", "il évite de ressaisir ses identifiants", "il chiffre les données"], "bonne": 1, "pourquoi": "Panier conservé, préférences retenues, session maintenue. L'inconvénient est le suivi d'un site à l'autre."}, {"q": "Le mode « navigation privée » permet :", "options": ["de limiter les traces conservées sur l'appareil", "de devenir invisible pour le site visité", "de masquer son adresse IP"], "bonne": 0, "pourquoi": "Il protège vis-à-vis des autres utilisateurs du même appareil. Le site, le fournisseur d'accès et l'établissement voient toujours le trafic."}, {"q": "Une règle d'usage raisonné est utile si :", "options": ["elle est générale", "on peut vérifier concrètement si on l'a tenue", "elle interdit tout"], "bonne": 1, "pourquoi": "« Je refuse les cookies non essentiels » se vérifie ; « je fais attention » ne se vérifie pas."}, {"q": "On peut utiliser librement les données personnelles quand elles sont numériques :", "options": ["vrai, il existe un principe de liberté sur Internet", "faux, c'est interdit", "vrai pour les données déjà publiées"], "bonne": 1, "pourquoi": "Le support ne change rien : le consentement reste nécessaire."}];
-const DUREE = 20 * 60;
+const DUREE = 15 * 60;
 const liste = document.getElementById('liste');
 let reste = DUREE, tic = null, remis = false;
 

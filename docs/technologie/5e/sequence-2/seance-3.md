@@ -35,7 +35,7 @@ J'écris d'abord de mémoire, stylo noir. Puis, à la correction, je complète o
 
 a. J'ai 128 Go sur mon téléphone et des vidéos de 500 Mo. Combien puis-je en stocker, à peu près ?
 Réponse : ……………………
-b. Un camarade me propose de me prêter son identifiant de l'ENT pour voir ses notes. Deux raisons de refuser.
+b. *(Prolongement : à la maison si le temps manque.)* Un camarade me propose de me prêter son identifiant de l'ENT pour voir ses notes. Deux raisons de refuser.
 
 ### Activité 3 — Évaluation en ligne (20 min)
 
@@ -55,7 +55,7 @@ Je recopie ici mon résultat :
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : système d'information, octet, arborescence, cybersécurité.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : système d'information, octet, arborescence, cybersécurité.
 
 ### Auto-évaluation
 

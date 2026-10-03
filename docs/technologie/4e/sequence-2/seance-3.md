@@ -36,7 +36,7 @@ J'écris six règles que je m'engage à appliquer. Chacune doit être vérifiabl
 
 a. Le cadenas est présent, l'adresse commence par https, et pourtant le site est frauduleux. Comment est-ce possible ?
 b. Un service me propose de supprimer mon compte mais garde mes données « pour améliorer le service ». Ai-je un recours ?
-c. En navigation privée, mon établissement peut-il savoir quels sites j'ai consultés ? Justifie.
+c. *(Prolongement : à la maison si le temps manque.)* En navigation privée, mon établissement peut-il savoir quels sites j'ai consultés ? Justifie.
 
 ### Activité 3 — Évaluation en ligne (20 min)
 
@@ -55,7 +55,7 @@ J'ouvre evaluation-sequence.html depuis la page de la séquence. Dix questions, 
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : certificat SSL, témoin de connexion, donnée personnelle, RGPD.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : certificat SSL, témoin de connexion, donnée personnelle, RGPD.
 
 ### Auto-évaluation
 

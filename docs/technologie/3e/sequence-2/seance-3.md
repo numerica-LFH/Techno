@@ -61,7 +61,7 @@ J'ouvre evaluation-sequence.html depuis la page de la séquence : dix questions,
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : e-réputation, courtier de données, centre de données, argumentaire court.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : e-réputation, courtier de données, centre de données, argumentaire court.
 
 ### Auto-évaluation
 

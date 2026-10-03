@@ -33,7 +33,7 @@ Dans la barre d'adresse d'un navigateur ouvert sur un site officiel, on distingu
 a. Quels numéros permettent d'affirmer que la connexion est sécurisée ? ……………………
 b. Que chiffre exactement le certificat SSL ? Et que ne garantit-il pas ?
 Réponse : ……………………
-c. Pourquoi le numéro 6, le nom de domaine, compte-t-il autant que le cadenas ?
+c. *(Prolongement : à la maison si le temps manque.)* Pourquoi le numéro 6, le nom de domaine, compte-t-il autant que le cadenas ?
 
 ### Activité 2 — Un mot de passe qui tient
 
@@ -53,7 +53,7 @@ b. Trois règles que je retiens pour construire un mot de passe :
 1. ……………………
 2. ……………………
 3. ……………………
-c. L'hameçonnage ne casse aucun mot de passe : il le demande. Quels indices permettent de repérer un message d'hameçonnage ?
+c. *(Prolongement : à la maison si le temps manque.)* L'hameçonnage ne casse aucun mot de passe : il le demande. Quels indices permettent de repérer un message d'hameçonnage ?
 
 ## APRÈS
 
@@ -65,7 +65,7 @@ c. L'hameçonnage ne casse aucun mot de passe : il le demande. Quels indices per
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : certificat SSL, hameçonnage, rançongiciel.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : certificat SSL, hameçonnage, rançongiciel.
 
 ### Question de la séance suivante
 

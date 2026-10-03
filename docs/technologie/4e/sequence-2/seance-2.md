@@ -36,7 +36,7 @@ Je remets le cycle dans l'ordre.
 a. Où le cookie est-il enregistré ? ……………………
 b. Un avantage : ……………………
 c. Un inconvénient : ……………………
-d. Le mode « navigation privée » évite la conservation des données de navigation sur l'appareil. Coche ce qu'il protège vraiment.
+d. *(Prolongement : à la maison si le temps manque.)* Le mode « navigation privée » évite la conservation des données de navigation sur l'appareil. Coche ce qu'il protège vraiment.
 
 | Ce que fait la navigation privée | Vrai | Faux |
 | --- | --- | --- |
@@ -62,7 +62,7 @@ Une entreprise européenne met en œuvre quatre actions. J'associe chaque phrase
 
 a. Je publie une photo de groupe prise en cours. Deux camarades y figurent. Qu'est-ce que le RGPD m'impose ?
 Réponse : ……………………
-b. Argumentaire court (cinq lignes) : un règlement européen protège-t-il vraiment quelqu'un qui utilise des services hébergés ailleurs ? J'écris un avantage, une limite, et ma conclusion.
+b. *(Prolongement : à la maison si le temps manque.)* Argumentaire court (cinq lignes) : un règlement européen protège-t-il vraiment quelqu'un qui utilise des services hébergés ailleurs ? J'écris un avantage, une limite, et ma conclusion.
 
 ## APRÈS
 
@@ -74,7 +74,7 @@ b. Argumentaire court (cinq lignes) : un règlement européen protège-t-il vrai
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : témoin de connexion (cookie), e-réputation, RGPD.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : témoin de connexion (cookie), e-réputation, RGPD.
 
 ### Question de la séance suivante
 

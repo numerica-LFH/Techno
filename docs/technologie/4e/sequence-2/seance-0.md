@@ -34,7 +34,7 @@ Je remets les six étapes dans l'ordre, en écrivant leur numéro.
 | Le profil est vendu ou loué à des annonceurs | …………………… |
 
 a. À quelle étape est-ce que je donne mon accord ? À quelle étape est-ce que je ne le donne plus ?
-b. Aucune de ces étapes n'est illégale en soi. Qu'est-ce qui, alors, fait la différence entre un usage légal et un usage interdit ?
+b. *(Prolongement : à la maison si le temps manque.)* Aucune de ces étapes n'est illégale en soi. Qu'est-ce qui, alors, fait la différence entre un usage légal et un usage interdit ?
 Réponse : ……………………
 
 ### Activité 2 — Donnée personnelle, ou pas ?
@@ -54,7 +54,7 @@ Réponse : ……………………
 
 a. « Une date de naissance n'est pas une donnée personnelle, puisque des milliers de gens sont nés le même jour. » Que répondre à cet argument ?
 Réponse : ……………………
-b. Je cite deux données que je laisse sans jamais les avoir saisies :
+b. *(Prolongement : à la maison si le temps manque.)* Je cite deux données que je laisse sans jamais les avoir saisies :
 …………………… et ……………………
 
 ## APRÈS
@@ -67,7 +67,7 @@ b. Je cite deux données que je laisse sans jamais les avoir saisies :
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : système d'information, donnée personnelle, objet communicant.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : système d'information, donnée personnelle, objet communicant.
 
 ### Question de la séance suivante
 

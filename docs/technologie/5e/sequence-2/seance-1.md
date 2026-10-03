@@ -36,7 +36,7 @@ a. Je relie chaque fichier à son ordre de grandeur.
 | Un film en haute définition | …………………… |
 | Le disque dur d'un ordinateur | …………………… |
 
-b. Une clé USB de 64 Go. Combien de photos de 4 Mo puis-je y mettre ? Je pose le calcul.
+b. *(Prolongement : à la maison si le temps manque.)* Une clé USB de 64 Go. Combien de photos de 4 Mo puis-je y mettre ? Je pose le calcul.
 Résultat : ……………………
 
 ### Activité 2 — Retrouver un fichier dans une arborescence
@@ -62,7 +62,7 @@ a. Je complète le tableau des extensions.
 | .xlsx | …………………… | .mp3 | …………………… |
 | .pdf | …………………… | .mp4 | …………………… |
 
-b. Deux fichiers portent le même nom mais pas la même extension : expose.odt et expose.pdf. Sont-ils identiques ? Justifie.
+b. *(Prolongement : à la maison si le temps manque.)* Deux fichiers portent le même nom mais pas la même extension : expose.odt et expose.pdf. Sont-ils identiques ? Justifie.
 
 ## APRÈS
 
@@ -74,7 +74,7 @@ b. Deux fichiers portent le même nom mais pas la même extension : expose.odt e
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : octet, arborescence, extension.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : octet, arborescence, extension.
 
 ### Question de la séance suivante
 

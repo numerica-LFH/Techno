@@ -31,7 +31,7 @@ En 2021, plus d'une entreprise sur deux a été victime d'une cyberattaque. Un s
 a. Un compte a été piraté. Parmi ces quatre mots de passe, un seul résiste. Lequel, et pourquoi les trois autres sont-ils faibles ?
 Durant 1402197 Jeremie francois(1972)&&
 Réponse : ……………………
-b. Quand je me connecte à un site, un petit cadenas apparaît à côté de l'adresse. Que garantit-il exactement ?
+b. *(Prolongement : à la maison si le temps manque.)* Quand je me connecte à un site, un petit cadenas apparaît à côté de l'adresse. Que garantit-il exactement ?
 Réponse : ……………………
 
 ### Activité 2 — Donnée personnelle ou pas ?
@@ -51,7 +51,7 @@ Je coche la bonne colonne pour chaque élément.
 | Mon empreinte digitale | …………………… |   |
 
 a. Règle générale : il est …………………… d'utiliser une donnée personnelle sans le …………………… de la personne concernée.
-b. Pourquoi la marque de mon téléphone, seule, n'est-elle pas une donnée personnelle, alors qu'elle peut le devenir si on l'ajoute à d'autres informations ?
+b. *(Prolongement : à la maison si le temps manque.)* Pourquoi la marque de mon téléphone, seule, n'est-elle pas une donnée personnelle, alors qu'elle peut le devenir si on l'ajoute à d'autres informations ?
 
 ## APRÈS
 
@@ -63,7 +63,7 @@ b. Pourquoi la marque de mon téléphone, seule, n'est-elle pas une donnée pers
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : cybersécurité, donnée personnelle, certificat SSL.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : cybersécurité, donnée personnelle, certificat SSL.
 
 ### Question de la séance suivante
 

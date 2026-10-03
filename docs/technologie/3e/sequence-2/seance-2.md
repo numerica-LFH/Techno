@@ -32,7 +32,7 @@ Un centre de données consomme autant d'électricité qu'une ville de 30 000 hab
 
 a. Le document annonce que les émissions liées au numérique doubleront et dépasseront alors celles des voitures. Quelle est la cause principale de cette augmentation ?
 Réponse : ……………………
-b. Une comparaison est trompeuse si l'on ne sait pas ce qu'elle compare. « 3 % de la consommation énergétique mondiale, soit plus que toute la France » : qu'est-ce que cette phrase permet de conclure, et qu'est-ce qu'elle ne permet pas ?
+b. *(Prolongement : à la maison si le temps manque.)* Une comparaison est trompeuse si l'on ne sait pas ce qu'elle compare. « 3 % de la consommation énergétique mondiale, soit plus que toute la France » : qu'est-ce que cette phrase permet de conclure, et qu'est-ce qu'elle ne permet pas ?
 
 ### Activité 2 — Le corps devant la machine
 
@@ -51,7 +51,7 @@ a. D'après le texte du manuel, trois actions qui limitent le rayonnement d'un t
 2. ……………………
 3. ……………………
 b. Les technologies informatiques peuvent aussi peser sur la vie psychologique : cyberaddiction, et cyberharcèlement, qui consiste à faire subir à une personne des comportements répétés dégradant ses conditions de vie. Le cyberharcèlement est …………………….
-c. Trois attitudes à adopter face à une situation de cyberharcèlement, pour soi ou pour quelqu'un d'autre :
+c. *(Prolongement : à la maison si le temps manque.)* Trois attitudes à adopter face à une situation de cyberharcèlement, pour soi ou pour quelqu'un d'autre :
 Au lycée, la vie scolaire, l'infirmerie et les professeurs principaux sont les interlocuteurs à solliciter en premier. En France, le 3018 est le numéro dédié.
 
 ## APRÈS
@@ -65,7 +65,7 @@ Au lycée, la vie scolaire, l'infirmerie et les professeurs principaux sont les 
 
 ### Ma trace écrite
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. J'emploie au moins deux des mots suivants : centre de données, gaz à effet de serre, trouble musculo-squelettique.
+J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : centre de données, gaz à effet de serre, trouble musculo-squelettique.
 
 ### Question de la séance suivante
 
