@@ -294,6 +294,12 @@ nav:
           - "Séance 0 — Ce que la photo jette": snt/sequence-6/seance-0.md
           - "Séance 1 — Manipuler les pixels": snt/sequence-6/seance-1.md
           - "Séance 2 — Filtres et métadonnées": snt/sequence-6/seance-2.md
+  - Missions Scratch:
+      - missions-scratch/index.md
+      - "Palier 1 (vert) : premiers scripts": missions-scratch/palier-1.md
+      - "Palier 2 (bleu) : messages, clones, blocs": missions-scratch/palier-2.md
+      - "Palier 3 (orange) : variables, capteurs, jeux": missions-scratch/palier-3.md
+      - "Palier 4 (violet) : procédures et Python": missions-scratch/palier-4.md
   - PIX:
       - pix/index.md
       - Le référentiel CRCN: pix/crcn.md
@@ -387,6 +393,10 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css
+  - missions-scratch/assets/missions.css
+
+extra_javascript:
+  - missions-scratch/assets/progression.js
 
 extra:
   social:
