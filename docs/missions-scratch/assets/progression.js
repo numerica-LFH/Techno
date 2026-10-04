@@ -46,6 +46,7 @@
                                : "Aucune mission cochée sur cette page pour l'instant.";
     var sel = document.getElementById("pm-derniere");
     if (sel && ids.length && !sel.dataset.touche) sel.value = ids[ids.length - 1];
+    if (MODE === "sketchup") r.textContent = "J'indique la dernière étape réussie et j'ajoute la capture de mon dessin.";
   }
 
   /* ---------- formulaire ---------- */
@@ -57,6 +58,15 @@
   }
 
   var capture = null; // {data, type, nom}
+  var MODE = "scratch";
+  var TXT = {
+    scratch: { derniere: "Dernière mission terminée", capture: "Capture d'écran de mon programme",
+               bloque: "Ce qui me bloque ou ce que j'ai ajouté (facultatif)", bouton: "J'envoie ma progression",
+               manqueCapture: "J'ajoute d'abord la capture d'écran de mon programme." },
+    sketchup: { derniere: "Dernière étape terminée", capture: "Capture d'écran de mon dessin SketchUp",
+                bloque: "Ce qui me bloque ou ce que j'ai ajouté (facultatif)", bouton: "J'envoie mon dessin",
+                manqueCapture: "J'ajoute d'abord la capture d'écran de mon dessin." }
+  };
 
   function compresser(fichier, rappel) {
     var lecteur = new FileReader();
@@ -94,9 +104,11 @@
 
   function construire(boite) {
     var pal = boite.getAttribute("data-palier");
+    MODE = boite.getAttribute("data-type") === "sketchup" ? "sketchup" : "scratch";
+    var T = TXT[MODE];
     var niveau = boite.getAttribute("data-niveau");
     var options = missions.map(function (m) {
-      return '<option value="' + m.id + '">Mission ' + m.id + " · " + m.titre + "</option>";
+      return '<option value="' + m.id + '">' + (MODE === "sketchup" ? "Étape " : "Mission ") + m.id + " · " + m.titre + "</option>";
     }).join("");
     boite.className = "pm-formulaire";
     boite.innerHTML =
@@ -107,15 +119,16 @@
       '<label>Classe<input id="pm-classe" type="text" placeholder="' + niveau + 'A" autocomplete="off"></label>' +
       '<label>Niveau<select id="pm-niveau"><option>5e</option><option>4e</option><option>3e</option><option>2de</option></select></label>' +
       "</div>" +
-      '<label class="pm-large">Dernière mission terminée<select id="pm-derniere">' + options + "</select></label>" +
-      '<label class="pm-large">Ce qui me bloque ou ce que j\'ai ajouté (facultatif)<textarea id="pm-commentaire" rows="2"></textarea></label>' +
+      '<label class="pm-large">' + T.derniere + '<select id="pm-derniere">' + options + "</select></label>" +
+      (MODE === "sketchup" ? '<label class="pm-large">Nom du fichier enregistré dans SketchUp (facultatif)<input id="pm-nomfichier" type="text" autocomplete="off"></label>' : "") +
+      '<label class="pm-large">' + T.bloque + '<textarea id="pm-commentaire" rows="2"></textarea></label>' +
       '<div class="pm-capture" id="pm-zone" tabindex="0">' +
-      "<strong>Capture d'écran de mon programme</strong><br>" +
+      "<strong>" + T.capture + "</strong><br>" +
       "Je fais la capture (Windows + Maj + S, ou Cmd + Ctrl + Maj + 4 sur Mac), je clique ici puis je colle (Ctrl + V ou Cmd + V)." +
       '<br>Ou je choisis le fichier : <input id="pm-fichier" type="file" accept="image/*">' +
       '<p id="pm-capture-etat" class="pm-etat"></p><img id="pm-apercu" alt="Aperçu de la capture" hidden>' +
       "</div>" +
-      '<button id="pm-envoyer" class="md-button md-button--primary" type="button">J\'envoie ma progression</button>' +
+      '<button id="pm-envoyer" class="md-button md-button--primary" type="button">' + T.bouton + "</button>" +
       '<p id="pm-statut" class="pm-statut" role="status"></p>';
 
     document.getElementById("pm-niveau").value = niveau;
@@ -149,7 +162,7 @@
     if (manque) { statut.className = "pm-statut ko"; statut.textContent = "Nom, prénom et classe sont obligatoires."; return; }
     if (!capture) {
       statut.className = "pm-statut ko";
-      statut.textContent = "J'ajoute d'abord la capture d'écran de mon programme.";
+      statut.textContent = TXT[MODE].manqueCapture;
       document.getElementById("pm-zone").classList.add("manque");
       return;
     }
@@ -159,7 +172,21 @@
     var id = document.getElementById("pm-derniere").value;
     var m = missions.filter(function (x) { return x.id === id; })[0] || { id: id, titre: "" };
     var niveau = document.getElementById("pm-niveau").value;
-    var donnees = {
+    var donnees = MODE === "sketchup" ? {
+      _type: "sketchup",
+      _subject: "SketchUp " + niveau + " · Étape " + m.id + " · " + nom.toUpperCase() + " " + prenom,
+      "Nom": nom.toUpperCase(),
+      "Prénom": prenom,
+      "Classe": classe,
+      "Niveau": niveau,
+      "Séquence": "Projet jardin sec · SketchUp",
+      "Séance": pal + " · Étape " + m.id + " " + m.titre,
+      "Dernière étape": m.id,
+      "Fichier": (document.getElementById("pm-nomfichier") || { value: "" }).value.trim(),
+      "Commentaire": document.getElementById("pm-commentaire").value.trim(),
+      "Date": new Date().toLocaleString("fr-FR"),
+      "capture": { nom: "sketchup-etape-" + m.id + "-" + nom.toLowerCase() + ".jpg", type: capture.type, data: capture.data }
+    } : {
       _type: "mission",
       _subject: "Missions Scratch " + niveau + " · Mission " + m.id + " · " + nom.toUpperCase() + " " + prenom,
       "Nom": nom.toUpperCase(),
@@ -184,7 +211,8 @@
       .then(function (r) {
         if (r && (r.success === true || r.success === "true")) {
           statut.className = "pm-statut ok";
-          statut.textContent = "Progression envoyée au professeur (mission " + m.id + "). Rien d'autre à faire.";
+          statut.textContent = (MODE === "sketchup" ? "Dessin envoyé au professeur (étape " : "Progression envoyée au professeur (mission ") +
+            m.id + "). Rien d'autre à faire.";
         } else { throw new Error("refus"); }
       })
       .catch(function () {

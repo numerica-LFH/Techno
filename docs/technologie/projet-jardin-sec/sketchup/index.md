@@ -26,3 +26,7 @@ en série, le fût et la ligne d'arrosage.
 
 En 3e, l'espace complet et son dossier : balises, ombrière, panneau solaire, contrôle de
 l'ensoleillement, cotation, scènes et export.
+
+## Envoyer son dessin au professeur
+
+En bas de chaque pas à pas, le formulaire « J'envoie mon dessin » transmet au professeur la dernière étape réussie et une capture d'écran du modèle. Les envois arrivent par courriel et s'inscrivent dans le classeur des résultats, à l'onglet du niveau.
