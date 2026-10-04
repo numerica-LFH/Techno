@@ -11,8 +11,8 @@ grilles d'évaluation ne sont pas publiés sur ce site.
 | 4e, le bac et les espaces extérieurs | [PDF](fichiers/fiches/sketchup/sketchup-4e-eleve.pdf) |
 | 3e, l'espace complet | [PDF](fichiers/fiches/sketchup/sketchup-3e-eleve.pdf) |
 
-Les tests se font directement dans le navigateur, la correction est immédiate :
-[test 5e](sketchup/quiz-5e.html), [test 4e](sketchup/quiz-4e.html), [test 3e](sketchup/quiz-3e.html).
+Le test de 3e se fait directement dans le navigateur, la correction est immédiate :
+[test 3e](sketchup/quiz-3e.html).
 
 ## Fiches des dix-huit séances
 
