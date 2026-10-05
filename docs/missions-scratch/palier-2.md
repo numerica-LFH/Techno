@@ -26,7 +26,7 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 | [A4](#mission-A4) | Le labyrinthe | algorithme, si, touche pressée |
 
 !!! info "Comment travailler"
-    Je regarde la vidéo, j'ouvre l'exercice, je lis le pas à pas et je programme. Je compare mon résultat avec la vidéo. Si je suis bloqué, j'ouvre « Les blocs que je vais utiliser ». En fin de séance, j'envoie ma progression avec une capture d'écran (bas de la page).
+    Je regarde la vidéo, j'ouvre l'exercice, je lis le pas à pas et je programme. Je compare mon résultat avec la vidéo. Si je suis bloqué, j'ouvre les coups de pouce dans l'ordre : 1, je réfléchis ; 2, les blocs à utiliser ; 3, le squelette du script. « Si ça ne marche pas » liste les erreurs les plus courantes. En fin de séance, j'envoie ma progression avec une capture d'écran (bas de la page).
 
 ## Mission 21 · Le magicien { #mission-21 }
 
@@ -49,13 +49,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Avec « quand je commence comme un clone », chaque clone se montre, glisse vers une position aléatoire et grandit.
 5. Au message « disparaître », chaque clone s'efface peu à peu (effet fantôme) puis est supprimé.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Quel lutin envoie le message, et quel lutin le reçoit ?
+    - Que fait chaque clone dès qu'il apparaît ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 21](img/m21-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 21](img/s21-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - Rien ne se passe à la réception : le message envoyé et le message reçu doivent porter exactement le même nom.
+    - Trop de lutins à l'écran : les clones s'ajoutent à chaque essai, je relance avec le drapeau vert et je laisse l'original caché si besoin.
+
 !!! tip "Mon défi"
     Chaque canard apparaît avec une couleur différente.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="21"> J'ai réussi la mission 21</label>
 
@@ -82,13 +105,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Dans une seconde boucle, elle change de couleur et tourne.
 5. Je termine par une surprise : un cri, une bulle, puis elle disparaît.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle suite de blocs revient plusieurs fois et mérite de devenir un bloc personnalisé ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 22](img/m22-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 22](img/s22-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - La suite attend la fin du son : « jouer le son jusqu'au bout » bloque le script, « démarrer le son » non.
+
 !!! tip "Mon défi"
     J'ajoute un paramètre « vitesse » au bloc « battre des ailes ».
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai créé et utilisé au moins un bloc personnalisé.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="22"> J'ai réussi la mission 22</label>
 
@@ -114,13 +160,33 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Avec « répéter jusqu'à souris pressée », la chauve-souris va au pointeur de souris et bat des ailes.
 4. Au clic suivant, la boucle s'arrête : elle se pose.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Que doit-il se passer quand je clique sur le lutin ?
+    - Jusqu'à quand le lutin répète-t-il son action ? Quelle condition arrête la boucle ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 23](img/m23-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 23](img/s23-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+
 !!! tip "Mon défi"
     La chauve-souris glisse vers la souris au lieu de sauter dessus.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai testé toutes les touches, tous les clics ou plusieurs réponses différentes.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="23"> J'ai réussi la mission 23</label>
 
@@ -147,13 +213,38 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Dans « répéter 8 fois » : je relève le stylo, je vais au début de la ligne, je trace la ligne et je diminue la hauteur de 40.
 5. À la fin, je relève le stylo et je cache le crayon.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle information dois-je garder dans une variable, et quelle est sa valeur au départ ?
+    - Quelle suite de blocs revient plusieurs fois et mérite de devenir un bloc personnalisé ?
+    - Où le crayon commence-t-il, et à quel moment le stylo doit-il être posé ou relevé ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 24](img/m24-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 24](img/s24-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - Un trait part du mauvais endroit : je relève le stylo avant « aller à », je le pose seulement après, et j'efface tout au début.
+    - La variable garde l'ancienne valeur : je la remets à sa valeur de départ au drapeau vert.
+
 !!! tip "Mon défi"
     Chaque ligne commence décalée d'un demi-créneau, comme un mur de briques.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai créé et utilisé au moins un bloc personnalisé.
+- [ ] La variable affiche la bonne valeur pendant et à la fin du programme.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="24"> J'ai réussi la mission 24</label>
 
@@ -178,13 +269,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 2. Dans le script principal, je prépare le crayon : effacer, position, orientation, taille et couleur du stylo.
 3. Je répète 4 fois : « côté » puis tourner de 90 degrés.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle suite de blocs revient plusieurs fois et mérite de devenir un bloc personnalisé ?
+    - Où le crayon commence-t-il, et à quel moment le stylo doit-il être posé ou relevé ?
+    - De combien de degrés tourner ? Je pense à la règle : 360 divisé par le nombre de côtés.
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 25](img/m25-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 25](img/s25-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Un trait part du mauvais endroit : je relève le stylo avant « aller à », je le pose seulement après, et j'efface tout au début.
+
 !!! tip "Mon défi"
     Chaque côté joue une note différente (extension Musique).
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai créé et utilisé au moins un bloc personnalisé.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="25"> J'ai réussi la mission 25</label>
 
@@ -210,13 +324,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Dans la boucle : avancer, tourner de 10 degrés, changer la couleur du stylo et l'effet couleur du chat.
 4. À la fin, je relève le stylo et je cache le chat.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Où le crayon commence-t-il, et à quel moment le stylo doit-il être posé ou relevé ?
+    - De combien de degrés tourner ? Je pense à la règle : 360 divisé par le nombre de côtés.
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 26](img/m26-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 26](img/s26-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - Un trait part du mauvais endroit : je relève le stylo avant « aller à », je le pose seulement après, et j'efface tout au début.
+
 !!! tip "Mon défi"
     Je trace trois cercles de tailles différentes.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="26"> J'ai réussi la mission 26</label>
 
@@ -242,13 +379,34 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Pour changer de couleur dans la boucle, j'utilise « ajouter à la couleur du stylo ».
 4. Je vérifie l'angle : 360 divisé par 3.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Où le crayon commence-t-il, et à quel moment le stylo doit-il être posé ou relevé ?
+    - De combien de degrés tourner ? Je pense à la règle : 360 divisé par le nombre de côtés.
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 27](img/m27-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 27](img/s27-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Un trait part du mauvais endroit : je relève le stylo avant « aller à », je le pose seulement après, et j'efface tout au début.
+
 !!! tip "Mon défi"
     Avec la même boucle, je dessine un hexagone (6 côtés).
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="27"> J'ai réussi la mission 27</label>
 
@@ -275,13 +433,34 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Le plongeur fait l'inverse : il part petit à droite et grossit en nageant vers la gauche.
 5. Je n'oublie pas de tout remettre en place au départ (montrer, taille).
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Jusqu'à quand le lutin répète-t-il son action ? Quelle condition arrête la boucle ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 28](img/m28-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 28](img/s28-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - La boucle s'arrête tout de suite : au départ, le lutin touche déjà le bord. Je le place un peu plus loin.
+
 !!! tip "Mon défi"
     Les poissons avancent à des vitesses choisies au hasard.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="28"> J'ai réussi la mission 28</label>
 
@@ -308,13 +487,33 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Il soupire : je baisse la hauteur du son (effet hauteur) avant le miaulement.
 5. Il se couche : il tourne de 90 degrés.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 29](img/m29-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 29](img/s29-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - La suite attend la fin du son : « jouer le son jusqu'au bout » bloque le script, « démarrer le son » non.
+
 !!! tip "Mon défi"
     Le chat se relève quand on clique dessus.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="29"> J'ai réussi la mission 29</label>
 
@@ -340,13 +539,34 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. J'ajoute le son Car Horn depuis la bibliothèque et je le joue jusqu'au bout.
 4. Elle part : elle avance de grands pas en changeant de costume, puis elle se cache.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 30](img/m30-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 30](img/s30-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - La suite attend la fin du son : « jouer le son jusqu'au bout » bloque le script, « démarrer le son » non.
+
 !!! tip "Mon défi"
     La sorcière accélère : chaque pas est plus grand que le précédent.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="30"> J'ai réussi la mission 30</label>
 
@@ -371,13 +591,34 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 2. Dans une boucle : je crée un clone de moi-même, puis le dinosaure d'origine se décale à droite et change de couleur.
 3. Le clone reste à l'ancienne place avec l'ancienne couleur.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - À quel moment créer un clone, et que fait ensuite le lutin d'origine ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 31](img/m31-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 31](img/s31-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - Trop de lutins à l'écran : les clones s'ajoutent à chaque essai, je relance avec le drapeau vert et je laisse l'original caché si besoin.
+
 !!! tip "Mon défi"
     Les dinosaures sont posés sur deux lignes.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="31"> J'ai réussi la mission 31</label>
 
@@ -403,13 +644,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Ensuite il marche en changeant de costume.
 4. Je teste le numéro du costume : si c'est le costume gueule ouverte, il rugit (son Growl).
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle condition dois-je tester, et que se passe-t-il quand elle est vraie ?
+    - À quel moment créer un clone, et que fait ensuite le lutin d'origine ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 32](img/m32-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 32](img/s32-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - La taille ou la couleur change un peu plus à chaque essai : au début, je remets « mettre la taille à » et « annuler les effets graphiques ».
+    - Mon test ne marche qu'une fois : le bloc « si » doit être à l'intérieur de la boucle.
+    - Trop de lutins à l'écran : les clones s'ajoutent à chaque essai, je relance avec le drapeau vert et je laisse l'original caché si besoin.
+
 !!! tip "Mon défi"
     Les clones disparaissent un par un après le passage du dinosaure.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="32"> J'ai réussi la mission 32</label>
 
@@ -435,13 +699,34 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Après la boucle, il pense une phrase construite avec « regrouper » : texte, variable, texte.
 4. Je termine par « stop tout ».
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Jusqu'à quand le lutin répète-t-il son action ? Quelle condition arrête la boucle ?
+    - Quelle information dois-je garder dans une variable, et quelle est sa valeur au départ ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 33](img/m33-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 33](img/s33-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - La variable garde l'ancienne valeur : je la remets à sa valeur de départ au drapeau vert.
+
 !!! tip "Mon défi"
     Le chien aboie seulement un pas sur deux.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] La variable affiche la bonne valeur pendant et à la fin du programme.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="33"> J'ai réussi la mission 33</label>
 
@@ -467,13 +752,38 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. À la réception de « partez », dans « répéter jusqu'à touche le bord » : saut prend un nombre aléatoire entre 5 et 20, puis le chien avance de saut.
 4. Le gagnant dit « J'ai gagné ! » puis arrête tout.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Quel lutin envoie le message, et quel lutin le reçoit ?
+    - Jusqu'à quand le lutin répète-t-il son action ? Quelle condition arrête la boucle ?
+    - Quelle information dois-je garder dans une variable, et quelle est sa valeur au départ ?
+    - Quelle valeur doit changer à chaque fois ? (nombre aléatoire)
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 34](img/m34-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 34](img/s34-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Rien ne se passe à la réception : le message envoyé et le message reçu doivent porter exactement le même nom.
+    - La variable garde l'ancienne valeur : je la remets à sa valeur de départ au drapeau vert.
+    - La boucle s'arrête tout de suite : au départ, le lutin touche déjà le bord. Je le place un peu plus loin.
+
 !!! tip "Mon défi"
     J'ajoute un troisième chien et un compte à rebours 3, 2, 1.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] La variable affiche la bonne valeur pendant et à la fin du programme.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="34"> J'ai réussi la mission 34</label>
 
@@ -499,13 +809,35 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Le ballon est caché au départ. Quand il reçoit « lancer », il va à la danseuse, se montre et glisse vers le coin de la scène.
 4. La danseuse termine sa danse.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Quel lutin envoie le message, et quel lutin le reçoit ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle suite de blocs revient plusieurs fois et mérite de devenir un bloc personnalisé ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 35](img/m35-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 35](img/s35-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - Rien ne se passe à la réception : le message envoyé et le message reçu doivent porter exactement le même nom.
+
 !!! tip "Mon défi"
     Le ballon tourne sur lui-même pendant son vol.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai créé et utilisé au moins un bloc personnalisé.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="35"> J'ai réussi la mission 35</label>
 
@@ -531,13 +863,31 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. Je place les trois boucles dans une grande boucle « répéter 2 fois ».
 4. Je démarre la musique au début et je l'arrête à la fin.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission 36](img/m36-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission 36](img/s36-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - Je relis mon script dans l'ordre, bloc par bloc, en me demandant ce que fait le lutin à chaque ligne.
+
 !!! tip "Mon défi"
     Chaque figure devient un bloc personnalisé.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat ressemble à la vidéo.
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="36"> J'ai réussi la mission 36</label>
 
@@ -561,13 +911,36 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 4. Dans le bloc : répéter « côtés » fois, avancer de « longueur », tourner de 360 / côtés.
 5. Pour l'étoile, le crayon fait deux tours complets en 5 branches : il tourne de 720 / 5 = 144 degrés.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui se répète dans la vidéo, et combien de fois ?
+    - Quelle suite de blocs revient plusieurs fois et mérite de devenir un bloc personnalisé ?
+    - Où le crayon commence-t-il, et à quel moment le stylo doit-il être posé ou relevé ?
+    - De combien de degrés tourner ? Je pense à la règle : 360 divisé par le nombre de côtés.
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission A3](img/mA3-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission A3](img/sA3-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - L'animation va trop vite pour être vue : j'ajoute « attendre » dans la boucle.
+    - Un trait part du mauvais endroit : je relève le stylo avant « aller à », je le pose seulement après, et j'efface tout au début.
+
 !!! tip "Mon défi"
     Je dessine les anneaux olympiques avec un bloc « cercle ».
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat correspond à la consigne « Ce que je dois obtenir ».
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai créé et utilisé au moins un bloc personnalisé.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="A3"> J'ai réussi la mission A3</label>
 
@@ -590,13 +963,35 @@ Classe de départ : **4e**. Les élèves qui ont terminé le palier précédent 
 3. J'ajoute : si l'explorateur touche la couleur bleue, il retourne au départ.
 4. Pour l'ami : répéter indéfiniment, si l'explorateur le touche, il dit merci, se cache et tout s'arrête.
 
-??? note "Les blocs que je vais utiliser"
+??? question "Coup de pouce 1 : je réfléchis avant de coder"
+    - Comment est la scène au départ : position, costume, taille de chaque lutin, visible ou caché ?
+    - Qu'est-ce qui doit se répéter sans jamais s'arrêter ?
+    - Quelle condition dois-je tester, et que se passe-t-il quand elle est vraie ?
+
+??? note "Coup de pouce 2 : les blocs que je vais utiliser"
     ![Blocs de la mission A4](img/mA4-blocs.svg){ .blocs }
 
     Les valeurs sont celles proposées par Scratch : à moi de choisir les bonnes et d'assembler les blocs.
 
+??? abstract "Coup de pouce 3 : le squelette du script"
+    Les blocs sont assemblés, les nombres sont à trouver (cases vides). Je l'ouvre seulement si les deux premiers coups de pouce ne suffisent pas.
+
+    ![Squelette du script de la mission A4](img/sA4-squelette.svg){ .blocs }
+
+??? warning "Si ça ne marche pas"
+    - Le lutin reste invisible au lancement suivant : je mets « montrer » au début du script.
+    - Mon test ne marche qu'une fois : le bloc « si » doit être à l'intérieur de la boucle.
+    - « couleur touchée » ne réagit pas : je prends la couleur avec la pipette, directement sur la scène.
+    - Le lutin avance la tête en bas : « fixer le sens de rotation gauche-droite ».
+
 !!! tip "Mon défi"
     Un ennemi se déplace de gauche à droite (rebondir si le bord est atteint) et renvoie l'explorateur au départ.
+
+**Je vérifie avant de cocher**
+
+- [ ] Mon résultat correspond à la consigne « Ce que je dois obtenir ».
+- [ ] Je clique deux fois de suite sur le drapeau vert : tout repart comme au premier essai.
+- [ ] J'ai enregistré mon projet sur l'ordinateur (Fichier, Enregistrer sur votre ordinateur).
 
 <label class="mission-reussie"><input type="checkbox" data-mission="A4"> J'ai réussi la mission A4</label>
 

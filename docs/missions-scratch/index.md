@@ -21,7 +21,7 @@ Les missions numérotées 01 à 68 reprennent les vidéos Canopé. Les missions 
 2. Je clique sur **Ouvrir l'exercice**. Le projet s'ouvre dans TurboWarp, un éditeur en ligne qui fonctionne comme Scratch 3, sans compte. Les lutins et les décors sont déjà en place.
 3. Je lis la consigne : elle est sur la page et dans un commentaire du projet.
 4. Je programme en suivant le pas à pas. Je teste souvent avec le drapeau vert.
-5. Si je suis bloqué, j'ouvre « Les blocs que je vais utiliser ».
+5. Si je suis bloqué, j'ouvre les coups de pouce dans l'ordre : les questions pour réfléchir, puis les blocs à utiliser, puis le squelette du script où il ne reste que les nombres à trouver. La rubrique « Si ça ne marche pas » aide à corriger les erreurs courantes.
 6. Quand le résultat est conforme à la vidéo, je coche « J'ai réussi » et je tente le défi.
 7. En fin de séance, je remplis « Où j'en suis » en bas de la page du palier, avec une capture d'écran.
 
