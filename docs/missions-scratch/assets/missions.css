@@ -10,6 +10,9 @@
 .md-typeset .mission.palier-2 { --palier: #1565c0; }
 .md-typeset .mission.palier-3 { --palier: #ef6c00; }
 .md-typeset .mission.palier-4 { --palier: #6a1b9a; }
+.md-typeset .mission.palier-1b { --palier: #d81b60; }
+.md-typeset img.mission-resultat { max-width: 480px; width: 100%; border-radius: 6px; }
+@media print { .md-typeset .pm-formulaire { display: none; } }
 .md-typeset .mission-objectif {
   background: var(--md-code-bg-color);
   padding: 0.5rem 0.8rem;

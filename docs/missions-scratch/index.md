@@ -2,22 +2,23 @@
 
 Un parcours de missions pour apprendre à programmer avec Scratch, pas à pas, de la 5e à la 2nde. Chaque mission montre en vidéo le résultat attendu. L'élève ouvre le fichier d'exercice, programme, compare avec la vidéo puis passe à la suivante.
 
-## Les quatre paliers
+## Les cinq paliers
 
 | Palier | Classe de départ | Contenu | Missions |
 |---|---|---|---|
 | [Palier 1 (vert)](palier-1.md) | 5e | Premiers scripts | 00 à A2 (11 missions) |
+| [Palier 1 bis (rose)](palier-1b.md) | 5e | Je consolide les bases | 09 à 20 (12 missions) |
 | [Palier 2 (bleu)](palier-2.md) | 4e | Messages, clones et blocs personnalisés | 21 à A4 (18 missions) |
 | [Palier 3 (orange)](palier-3.md) | 3e | Variables, capteurs et jeux | 41 à A6 (18 missions) |
 | [Palier 4 (violet)](palier-4.md) | 2de | Procédures, algorithmes et passage à Python | 61 à A8 (10 missions) |
 
-Chaque classe commence à son palier. Un élève qui a terminé passe au palier suivant : le parcours continue d'une année sur l'autre jusqu'en 2nde.
+Chaque classe commence à son palier. Un élève qui a terminé passe au palier suivant : le parcours continue d'une année sur l'autre jusqu'en 2nde. En 5e, le palier vert est suivi du palier rose, qui consolide les bases avant le palier bleu.
 
-Les missions numérotées 01 à 68 reprennent les vidéos Canopé. Les missions A1 à A8 sont des ateliers plus longs : mélodie, dialogue, labyrinthe, polygones, tir à l'arc, premier jeu, passage à Python et projet personnel.
+Les missions 01 à 08 et 21 à 68 reprennent les vidéos Canopé. Les missions 09 à 20 (palier rose) ont été créées pour le site : une image montre le résultat attendu à la place de la vidéo. Les missions A1 à A8 sont des ateliers plus longs : mélodie, dialogue, labyrinthe, polygones, tir à l'arc, premier jeu, passage à Python et projet personnel.
 
 ## Une mission, pas à pas
 
-1. Je regarde la vidéo : c'est le résultat que mon programme doit produire.
+1. Je regarde la vidéo, ou l'image pour les missions 09 à 20 : c'est le résultat que mon programme doit produire.
 2. Je clique sur **Ouvrir l'exercice**. Le projet s'ouvre dans TurboWarp, un éditeur en ligne qui fonctionne comme Scratch 3, sans compte. Les lutins et les décors sont déjà en place.
 3. Je lis la consigne : elle est sur la page et dans un commentaire du projet.
 4. Je programme en suivant le pas à pas. Je teste souvent avec le drapeau vert.
