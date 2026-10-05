@@ -297,6 +297,7 @@ nav:
   - Missions Scratch:
       - missions-scratch/index.md
       - "Palier 1 (vert) : premiers scripts": missions-scratch/palier-1.md
+      - "Palier 1 bis (rose) : je consolide les bases": missions-scratch/palier-1b.md
       - "Palier 2 (bleu) : messages, clones, blocs": missions-scratch/palier-2.md
       - "Palier 3 (orange) : variables, capteurs, jeux": missions-scratch/palier-3.md
       - "Palier 4 (violet) : procédures et Python": missions-scratch/palier-4.md
