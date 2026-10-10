@@ -258,7 +258,7 @@ Le simulateur sert à préparer et à rattraper le travail sur carte réelle :
 - reprendre une séance manquée, le circuit et le programme étant au même endroit
 - projeter un montage au tableau pendant la correction
 
-Les programmes micro:bit du projet jardin sec se transposent directement dans le
+Les programmes Arduino du projet jardin sec (kit Grove) se testent aussi dans le
 simulateur, voir les [ressources techniques du projet](../technologie/projet-jardin-sec/ressources.md).
 
 ## Espace de travail collaboratif

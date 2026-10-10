@@ -1,6 +1,9 @@
 # Les pas à pas SketchUp
 
-Trois séances de modélisation, une par niveau, sur SketchUp Free dans le navigateur.
+Trois pas à pas de modélisation, un par niveau, sur SketchUp Free dans le navigateur. Celui de 5e
+est fait en séance 3 de la [séquence jardin sec](../../5e/sequence-jardin-sec/seance-3.md) ; ceux de 4e et
+de 3e sont proposés en prolongement.
+
 Chaque pas à pas tient en douze gestes, illustrés étape par étape. En 5e et en 4e, les
 élèves dessinent d'après le croquis, sans cotes à reporter ; le pas à pas de 3e se termine
 par un test en ligne qui se corrige tout seul.

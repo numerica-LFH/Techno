@@ -16,12 +16,12 @@
 | FP2 | Alimenter les plantes en eau sans intervention quotidienne | autonomie sans intervention | 7 jours au minimum | F0 |
 | FC1 | Limiter la consommation d'eau | volume consommé | moins de 1 L/m2/jour en saison sèche | F0 |
 | FC2 | S'alimenter en eau de pluie | part d'eau de pluie | 100 % visé, 70 % accepté | F1 |
-| FC3 | Fonctionner sans branchement électrique | source d'énergie | panneau solaire et accumulateur | F1 |
+| FC3 | Fonctionner de façon autonome | intervention humaine pour arroser | aucune en fonctionnement normal | F1 |
 | FC4 | Résister au climat local | tenue au soleil et à la pluie | boîtier étanche, bois traité | F0 |
 | FC5 | Être construit avec des matériaux de récupération | part de matériaux récupérés | 60 % au minimum | F2 |
 | FC6 | Être accessible aux élèves | hauteur de travail | entre 25 et 80 cm | F1 |
-| FC7 | Respecter la sécurité des personnes | tension utilisée | très basse tension, 5 V ou 6 V | F0 |
-| FC8 | S'intégrer visuellement à la cour | traitement des surfaces | peinture et signalétique réalisées par les élèves | F2 |
+| FC7 | Respecter la sécurité des personnes | tension utilisée | très basse tension, 12 V au plus | F0 |
+| FC8 | S'intégrer visuellement à la cour | traitement des surfaces | peinture et signalétique | F2 |
 
 Flexibilité : F0 nulle, F1 faible, F2 forte.
 
@@ -30,7 +30,10 @@ Flexibilité : F0 nulle, F1 faible, F2 forte.
 Les prix sont indicatifs, en lempiras, relevés à Tegucigalpa. Ils sont à actualiser au moment
 de la demande d'achat. La colonne « récup » indique ce qui peut être obtenu sans achat.
 
-### 3.1 Structure et plantation, poste piloté par les 5e
+### 3.1 Structure et plantation, d'après le modèle SketchUp des 5e
+
+Les élèves ne fabriquent pas les jardinières : ils les conçoivent. La construction est
+confiée à l'établissement, à partir du modèle et du cahier des charges.
 
 | Article | Quantité | Prix unitaire | Total | Récup |
 |---|---|---:|---:|---|
@@ -64,7 +67,7 @@ intérêt pédagogique ou alimentaire.
 
 Budget plants et semences : environ 1 500 lempiras.
 
-### 3.3 Récupération et distribution d'eau, poste piloté par les 4e
+### 3.3 Récupération et distribution d'eau, dimensionnées par les 4e
 
 | Article | Quantité | Prix unitaire | Total |
 |---|---|---:|---:|
@@ -77,26 +80,34 @@ Budget plants et semences : environ 1 500 lempiras.
 | Raccords, tés, bouchons | 1 lot | 350 | 350 |
 | **Sous-total eau** | | | **3 450** |
 
-### 3.4 Commande et énergie, poste piloté par les 4e et les 3e
+### 3.4 Commande : le kit Grove de la classe
 
-| Article | Quantité | Prix unitaire | Total |
+La commande de l'arrosage utilise le **Grove Smart Plant Care Kit for Arduino** de Seeed
+Studio, déjà présent dans la classe, monté sur une carte Arduino Uno par son Base Shield.
+
+| Élément du kit | Rôle dans le projet | Branchement retenu |
+|---|---|---|
+| Base Shield V2 | relie les modules Grove à la carte Arduino Uno | sur la carte |
+| Capteur d'humidité du sol | acquérir l'humidité de la terre | port A0 |
+| Relais Grove | distribuer l'énergie à la pompe sur ordre de la carte | port D7 |
+| Pompe à eau et son tuyau | convertir l'énergie électrique et faire circuler l'eau | par le relais, alimentation 12 V |
+| Écran OLED, capteur de température et d'humidité de l'air, bouton, encodeur, capteur de débit | prolongements possibles | non utilisés dans les séances |
+
+Le contenu exact du kit et le brochage sont à vérifier sur la notice fournie avec le kit. Les
+repères du capteur (environ 200 dans la terre sèche, 600 dans la terre arrosée) sont à
+remesurer avec le capteur de la classe avant les séances.
+
+| Article complémentaire | Quantité | Prix unitaire | Total |
 |---|---|---:|---:|
-| micro:bit v2 avec câble USB | 6 | 720 | 4 320 |
-| Support de piles micro:bit | 6 | 90 | 540 |
-| Capteur d'humidité du sol capacitif | 8 | 145 | 1 160 |
-| Module relais 1 canal 5 V | 4 | 110 | 440 |
-| Pompe submersible 5 V, 120 L/h | 2 | 260 | 520 |
-| Panneau solaire 6 V 2 W | 2 | 380 | 760 |
-| Régulateur de charge et accumulateur 18650 avec support | 2 | 340 | 680 |
-| Boîtier étanche IP65, 150 x 110 x 70 mm | 2 | 290 | 580 |
-| Pinces crocodile, fils, connecteurs | 1 lot | 400 | 400 |
-| Multimètre | 2 | 450 | 900 |
-| **Sous-total commande et énergie** | | | **10 300** |
+| Câble USB pour la carte Arduino | 1 | 90 | 90 |
+| Boîtier étanche IP65, 150 x 110 x 70 mm | 1 | 290 | 290 |
+| Pots de terre pour les essais en classe | 2 | 60 | 120 |
+| **Sous-total commande, hors kit** | | | **500** |
 
-### 3.5 Outillage, à emprunter en priorité
+### 3.5 Petit matériel de mesure, à emprunter en priorité
 
-Scie égoïne, visseuse sans fil, mètre, décamètre, équerre, niveau à bulle, agrafeuse, ciseau à
-bois, pinceaux, gants, arrosoir gradué, balance de cuisine au gramme, éprouvette ou verre doseur.
+Décamètre, mètre, verre doseur ou éprouvette, chronomètre, balance de cuisine au gramme,
+barquettes, bouteille de 1,5 L et goutteur pour la mesure de débit, arrosoir.
 
 ### 3.6 Récapitulatif
 
@@ -105,38 +116,36 @@ bois, pinceaux, gants, arrosoir gradué, balance de cuisine au gramme, éprouvet
 | Structure et plantation | 6 004 | 210 |
 | Plantes et semences | 1 500 | 53 |
 | Récupération et distribution d'eau | 3 450 | 121 |
-| Commande et énergie | 10 300 | 361 |
-| **Total** | **21 254** | **745** |
+| Commande, hors kit Grove déjà présent | 500 | 18 |
+| **Total** | **11 454** | **402** |
 
-Conversion indicative sur la base de 28,5 lempiras pour 1 euro. Le poste commande et énergie
-est réutilisable d'une année sur l'autre, ce qui ramène le coût de reconduction du projet à
-environ 300 euros.
+Conversion indicative sur la base de 28,5 lempiras pour 1 euro. Les prix sont à actualiser au
+moment de la demande d'achat. Le kit Grove et la commande sont réutilisables d'une année sur
+l'autre.
 
 ## 4. Logiciels et ressources numériques
 
 | Outil | Usage | Remarque |
 |---|---|---|
-| SketchUp Free ou SketchUp for Schools | modélisation 3D du site et des jardinières | version navigateur, compte scolaire |
+| SketchUp Free | modélisation 3D de la jardinière et du site | app.sketchup.com, compte Trimble par élève |
 | Console Ruby de SketchUp Pro | exécution des scripts fournis | pour le professeur, en démonstration |
-| MakeCode micro:bit | programmation par blocs | makecode.microbit.org, hors ligne possible |
-| Éditeur Python micro:bit | programmation en MicroPython | python.microbit.org, pour les 3e |
-| Tableur | bilan d'eau, courbes d'humidité | classeur fourni |
+| Arduino IDE | lecture, réglage et téléversement des programmes du kit Grove | moniteur série à 9600 bauds |
+| Tableur | bilan d'eau, lecture du journal de données | classeur fourni |
 
 ## 5. Sécurité et organisation
 
-- Aucune tension supérieure à 6 V n'est manipulée par les élèves.
-- La pompe et le relais sont câblés hors tension, vérifiés par le professeur avant essai.
+- Aucune fabrication à la main pendant les séances : ni sciage, ni vissage, ni perçage.
+- Aucune tension supérieure à 12 V. La pompe et son alimentation sont mises en marche par le
+  professeur ; les connecteurs Grove se branchent et se débranchent hors tension.
+- Les mesures d'eau se font près d'un point d'eau, loin des postes informatiques.
 - Le fût de récupération reste fermé par son couvercle et sa grille, contre les moustiques.
-  Ce point est traité explicitement en 4e, avec le contexte sanitaire local.
-- Le sciage et le vissage se font par postes de quatre élèves, avec gants, sous surveillance
-  directe, pendant les séances en demi-groupe.
 - Une fiche d'arrosage de secours est affichée près du jardin, pour les périodes de vacances.
 
 ## 6. Calendrier type sur une année scolaire
 
 | Période | 5e | 4e | 3e |
 |---|---|---|---|
-| Semaines 1 à 3 | séances 1 à 6, conception et construction des jardinières | | |
-| Semaines 4 à 6 | | séances 1 à 6, récupération d'eau et arrosage automatique | |
-| Semaines 7 à 9 | | | séances 1 à 6, autonomie énergétique, données, bilan |
-| Semaine 10 | présentation commune du jardin aux familles et à la direction | | |
+| Semaines 1 et 2 | séances 1 à 3 : besoin, choix, modèle SketchUp | | |
+| Semaines 3 et 4 | | séances 1 à 3 : débit, chaînes, programme | |
+| Semaines 5 et 6 | | | séances 1 à 3 : mesures fiables, bilan, programme final |
+| Semaine 7 | présentation commune du jardin aux familles et à la direction | | |

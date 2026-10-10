@@ -24,6 +24,12 @@ Deux séquences projet, en séances de 40 minutes, avec fiches à imprimer, trac
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 - [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances
 
+## Séquence projet : le jardin sec
+
+Étalonner le capteur et lire un journal de données, faire le bilan d'eau, programmer l'arrosage à deux seuils. Trois séances de 40 minutes, avec fiches à imprimer, traces écrites, exercices autocorrectifs et une évaluation de fin de séquence en 40 questions. Cette séquence fait partie du [projet jardin sec](../projet-jardin-sec/index.md), mené sur les trois niveaux.
+
+[Ouvrir la séquence « Jardin sec : le système complet et son bilan »](sequence-jardin-sec/index.md)
+
 ## Chapitre 1. De la découverte à l'innovation, et ses effets sur la société
 
 !!! abstract "Question directrice"

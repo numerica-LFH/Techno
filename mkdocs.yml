@@ -103,6 +103,15 @@ nav:
                   - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/5e/sequence-jeu-video/trace-ecrite-seance-6.md
                   - "Séance 7 — Entraînement à la Nuit du Code": technologie/5e/sequence-jeu-video/trace-ecrite-seance-7.md
                   - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/5e/sequence-jeu-video/trace-ecrite-seance-8.md
+          - "Séquence projet — Jardin sec : concevoir la jardinière":
+              - technologie/5e/sequence-jardin-sec/index.md
+              - "Séance 1 — De combien d'eau ce jardin aura-t-il besoin ?": technologie/5e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Quelle jardinière, quelles plantes, quel paillage ?": technologie/5e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Modéliser la jardinière dans SketchUp, puis l'évaluation": technologie/5e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — De combien d'eau ce jardin aura-t-il besoin ?": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Quelle jardinière, quelles plantes, quel paillage ?": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Modéliser la jardinière dans SketchUp, puis l'évaluation": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-3.md
       - 4e:
           - technologie/4e/index.md
           - "Séquence 1 — Pourquoi les objets techniques évoluent-ils ?":
@@ -178,6 +187,15 @@ nav:
                   - "Séance 8 — Étalonner les déplacements du robot": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-8.md
                   - "Séance 9 — Suivre une ligne": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-9.md
                   - "Séance 10 — Le défi du robot livreur": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-10.md
+          - "Séquence projet — Jardin sec : automatiser l'arrosage":
+              - technologie/4e/sequence-jardin-sec/index.md
+              - "Séance 1 — Arroser sans gaspiller : je mesure un débit": technologie/4e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Qui décide d'arroser ? Les deux chaînes et la règle « si »": technologie/4e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Programmer l'arrosage avec le kit Grove, puis l'évaluation": technologie/4e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Arroser sans gaspiller : je mesure un débit": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Qui décide d'arroser ? Les deux chaînes et la règle « si »": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer l'arrosage avec le kit Grove, puis l'évaluation": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-3.md
       - 3e:
           - technologie/3e/index.md
           - "Séquence 1 — De la découverte à l'innovation, et ses effets sur la société":
@@ -253,6 +271,15 @@ nav:
                   - "Séance 8 — Étalonner les déplacements du robot": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-8.md
                   - "Séance 9 — Suivre une ligne": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-9.md
                   - "Séance 10 — Le défi du robot livreur": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-10.md
+          - "Séquence projet — Jardin sec : le système complet et son bilan":
+              - technologie/3e/sequence-jardin-sec/index.md
+              - "Séance 1 — Mesurer pour régler : étalonner le capteur et lire un journal": technologie/3e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Innovation et bilan : le jardin tient-il sa promesse ?": technologie/3e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Le programme à deux seuils, puis l'évaluation": technologie/3e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Mesurer pour régler : étalonner le capteur et lire un journal": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Innovation et bilan : le jardin tient-il sa promesse ?": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Le programme à deux seuils, puis l'évaluation": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-3.md
   - SNT:
       - snt/index.md
       - Prise en main et Python: snt/prise-en-main.md
@@ -321,30 +348,6 @@ nav:
           - 5e, créer le bac: technologie/projet-jardin-sec/sketchup/5e.md
           - 4e, le bac et les espaces: technologie/projet-jardin-sec/sketchup/4e.md
           - 3e, l'espace complet: technologie/projet-jardin-sec/sketchup/3e.md
-      - 5e, concevoir la jardinière:
-          - Vue d'ensemble: technologie/projet-jardin-sec/5e/index.md
-          - Séance 1: technologie/projet-jardin-sec/5e/seance-1.md
-          - Séance 2: technologie/projet-jardin-sec/5e/seance-2.md
-          - Séance 3: technologie/projet-jardin-sec/5e/seance-3.md
-          - Séance 4: technologie/projet-jardin-sec/5e/seance-4.md
-          - Séance 5: technologie/projet-jardin-sec/5e/seance-5.md
-          - Séance 6: technologie/projet-jardin-sec/5e/seance-6.md
-      - 4e, automatiser l'arrosage:
-          - Vue d'ensemble: technologie/projet-jardin-sec/4e/index.md
-          - Séance 1: technologie/projet-jardin-sec/4e/seance-1.md
-          - Séance 2: technologie/projet-jardin-sec/4e/seance-2.md
-          - Séance 3: technologie/projet-jardin-sec/4e/seance-3.md
-          - Séance 4: technologie/projet-jardin-sec/4e/seance-4.md
-          - Séance 5: technologie/projet-jardin-sec/4e/seance-5.md
-          - Séance 6: technologie/projet-jardin-sec/4e/seance-6.md
-      - 3e, autonomie et bilan:
-          - Vue d'ensemble: technologie/projet-jardin-sec/3e/index.md
-          - Séance 1: technologie/projet-jardin-sec/3e/seance-1.md
-          - Séance 2: technologie/projet-jardin-sec/3e/seance-2.md
-          - Séance 3: technologie/projet-jardin-sec/3e/seance-3.md
-          - Séance 4: technologie/projet-jardin-sec/3e/seance-4.md
-          - Séance 5: technologie/projet-jardin-sec/3e/seance-5.md
-          - Séance 6: technologie/projet-jardin-sec/3e/seance-6.md
       - Ressources techniques: technologie/projet-jardin-sec/ressources.md
       - Téléchargements: technologie/projet-jardin-sec/telechargements.md
   - Programmes: programmes.md

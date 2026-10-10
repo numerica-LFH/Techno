@@ -146,6 +146,25 @@ Quand une activité change dans une fiche, la page du thème correspondante doit
 | `ressources/outils.md` | **à compléter** : aucun éditeur HTML listé |
 | `ressources/liens.md` | **à compléter** : section « écrire des pages web » absente |
 
+## Rangement des séquences de technologie
+
+Chaque séquence vit dans le dossier de son niveau, avec la même structure :
+
+```
+docs/technologie/<niveau>/<sequence>/
+  index.md                    page de la séquence
+  seance-N.md                 une page par séance
+  trace-ecrite-seance-N.md    trace écrite de la séance
+  exercices-seance-N.html     exercice autocorrectif (rien n'est envoyé)
+  evaluation-sequence.html    évaluation de fin de séquence, 40 questions (Apps Script)
+  fiches/  traces/  img/      PDF élève, PDF des traces, figures
+```
+
+Le projet jardin sec suit cette règle : `sequence-jardin-sec` dans 5e, 4e et 3e (trois séances
+chacune). `docs/technologie/projet-jardin-sec/` ne garde que le dossier commun : présentation,
+besoins et matériel, pas à pas SketchUp, ressources (scripts SketchUp, programmes Arduino du kit
+Grove, classeur) et téléchargements. Les fiches professeur ne sont jamais déposées dans `docs/`.
+
 ## Travailler sur ce dépôt
 
 Ne jamais committer directement sur `main` sans relire le rendu : chaque push

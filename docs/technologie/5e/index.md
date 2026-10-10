@@ -23,6 +23,12 @@ Une séquence projet, en séances de 40 minutes, avec fiches à imprimer, traces
 
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 
+## Séquence projet : le jardin sec
+
+Mesurer la cour et chiffrer le besoin en eau, choisir le paillage et les plantes, modéliser la jardinière dans SketchUp. Trois séances de 40 minutes, avec fiches à imprimer, traces écrites, exercices autocorrectifs et une évaluation de fin de séquence en 40 questions. Cette séquence fait partie du [projet jardin sec](../projet-jardin-sec/index.md), mené sur les trois niveaux.
+
+[Ouvrir la séquence « Jardin sec : concevoir la jardinière »](sequence-jardin-sec/index.md)
+
 ## Chapitre 1. Les besoins humains et les objets techniques
 
 !!! abstract "Question directrice"

@@ -3,7 +3,7 @@
 ## Deux usages de SketchUp, à ne pas confondre
 
 Les élèves modélisent à la main, sur **SketchUp Free** dans le navigateur : ce sont les
-[trois pas à pas](sketchup/index.md), douze gestes chacun, avec leur test en ligne.
+[trois pas à pas](sketchup/index.md), douze gestes chacun ; celui de 3e se termine par un test en ligne.
 
 Les scripts Ruby ci-dessous s'exécutent dans **SketchUp Pro**, sur le poste du professeur. Ils
 servent à préparer le modèle de référence et à le projeter, jamais à remplacer le travail des
@@ -18,10 +18,10 @@ modèle est à l'échelle 1 pour 1.
 | Fichier | Ce qu'il construit | Quand s'en servir |
 |---|---|---|
 | `_commun.rb` | La bibliothèque de fonctions partagée, à charger en premier | Toujours |
-| `00_site_avant.rb` | Le couloir tel qu'il est : sol, mur, fenêtres et grilles, dalle, mur de soutènement, bâtiment en brique, haie, jeune pin | Fin de séance 2 de 5e, en démonstration |
-| `01_5e_jardiniere.rb` | La jardinière, en six étapes appelables une par une, puis la nomenclature et l'implantation des huit exemplaires | Séance 4 de 5e, projeté au rythme de la classe |
-| `02_4e_reseau.rb` | Gouttière, fût sur support surélevé, ligne principale, antennes, goutteurs, capteurs, boîtier de commande | Séance 2 de 4e |
-| `03_3e_amenagement.rb` | Ombrière, panneau solaire, jardinières murales en palette, fresque, coin des chevalets, végétation et étiquettes | Séance 6 de 3e |
+| `00_site_avant.rb` | Le couloir tel qu'il est : sol, mur, fenêtres et grilles, dalle, mur de soutènement, bâtiment en brique, haie, jeune pin | Projet présenté aux 5e, en démonstration |
+| `01_5e_jardiniere.rb` | La jardinière, en six étapes appelables une par une, puis la nomenclature et l'implantation des huit exemplaires | Séance 3 de 5e, observation du modèle de référence |
+| `02_4e_reseau.rb` | Gouttière, fût sur support surélevé, ligne principale, antennes, goutteurs, capteurs, boîtier de commande | Prolongement SketchUp de 4e |
+| `03_3e_amenagement.rb` | Ombrière, panneau solaire, jardinières murales en palette, fresque, coin des chevalets, végétation et étiquettes | Prolongement SketchUp de 3e |
 | `99_site_apres.rb` | Charge tout et construit le modèle complet en une commande, plus le récapitulatif chiffré du projet | Présentation, ou secours si un binôme perd son fichier |
 
 ### Démarrage type
@@ -46,8 +46,8 @@ JardinSec::Jardiniere.nomenclature
 JardinSec::Jardiniere.implanter
 ```
 
-Chaque étape affiche dans la console la valeur que l'élève doit taper au clavier, ce qui
-permet de suivre exactement le déroulé de la fiche de séance.
+Chaque étape affiche dans la console les dimensions de la pièce construite. Ces valeurs
+servent au professeur : en 5e et en 4e, les élèves dessinent sans cotes.
 
 ### Le modèle complet en une commande
 
@@ -66,31 +66,49 @@ Les éléments sont répartis en six calques : `01 Site`, `02 Jardinieres`, `03 
 
 SketchUp for Schools, la version navigateur utilisée par les élèves, n'a pas de console Ruby.
 Les scripts servent alors au professeur, sur un poste équipé de la version Pro, pour préparer
-le modèle de référence et le projeter. Les élèves reproduisent les mêmes gestes à la main,
-c'est d'ailleurs l'objet des séances.
+le modèle de référence et le projeter. Les élèves construisent leur propre modèle dans SketchUp
+Free, en suivant les pas à pas.
 
-## Programmes micro:bit
+## Programmes Arduino du kit Grove
 
-Quatre programmes en MicroPython, chacun accompagné de son équivalent MakeCode en blocs,
-décrit en tête de fichier.
+Le kit Grove Smart Plant Care est monté sur une carte Arduino Uno par son Base Shield : capteur
+d'humidité sur le port A0, relais de la pompe sur le port D7. Les programmes s'ouvrent dans
+l'Arduino IDE ; le moniteur série se règle à 9600 bauds.
 
-| Fichier | Niveau | Séance |
-|---|---|---|
-| `4e_1_lecture_capteur.py` | 4e | 4, étalonnage du capteur |
-| `4e_2_arrosage_seuil.py` | 4e | 5 et 6, arrosage au seuil avec filtre de sécurité |
-| `3e_1_emetteur.py` | 3e | 4, hystérésis à deux seuils et émission radio |
-| `3e_2_recepteur.py` | 3e | 4, réception, affichage et journal de données |
+| Fichier | Niveau | Séance | Ce qu'il fait |
+|---|---|---|---|
+| `jardin-lecture.ino` | 4e, 3e | 4e séance 2 (démonstration), 3e séance 1 | Affiche la valeur du capteur chaque seconde, pour l'étalonnage |
+| `jardin-4e-arrosage.ino` | 4e | séance 3 | Donne une dose de 3 s quand la valeur passe sous le seuil de 320, puis attend |
+| `jardin-3e-hysteresis.ino` | 3e | séance 3 | Deux seuils (320 et 400), filtre des valeurs impossibles, journal au moniteur série |
+
+Les fichiers sont dans le dossier `programmes` de chaque séquence et dans
+[fichiers/arduino](fichiers/arduino/README.md).
+
+### Étalonnage, à refaire pour chaque capteur
+
+| Situation | Valeur de référence |
+|---|---|
+| Capteur à l'air | proche de 0 |
+| Terre sèche | environ 200 |
+| Terre juste arrosée | environ 600 |
+| Capteur dans un verre d'eau | plusieurs centaines, au-dessus de la terre arrosée |
+
+Avec ces repères, l'humidité en % vaut 100 × (valeur − 200) ÷ 400 : 30 % correspond à 320,
+50 % à 400. Si le capteur de la classe donne une valeur qui baisse quand la terre est
+mouillée, il faut inverser les tests des programmes et recalculer les seuils.
 
 ## Classeur de calcul
 
-`bilan-eau-jardin-sec.xlsx`, six onglets. Les élèves ne modifient que les cellules bleues sur
-fond jaune, tout le reste se recalcule.
+`bilan-eau-jardin-sec.xlsx`. Les élèves ne modifient que les cellules bleues sur fond jaune,
+tout le reste se recalcule. Les onglets utiles aux séquences en trois séances :
 
 | Onglet | Contenu | Séance |
 |---|---|---|
-| Notice | Mode d'emploi, code couleur, origine des données | |
-| Parametres | Les 18 valeurs d'entrée du projet | toutes |
-| Bilan_eau | Surfaces, consommations, économie, contrainte FC1 | 5e 1, 3e 5 |
-| Journal | Zone de collage du CSV micro:bit et son analyse | 3e 3 |
-| Energie | Bilan énergétique et autonomie | 3e 2 |
-| Materiel | Budget par poste, total en lempiras et en euros | |
+| Parametres | Les valeurs d'entrée du projet | toutes |
+| Bilan_eau | Surfaces, consommations, économie, contrainte FC1 | 5e séance 1, 3e séance 2 |
+| Journal | Zone de collage d'un journal de mesures et son analyse | 3e séance 1, en prolongement |
+| Materiel | Budget par poste | |
+
+L'onglet Energie et les colonnes du journal pensées pour la version micro:bit ne sont plus
+utilisés : le journal du kit Grove se copie depuis le moniteur série (colonnes temps ;
+valeur ; arrosage).

@@ -23,6 +23,12 @@ Deux séquences projet, en séances de 40 minutes, avec fiches à imprimer, trac
 - [Inventer un jeu vidéo avec Scratch et Scratch Lab](sequence-jeu-video/index.md) · 8 séances
 - [De la carte Arduino au robot mBot](sequence-arduino-mbot/index.md) · 10 séances
 
+## Séquence projet : le jardin sec
+
+Mesurer des débits, décrire les deux chaînes du système, régler et tester le programme d'arrosage sur le kit Grove. Trois séances de 40 minutes, avec fiches à imprimer, traces écrites, exercices autocorrectifs et une évaluation de fin de séquence en 40 questions. Cette séquence fait partie du [projet jardin sec](../projet-jardin-sec/index.md), mené sur les trois niveaux.
+
+[Ouvrir la séquence « Jardin sec : automatiser l'arrosage »](sequence-jardin-sec/index.md)
+
 ## Chapitre 1. Pourquoi les objets techniques évoluent-ils ?
 
 !!! abstract "Question directrice"
