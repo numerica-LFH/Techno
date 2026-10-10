@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT · Séquence 2 · Séance 2 : ce que je laisse, ce que j'accepte · Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+pre.graphe { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu); border-radius:6px; padding:10px 14px; font-size:.9rem; overflow-x:auto; margin:0 0 16px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SNT · Séquence 2 : les réseaux sociaux</h1>
+  <p class="sous"><b>Séance 2 : ce que je laisse, ce que j'accepte</b> · 14 questions à correction immédiate. Je réponds, je vérifie,
+  je recommence autant de fois que nécessaire. Le score ne compte pas dans la moyenne et n'est envoyé à personne.</p>
+</header>
+
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien · Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 2 · Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Le service est gratuit parce que :",
+  "choix": [
+   "la plateforme est une association",
+   "l'attention des utilisateurs est vendue aux annonceurs",
+   "l'État paie la plateforme"
+  ],
+  "bonne": 1,
+  "expl": "L'utilisateur n'est pas le client : il fournit ce qui est vendu, son attention."
+ },
+ {
+  "enonce": "Qui paie la plateforme ?",
+  "choix": [
+   "L'utilisateur",
+   "L'annonceur",
+   "Le fournisseur d'accès"
+  ],
+  "bonne": 1,
+  "expl": "L'annonceur paie pour toucher un public précis."
+ },
+ {
+  "enonce": "Quelle chaîne est dans le bon ordre ?",
+  "choix": [
+   "profil → temps passé → annonceur → traces",
+   "temps passé → traces collectées → profil → l'annonceur paie",
+   "l'annonceur paie → temps passé → profil → traces"
+  ],
+  "bonne": 1,
+  "expl": "Le temps passé produit des traces, les traces construisent un profil, le profil se vend."
+ },
+ {
+  "enonce": "Un algorithme de recommandation classe le fil pour maximiser :",
+  "choix": [
+   "la vérité des informations",
+   "le temps passé sur l'application",
+   "le nombre de comptes"
+  ],
+  "bonne": 1,
+  "expl": "Il optimise une mesure, pas une valeur : il ne sait rien de ce qui est vrai ou bon pour moi."
+ },
+ {
+  "enonce": "Les réglages de confidentialité proposés par défaut :",
+  "choix": [
+   "sont neutres",
+   "sont souvent ouverts, car ils servent l'intérêt de la plateforme",
+   "sont toujours les plus protecteurs"
+  ],
+  "bonne": 1,
+  "expl": "Une valeur par défaut est choisie par la plateforme. C'est à moi de la vérifier."
+ },
+ {
+  "enonce": "Un compte réglé en privé :",
+  "choix": [
+   "empêche la plateforme de mesurer mon activité",
+   "limite ce que voient les autres utilisateurs, pas ce que mesure la plateforme",
+   "supprime mes données"
+  ],
+  "bonne": 1,
+  "expl": "Le réglage de visibilité concerne les autres utilisateurs. La plateforme continue de tout mesurer."
+ },
+ {
+  "enonce": "Parmi ces données, laquelle est observée par la plateforme sans que je l'aie publiée ?",
+  "choix": [
+   "Ma photo de profil",
+   "Le temps passé devant une vidéo",
+   "Le texte de ma publication"
+  ],
+  "bonne": 1,
+  "expl": "La donnée la plus utile n'est pas celle que l'on publie : temps d'arrêt, heure de connexion, recherche abandonnée."
+ },
+ {
+  "enonce": "Une donnée personnelle, c'est :",
+  "choix": [
+   "seulement mon nom et mon adresse",
+   "toute information qui permet de m'identifier, directement ou non",
+   "une information que je garde secrète"
+  ],
+  "bonne": 1,
+  "expl": "Un identifiant, une localisation, une photo, un historique peuvent suffire à identifier quelqu'un."
+ },
+ {
+  "enonce": "Pour les photos publiées, les conditions d'utilisation prévoient le plus souvent que :",
+  "choix": [
+   "la plateforme devient propriétaire des photos",
+   "je reste propriétaire, mais j'accorde à la plateforme un droit d'usage étendu",
+   "les photos sont supprimées au bout d'un mois"
+  ],
+  "bonne": 1,
+  "expl": "On parle de licence : la plateforme peut utiliser, copier et diffuser le contenu dans le cadre du service."
+ },
+ {
+  "enonce": "L'âge minimum le plus souvent indiqué pour ouvrir un compte est :",
+  "choix": [
+   "10 ans",
+   "13 ans",
+   "18 ans"
+  ],
+  "bonne": 1,
+  "expl": "Il varie selon la plateforme et le pays : il faut le lire dans les conditions."
+ },
+ {
+  "enonce": "Quand je supprime mon compte :",
+  "choix": [
+   "toutes mes données disparaissent immédiatement",
+   "une partie des données peut être conservée un certain temps",
+   "rien ne se passe"
+  ],
+  "bonne": 1,
+  "expl": "Certaines données sont gardées, souvent pour des raisons légales ou de sécurité."
+ },
+ {
+  "enonce": "Publier la photo d'un camarade reconnaissable sans lui demander son accord :",
+  "choix": [
+   "est permis si la photo est flatteuse",
+   "porte atteinte à son droit à l'image",
+   "est permis si mon compte est privé"
+  ],
+  "bonne": 1,
+  "expl": "Le droit à l'image ne dépend ni de la qualité de la photo, ni du réglage du compte."
+ },
+ {
+  "enonce": "Dans une situation de harcèlement en ligne, relayer un message :",
+  "choix": [
+   "n'engage que l'auteur du premier message",
+   "c'est participer au harcèlement",
+   "est sans conséquence si on ne commente pas"
+  ],
+  "bonne": 1,
+  "expl": "La responsabilité ne s'arrête pas à l'auteur : relayer, c'est amplifier."
+ },
+ {
+  "enonce": "Pourquoi reformuler une clause des conditions d'utilisation plutôt que la recopier ?",
+  "choix": [
+   "Pour gagner du temps",
+   "Pour vérifier que j'ai compris ce que j'accepte",
+   "Parce que la recopie est interdite"
+  ],
+  "bonne": 1,
+  "expl": "Une phrase juridique recopiée n'est pas une phrase comprise."
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>

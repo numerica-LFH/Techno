@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4e — Séquence 1 — Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>4e · Séquence 1 — Pourquoi les objets techniques évoluent-ils ?</h1>
+  <p class="sous">Dix questions. Je réponds, je vérifie, je recommence autant de fois que nécessaire.
+  Le score ne compte pas dans la moyenne.</p>
+</header>
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 4e — Séquence 1 — Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Les objets existent sans forcément de lien avec leurs usages.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "Un OST est toujours lié à un usage réel, dans un lieu et à une époque.",
+  "illus": ""
+ },
+ {
+  "enonce": "Les objets techniques évoluent :",
+  "choix": [
+   "au hasard des modes",
+   "pour répondre à de nouveaux besoins ou profiter de nouvelles technologies",
+   "uniquement quand un vendeur le décide"
+  ],
+  "bonne": 1,
+  "expl": "Les deux causes agissent le plus souvent ensemble.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"28\" cy=\"82\" r=\"20\"/><circle cx=\"92\" cy=\"82\" r=\"20\"/>\n<path d=\"M28 82l22-34h22l-14 34\"/><path d=\"M50 48h26l16 34\"/><path d=\"M44 44h16\"/>\n<path d=\"M66 44l8-6\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"28\" cy=\"84\" r=\"18\"/><circle cx=\"92\" cy=\"84\" r=\"18\"/>\n<path d=\"M28 84l22-32h20l-12 32\"/><path d=\"M50 52h24l18 32\"/><path d=\"M44 48h16\"/>\n<rect x=\"52\" y=\"60\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M62 62l-4 6h6l-4 6\" stroke-width=\"2.4\"/></svg>"
+ },
+ {
+  "enonce": "Quand on fabrique un nouvel objet, on change absolument tout dans sa structure.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "On fait évoluer quelques fonctions techniques : c'est plus fiable et cela ne déroute pas les utilisateurs.",
+  "illus": ""
+ },
+ {
+  "enonce": "Entre l'ENIAC de 1946 et un ordinateur portable actuel, qu'est-ce qui n'a pas changé ?",
+  "choix": [
+   "les matériaux",
+   "la fonction d'usage",
+   "la source d'énergie"
+  ],
+  "bonne": 1,
+  "expl": "Calculer. Tout le reste a changé : principe, matériaux, énergie, design.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"10\" y=\"24\" width=\"30\" height=\"72\"/><rect x=\"45\" y=\"24\" width=\"30\" height=\"72\"/>\n<rect x=\"80\" y=\"24\" width=\"30\" height=\"72\"/>\n<path d=\"M16 36h18M16 48h18M16 60h18M51 36h18M51 48h18M51 60h18M86 36h18M86 48h18M86 60h18\"\n stroke-width=\"2.2\"/><path d=\"M16 76h18M51 76h18M86 76h18\" stroke-width=\"2.2\"/></svg><svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 24h64v50H28z\"/><path d=\"M34 30h52v38H34z\" stroke-width=\"2.2\"/>\n<path d=\"M14 74h92l8 18H6z\"/><path d=\"M48 84h24\" stroke-width=\"2.4\"/></svg>"
+ },
+ {
+  "enonce": "Quel composant, inventé en 1971, a permis de réduire la taille des ordinateurs ?",
+  "choix": [
+   "le transistor",
+   "le microprocesseur",
+   "l'écran à cristaux liquides"
+  ],
+  "bonne": 1,
+  "expl": "Le microprocesseur, Intel 4004, 1971.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 24h64v50H28z\"/><path d=\"M34 30h52v38H34z\" stroke-width=\"2.2\"/>\n<path d=\"M14 74h92l8 18H6z\"/><path d=\"M48 84h24\" stroke-width=\"2.4\"/></svg>"
+ },
+ {
+  "enonce": "Le design d'un objet n'évolue jamais, seul le service rendu compte.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "Le design suit les goûts des utilisateurs, qui évoluent.",
+  "illus": ""
+ },
+ {
+  "enonce": "Les évolutions technologiques et informatiques permettent toujours d'avoir un objet moins cher à l'achat.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "bonne": 1,
+  "expl": "Souvent l'objet gagne en performances et non en prix ; parfois il coûte plus cher.",
+  "illus": ""
+ },
+ {
+  "enonce": "Une IA de reconnaissance d'images apprend :",
+  "choix": [
+   "en lisant le code de la route",
+   "à partir des données qu'on lui fournit",
+   "toute seule, sans données"
+  ],
+  "bonne": 1,
+  "expl": "D'où l'importance de la qualité et de la représentativité des données.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"16\" y=\"30\" width=\"88\" height=\"60\" rx=\"8\"/>\n<circle cx=\"42\" cy=\"52\" r=\"6\"/><circle cx=\"70\" cy=\"44\" r=\"6\"/><circle cx=\"80\" cy=\"70\" r=\"6\"/>\n<circle cx=\"46\" cy=\"76\" r=\"6\"/><path d=\"M42 52l28-8M70 44l10 26M80 70l-34 6M46 76l-4-24\"\n stroke-width=\"2.2\"/></svg>"
+ },
+ {
+  "enonce": "Le programme a appris sur des panneaux européens et se trompe au Honduras. On appelle cela :",
+  "choix": [
+   "une panne",
+   "un biais",
+   "un virus"
+  ],
+  "bonne": 1,
+  "expl": "Un biais vient de données d'apprentissage non représentatives du lieu d'usage.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"60\" cy=\"52\" r=\"34\" stroke-width=\"6\"/>\n<text x=\"60\" y=\"66\" text-anchor=\"middle\" font-size=\"34\" font-family=\"sans-serif\"\n font-weight=\"700\" fill=\"#1d3557\" stroke=\"none\">50</text><path d=\"M60 86v26\"/></svg>"
+ },
+ {
+  "enonce": "Quand la lecture automatique des panneaux se trompe, qui reste responsable de la vitesse ?",
+  "choix": [
+   "le constructeur",
+   "le conducteur",
+   "le programme"
+  ],
+  "bonne": 1,
+  "expl": "Le système assiste, il ne conduit pas. La responsabilité reste humaine.",
+  "illus": "<svg viewBox=\"0 0 120 120\" class=\"picto\" style=\"width:18mm;height:18mm\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"#1d3557\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"18\" y=\"40\" width=\"56\" height=\"40\" rx=\"4\"/>\n<path d=\"M74 52l26-14v44L74 68z\"/><circle cx=\"40\" cy=\"60\" r=\"9\"/>\n<path d=\"M30 92h60\" stroke-width=\"2.4\"/></svg>"
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>
