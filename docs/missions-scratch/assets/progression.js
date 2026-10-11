@@ -1,4 +1,4 @@
-/* Missions Scratch : missions cochées et envoi « Où j'en suis » au professeur.
+/* Missions Scratch, Missions Arduino et pas à pas SketchUp : missions cochées et envoi « Où j'en suis » au professeur.
    L'envoi passe par le même script Google Apps Script que les évaluations :
    courriel à numerica@liceofranco.org (capture en pièce jointe) et ligne dans
    le classeur des résultats. */
@@ -6,7 +6,7 @@
   "use strict";
   var URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
   var CIBLE = "numerica@liceofranco.org";
-  var CLE_REUSSIES = "lfh_missions_scratch";
+  var CLE_REUSSIES = "lfh_missions_scratch"; // remplacée par lfh_missions_arduino sur les pages Arduino
   var CLE_ELEVE = "lfh_eleve";
 
   function lire(cle, defaut) {
@@ -63,6 +63,9 @@
     scratch: { derniere: "Dernière mission terminée", capture: "Capture d'écran de mon programme",
                bloque: "Ce qui me bloque ou ce que j'ai ajouté (facultatif)", bouton: "J'envoie ma progression",
                manqueCapture: "J'ajoute d'abord la capture d'écran de mon programme." },
+    arduino: { derniere: "Dernière mission terminée", capture: "Capture d'écran de mon circuit et de mon programme Tinkercad",
+               bloque: "Ce qui me bloque ou ce que j'ai ajouté (facultatif)", bouton: "J'envoie ma progression",
+               manqueCapture: "J'ajoute d'abord la capture d'écran de mon circuit et de mon programme." },
     sketchup: { derniere: "Dernière étape terminée", capture: "Capture d'écran de mon dessin SketchUp",
                 bloque: "Ce qui me bloque ou ce que j'ai ajouté (facultatif)", bouton: "J'envoie mon dessin",
                 manqueCapture: "J'ajoute d'abord la capture d'écran de mon dessin." }
@@ -104,7 +107,8 @@
 
   function construire(boite) {
     var pal = boite.getAttribute("data-palier");
-    MODE = boite.getAttribute("data-type") === "sketchup" ? "sketchup" : "scratch";
+    var type = boite.getAttribute("data-type");
+    MODE = type === "sketchup" || type === "arduino" ? type : "scratch";
     var T = TXT[MODE];
     var niveau = boite.getAttribute("data-niveau");
     var options = missions.map(function (m) {
@@ -188,19 +192,19 @@
       "capture": { nom: "sketchup-etape-" + m.id + "-" + nom.toLowerCase() + ".jpg", type: capture.type, data: capture.data }
     } : {
       _type: "mission",
-      _subject: "Missions Scratch " + niveau + " · Mission " + m.id + " · " + nom.toUpperCase() + " " + prenom,
+      _subject: (MODE === "arduino" ? "Missions Arduino " : "Missions Scratch ") + niveau + " · Mission " + m.id + " · " + nom.toUpperCase() + " " + prenom,
       "Nom": nom.toUpperCase(),
       "Prénom": prenom,
       "Classe": classe,
       "Niveau": niveau,
-      "Séquence": "Missions Scratch",
+      "Séquence": MODE === "arduino" ? "Missions Arduino" : "Missions Scratch",
       "Séance": "Palier " + pal + " · Mission " + m.id + " " + m.titre,
       "Dernière mission": m.id,
       "Palier": pal,
       "Missions réussies": reussies().join(", "),
       "Commentaire": document.getElementById("pm-commentaire").value.trim(),
       "Date": new Date().toLocaleString("fr-FR"),
-      "capture": { nom: "mission-" + m.id + "-" + nom.toLowerCase() + ".jpg", type: capture.type, data: capture.data }
+      "capture": { nom: (MODE === "arduino" ? "arduino-" : "") + "mission-" + m.id + "-" + nom.toLowerCase() + ".jpg", type: capture.type, data: capture.data }
     };
     var bouton = document.getElementById("pm-envoyer");
     bouton.disabled = true;
@@ -228,6 +232,8 @@
   }
 
   function demarrer() {
+    var b0 = document.getElementById("progression-missions");
+    if (b0 && b0.getAttribute("data-type") === "arduino") CLE_REUSSIES = "lfh_missions_arduino";
     cases();
     var boite = document.getElementById("progression-missions");
     var data = document.getElementById("missions-data");

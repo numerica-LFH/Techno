@@ -1,6 +1,6 @@
 /**
  * Résultats des élèves : évaluations « S'évaluer », évaluations SNT et
- * progression des Missions Scratch et dessins SketchUp du projet jardin sec
+ * progression des Missions Scratch et Missions Arduino, dessins SketchUp du projet jardin sec
  * (site numerica-lfh.github.io/Techno).
  *
  * Chaque envoi :
@@ -81,6 +81,7 @@ function nombre_(v) {
 /** Type d'envoi : évaluation notée, Missions Scratch ou dessin SketchUp. */
 function typeEnvoi_(d) {
   if (d._type === "sketchup" || d["Type"] === "Dessin SketchUp") return "Dessin SketchUp";
+  if (d["Séquence"] === "Missions Arduino") return "Missions Arduino";
   if (d._type === "mission" || d["Séquence"] === "Missions Scratch") return "Missions Scratch";
   return "Évaluation";
 }
@@ -118,6 +119,7 @@ function ligneDepuisEnvoi_(d, lienCapture) {
 
 function rangSequence_(nom) {
   if (nom === "Missions Scratch") return [9999, nom];
+  if (nom === "Missions Arduino") return [9998, nom];
   if (/SketchUp/i.test(nom)) return [9000, nom];
   var m = String(nom).match(/S[ée]quence\s+(\d+)/i);
   if (m) return [parseInt(m[1], 10), nom];
@@ -158,7 +160,7 @@ function calculerSynthese_(lignes) {
     if (!nom && !prenom) return;
     var k = cleEleve_(nom, prenom);
     if (!eleves[k]) {
-      eleves[k] = { nom: nom, prenom: prenom, classe: l[I["Classe"]], evals: {}, mission: null,
+      eleves[k] = { nom: nom, prenom: prenom, classe: l[I["Classe"]], evals: {}, mission: null, arduino: null,
                     etape: null, dernier: "" };
       ordreEleves.push(k);
     }
@@ -175,6 +177,14 @@ function calculerSynthese_(lignes) {
       if (!isNaN(et)) {
         S.etapes.push(et);
         if (e.etape === null || et > e.etape) e.etape = et;
+      }
+      return;
+    }
+    if (l[I["Type"]] === "Missions Arduino") {
+      var ida = parseInt(String(l[I["Note"]]).replace(/\D/g, ""), 10);
+      if (!isNaN(ida)) {
+        S.missions.push(String(ida));
+        if (e.arduino === null || ida > e.arduino) e.arduino = ida;
       }
       return;
     }
@@ -205,7 +215,10 @@ function calculerSynthese_(lignes) {
       moyEleves.push(moyenne_(t));
     });
     var plusLoin = "";
-    S.missions.forEach(function (id) { if (plusLoin === "" || rangMission_(id) > rangMission_(plusLoin)) plusLoin = id; });
+    S.missions.forEach(function (id) {
+      if (seq === "Missions Arduino") { if (plusLoin === "" || +id > +plusLoin) plusLoin = id; }
+      else if (plusLoin === "" || rangMission_(id) > rangMission_(plusLoin)) plusLoin = id;
+    });
     var sup10 = moyEleves.filter(function (x) { return x >= 10; }).length;
     resume.push([seq, Object.keys(S.evals).length, Object.keys(S.eleves).length, S.copies,
                  moyEleves.length ? moyenne_(moyEleves) : "",
@@ -216,10 +229,10 @@ function calculerSynthese_(lignes) {
                    (S.etapes.length ? "Étape " + Math.max.apply(null, S.etapes) : "")]);
   });
   var seqNotees = listeSeq.filter(function (s) {
-    return s !== "Missions Scratch" && !sequences[s].etapes.length;
+    return s !== "Missions Scratch" && s !== "Missions Arduino" && !sequences[s].etapes.length;
   });
   var ent = ["Nom", "Prénom", "Classe"].concat(seqNotees.map(function (s) { return s + " (/20)"; }))
-    .concat(["Moyenne générale", "Missions Scratch : dernière mission",
+    .concat(["Moyenne générale", "Missions Scratch : dernière mission", "Missions Arduino : dernière mission",
              "SketchUp : dernière étape", "Dernier envoi"]);
   var tab = [ent];
   ordreEleves.sort(function (a, b) {
@@ -239,6 +252,7 @@ function calculerSynthese_(lignes) {
     });
     ligne.push(toutes.length ? moyenne_(toutes) : "");
     ligne.push(e.mission !== null ? "Mission " + e.mission : "");
+    ligne.push(e.arduino !== null ? "Mission " + (e.arduino < 10 ? "0" : "") + e.arduino : "");
     ligne.push(e.etape !== null ? "Étape " + e.etape : "");
     ligne.push(e.dernier);
     tab.push(ligne);

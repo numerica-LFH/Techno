@@ -165,6 +165,15 @@ chacune). `docs/technologie/projet-jardin-sec/` ne garde que le dossier commun :
 besoins et matériel, pas à pas SketchUp, ressources (scripts SketchUp, programmes Arduino du kit
 Grove, classeur) et téléchargements. Les fiches professeur ne sont jamais déposées dans `docs/`.
 
+## Parcours de missions
+
+`docs/missions-scratch/` et `docs/missions-arduino/` suivent le même modèle : cinq paliers de
+couleur (vert, rose, bleu, orange, violet), chaque classe démarre à son palier (5e, 5e, 4e, 3e,
+2de), coups de pouce dépliables, case « J'ai réussi » et formulaire « Où j'en suis » en bas de
+page. Le script commun `docs/missions-scratch/assets/progression.js` gère les trois modes
+(`data-type` scratch, arduino, sketchup) et envoie au même Apps Script (`Code.gs`). Les corrigés
+des missions Arduino et les fiches professeur ne vont jamais dans `docs/`.
+
 ## Travailler sur ce dépôt
 
 Ne jamais committer directement sur `main` sans relire le rendu : chaque push

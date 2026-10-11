@@ -2,6 +2,8 @@
 
 Un parcours de missions pour apprendre à programmer avec Scratch, pas à pas, de la 5e à la 2nde. Chaque mission montre en vidéo le résultat attendu. L'élève ouvre le fichier d'exercice, programme, compare avec la vidéo puis passe à la suivante.
 
+Le même principe sert au parcours [Missions Arduino](../missions-arduino/index.md) : cinquante missions dans Tinkercad Circuits, de la 5e à la 2nde, jusqu'au kit Grove du projet jardin sec.
+
 ## Les cinq paliers
 
 | Palier | Classe de départ | Contenu | Missions |
