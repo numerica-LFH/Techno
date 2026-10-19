@@ -1,0 +1,472 @@
+site_name: Technologie & SNT
+site_description: Ressources de technologie (cycle 4) et de SNT, Lycée franco-hondurien de Tegucigalpa
+site_author: Thierry Quicroit
+site_url: https://numerica-lfh.github.io/Techno/
+
+repo_url: https://github.com/numerica-LFH/Techno
+repo_name: numerica-LFH/Techno
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Lycée franco-hondurien de Tegucigalpa
+
+theme:
+  name: material
+  language: fr
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Accueil: index.md
+  - Blog:
+      - blog/index.md
+      - Proposer un article: blog/proposer.md
+      - Veille par projet: blog/projets.md
+  - Technologie:
+      - technologie/index.md
+      - Programmation annuelle: technologie/programmation-annuelle.md
+      - Objectifs et compétences: technologie/objectifs.md
+      - Applications interactives: technologie/apps.md
+      - 5e:
+          - technologie/5e/index.md
+          - "Séquence 1 — Des besoins aux objets techniques":
+              - technologie/5e/sequence-1/index.md
+              - "Séance 1 — De quoi avons-nous besoin ?": technologie/5e/sequence-1/seance-1.md
+              - "Séance 2 — Plusieurs objets pour un même service": technologie/5e/sequence-1/seance-2.md
+              - "Séance 3 — La lignée d'un objet": technologie/5e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — De quoi avons-nous besoin ?": technologie/5e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — Plusieurs objets pour un même service": technologie/5e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — La lignée d'un objet": technologie/5e/sequence-1/trace-ecrite-seance-3.md
+          - "Séquence 2 — Comprendre l'évolution des systèmes d'information":
+              - technologie/5e/sequence-2/index.md
+              - "Séance 0 — Qu'est-ce qu'un système d'information ?": technologie/5e/sequence-2/seance-0.md
+              - "Séance 1 — Stocker et classer les données": technologie/5e/sequence-2/seance-1.md
+              - "Séance 2 — Sécuriser le système, protéger les personnes": technologie/5e/sequence-2/seance-2.md
+              - "Séance 3 — Bilan et évaluation": technologie/5e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Qu'est-ce qu'un système d'information ?": technologie/5e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Stocker, classer, retrouver": technologie/5e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Cybersécurité et données personnelles": technologie/5e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/5e/sequence-2/trace-ecrite-seance-3.md
+          - "Séquence 3 — Les contraintes d'un objet et ses interacteurs":
+              - technologie/5e/sequence-3/index.md
+              - "Séance 1 — Un objet peut-il se fabriquer comme on veut ?": technologie/5e/sequence-3/seance-1.md
+              - "Séance 2 — Normes, sécurité et environnement": technologie/5e/sequence-3/seance-2.md
+              - "Séance 3 — Le diagramme des interacteurs": technologie/5e/sequence-3/seance-3.md
+              - "Séance 4 — Bilan : le robot aspirateur, puis l'évaluation": technologie/5e/sequence-3/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Un objet peut-il se fabriquer comme on veut ?": technologie/5e/sequence-3/trace-ecrite-seance-1.md
+                  - "Séance 2 — Normes, sécurité et environnement": technologie/5e/sequence-3/trace-ecrite-seance-2.md
+                  - "Séance 3 — Le diagramme des interacteurs": technologie/5e/sequence-3/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : le robot aspirateur, puis l'évaluation": technologie/5e/sequence-3/trace-ecrite-seance-4.md
+          - "Séquence Scratch — Prendre en main Scratch avant les missions":
+              - technologie/5e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/5e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/5e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/5e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/5e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
+          - "Séquence projet — Inventer un jeu vidéo avec Scratch et Scratch Lab":
+              - technologie/5e/sequence-jeu-video/index.md
+              - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/5e/sequence-jeu-video/seance-1.md
+              - "Séance 2 — Faire bouger un lutin au clavier": technologie/5e/sequence-jeu-video/seance-2.md
+              - "Séance 3 — Règles, algorithme et variables": technologie/5e/sequence-jeu-video/seance-3.md
+              - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/5e/sequence-jeu-video/seance-4.md
+              - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/5e/sequence-jeu-video/seance-5.md
+              - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/5e/sequence-jeu-video/seance-6.md
+              - "Séance 7 — Entraînement à la Nuit du Code": technologie/5e/sequence-jeu-video/seance-7.md
+              - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/5e/sequence-jeu-video/seance-8.md
+              - "Traces écrites":
+                  - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/5e/sequence-jeu-video/trace-ecrite-seance-1.md
+                  - "Séance 2 — Faire bouger un lutin au clavier": technologie/5e/sequence-jeu-video/trace-ecrite-seance-2.md
+                  - "Séance 3 — Règles, algorithme et variables": technologie/5e/sequence-jeu-video/trace-ecrite-seance-3.md
+                  - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/5e/sequence-jeu-video/trace-ecrite-seance-4.md
+                  - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/5e/sequence-jeu-video/trace-ecrite-seance-5.md
+                  - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/5e/sequence-jeu-video/trace-ecrite-seance-6.md
+                  - "Séance 7 — Entraînement à la Nuit du Code": technologie/5e/sequence-jeu-video/trace-ecrite-seance-7.md
+                  - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/5e/sequence-jeu-video/trace-ecrite-seance-8.md
+          - "Séquence projet — Jardin sec : concevoir la jardinière":
+              - technologie/5e/sequence-jardin-sec/index.md
+              - "Séance 1 — De combien d'eau ce jardin aura-t-il besoin ?": technologie/5e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Quelle jardinière, quelles plantes, quel paillage ?": technologie/5e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Modéliser la jardinière dans SketchUp, puis l'évaluation": technologie/5e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — De combien d'eau ce jardin aura-t-il besoin ?": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Quelle jardinière, quelles plantes, quel paillage ?": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Modéliser la jardinière dans SketchUp, puis l'évaluation": technologie/5e/sequence-jardin-sec/trace-ecrite-seance-3.md
+      - 4e:
+          - technologie/4e/index.md
+          - "Séquence 1 — Pourquoi les objets techniques évoluent-ils ?":
+              - technologie/4e/sequence-1/index.md
+              - "Séance 1 — Des usages qui changent, des objets qui suivent": technologie/4e/sequence-1/seance-1.md
+              - "Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?": technologie/4e/sequence-1/seance-2.md
+              - "Séance 3 — Avantages et inconvénients des évolutions technologiques": technologie/4e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Des usages qui changent, des objets qui suivent": technologie/4e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — Qu'est-ce qui change dans un objet qui évolue ?": technologie/4e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — Avantages et inconvénients des évolutions technologiques": technologie/4e/sequence-1/trace-ecrite-seance-3.md
+          - "Séquence 2 — Comprendre l'évolution des systèmes d'information":
+              - technologie/4e/sequence-2/index.md
+              - "Séance 0 — Ce qu'un système d'information sait de moi": technologie/4e/sequence-2/seance-0.md
+              - "Séance 1 — Sécuriser les échanges et les accès": technologie/4e/sequence-2/seance-1.md
+              - "Séance 2 — Traces, cookies et droits": technologie/4e/sequence-2/seance-2.md
+              - "Séance 3 — Bilan, règles d'usage et évaluation": technologie/4e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Le système d'information et mes données": technologie/4e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Certificat SSL, mots de passe, hameçonnage": technologie/4e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Témoins de connexion, e-réputation, RGPD": technologie/4e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/4e/sequence-2/trace-ecrite-seance-3.md
+          - "Séquence 3 — Contraintes, exigences et expérience de l'utilisateur":
+              - technologie/4e/sequence-3/index.md
+              - "Séance 1 — Les familles de contraintes": technologie/4e/sequence-3/seance-1.md
+              - "Séance 2 — La sécurité d'un jouet : la voiture télécommandée": technologie/4e/sequence-3/seance-2.md
+              - "Séance 3 — Décrire l'expérience de l'utilisateur : le manuel": technologie/4e/sequence-3/seance-3.md
+              - "Séance 4 — Bilan : concevoir une coque de smartphone, puis l'évaluation": technologie/4e/sequence-3/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Les familles de contraintes": technologie/4e/sequence-3/trace-ecrite-seance-1.md
+                  - "Séance 2 — La sécurité d'un jouet : la voiture télécommandée": technologie/4e/sequence-3/trace-ecrite-seance-2.md
+                  - "Séance 3 — Décrire l'expérience de l'utilisateur : le manuel": technologie/4e/sequence-3/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : concevoir une coque de smartphone, puis l'évaluation": technologie/4e/sequence-3/trace-ecrite-seance-4.md
+          - "Séquence Scratch — Prendre en main Scratch avant les missions":
+              - technologie/4e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/4e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/4e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/4e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/4e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
+          - "Séquence projet — Inventer un jeu vidéo avec Scratch et Scratch Lab":
+              - technologie/4e/sequence-jeu-video/index.md
+              - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/4e/sequence-jeu-video/seance-1.md
+              - "Séance 2 — Faire bouger un lutin au clavier": technologie/4e/sequence-jeu-video/seance-2.md
+              - "Séance 3 — Règles, algorithme et variables": technologie/4e/sequence-jeu-video/seance-3.md
+              - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/4e/sequence-jeu-video/seance-4.md
+              - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/4e/sequence-jeu-video/seance-5.md
+              - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/4e/sequence-jeu-video/seance-6.md
+              - "Séance 7 — Entraînement à la Nuit du Code": technologie/4e/sequence-jeu-video/seance-7.md
+              - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/4e/sequence-jeu-video/seance-8.md
+              - "Traces écrites":
+                  - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/4e/sequence-jeu-video/trace-ecrite-seance-1.md
+                  - "Séance 2 — Faire bouger un lutin au clavier": technologie/4e/sequence-jeu-video/trace-ecrite-seance-2.md
+                  - "Séance 3 — Règles, algorithme et variables": technologie/4e/sequence-jeu-video/trace-ecrite-seance-3.md
+                  - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/4e/sequence-jeu-video/trace-ecrite-seance-4.md
+                  - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/4e/sequence-jeu-video/trace-ecrite-seance-5.md
+                  - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/4e/sequence-jeu-video/trace-ecrite-seance-6.md
+                  - "Séance 7 — Entraînement à la Nuit du Code": technologie/4e/sequence-jeu-video/trace-ecrite-seance-7.md
+                  - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/4e/sequence-jeu-video/trace-ecrite-seance-8.md
+          - "Séquence 4 — De la carte Arduino au robot mBot":
+              - technologie/4e/sequence-arduino-mbot/index.md
+              - "Séance 1 — De Scratch à Arduino": technologie/4e/sequence-arduino-mbot/seance-1.md
+              - "Séance 2 — Une LED sur plaque d'essai": technologie/4e/sequence-arduino-mbot/seance-2.md
+              - "Séance 3 — Un bouton pour commander": technologie/4e/sequence-arduino-mbot/seance-3.md
+              - "Séance 4 — Le jeu « attrape la lumière »": technologie/4e/sequence-arduino-mbot/seance-4.md
+              - "Séance 5 — Mesurer la lumière": technologie/4e/sequence-arduino-mbot/seance-5.md
+              - "Séance 6 — Le radar de recul": technologie/4e/sequence-arduino-mbot/seance-6.md
+              - "Séance 7 — Le robot mBot": technologie/4e/sequence-arduino-mbot/seance-7.md
+              - "Séance 8 — Étalonner les déplacements du robot": technologie/4e/sequence-arduino-mbot/seance-8.md
+              - "Séance 9 — Suivre une ligne": technologie/4e/sequence-arduino-mbot/seance-9.md
+              - "Séance 10 — Le défi du robot livreur": technologie/4e/sequence-arduino-mbot/seance-10.md
+              - "Traces écrites":
+                  - "Séance 1 — De Scratch à Arduino": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-1.md
+                  - "Séance 2 — Une LED sur plaque d'essai": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-2.md
+                  - "Séance 3 — Un bouton pour commander": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-3.md
+                  - "Séance 4 — Le jeu « attrape la lumière »": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-4.md
+                  - "Séance 5 — Mesurer la lumière": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-5.md
+                  - "Séance 6 — Le radar de recul": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-6.md
+                  - "Séance 7 — Le robot mBot": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-7.md
+                  - "Séance 8 — Étalonner les déplacements du robot": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-8.md
+                  - "Séance 9 — Suivre une ligne": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-9.md
+                  - "Séance 10 — Le défi du robot livreur": technologie/4e/sequence-arduino-mbot/trace-ecrite-seance-10.md
+          - "Séquence projet — Jardin sec : automatiser l'arrosage":
+              - technologie/4e/sequence-jardin-sec/index.md
+              - "Séance 1 — Arroser sans gaspiller : je mesure un débit": technologie/4e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Qui décide d'arroser ? Les deux chaînes et la règle « si »": technologie/4e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Programmer l'arrosage avec le kit Grove, puis l'évaluation": technologie/4e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Arroser sans gaspiller : je mesure un débit": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Qui décide d'arroser ? Les deux chaînes et la règle « si »": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer l'arrosage avec le kit Grove, puis l'évaluation": technologie/4e/sequence-jardin-sec/trace-ecrite-seance-3.md
+      - 3e:
+          - technologie/3e/index.md
+          - "Séquence 1 — De la découverte à l'innovation, et ses effets sur la société":
+              - technologie/3e/sequence-1/index.md
+              - "Séance 1 — Découverte, invention, innovation": technologie/3e/sequence-1/seance-1.md
+              - "Séance 2 — D'une découverte scientifique à ses effets sur la société": technologie/3e/sequence-1/seance-2.md
+              - "Séance 3 — Argumenter : l'objet et la société": technologie/3e/sequence-1/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Découverte, invention, innovation": technologie/3e/sequence-1/trace-ecrite-seance-1.md
+                  - "Séance 2 — D'une découverte scientifique à ses effets sur la société": technologie/3e/sequence-1/trace-ecrite-seance-2.md
+                  - "Séance 3 — Argumenter : l'objet et la société": technologie/3e/sequence-1/trace-ecrite-seance-3.md
+          - "Séquence 2 — Comprendre l'évolution des systèmes d'information":
+              - technologie/3e/sequence-2/index.md
+              - "Séance 0 — Traces, e-réputation et navigation": technologie/3e/sequence-2/seance-0.md
+              - "Séance 1 — Le numérique comme choix stratégique": technologie/3e/sequence-2/seance-1.md
+              - "Séance 2 — Les deux coûts : l'environnement et la santé": technologie/3e/sequence-2/seance-2.md
+              - "Séance 3 — Bilan, argumentaire et évaluation": technologie/3e/sequence-2/seance-3.md
+              - "Traces écrites":
+                  - "Séance 0 — Ce que le réseau garde de moi": technologie/3e/sequence-2/trace-ecrite-seance-0.md
+                  - "Séance 1 — Entreprises, métiers, données": technologie/3e/sequence-2/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ce que consomme le système, ce qu'il fait au corps": technologie/3e/sequence-2/trace-ecrite-seance-2.md
+                  - "Séance 3 — Bilan de séquence et évaluation": technologie/3e/sequence-2/trace-ecrite-seance-3.md
+          - "Séquence 3 — Décrire l'expérience de l'utilisateur":
+              - technologie/3e/sequence-3/index.md
+              - "Séance 1 — Du besoin au manuel de l'utilisateur": technologie/3e/sequence-3/seance-1.md
+              - "Séance 2 — La sécurité dans le manuel de l'utilisateur": technologie/3e/sequence-3/seance-2.md
+              - "Séance 3 — Paramétrer un objet : l'algorithme": technologie/3e/sequence-3/seance-3.md
+              - "Séance 4 — Vers le brevet : le robot explorateur, puis l'évaluation": technologie/3e/sequence-3/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Du besoin au manuel de l'utilisateur": technologie/3e/sequence-3/trace-ecrite-seance-1.md
+                  - "Séance 2 — La sécurité dans le manuel de l'utilisateur": technologie/3e/sequence-3/trace-ecrite-seance-2.md
+                  - "Séance 3 — Paramétrer un objet : l'algorithme": technologie/3e/sequence-3/trace-ecrite-seance-3.md
+                  - "Séance 4 — Vers le brevet : le robot explorateur, puis l'évaluation": technologie/3e/sequence-3/trace-ecrite-seance-4.md
+          - "Séquence Scratch — Prendre en main Scratch avant les missions":
+              - technologie/3e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/3e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/3e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/3e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/3e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
+          - "Séquence projet — Inventer un jeu vidéo avec Scratch et Scratch Lab":
+              - technologie/3e/sequence-jeu-video/index.md
+              - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/3e/sequence-jeu-video/seance-1.md
+              - "Séance 2 — Faire bouger un lutin au clavier": technologie/3e/sequence-jeu-video/seance-2.md
+              - "Séance 3 — Règles, algorithme et variables": technologie/3e/sequence-jeu-video/seance-3.md
+              - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/3e/sequence-jeu-video/seance-4.md
+              - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/3e/sequence-jeu-video/seance-5.md
+              - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/3e/sequence-jeu-video/seance-6.md
+              - "Séance 7 — Entraînement à la Nuit du Code": technologie/3e/sequence-jeu-video/seance-7.md
+              - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/3e/sequence-jeu-video/seance-8.md
+              - "Traces écrites":
+                  - "Séance 1 — Qu'est-ce qui fait marcher un jeu vidéo ?": technologie/3e/sequence-jeu-video/trace-ecrite-seance-1.md
+                  - "Séance 2 — Faire bouger un lutin au clavier": technologie/3e/sequence-jeu-video/trace-ecrite-seance-2.md
+                  - "Séance 3 — Règles, algorithme et variables": technologie/3e/sequence-jeu-video/trace-ecrite-seance-3.md
+                  - "Séance 4 — Score, vies, fin de partie et chasse aux bogues": technologie/3e/sequence-jeu-video/trace-ecrite-seance-4.md
+                  - "Séance 5 — Comment un ordinateur trouve-t-il un visage ?": technologie/3e/sequence-jeu-video/trace-ecrite-seance-5.md
+                  - "Séance 6 — Le panier piloté au nez, l'écran titre dans Scratch Lab": technologie/3e/sequence-jeu-video/trace-ecrite-seance-6.md
+                  - "Séance 7 — Entraînement à la Nuit du Code": technologie/3e/sequence-jeu-video/trace-ecrite-seance-7.md
+                  - "Séance 8 — Tester, améliorer et présenter son jeu": technologie/3e/sequence-jeu-video/trace-ecrite-seance-8.md
+          - "Séquence 4 — De la carte Arduino au robot mBot":
+              - technologie/3e/sequence-arduino-mbot/index.md
+              - "Séance 1 — De Scratch à Arduino": technologie/3e/sequence-arduino-mbot/seance-1.md
+              - "Séance 2 — Une LED sur plaque d'essai": technologie/3e/sequence-arduino-mbot/seance-2.md
+              - "Séance 3 — Un bouton pour commander": technologie/3e/sequence-arduino-mbot/seance-3.md
+              - "Séance 4 — Le jeu « attrape la lumière »": technologie/3e/sequence-arduino-mbot/seance-4.md
+              - "Séance 5 — Mesurer la lumière": technologie/3e/sequence-arduino-mbot/seance-5.md
+              - "Séance 6 — Le radar de recul": technologie/3e/sequence-arduino-mbot/seance-6.md
+              - "Séance 7 — Le robot mBot": technologie/3e/sequence-arduino-mbot/seance-7.md
+              - "Séance 8 — Étalonner les déplacements du robot": technologie/3e/sequence-arduino-mbot/seance-8.md
+              - "Séance 9 — Suivre une ligne": technologie/3e/sequence-arduino-mbot/seance-9.md
+              - "Séance 10 — Le défi du robot livreur": technologie/3e/sequence-arduino-mbot/seance-10.md
+              - "Traces écrites":
+                  - "Séance 1 — De Scratch à Arduino": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-1.md
+                  - "Séance 2 — Une LED sur plaque d'essai": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-2.md
+                  - "Séance 3 — Un bouton pour commander": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-3.md
+                  - "Séance 4 — Le jeu « attrape la lumière »": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-4.md
+                  - "Séance 5 — Mesurer la lumière": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-5.md
+                  - "Séance 6 — Le radar de recul": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-6.md
+                  - "Séance 7 — Le robot mBot": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-7.md
+                  - "Séance 8 — Étalonner les déplacements du robot": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-8.md
+                  - "Séance 9 — Suivre une ligne": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-9.md
+                  - "Séance 10 — Le défi du robot livreur": technologie/3e/sequence-arduino-mbot/trace-ecrite-seance-10.md
+          - "Séquence projet — Jardin sec : le système complet et son bilan":
+              - technologie/3e/sequence-jardin-sec/index.md
+              - "Séance 1 — Mesurer pour régler : étalonner le capteur et lire un journal": technologie/3e/sequence-jardin-sec/seance-1.md
+              - "Séance 2 — Innovation et bilan : le jardin tient-il sa promesse ?": technologie/3e/sequence-jardin-sec/seance-2.md
+              - "Séance 3 — Le programme à deux seuils, puis l'évaluation": technologie/3e/sequence-jardin-sec/seance-3.md
+              - "Traces écrites":
+                  - "Séance 1 — Mesurer pour régler : étalonner le capteur et lire un journal": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-1.md
+                  - "Séance 2 — Innovation et bilan : le jardin tient-il sa promesse ?": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-2.md
+                  - "Séance 3 — Le programme à deux seuils, puis l'évaluation": technologie/3e/sequence-jardin-sec/trace-ecrite-seance-3.md
+  - SNT:
+      - snt/index.md
+      - Prise en main et Python: snt/prise-en-main.md
+      - Internet: snt/internet.md
+      - Le Web: snt/web.md
+      - Les réseaux sociaux: snt/reseaux-sociaux.md
+      - Données structurées: snt/donnees-structurees.md
+      - Localisation et cartographie: snt/localisation.md
+      - Objets connectés: snt/objets-connectes.md
+      - Photographie numérique: snt/photographie-numerique.md
+      - Projet final: snt/projet-final.md
+      - "Séquence 1 — D'Internet au Web":
+          - snt/sequence-1/index.md
+          - "Séance 0 — Aux origines d'Internet": snt/sequence-1/seance-0.md
+          - "Séance 1 — Écrire une page": snt/sequence-1/seance-1.md
+          - "Séance 2 — Du serveur au rang d'une page": snt/sequence-1/seance-2.md
+      - "Séquence 2 — Les réseaux sociaux":
+          - snt/sequence-2/index.md
+          - "Séance 0 — Le fil n'est pas le monde": snt/sequence-2/seance-0.md
+          - "Séance 1 — Mesurer un graphe": snt/sequence-2/seance-1.md
+          - "Séance 2 — Ce que je laisse, ce que j'accepte": snt/sequence-2/seance-2.md
+      - "Séquence 3 — Les données structurées":
+          - snt/sequence-3/index.md
+          - "Séance 0 — Ranger pour pouvoir chercher": snt/sequence-3/seance-0.md
+          - "Séance 1 — Nettoyer un jeu de données": snt/sequence-3/seance-1.md
+          - "Séance 2 — Croiser deux tables": snt/sequence-3/seance-2.md
+      - "Séquence 4 — Localisation et cartographie":
+          - snt/sequence-4/index.md
+          - "Séance 0 — Écouter le ciel": snt/sequence-4/seance-0.md
+          - "Séance 1 — Décoder une trame NMEA": snt/sequence-4/seance-1.md
+          - "Séance 2 — Cartes et plus court chemin": snt/sequence-4/seance-2.md
+      - "Séquence 5 — Les objets connectés":
+          - snt/sequence-5/index.md
+          - "Séance 0 — L'objet qui décide": snt/sequence-5/seance-0.md
+          - "Séance 1 — Piloter une carte": snt/sequence-5/seance-1.md
+          - "Séance 2 — Réguler et sécuriser": snt/sequence-5/seance-2.md
+      - "Séquence 6 — La photographie numérique":
+          - snt/sequence-6/index.md
+          - "Séance 0 — Ce que la photo jette": snt/sequence-6/seance-0.md
+          - "Séance 1 — Manipuler les pixels": snt/sequence-6/seance-1.md
+          - "Séance 2 — Filtres et métadonnées": snt/sequence-6/seance-2.md
+  - Missions Scratch:
+      - missions-scratch/index.md
+      - "Palier 1 (vert) : premiers scripts": missions-scratch/palier-1.md
+      - "Palier 1 bis (rose) : je consolide les bases": missions-scratch/palier-1b.md
+      - "Palier 2 (bleu) : messages, clones, blocs": missions-scratch/palier-2.md
+      - "Palier 3 (orange) : variables, capteurs, jeux": missions-scratch/palier-3.md
+      - "Palier 4 (violet) : procédures et Python": missions-scratch/palier-4.md
+  - Missions Arduino:
+      - missions-arduino/index.md
+      - "Palier 1 (vert) : premiers circuits": missions-arduino/palier-1.md
+      - "Palier 1 bis (rose) : la carte écoute": missions-arduino/palier-1b.md
+      - "Palier 2 (bleu) : capteurs et actionneurs": missions-arduino/palier-2.md
+      - "Palier 3 (orange) : du bloc au texte": missions-arduino/palier-3.md
+      - "Palier 4 (violet) : l'objet connecté": missions-arduino/palier-4.md
+  - PIX:
+      - pix/index.md
+      - Le référentiel CRCN: pix/crcn.md
+      - Parcours par niveau: pix/parcours.md
+      - La certification: pix/certification.md
+  - Projets d'établissement:
+      - projets-etablissement/index.md
+      - Développement durable: projets-etablissement/developpement-durable.md
+      - Concours et compétitions: projets-etablissement/concours.md
+      - Club robotique: projets-etablissement/club-robotique.md
+      - La Nuit du Code: projets-etablissement/nuit-du-code.md
+      - Semaine du numérique: projets-etablissement/semaine-numerique.md
+  - Projet jardin sec:
+      - Présentation: technologie/projet-jardin-sec/index.md
+      - Besoins et matériel: technologie/projet-jardin-sec/besoins-et-materiel.md
+      - Pas à pas SketchUp:
+          - Vue d'ensemble: technologie/projet-jardin-sec/sketchup/index.md
+          - 5e, créer le bac: technologie/projet-jardin-sec/sketchup/5e.md
+          - 4e, le bac et les espaces: technologie/projet-jardin-sec/sketchup/4e.md
+          - 3e, l'espace complet: technologie/projet-jardin-sec/sketchup/3e.md
+      - Ressources techniques: technologie/projet-jardin-sec/ressources.md
+      - Téléchargements: technologie/projet-jardin-sec/telechargements.md
+  - Programmes: programmes.md
+  - Ressources:
+      - Les outils: ressources/outils.md
+      - ASSR, sécurité routière: ressources/assr.md
+      - Liens utiles: ressources/liens.md
+      - Projets: ressources/projets.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search:
+      lang: fr
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_excerpt: optional
+      post_readtime: true
+      post_readtime_words_per_minute: 200
+      authors: false
+      archive_name: Archives
+      categories_name: Rubriques
+      categories_allowed:
+        - Vie de la classe
+        - Projets
+        - Actions
+        - Veille
+      pagination_per_page: 8
+  - tags
+
+extra_css:
+  - stylesheets/extra.css
+  - blog/assets/blog.css
+  - missions-scratch/assets/missions.css
+
+extra_javascript:
+  - missions-scratch/assets/progression.js
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://www.liceofrancohondureno.edu.hn
+      name: Lycée franco-hondurien
