@@ -3,6 +3,17 @@
  * progression des Missions Scratch et Missions Arduino, dessins SketchUp du projet jardin sec
  * (site numerica-lfh.github.io/Techno).
  *
+ * Blog de la classe : les articles proposés par les élèves (page « Proposer
+ * un article », envoi de type "article") s'inscrivent dans l'onglet « Blog »
+ * avec le statut « À relire » et partent par courriel avec le fichier .md
+ * prêt à publier et la photo. Rien n'est publié sans relecture.
+ *
+ * La semaine en images : les photos de la semaine sont rangées dans
+ * Drive (« Blog · semaine en images », un dossier par semaine). Le montage du
+ * vendredi (GitHub Actions, scripts/semaine_en_images.py) lit ce dossier avec
+ * la clé CLE_MONTAGE, monte la vidéo et la renvoie ici ; elle est rangée dans
+ * « Blog · vidéos » et partagée en lecture par lien.
+ *
  * Chaque envoi :
  *   1. s'inscrit sur une ligne de l'onglet du groupe (5e, 4e, 3e, 2de) ;
  *   2. met à jour l'onglet « synthèse » du groupe (résumé par séquence et
@@ -23,6 +34,12 @@ var CONFIG = {
   DOSSIER_CAPTURES: "Missions Scratch · captures",
   MAIL_EVALUATIONS: true,          // false : plus de courriel pour les évaluations
   MAIL_MISSIONS: true,
+  DOSSIER_BLOG: "Blog · propositions",
+  DEPOT_BLOG: "https://github.com/numerica-LFH/Techno/upload/main/docs/blog/posts",
+  FUSEAU: "America/Tegucigalpa",
+  DOSSIER_IMAGES: "Blog · semaine en images",
+  DOSSIER_VIDEOS: "Blog · vidéos",
+  PAGE_PROPOSITIONS: "https://github.com/numerica-LFH/Techno/pulls",
   GROUPES: ["5e", "4e", "3e", "2de"]
 };
 
@@ -260,6 +277,129 @@ function calculerSynthese_(lignes) {
   return { resume: resume, eleves: tab };
 }
 
+/* ---------- Blog : fabrication de l'article (fonctions pures) ---------- */
+
+var RUBRIQUES_BLOG = ["Vie de la classe", "Projets", "Actions", "Veille"];
+var ENTETES_BLOG = ["Date", "Nom", "Prénom", "Classe", "Rubrique", "Projet", "Titre",
+                    "Statut", "Fichier", "Dossier Drive"];
+
+function slug_(s, max) {
+  var t = sansAccents_(s).toLowerCase().replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  t = t.slice(0, max || 50).replace(/-+$/, "");
+  return t || "article";
+}
+
+/** Texte d'élève -> markdown sûr : pas de HTML, pas de titre ni de bloc spécial. */
+function texteSur_(s) {
+  var t = String(s || "").replace(/\r\n?/g, "\n").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  var paragraphes = t.split(/\n+/).map(function (l) {
+    l = l.trim();
+    if (/^(#|!!!|\?\?\?|---|\*\*\*|___|=+$|\[\^|\*\[)/.test(l)) l = "\\" + l;
+    return l;
+  }).filter(String);
+  return paragraphes.join("\n\n");
+}
+
+function ligneSure_(s) {
+  return texteSur_(s).replace(/\n+/g, " ").replace(/^\\/, "");
+}
+
+function yaml_(s) {
+  return '"' + String(s || "").replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/[\r\n]+/g, " ") + '"';
+}
+
+function majuscule_(s) {
+  s = String(s || "").trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function sourceMarkdown_(src) {
+  var titre = ligneSure_(src.titre || src.url || "Source").replace(/([\[\]])/g, "\\$1");
+  var url = String(src.url || "").trim();
+  var lien = /^https?:\/\/[^\s<>"]+$/.test(url)
+    ? "[" + titre + "](" + url.replace(/\(/g, "%28").replace(/\)/g, "%29") + ")"
+    : titre;
+  var auteur = src.auteur ? ligneSure_(src.auteur) : "auteur non indiqué";
+  var date = src.date ? "publié " + ligneSure_(src.date) : "date non indiquée";
+  return lien + ", " + auteur + ", " + date + ".";
+}
+
+/**
+ * Construit le fichier markdown d'un article proposé.
+ * d : données reçues du formulaire ; dateIso : "2026-10-18" ;
+ * nomPhoto : nom du fichier image joint, ou "" sans photo.
+ * Retourne {base, nomFichier, contenu}.
+ */
+function construireArticle_(d, dateIso, nomPhoto) {
+  var rubrique = RUBRIQUES_BLOG.indexOf(d["Rubrique"]) >= 0 ? d["Rubrique"] : "Veille";
+  var veille = rubrique === "Veille";
+  var titre = ligneSure_(d["Titre"]) || "Article sans titre";
+  var prenom = majuscule_(ligneSure_(d["Prénom"]));
+  var classe = ligneSure_(d["Classe"]);
+  var projet = ligneSure_(d["Projet"]);
+  var base = dateIso + "-" + slug_(titre, 45) + "-" + slug_(prenom, 15);
+  var texte = texteSur_(d["Texte"]).split("\n\n");
+  var sources = (d["Sources"] || []).filter(function (x) { return x && (x.titre || x.url); });
+  var l = ["---", "date: " + dateIso, "slug: " + slug_(titre, 60), "categories:", "  - " + rubrique];
+  if (projet) l.push("tags:", "  - " + yaml_(projet));
+  l.push("---", "", "# " + titre, "", texte[0], "", "<!-- more -->", "");
+  if (texte.length > 1) l.push(texte.slice(1).join("\n\n"), "");
+  if (nomPhoto) {
+    var legende = ligneSure_(d["Légende"]) || titre;
+    l.push("![" + legende.replace(/([\[\]])/g, "\\$1") + "](" + nomPhoto + ")", "", "*" + legende + "*", "");
+  }
+  if (veille && d["Apport"]) l.push("## Ce que ça apporte au projet", "", texteSur_(d["Apport"]), "");
+  if (sources.length) {
+    l.push("## Sources", "");
+    sources.forEach(function (x, i) { l.push((i + 1) + ". " + sourceMarkdown_(x)); });
+    l.push("");
+  }
+  if (d["À vérifier"]) l.push("## À vérifier", "", texteSur_(d["À vérifier"]), "");
+  l.push("---", "", "*Article proposé par " + prenom + (classe ? " (" + classe + ")" : "") + ".*", "");
+  return { base: base, nomFichier: base + ".md", contenu: l.join("\n") };
+}
+
+/* ---------- Semaine en images : calcul des semaines (fonctions pures) ---------- */
+
+var MOIS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+               "août", "septembre", "octobre", "novembre", "décembre"];
+
+function isoJour_(t) {
+  var d = new Date(t);
+  return d.getUTCFullYear() + "-" + ("0" + (d.getUTCMonth() + 1)).slice(-2) + "-" + ("0" + d.getUTCDate()).slice(-2);
+}
+
+/** "2026-10-21" -> {id: "2026-S43", lundi: "2026-10-19", vendredi: "2026-10-23"} (semaine ISO). */
+function semaineDe_(dateIso) {
+  var m = String(dateIso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  var t = Date.UTC(+m[1], +m[2] - 1, +m[3]);
+  var jour = (new Date(t).getUTCDay() + 6) % 7;          // lundi = 0
+  var lundi = t - jour * 86400000;
+  var jeudi = lundi + 3 * 86400000;
+  var annee = new Date(jeudi).getUTCFullYear();
+  var premier = Date.UTC(annee, 0, 1);
+  var num = Math.floor((jeudi - premier) / 86400000 / 7) + 1;
+  return { id: annee + "-S" + ("0" + num).slice(-2), lundi: isoJour_(lundi), vendredi: isoJour_(lundi + 4 * 86400000) };
+}
+
+/** "2026-S43" -> même objet que semaineDe_. */
+function semaineDepuisId_(id) {
+  var m = String(id).match(/^(\d{4})-S(\d{1,2})$/);
+  if (!m) return null;
+  var jan4 = Date.UTC(+m[1], 0, 4);
+  var lundi1 = jan4 - ((new Date(jan4).getUTCDay() + 6) % 7) * 86400000;
+  return semaineDe_(isoJour_(lundi1 + (+m[2] - 1) * 7 * 86400000));
+}
+
+/** Nom du dossier Drive : "2026-S43 · 19 au 23 octobre". */
+function nomDossierSemaine_(sem) {
+  var a = sem.lundi.split("-"), b = sem.vendredi.split("-");
+  var jour = function (j) { return +j === 1 ? "1er" : String(+j); };
+  var debut = jour(a[2]) + (a[1] !== b[1] ? " " + MOIS_FR[+a[1] - 1] : "");
+  return sem.id + " · " + debut + " au " + jour(b[2]) + " " + MOIS_FR[+b[1] - 1];
+}
+
 /* =====================================================================
  * Réception des envois (application web)
  * ===================================================================== */
@@ -269,6 +409,13 @@ function doPost(e) {
   try {
     var d = JSON.parse(e.postData.contents);
     verrou.waitLock(30000);
+    if (d._type === "video") {
+      return repondre_(recevoirVideo_(d));
+    }
+    if (d._type === "article") {
+      enregistrerArticle_(d);
+      return repondre_({ success: true });
+    }
     enregistrer_(d, false);
     return repondre_({ success: true });
   } catch (err) {
@@ -279,7 +426,12 @@ function doPost(e) {
   }
 }
 
-function doGet() {
+function doGet(e) {
+  var p = (e && e.parameter) || {};
+  if (p.action) {
+    try { return repondre_(montage_(p)); }
+    catch (err) { console.error(err); return repondre_({ success: false, error: String(err) }); }
+  }
   return ContentService.createTextOutput("Service de résultats actif.");
 }
 
@@ -331,6 +483,222 @@ function envoyerMail_(d, ligne, groupe, piece) {
   MailApp.sendEmail(CONFIG.DESTINATAIRE,
                     d._subject || ("Résultat " + ligne[1] + " " + ligne[2]),
                     "Nouveau résultat : voir la version HTML.", options);
+}
+
+/* =====================================================================
+ * Blog : réception d'un article proposé
+ * ===================================================================== */
+
+function enregistrerArticle_(d) {
+  var dateIso = Utilities.formatDate(new Date(), CONFIG.FUSEAU, "yyyy-MM-dd");
+  var aPhoto = !!(d.photo && d.photo.data);
+  var essai = construireArticle_(d, dateIso, "");
+  var nomPhoto = aPhoto ? essai.base + ".jpg" : "";
+  var art = construireArticle_(d, dateIso, nomPhoto);
+  var pieces = [Utilities.newBlob(art.contenu, "text/plain", art.nomFichier)];
+  if (aPhoto) {
+    pieces.push(Utilities.newBlob(Utilities.base64Decode(d.photo.data), d.photo.type || "image/jpeg", nomPhoto));
+  }
+  var lienDossier = "", lienFichier = "";
+  try {
+    var dossier = dossierBlog_().createFolder(art.base);
+    var f = dossier.createFile(pieces[0]);
+    if (aPhoto) dossier.createFile(pieces[1]);
+    lienDossier = dossier.getUrl();
+    if (aPhoto) {
+      var copie = dossierSemaine_(dateIso).createFile(pieces[1].copyBlob().setName("eleve-" + nomPhoto));
+      var leg = String(d["Légende"] || d["Titre"] || "").trim();
+      copie.setDescription(leg + " · " + String(d["Prénom"] || "").trim() + " (" + String(d["Classe"] || "").trim() + ")");
+    }
+    lienFichier = f.getUrl();
+  } catch (err) {
+    console.warn("Article non rangé dans Drive : " + err);
+  }
+  var feuille = feuilleBlog_();
+  feuille.appendRow([
+    d["Date"] || new Date().toLocaleString("fr-FR"),
+    String(d["Nom"] || "").toUpperCase().trim(),
+    String(d["Prénom"] || "").trim(),
+    String(d["Classe"] || "").trim(),
+    d["Rubrique"] || "", d["Projet"] || "", d["Titre"] || "",
+    "À relire", art.nomFichier, lienDossier
+  ]);
+  if (lienDossier) {
+    feuille.getRange(feuille.getLastRow(), ENTETES_BLOG.length)
+      .setFormula('=HYPERLINK("' + lienDossier + '","dossier")');
+  }
+  envoyerMailArticle_(d, art, pieces, aPhoto, lienDossier);
+}
+
+function envoyerMailArticle_(d, art, pieces, aPhoto, lienDossier) {
+  var esc = function (s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+  var corps =
+    "<p><b>" + esc(d["Prénom"]) + " " + esc(String(d["Nom"] || "").toUpperCase()) + "</b> (" +
+    esc(d["Classe"]) + ") propose un article pour le blog.</p>" +
+    "<p>Rubrique : " + esc(d["Rubrique"]) + " · Projet : " + esc(d["Projet"]) + "</p>" +
+    "<p><b>Pour publier</b> : relire le fichier joint, le corriger si besoin, puis " +
+    "<a href='" + CONFIG.DEPOT_BLOG + "'>déposer " + (aPhoto ? "les deux fichiers joints" : "le fichier joint") +
+    " dans docs/blog/posts sur GitHub</a> (Commit changes). Le site se met à jour en deux minutes. " +
+    "Pour refuser, ne rien faire et passer le statut à « Refusé » dans l'onglet Blog.</p>" +
+    (aPhoto ? "<p>La photo est aussi copiée dans le dossier de la semaine (« " + CONFIG.DOSSIER_IMAGES +
+     " ») pour la vidéo du vendredi. Si l'article est refusé, supprimer le fichier « eleve-… » de ce dossier.</p>" : "") +
+    (lienDossier ? "<p><a href='" + lienDossier + "'>Copie dans Google Drive</a></p>" : "") +
+    "<pre style='white-space:pre-wrap;background:#eef0fb;padding:10px;border-radius:6px'>" +
+    esc(art.contenu) + "</pre>";
+  MailApp.sendEmail(CONFIG.DESTINATAIRE,
+                    d._subject || ("Blog · proposition · " + (d["Titre"] || "")),
+                    "Nouvel article proposé : voir la version HTML.",
+                    { htmlBody: corps, name: "Blog de la classe", attachments: pieces });
+}
+
+function feuilleBlog_() {
+  var ss = classeur_();
+  var f = ss.getSheetByName("Blog");
+  if (!f) {
+    f = ss.insertSheet("Blog");
+    f.getRange(1, 1, 1, ENTETES_BLOG.length).setValues([ENTETES_BLOG])
+      .setFontWeight("bold").setBackground("#4051b5").setFontColor("#ffffff");
+    f.setFrozenRows(1);
+    f.setColumnWidths(1, ENTETES_BLOG.length, 110);
+    f.setColumnWidth(7, 300);
+    f.setColumnWidth(9, 280);
+    var statuts = SpreadsheetApp.newDataValidation()
+      .requireValueInList(["À relire", "Publié", "Refusé"], true).build();
+    f.getRange("H2:H").setDataValidation(statuts);
+  }
+  return f;
+}
+
+function dossierBlog_() {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty("ID_DOSSIER_BLOG");
+  if (id) { try { return DriveApp.getFolderById(id); } catch (e) {} }
+  var dossier = DriveApp.createFolder(CONFIG.DOSSIER_BLOG);
+  props.setProperty("ID_DOSSIER_BLOG", dossier.getId());
+  return dossier;
+}
+
+/* =====================================================================
+ * Semaine en images : dossiers, lecture pour le montage, réception vidéo
+ * ===================================================================== */
+
+function aujourdhui_() {
+  return Utilities.formatDate(new Date(), CONFIG.FUSEAU, "yyyy-MM-dd");
+}
+
+function dossierParNom_(cleProp, nom) {
+  var props = PropertiesService.getScriptProperties();
+  var id = props.getProperty(cleProp);
+  if (id) { try { return DriveApp.getFolderById(id); } catch (e) {} }
+  var dossier = DriveApp.createFolder(nom);
+  props.setProperty(cleProp, dossier.getId());
+  return dossier;
+}
+
+function dossierImages_() { return dossierParNom_("ID_DOSSIER_IMAGES", CONFIG.DOSSIER_IMAGES); }
+function dossierVideos_() { return dossierParNom_("ID_DOSSIER_VIDEOS", CONFIG.DOSSIER_VIDEOS); }
+
+/** Dossier de la semaine qui contient dateIso, créé s'il manque. */
+function dossierSemaine_(dateIso, creer) {
+  var sem = semaineDe_(dateIso);
+  var it = dossierImages_().getFolders();
+  while (it.hasNext()) {
+    var f = it.next();
+    if (f.getName().indexOf(sem.id) === 0) return f;
+  }
+  return creer === false ? null : dossierImages_().createFolder(nomDossierSemaine_(sem));
+}
+
+/** Déclencheur du lundi : prépare le dossier de la semaine pour les dépôts du téléphone. */
+function creerDossierSemaine() {
+  var f = dossierSemaine_(aujourdhui_());
+  console.log("Dossier de la semaine : " + f.getName() + " " + f.getUrl());
+}
+
+function cleMontage_() {
+  var props = PropertiesService.getScriptProperties();
+  var cle = props.getProperty("CLE_MONTAGE");
+  if (!cle) { cle = Utilities.getUuid().replace(/-/g, ""); props.setProperty("CLE_MONTAGE", cle); }
+  return cle;
+}
+
+/** Lecture protégée pour le montage : liste de la semaine ou contenu d'une image. */
+function montage_(p) {
+  if (!p.cle || p.cle !== cleMontage_()) return { success: false, error: "clé refusée" };
+  var racine = dossierImages_();
+  if (p.action === "semaine") {
+    var sem = p.semaine ? semaineDepuisId_(p.semaine) : semaineDe_(aujourdhui_());
+    if (!sem) return { success: false, error: "semaine illisible" };
+    var dossier = dossierSemaine_(sem.lundi, false);
+    var images = [];
+    if (dossier) {
+      var it = dossier.getFiles();
+      while (it.hasNext()) {
+        var f = it.next();
+        if (!/^image\//.test(f.getMimeType()) || f.isTrashed()) continue;
+        images.push({ id: f.getId(), nom: f.getName(), legende: f.getDescription() || "",
+                      date: f.getDateCreated().toISOString(), mime: f.getMimeType(), octets: f.getSize() });
+      }
+    }
+    images.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+    return { success: true, semaine: sem.id, lundi: sem.lundi, vendredi: sem.vendredi,
+             titre: nomDossierSemaine_(sem), dossier: dossier ? dossier.getUrl() : "", images: images };
+  }
+  if (p.action === "image") {
+    var fichier = DriveApp.getFileById(p.id);
+    var parents = fichier.getParents();
+    var autorise = false;
+    while (parents.hasNext()) {
+      var par = parents.next().getParents();
+      while (par.hasNext()) { if (par.next().getId() === racine.getId()) autorise = true; }
+    }
+    if (!autorise) return { success: false, error: "image hors du dossier de la semaine" };
+    return { success: true, mime: fichier.getMimeType(),
+             data: Utilities.base64Encode(fichier.getBlob().getBytes()) };
+  }
+  return { success: false, error: "action inconnue" };
+}
+
+/** Vidéo montée par GitHub Actions : rangée dans Drive, partagée en lecture par lien. */
+function recevoirVideo_(d) {
+  if (!d.cle || d.cle !== cleMontage_()) return { success: false, error: "clé refusée" };
+  var nom = "semaine-en-images-" + String(d.semaine || "").replace(/[^0-9A-Za-z-]/g, "") + ".mp4";
+  var dossier = dossierVideos_();
+  var anciens = dossier.getFilesByName(nom);
+  while (anciens.hasNext()) anciens.next().setTrashed(true);
+  var f = dossier.createFile(Utilities.newBlob(Utilities.base64Decode(d.data), "video/mp4", nom));
+  f.setDescription(String(d.titre || ""));
+  var partage = true;
+  try { f.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW); }
+  catch (err) { partage = false; console.warn("Partage par lien refusé : " + err); }
+  MailApp.sendEmail(CONFIG.DESTINATAIRE, "Blog · la semaine en images " + (d.semaine || "") + " est prête",
+    "Vidéo prête : voir la version HTML.", { name: "Blog de la classe", htmlBody:
+      "<p>La vidéo de la semaine (" + String(d.nombre || "?") + " images) est rangée dans Drive : <a href='" +
+      f.getUrl() + "'>" + nom + "</a>.</p>" +
+      (partage ? "" : "<p><b>Le partage par lien a été refusé par le domaine</b> : la vidéo ne sera pas " +
+       "visible sur le blog tant qu'elle n'est pas partagée « Tous les utilisateurs disposant du lien ».</p>") +
+      "<p>L'article « La semaine en images » attend ta validation sur GitHub : <a href='" +
+      CONFIG.PAGE_PROPOSITIONS + "'>ouvrir les propositions</a>, relire, puis « Merge pull request ». " +
+      "Pour ne pas publier cette semaine, fermer la proposition.</p>" });
+  return { success: true, id: f.getId(), url: f.getUrl(), partage: partage };
+}
+
+/** Affiche la clé et les dossiers à reporter dans GitHub (Settings > Secrets). */
+function afficherCleMontage() {
+  console.log("CLE_MONTAGE (secret GitHub) : " + cleMontage_());
+  console.log("Dossier des images : " + dossierImages_().getUrl());
+  console.log("Dossier de la semaine : " + dossierSemaine_(aujourdhui_()).getUrl());
+  console.log("Dossier des vidéos : " + dossierVideos_().getUrl());
+}
+
+/** À exécuter une fois : dossier de la semaine recréé chaque lundi à 5 h. */
+function installerDeclencheurs() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === "creerDossierSemaine") ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger("creerDossierSemaine").timeBased()
+    .onWeekDay(ScriptApp.WeekDay.MONDAY).atHour(5).inTimezone(CONFIG.FUSEAU).create();
+  creerDossierSemaine();
 }
 
 /* =====================================================================
@@ -423,6 +791,11 @@ function installer() {
   var ss = classeur_();
   CONFIG.GROUPES.forEach(function (g) { feuilleGroupe_(g); majSynthese_(g); });
   dossierCaptures_("5e");
+  feuilleBlog_();
+  dossierBlog_();
+  dossierSemaine_(aujourdhui_());
+  dossierVideos_();
+  cleMontage_();
   var defaut = ss.getSheetByName("Feuille 1") || ss.getSheetByName("Sheet1");
   if (defaut && defaut.getLastRow() === 0 && ss.getSheets().length > 1) ss.deleteSheet(defaut);
   console.log("Classeur : " + ss.getUrl());
@@ -474,5 +847,8 @@ function reprendreHistorique() {
 
 if (typeof module !== "undefined") {
   module.exports = { groupeDe_: groupeDe_, lireNote_: lireNote_, ligneDepuisEnvoi_: ligneDepuisEnvoi_,
-                     calculerSynthese_: calculerSynthese_, trierSequences_: trierSequences_, ENTETES: ENTETES };
+                     calculerSynthese_: calculerSynthese_, trierSequences_: trierSequences_, ENTETES: ENTETES,
+                     construireArticle_: construireArticle_, slug_: slug_, texteSur_: texteSur_,
+                     semaineDe_: semaineDe_, semaineDepuisId_: semaineDepuisId_,
+                     nomDossierSemaine_: nomDossierSemaine_ };
 }

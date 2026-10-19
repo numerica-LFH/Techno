@@ -174,6 +174,50 @@ page. Le script commun `docs/missions-scratch/assets/progression.js` gère les t
 (`data-type` scratch, arduino, sketchup) et envoie au même Apps Script (`Code.gs`). Les corrigés
 des missions Arduino et les fiches professeur ne vont jamais dans `docs/`.
 
+## Blog de la classe
+
+`docs/blog/` utilise le plugin blog de Material (onglet « Blog »). Rubriques
+autorisées, et seulement elles : Vie de la classe, Projets, Actions, Veille
+(une autre valeur fait échouer la publication). Le projet concerné va dans
+`tags` et alimente la page `blog/projets.md`.
+
+```
+docs/blog/
+  index.md            présentation, liste des articles en dessous
+  proposer.md         formulaire élève (assets/proposer.js)
+  projets.md          veille rangée par projet (plugin tags)
+  posts/              un fichier AAAA-MM-JJ-titre-prenom.md par article,
+                      sa photo éventuelle à côté (même nom, .jpg)
+```
+
+Le formulaire envoie au même Apps Script (`Code.gs`, `_type: "article"`) :
+ligne « À relire » dans l'onglet Blog, courriel à numerica@ avec le .md prêt
+et la photo. Le professeur relit puis dépose les fichiers dans
+`docs/blog/posts/`. Règles de publication : prénom et classe seulement, aucun
+visage, aucun nom lisible, sources citées.
+
+## La semaine en images (vidéo du vendredi)
+
+Les photos de la semaine sont rangées dans Google Drive (compte numerica@),
+dossier « Blog · semaine en images », un sous-dossier par semaine ISO
+(« 2026-S43 · 19 au 23 octobre ») créé chaque lundi par `Code.gs`. Le
+professeur y dépose ses photos depuis son téléphone ; la légende est la
+description du fichier dans Drive. Les photos des articles élèves y sont
+copiées automatiquement (nom `eleve-…`, légende « … · Prénom (classe) »).
+
+Chaque vendredi à 14 h 07 (Tegucigalpa), `.github/workflows/semaine-en-images.yml`
+lance `scripts/semaine_en_images.py` : lecture du dossier via l'Apps Script
+(secret `CLE_MONTAGE`), montage ffmpeg en 1280 x 720 sans musique (ouverture,
+une diapositive par photo, fin), vidéo renvoyée à l'Apps Script qui la range
+dans « Blog · vidéos » et la partage en lecture par lien, puis article
+`docs/blog/posts/AAAA-MM-JJ-semaine-en-images-aaaa-snn.md` proposé en pull
+request sur la branche `semaine/AAAA-SNN`. Moins de trois images : pas de
+vidéo. Publier = fusionner la pull request. Relance manuelle : Actions >
+La semaine en images > Run workflow (champ semaine facultatif).
+
+Secrets GitHub nécessaires : `URL_APPS_SCRIPT` (adresse /exec) et
+`CLE_MONTAGE` (fonction `afficherCleMontage` de `Code.gs`).
+
 ## Travailler sur ce dépôt
 
 Ne jamais committer directement sur `main` sans relire le rendu : chaque push

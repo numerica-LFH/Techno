@@ -46,6 +46,10 @@ theme:
 
 nav:
   - Accueil: index.md
+  - Blog:
+      - blog/index.md
+      - Proposer un article: blog/proposer.md
+      - Veille par projet: blog/projets.md
   - Technologie:
       - technologie/index.md
       - Programmation annuelle: technologie/programmation-annuelle.md
@@ -401,9 +405,28 @@ markdown_extensions:
 plugins:
   - search:
       lang: fr
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_excerpt: optional
+      post_readtime: true
+      post_readtime_words_per_minute: 200
+      authors: false
+      archive_name: Archives
+      categories_name: Rubriques
+      categories_allowed:
+        - Vie de la classe
+        - Projets
+        - Actions
+        - Veille
+      pagination_per_page: 8
+  - tags
 
 extra_css:
   - stylesheets/extra.css
+  - blog/assets/blog.css
   - missions-scratch/assets/missions.css
 
 extra_javascript:
