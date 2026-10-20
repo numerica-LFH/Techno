@@ -68,3 +68,9 @@ J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la
 ### Question de la séance suivante
 
 Même sans me faire pirater, est-ce que je laisse des traces derrière moi ? Et qui peut les lire ?
+
+## S'évaluer : l'évaluation de la séance
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-2.html){ .md-button .md-button--primary target=_blank }
+
+Sept questions courtes sur les notions de la séance. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Je relis la trace écrite avant de commencer.

@@ -39,12 +39,11 @@ b. *(Prolongement : à la maison si le temps manque.)* Un camarade me propose de
 
 ### Activité 3 — Évaluation en ligne (20 min)
 
-J'ouvre la page evaluation-sequence.html depuis la page de la séquence sur le site de la classe. Je saisis mon nom, je clique sur Démarrer, je réponds aux dix questions, puis je remets ma copie. La correction s'affiche immédiatement, avec le pourquoi de chaque réponse.
-Je recopie ici mon résultat :
+J'ouvre l'évaluation de fin de séquence depuis la page de la séquence. J'indique mon nom, mon prénom et ma classe, je réponds aux quarante questions, puis je termine : ma note s'affiche et elle est envoyée au professeur. Je recopie mon résultat ci-dessous.
 
 | Note obtenue | Bonnes réponses | La question qui m'a le plus surpris |
 | --- | --- | --- |
-| / 20 | / 10 |   |
+| / 20 | / 40 |   |
 
 ## APRÈS
 
@@ -70,3 +69,15 @@ J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la
 ### Question de la séance suivante
 
 Un système d'information consomme de l'électricité, du métal et de l'eau. Combien, exactement ? La question sera reprise en 3e.
+
+## S'évaluer : l'évaluation de la séance
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
+
+Sept questions courtes sur les notions de la séance. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Je relis la trace écrite avant de commencer.
+
+## S'évaluer : l'évaluation de la séquence
+
+[Ouvrir l'évaluation de fin de séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des quatre séances. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

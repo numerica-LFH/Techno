@@ -19,18 +19,15 @@ Quatre séances de 40 minutes. Même trame que la séquence 1 : AVANT (question 
 
 ## Les séances
 
-| Séance | Titre | Fiche élève | Trace écrite | Évaluation autocorrective |
+| Séance | Titre | Fiche élève | Trace écrite | Évaluation de la séance |
 | --- | --- | --- | --- | --- |
-| 0 | Qu'est-ce qu'un système d'information ? | [fiche](seance-0.html) · [version imprimable](seance-0.md) · [PDF](fiches/5e-seq2-seance0-eleve.pdf) | [Trace écrite](trace-ecrite-seance-0.md) | [5 questions, 6 min](evaluation-seance-0.html) |
-| 1 | Stocker et classer les données | [fiche](seance-1.html) · [version imprimable](seance-1.md) · [PDF](fiches/5e-seq2-seance1-eleve.pdf) | [Trace écrite](trace-ecrite-seance-1.md) | [5 questions, 6 min](evaluation-seance-1.html) |
-| 2 | Sécuriser le système, protéger les personnes | [fiche](seance-2.html) · [version imprimable](seance-2.md) · [PDF](fiches/5e-seq2-seance2-eleve.pdf) | [Trace écrite](trace-ecrite-seance-2.md) | [5 questions, 6 min](evaluation-seance-2.html) |
-| 3 | Bilan et évaluation | [fiche](seance-3.html) · [version imprimable](seance-3.md) · [PDF](fiches/5e-seq2-seance3-eleve.pdf) | [Trace écrite](trace-ecrite-seance-3.md) | [5 questions, 6 min](evaluation-seance-3.html) |
+| 0 | Qu'est-ce qu'un système d'information ? | [fiche](seance-0.html) · [version imprimable](seance-0.md) · [PDF](fiches/5e-seq2-seance0-eleve.pdf) | [Trace écrite](trace-ecrite-seance-0.md) | [sept questions](evaluation-seance-0.html) |
+| 1 | Stocker et classer les données | [fiche](seance-1.html) · [version imprimable](seance-1.md) · [PDF](fiches/5e-seq2-seance1-eleve.pdf) | [Trace écrite](trace-ecrite-seance-1.md) | [sept questions](evaluation-seance-1.html) |
+| 2 | Sécuriser le système, protéger les personnes | [fiche](seance-2.html) · [version imprimable](seance-2.md) · [PDF](fiches/5e-seq2-seance2-eleve.pdf) | [Trace écrite](trace-ecrite-seance-2.md) | [sept questions](evaluation-seance-2.html) |
+| 3 | Bilan et évaluation | [fiche](seance-3.html) · [version imprimable](seance-3.md) · [PDF](fiches/5e-seq2-seance3-eleve.pdf) | [Trace écrite](trace-ecrite-seance-3.md) | [sept questions](evaluation-seance-3.html) |
 
 ## Évaluation de fin de séquence
 
-[Évaluation de la séquence entière](evaluation-sequence.html) : dix questions, quinze minutes, correction commentée immédiate, note sur 20 à recopier sur la fiche de la séance 3.
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
 
-Toutes les évaluations fonctionnent hors ligne, dans le navigateur : aucun compte, aucune donnée transmise, aucun service extérieur. Elles se refont autant de fois que voulu.
-
-!!! note "Documents non publiés"
-    Les fiches professeur, les corrigés et les grilles de correction ne sont pas dans `docs/` : le script les écrit dans `prof/`, à la racine du dépôt, hors du périmètre construit par MkDocs.
+Quarante questions qui reprennent les thèmes des quatre séances. Elle se passe pendant la séance 3. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'évaluation courte de chaque séance.

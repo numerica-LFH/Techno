@@ -21,6 +21,18 @@ On part des besoins de la vie quotidienne pour arriver à la notion d'objet tech
 | 2 | [Plusieurs objets pour un même service](seance-2.md) | Famille d'objets, principes techniques, fonction d'estime | [Trace écrite](trace-ecrite-seance-2.md) | [PDF](fiches/5e-seq1-seance2-eleve.pdf) |
 | 3 | [La lignée d'un objet](seance-3.md) | Collecter, trier et analyser des données ; construire une frise | [Trace écrite](trace-ecrite-seance-3.md) | [PDF](fiches/5e-seq1-seance3-eleve.pdf) |
 
+## Évaluation de fin de séquence
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des trois séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe à la fin de la séquence, après la séance 3. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'évaluation courte de chaque séance.
+
+| Séance | Évaluation de la séance |
+|---|---|
+| 1 · De quoi avons-nous besoin ? | [seize questions](evaluation-seance-1.html) |
+| 2 · Plusieurs objets pour un même service | [seize questions](evaluation-seance-2.html) |
+| 3 · La lignée d'un objet | [seize questions](evaluation-seance-3.html) |
+
 ## S'entraîner
 
 [Ouvrir les exercices de la séquence :material-arrow-right:](exercices.html){ .md-button .md-button--primary target=_blank }

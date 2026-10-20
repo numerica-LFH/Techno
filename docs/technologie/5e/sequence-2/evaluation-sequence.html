@@ -1,276 +1,887 @@
-<!DOCTYPE html><html lang='fr'><head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>5e - Évaluation de la séquence 2</title><style>
-:root{
-  --nuit:#383e94; --nuit-fonce:#2c3178; --bleu:#3b45b0; --bleu-clair:#eef0fb;
-  --lavande:#e8eafc; --trait:#c9cef0; --gris:#6b7280; --gris-clair:#f6f7fd;
-  --encre:#1f2430; --reponse:#1d4ed8;
-}
-*{box-sizing:border-box}
-html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{
-  font-family:"Source Sans 3","Open Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size:10.4pt; line-height:1.42; color:var(--encre); margin:0;
-  background:#e9eaf1;
-}
-.page{
-  width:210mm; min-height:297mm; margin:8mm auto; padding:12mm 12mm 20mm 12mm;
-  background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.18); position:relative;
-}
-@page{size:A4; margin:12mm 12mm 20mm 12mm}
-@media print{
-  body{background:#fff}
-  .page{width:auto;min-height:0;margin:0;padding:0;box-shadow:none}
-  .page + .page{page-break-before:always}
-  .noprint{display:none}
-}
-.acte{page-break-inside:avoid;break-inside:avoid;page-break-after:avoid;break-after:avoid}
-.section{page-break-after:avoid;break-after:avoid}
-h3{page-break-after:avoid;break-after:avoid}
-tr{page-break-inside:avoid;break-inside:avoid}
-.retenir,.prof,.cadre,.q{page-break-inside:avoid;break-inside:avoid}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5e — Séquence 2 — Comprendre l&#x27;évolution des systèmes d&#x27;information — Évaluation de fin de séquence</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>5e · Séquence 2 — Comprendre l&#x27;évolution des systèmes d&#x27;information — Évaluation de fin de séquence</h1>
+  <p class="sous">40 questions, 45 points. J'indique mon nom et ma classe, je réponds, puis je termine : ma note s'affiche et elle est envoyée au professeur.</p>
+</header>
 
-/* ---------- bandeau ---------- */
-.bandeau{
-  display:flex; align-items:center; background:var(--nuit);
-  color:#fff; border-radius:7px; padding:9px 14px; margin-bottom:9px;
-}
-.logo{
-  width:40px;height:40px;flex:0 0 40px;background:#fff;border-radius:5px;margin-right:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:11pt;color:var(--nuit);letter-spacing:.5px;
-  overflow:hidden;
-}
-.logo img{width:100%;height:100%;object-fit:contain}
-.bandeau .titres{flex:1 1 auto}
-.bandeau h1{margin:0;font-size:15pt;font-weight:600;line-height:1.15}
-.bandeau .st{margin:1px 0 0;font-size:8.6pt;color:#c7cbf0}
-.badge-seance{
-  display:inline-block;background:#c9cdf3;color:var(--nuit-fonce);
-  font-size:8pt;font-weight:700;letter-spacing:.6px;
-  padding:2px 7px;border-radius:3px;margin-left:8px;vertical-align:2px;
-}
-.bandeau .droite{margin-left:12px;text-align:right;font-size:8.4pt;color:#c7cbf0;line-height:1.35;flex:0 0 auto}
-
-/* ---------- identite ---------- */
-.identite{display:flex;margin-bottom:11px}
-.identite div{
-  flex:1;margin-right:7px;border:1px solid #d3d6e4;border-radius:5px;
-  padding:6px 8px;font-size:9pt;color:var(--gris);height:26px;
-}
-
-/* ---------- sections ---------- */
-.section{
-  background:var(--bleu-clair);border-left:4px solid var(--bleu);
-  padding:5px 11px;margin:13px 0 8px;border-radius:0 4px 4px 0;
-  display:flex;justify-content:space-between;align-items:baseline;
-}
-.section h2{margin:0;font-size:11.2pt;color:var(--bleu);font-weight:700}
-.section .tag{font-size:8.4pt;color:#8b93c9}
-h3{margin:11px 0 4px;font-size:10.4pt;color:var(--bleu);font-weight:700}
-p{margin:5px 0}
-.mini{font-size:8.8pt;color:var(--gris);margin:3px 0}
-
-.cadre{
-  border:1px dashed #9aa2e0;border-radius:5px;padding:7px 10px;margin:5px 0;
-  font-style:italic;background:#fbfbff;
-}
-.cadre b{font-style:italic}
-
-/* ---------- tableaux ---------- */
-table{width:100%;border-collapse:collapse;margin:5px 0;font-size:9.6pt}
-th{
-  background:var(--lavande);color:var(--bleu);text-align:left;font-weight:700;
-  border:1px solid var(--trait);padding:5px 8px;
-}
-td{border:1px solid var(--trait);padding:5px 8px;vertical-align:top}
-td.vide{height:22px}
-.c{text-align:center}
-.identite div:last-child{margin-right:0}
-tr.h td{height:26px}
-
-/* ---------- activites ---------- */
-.acte{display:flex;align-items:center;margin:12px 0 4px}
-.pill{
-  background:var(--nuit);color:#fff;font-size:8.4pt;font-weight:700;margin-right:9px;
-  padding:2px 9px;border-radius:3px;white-space:nowrap;
-}
-.acte h4{margin:0;font-size:10.6pt;color:var(--bleu);font-weight:700}
-ol,ul{margin:5px 0 5px 18px;padding:0}
-li{margin:2px 0}
-code{font-family:"DejaVu Sans Mono",Consolas,monospace;font-size:9pt;background:#f2f3fa;padding:0 3px;border-radius:3px}
-
-/* ---------- reponses ---------- */
-.line{
-  display:inline-block;min-width:38mm;border-bottom:1px dotted #8b93c9;
-  line-height:1.35;vertical-align:baseline;
-}
-.line.l{min-width:62mm}
-.line.xl{min-width:100%}
-.ecrire{border-bottom:1px solid #d3d6e4;height:19px;margin:7px 0}
-.ans{visibility:hidden}
-.corrige .ans{visibility:visible;color:var(--reponse);font-weight:600}
-.corrige .prof{display:block}
-.prof{
-  display:none;border:1px solid #b9c0e8;border-left:4px solid var(--bleu);
-  background:#f4f6ff;border-radius:0 5px 5px 0;padding:7px 10px;margin:8px 0;
-  font-size:9.2pt;
-}
-.prof b{color:var(--bleu)}
-
-/* ---------- a retenir ---------- */
-.retenir{
-  border:1.4px solid var(--bleu);border-radius:8px;background:#fafbff;
-  padding:9px 12px;margin:8px 0;
-}
-.retenir h3{margin:0 0 4px}
-.trace{
-  border:1.2px solid var(--trait);border-radius:6px;background:#fff;
-  padding:8px 11px 4px;margin:6px 0;page-break-inside:avoid;break-inside:avoid;
-}
-.trace .mots{
-  font-size:8.8pt;color:var(--bleu);font-weight:600;margin:0 0 5px;
-  border-bottom:1px solid var(--lavande);padding-bottom:4px;
-}
-.trace .ecrire{border-bottom:1px solid #c8ccdf;height:21px;margin:9px 0}
-.retenir .cle{font-weight:700;margin:0 0 5px}
-
-/* ---------- pied ---------- */
-.pied{
-  border-top:1px solid var(--trait);margin-top:14px;padding-top:6px;
-  font-size:8.2pt;color:var(--gris);text-align:center;
-}
-.pied b{color:var(--bleu)}
-
-/* ---------- evaluation autocorrective ---------- */
-.eval{max-width:190mm;margin:0 auto}
-.barre{
-  position:sticky;top:0;z-index:5;display:flex;align-items:center;
-  background:var(--nuit);color:#fff;padding:8px 12px;border-radius:6px;margin-bottom:10px;
-}
-.barre label{margin-right:10px}
-.barre #go{margin-right:10px}
-.barre input{
-  border:0;border-radius:4px;padding:5px 8px;font-size:10pt;min-width:140px;
-  font-family:inherit;
-}
-.chrono{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:700;font-size:12pt}
-.chrono.rouge{color:#ffd0d0}
-.q{border:1px solid var(--trait);border-radius:6px;padding:9px 12px;margin:8px 0;background:#fff}
-.q .num{font-weight:700;color:var(--bleu)}
-.q .enonce{font-weight:600;margin:2px 0 6px}
-.opt{display:block;margin:3px 0;cursor:pointer;padding:3px 5px;border-radius:4px}
-.opt:hover{background:var(--gris-clair)}
-.opt input{margin-right:7px}
-.q.juste{border-color:#3f9d5a;background:#f4fbf6}
-.q.faux{border-color:#c2453f;background:#fdf5f5}
-.verdict{margin-top:6px;font-size:9.4pt;border-top:1px dashed var(--trait);padding-top:5px}
-.verdict b{color:var(--bleu)}
-.btn{
-  background:var(--bleu);color:#fff;border:0;border-radius:5px;padding:8px 16px;
-  font-size:10.4pt;font-weight:600;cursor:pointer;font-family:inherit;
-}
-.btn.sec{background:#8b93c9}
-.actions{display:flex;margin:14px 0}
-.actions .btn{margin-right:9px}
-.score{
-  display:none;border:1.6px solid var(--bleu);border-radius:8px;background:#fafbff;
-  padding:12px 14px;margin:12px 0;
-}
-.score.on{display:block}
-.score .note{font-size:20pt;font-weight:800;color:var(--bleu)}
-.report{
-  border:1px dashed #9aa2e0;border-radius:5px;padding:8px 10px;margin-top:9px;
-  font-size:9.4pt;background:#fbfbff;
-}
-@media print{
-  .barre,.actions,.noprint{display:none}
-  body{background:#fff}
-  .eval{max-width:none}
-}
-@media (max-width:820px){
-  .page{width:auto;margin:0;padding:6mm;box-shadow:none}
-  body{font-size:11pt}
-}
-</style></head><body>
-<div class="page"><div class="eval">
-<div class="bandeau">
-  <div class="logo"><img src="../../../assets/logo-lfh.png" alt="" onerror="this.replaceWith(document.createTextNode('LFH'))"></div>
-  <div class="titres"><h1>Évaluation de la séquence 2</h1><div class="st">Technologie &middot; 5e &middot; Où vont mes données ?</div></div>
-  <div class="droite">10 questions &middot; 15 min<br>correction immédiate</div>
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="5eA" autocomplete="off"></div>
+  </div>
 </div>
-<div class="barre noprint">
-  <label>Nom : <input id="nom" placeholder="Nom et prénom"></label>
-  <button class="btn sec" id="go">Démarrer</button>
-  <span class="chrono" id="chrono">15:00</span>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
 </div>
-<p class="mini">Une seule bonne réponse par question. Le chronomètre démarre au clic sur <b>Démarrer</b> ; à zéro, la copie est remise automatiquement. La correction s'affiche après la remise, avec le pourquoi de chaque réponse.</p>
-<div id="liste"></div>
-<div class="actions noprint"><button class="btn" id="remise">Remettre ma copie</button><button class="btn sec" id="reset">Tout effacer</button><button class="btn sec" id="imprimer">Imprimer</button></div>
-<div class="score" id="score"></div>
-<div class="report">Je recopie ma note sur la fiche de la séance 3, ainsi que la question qui m'a le plus surpris. La correction commentée sert de révision : je peux refaire l'évaluation autant de fois que je veux.</div>
-<div class="pied"><b>Lycée franco-hondurien</b> &mdash; Technologie &amp; SNT &middot; numerica-lfh.github.io/Techno &middot; 5e &mdash; Évaluation de la séquence 2</div>
-</div></div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer">Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien — Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · 5e — Séquence 2 — Comprendre l&#x27;évolution des systèmes d&#x27;information — Évaluation de fin de séquence</footer></div>
+
 <script>
-const Q = [{"q": "Un système d'information sert à :", "options": ["stocker, traiter et diffuser des informations", "voler des données", "empêcher les élèves d'utiliser Internet"], "bonne": 0, "pourquoi": "Quatre verbes à retenir dans l'ordre : collecter, stocker, traiter, diffuser."}, {"q": "Un système d'information concerne :", "options": ["seulement les grandes entreprises", "aussi bien un établissement scolaire qu'une entreprise", "seulement les services de l'État"], "bonne": 1, "pourquoi": "Dès qu'une organisation manipule beaucoup d'informations partagées, elle a un système d'information."}, {"q": "L'unité de base de la mémoire numérique est :", "options": ["le kilo-octet", "l'octet", "le bit par seconde"], "bonne": 1, "pourquoi": "Un caractère tapé au clavier occupe environ un octet. Le kilo-octet en vaut mille."}, {"q": "1 Go vaut :", "options": ["1 000 Ko", "1 000 Mo", "1 000 To"], "bonne": 1, "pourquoi": "L'échelle monte de mille en mille : octet, Ko, Mo, Go, To."}, {"q": "La protection de l'ensemble d'un système d'information, matériel et logiciel, s'appelle :", "options": ["la cybersécurité", "la cybermalveillance", "le RGPD"], "bonne": 0, "pourquoi": "La cybermalveillance est l'attaque, la cybersécurité est la défense."}, {"q": "Un bon mot de passe doit surtout être :", "options": ["facile à retenir", "long et composé de caractères variés", "changé chaque jour"], "bonne": 1, "pourquoi": "La longueur compte plus que la complexité seule. Un mot de passe court reste faible même avec des symboles."}, {"q": "Le cadenas affiché à côté de l'adresse d'un site garantit :", "options": ["que le site est honnête", "que la communication est chiffrée", "que le site ne dépose pas de cookies"], "bonne": 1, "pourquoi": "Il atteste le certificat SSL, donc le chiffrement du transport. Un site frauduleux peut très bien l'afficher."}, {"q": "Un système d'information regroupe :", "options": ["seulement des ordinateurs", "des ressources matérielles et logicielles", "seulement des données"], "bonne": 1, "pourquoi": "Matériel, logiciels, réseau, règles de sécurité et personnes : tout cela en fait partie."}, {"q": "Pour retrouver un fichier sur un ordinateur, on utilise :", "options": ["un moteur de recherche", "un gestionnaire de fichiers", "un navigateur"], "bonne": 1, "pourquoi": "Le moteur de recherche cherche sur le Web ; le gestionnaire de fichiers cherche sur la machine."}, {"q": "128 Go de mémoire et des vidéos de 500 Mo : combien de vidéos environ ?", "options": ["26", "256", "2 560"], "bonne": 1, "pourquoi": "128 000 Mo divisés par 500 Mo font 256."}];
-const DUREE = 15 * 60;
-const liste = document.getElementById('liste');
-let reste = DUREE, tic = null, remis = false;
 
-function dessine(){
-  liste.innerHTML = '';
-  Q.forEach((q,i)=>{
-    const d = document.createElement('div');
-    d.className='q'; d.id='q'+i;
-    let h = '<div class="enonce"><span class="num">'+(i+1)+'.</span> '+q.q+'</div>';
-    q.options.forEach((o,j)=>{
-      h += '<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'">'+o+'</label>';
-    });
-    h += '<div class="verdict" style="display:none"></div>';
+const CIBLE = "numerica@liceofranco.org";
+const URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
+const META = {"niveau": "5e", "sequence": "Séquence 2 — Comprendre l'évolution des systèmes d'information", "seance": "Évaluation de fin de séquence", "exemple_classe": "5eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "enonce": "Un système d'information sert à :",
+  "choix": [
+   "voler des données",
+   "stocker, traiter et diffuser des informations",
+   "empêcher les élèves d'utiliser Internet"
+  ],
+  "bonne": 1,
+  "expl": "Quatre verbes à retenir dans l'ordre : collecter, stocker, traiter, diffuser.",
+  "points": 1,
+  "reponse": "stocker, traiter et diffuser des informations."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un système d'information concerne :",
+  "choix": [
+   "seulement les grandes entreprises",
+   "seulement les services de l'État",
+   "aussi bien un établissement scolaire qu'une entreprise"
+  ],
+  "bonne": 2,
+  "expl": "Dès qu'une organisation manipule beaucoup d'informations partagées, elle a un système d'information.",
+  "points": 1,
+  "reponse": "aussi bien un établissement scolaire qu'une entreprise."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un serveur est une ressource :",
+  "choix": [
+   "logicielle",
+   "ni l'une ni l'autre",
+   "matérielle"
+  ],
+  "bonne": 2,
+  "expl": "C'est une machine, donc du matériel. Les logiciels qu'elle fait tourner, eux, sont des ressources logicielles.",
+  "points": 1,
+  "reponse": "matérielle."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le système d'exploitation (Windows, Linux, Android) est une ressource :",
+  "choix": [
+   "logicielle",
+   "matérielle",
+   "matérielle et logicielle"
+  ],
+  "bonne": 0,
+  "expl": "C'est un programme. Il fait fonctionner la machine, mais il n'en est pas une pièce.",
+  "points": 1,
+  "reponse": "logicielle."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une seule identification pour tous les services de l'établissement, cela permet surtout :",
+  "choix": [
+   "de supprimer les mots de passe",
+   "de gérer les droits d'accès en un seul endroit",
+   "d'accéder aux mêmes contenus que tout le monde"
+  ],
+  "bonne": 1,
+  "expl": "Chaque profil garde ses propres droits d'accès : l'élève et le professeur ne voient pas la même chose.",
+  "points": 1,
+  "reponse": "de gérer les droits d'accès en un seul endroit."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un câble réseau est une ressource :",
+  "choix": [
+   "logicielle",
+   "de sécurité",
+   "matérielle"
+  ],
+  "bonne": 2,
+  "expl": "On peut le toucher : c'est du matériel.",
+  "points": 1,
+  "reponse": "matérielle."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Les règles de sécurité font partie du système d'information parce que :",
+  "choix": [
+   "sans elles, le matériel et les logiciels ne garantissent rien",
+   "ce sont des logiciels",
+   "ce sont des ordinateurs"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "sans elles, le matériel et les logiciels ne garantissent rien."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un élève, sa famille et un professeur voient exactement la même chose dans l'espace numérique.",
+  "bonne": 1,
+  "expl": "Chacun n'accède qu'à ce que ses droits d'accès autorisent.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "ordre",
+  "enonce": "Je remets dans l'ordre ce que fait un système d'information avec une information.",
+  "elements": [
+   "la collecter",
+   "la stocker",
+   "la traiter",
+   "la diffuser"
+  ],
+  "points": 2,
+  "expl": "",
+  "consigne": "Je numérote les étapes dans l'ordre (tout juste : 2 points).",
+  "reponse": "1. la collecter ; 2. la stocker ; 3. la traiter ; 4. la diffuser."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mot avec sa définition.",
+  "paires": [
+   {
+    "terme": "système d'information",
+    "definition": "les ressources qui collectent, stockent, traitent et diffusent des informations"
+   },
+   {
+    "terme": "ressource matérielle",
+    "definition": "le matériel que l'on peut toucher"
+   },
+   {
+    "terme": "ressource logicielle",
+    "definition": "un programme qui traite ou affiche des données"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "système d'information = les ressources qui collectent, stockent, traitent et diffusent des informations · ressource matérielle = le matériel que l'on peut toucher · ressource logicielle = un programme qui traite ou affiche des données",
+  "expl": ""
+ },
+ {
+  "type": "qcm",
+  "enonce": "L'unité de base de la mémoire numérique est :",
+  "choix": [
+   "le kilo-octet",
+   "l'octet",
+   "le bit par seconde"
+  ],
+  "bonne": 1,
+  "expl": "Un caractère tapé au clavier occupe environ un octet. Le kilo-octet en vaut mille.",
+  "points": 1,
+  "reponse": "l'octet."
+ },
+ {
+  "type": "qcm",
+  "enonce": "1 Go vaut :",
+  "choix": [
+   "1 000 To",
+   "1 000 Ko",
+   "1 000 Mo"
+  ],
+  "bonne": 2,
+  "expl": "L'échelle monte de mille en mille : octet, Ko, Mo, Go, To.",
+  "points": 1,
+  "reponse": "1 000 Mo."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une vidéo en haute définition pèse :",
+  "choix": [
+   "quelques gigaoctets",
+   "quelques mégaoctets",
+   "quelques kilo-octets"
+  ],
+  "bonne": 0,
+  "expl": "Une photo se compte en Mo, un film en Go. Un texte, lui, reste en Ko.",
+  "points": 1,
+  "reponse": "quelques gigaoctets."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Sur une clé USB de 64 Go, je peux stocker à peu près :",
+  "choix": [
+   "1 600 photos de 4 Mo",
+   "16 000 photos de 4 Mo",
+   "160 photos de 4 Mo"
+  ],
+  "bonne": 1,
+  "expl": "64 Go font 64 000 Mo ; divisés par 4 Mo, cela donne 16 000.",
+  "points": 1,
+  "reponse": "16 000 photos de 4 Mo."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le rangement des fichiers en dossiers et sous-dossiers s'appelle :",
+  "choix": [
+   "un gestionnaire de fichiers",
+   "une extension",
+   "une arborescence"
+  ],
+  "bonne": 2,
+  "expl": "Le gestionnaire de fichiers est l'application qui affiche l'arborescence ; ce n'est pas l'arborescence elle-même.",
+  "points": 1,
+  "reponse": "une arborescence."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une photo prise au smartphone pèse environ :",
+  "choix": [
+   "quelques To",
+   "quelques Mo",
+   "quelques Ko"
+  ],
+  "bonne": 1,
+  "expl": "",
+  "points": 1,
+  "reponse": "quelques Mo."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le fichier « expose.pdf » a pour extension :",
+  "choix": [
+   ".pdf",
+   ".odt",
+   "expose"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": ".pdf."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un fichier qui se termine par .mp3 est :",
+  "choix": [
+   "un tableau",
+   "une image",
+   "un son"
+  ],
+  "bonne": 2,
+  "expl": "",
+  "points": 1,
+  "reponse": "un son."
+ },
+ {
+  "type": "vf",
+  "enonce": "expose.odt et expose.pdf sont deux fichiers identiques.",
+  "bonne": 1,
+  "expl": "Le .odt se modifie, le .pdf garde sa mise en page.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "qcm",
+  "enonce": "1 Go vaut combien de Mo ?",
+  "choix": [
+   "1 000 Mo",
+   "10 Mo",
+   "100 Mo"
+  ],
+  "bonne": 0,
+  "expl": "Chaque unité vaut mille fois la précédente.",
+  "points": 1,
+  "reponse": "1 000 Mo."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La protection de l'ensemble d'un système d'information, matériel et logiciel, s'appelle :",
+  "choix": [
+   "le RGPD",
+   "la cybermalveillance",
+   "la cybersécurité"
+  ],
+  "bonne": 2,
+  "expl": "La cybermalveillance est l'attaque, la cybersécurité est la défense.",
+  "points": 1,
+  "reponse": "la cybersécurité."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un bon mot de passe doit surtout être :",
+  "choix": [
+   "long et composé de caractères variés",
+   "changé chaque jour",
+   "facile à retenir"
+  ],
+  "bonne": 0,
+  "expl": "La longueur compte plus que la complexité seule. Un mot de passe court reste faible même avec des symboles.",
+  "points": 1,
+  "reponse": "long et composé de caractères variés."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le cadenas affiché à côté de l'adresse d'un site garantit :",
+  "choix": [
+   "que la communication est chiffrée",
+   "que le site ne dépose pas de cookies",
+   "que le site est honnête"
+  ],
+  "bonne": 0,
+  "expl": "Il atteste le certificat SSL, donc le chiffrement du transport. Un site frauduleux peut très bien l'afficher.",
+  "points": 1,
+  "reponse": "que la communication est chiffrée."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Une date de naissance est :",
+  "choix": [
+   "une donnée personnelle seulement si on la publie",
+   "une donnée personnelle",
+   "une donnée publique, car d'autres sont nés le même jour"
+  ],
+  "bonne": 1,
+  "expl": "Elle permet d'identifier indirectement, surtout croisée avec un nom ou une localité.",
+  "points": 1,
+  "reponse": "une donnée personnelle."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Utiliser une donnée personnelle sans l'accord de la personne concernée est :",
+  "choix": [
+   "autorisé à des fins commerciales",
+   "autorisé si la donnée est déjà en ligne",
+   "interdit"
+  ],
+  "bonne": 2,
+  "expl": "La règle est simple : pas de consentement, pas d'utilisation, quelle qu'en soit la finalité.",
+  "points": 1,
+  "reponse": "interdit."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Parmi ces mots de passe, lequel résiste le mieux ?",
+  "choix": [
+   "francois(1972)&&",
+   "1402197",
+   "Durant"
+  ],
+  "bonne": 0,
+  "expl": "Il est long et mélange lettres, chiffres et symboles.",
+  "points": 1,
+  "reponse": "francois(1972)&&."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Mon empreinte digitale est :",
+  "choix": [
+   "une donnée publique",
+   "une donnée personnelle",
+   "une extension"
+  ],
+  "bonne": 1,
+  "expl": "",
+  "points": 1,
+  "reponse": "une donnée personnelle."
+ },
+ {
+  "type": "vf",
+  "enonce": "La météo du jour à Tegucigalpa est une donnée personnelle.",
+  "bonne": 1,
+  "expl": "Elle ne permet d'identifier personne.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "vf",
+  "enonce": "Un site frauduleux peut afficher le cadenas et une adresse en https.",
+  "bonne": 0,
+  "expl": "Le cadenas garantit le chiffrement, pas l'honnêteté du site.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Vrai."
+ },
+ {
+  "type": "qcm",
+  "enonce": "En Europe, le règlement qui protège les données personnelles s'appelle :",
+  "choix": [
+   "l'ENT",
+   "le SSL",
+   "le RGPD"
+  ],
+  "bonne": 2,
+  "expl": "",
+  "points": 1,
+  "reponse": "le RGPD."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Un système d'information regroupe :",
+  "choix": [
+   "des ressources matérielles et logicielles",
+   "seulement des ordinateurs",
+   "seulement des données"
+  ],
+  "bonne": 0,
+  "expl": "Matériel, logiciels, réseau, règles de sécurité et personnes : tout cela en fait partie.",
+  "points": 1,
+  "reponse": "des ressources matérielles et logicielles."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Pour retrouver un fichier sur un ordinateur, on utilise :",
+  "choix": [
+   "un moteur de recherche",
+   "un gestionnaire de fichiers",
+   "un navigateur"
+  ],
+  "bonne": 1,
+  "expl": "Le moteur de recherche cherche sur le Web ; le gestionnaire de fichiers cherche sur la machine.",
+  "points": 1,
+  "reponse": "un gestionnaire de fichiers."
+ },
+ {
+  "type": "qcm",
+  "enonce": "128 Go de mémoire et des vidéos de 500 Mo : combien de vidéos environ ?",
+  "choix": [
+   "2 560",
+   "26",
+   "256"
+  ],
+  "bonne": 2,
+  "expl": "128 000 Mo divisés par 500 Mo font 256.",
+  "points": 1,
+  "reponse": "256."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Prêter son identifiant de connexion à un camarade, c'est :",
+  "choix": [
+   "interdit seulement pour les adultes",
+   "sans conséquence entre amis",
+   "risqué, car les actions faites seront attribuées au titulaire"
+  ],
+  "bonne": 2,
+  "expl": "L'identifiant est une donnée personnelle liée à des droits d'accès. Ce qui est fait avec est imputé à son titulaire.",
+  "points": 1,
+  "reponse": "risqué, car les actions faites seront attribuées au titulaire."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Quand on utilise un système d'information :",
+  "choix": [
+   "on est libre de tout faire",
+   "seul l'administrateur est responsable",
+   "chacun est responsable de ses actes"
+  ],
+  "bonne": 2,
+  "expl": "La liberté d'usage ne supprime pas la responsabilité de chacun face aux dérives.",
+  "points": 1,
+  "reponse": "chacun est responsable de ses actes."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le RGPD défend surtout :",
+  "choix": [
+   "la vitesse du réseau",
+   "les personnes dont le système contient les données",
+   "le matériel du lycée"
+  ],
+  "bonne": 1,
+  "expl": "",
+  "points": 1,
+  "reponse": "les personnes dont le système contient les données."
+ },
+ {
+  "type": "qcm",
+  "enonce": "La cybersécurité défend surtout :",
+  "choix": [
+   "le prix des ordinateurs",
+   "le système d'information, côté matériel et côté logiciel",
+   "les droits d'auteur"
+  ],
+  "bonne": 1,
+  "expl": "",
+  "points": 1,
+  "reponse": "le système d'information, côté matériel et côté logiciel."
+ },
+ {
+  "type": "assoc",
+  "enonce": "Chaque mot avec sa définition.",
+  "paires": [
+   {
+    "terme": "octet",
+    "definition": "l'unité de base de la mémoire numérique"
+   },
+   {
+    "terme": "arborescence",
+    "definition": "le rangement en dossiers et sous-dossiers"
+   },
+   {
+    "terme": "extension",
+    "definition": "les lettres après le point, qui indiquent le format"
+   }
+  ],
+  "points": 3,
+  "consigne": "Je relie chaque mot à sa définition.",
+  "reponse": "octet = l'unité de base de la mémoire numérique · arborescence = le rangement en dossiers et sous-dossiers · extension = les lettres après le point, qui indiquent le format",
+  "expl": ""
+ },
+ {
+  "type": "vf",
+  "enonce": "Je peux prêter mon identifiant de l'ENT à un camarade s'il me le demande gentiment.",
+  "bonne": 1,
+  "expl": "Un identifiant est personnel : on ne le prête pas.",
+  "choix": [
+   "Vrai",
+   "Faux"
+  ],
+  "points": 1,
+  "reponse": "Faux."
+ },
+ {
+  "type": "qcm",
+  "enonce": "Le chemin « technologie › photos › velo » indique que le dossier velo est rangé dans :",
+  "choix": [
+   "le dossier photos",
+   "la corbeille",
+   "le dossier technologie directement"
+  ],
+  "bonne": 0,
+  "expl": "",
+  "points": 1,
+  "reponse": "le dossier photos."
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">— choisir —</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">—</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
     d.innerHTML = h;
-    liste.appendChild(d);
+    zone.appendChild(d);
   });
 }
-function fmt(s){const m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');}
-function demarre(){
-  if(tic) return;
-  tic = setInterval(()=>{
-    reste--;
-    const c = document.getElementById('chrono');
-    c.textContent = fmt(reste);
-    if(reste<=60) c.classList.add('rouge');
-    if(reste<=0){clearInterval(tic); tic=null; corrige();}
-  },1000);
-}
-function corrige(){
-  if(remis) return; remis = true;
-  if(tic){clearInterval(tic); tic=null;}
-  let bons = 0;
-  Q.forEach((q,i)=>{
-    const d = document.getElementById('q'+i);
-    const choix = document.querySelector('input[name=q'+i+']:checked');
-    const v = d.querySelector('.verdict');
-    d.querySelectorAll('input').forEach(x=>x.disabled=true);
-    const ok = choix && Number(choix.value)===q.bonne;
-    if(ok){bons++; d.classList.add('juste');} else {d.classList.add('faux');}
-    v.style.display='block';
-    v.innerHTML = (ok?'<b>Juste.</b> ':'<b>Réponse attendue :</b> '+q.options[q.bonne]+'. ') + q.pourquoi;
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
   });
-  const note = Math.round(bons / Q.length * 20 * 2) / 2;
-  const nom = document.getElementById('nom').value.trim() || '(nom à compléter)';
-  const s = document.getElementById('score');
-  s.className='score on';
-  s.innerHTML = '<div>'+nom+'</div><div class="note">'+note.toString().replace('.',',')+' / 20</div>'
-    + '<div>'+bons+' bonnes réponses sur '+Q.length+'</div>';
-  s.scrollIntoView({behavior:'smooth'});
+  return { obtenus: obtenus, detail: detail };
 }
-document.getElementById('go').onclick = demarre;
-document.getElementById('remise').onclick = corrige;
-document.getElementById('imprimer').onclick = ()=>window.print();
-document.getElementById('reset').onclick = ()=>{remis=false; reste=DUREE; if(tic){clearInterval(tic);tic=null;}
-  document.getElementById('chrono').textContent=fmt(DUREE);
-  document.getElementById('chrono').classList.remove('rouge');
-  document.getElementById('score').className='score'; dessine();};
-dessine();
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch(URL_ENVOI, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>";
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " — " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Détail par question": r.detail.join("  ")
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = false;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
 </script>
-</body></html>
+</body>
+</html>
