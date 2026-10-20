@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT · Séquence 2 · Séance 0 : le fil n'est pas le monde · Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+pre.graphe { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu); border-radius:6px; padding:10px 14px; font-size:.9rem; overflow-x:auto; margin:0 0 16px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SNT · Séquence 2 : les réseaux sociaux</h1>
+  <p class="sous"><b>Séance 0 : le fil n'est pas le monde</b> · 13 questions à correction immédiate. Je réponds, je vérifie,
+  je recommence autant de fois que nécessaire. Le score ne compte pas dans la moyenne et n'est envoyé à personne.</p>
+</header>
+
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien · Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 2 · Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Dans le graphe d'un réseau social, un sommet représente :",
+  "choix": [
+   "une relation entre deux comptes",
+   "un compte",
+   "un message publié"
+  ],
+  "bonne": 1,
+  "expl": "Les comptes (personnes, pages, entreprises) sont les sommets ; les relations sont les arêtes."
+ },
+ {
+  "enonce": "Dans ce même graphe, une arête représente :",
+  "choix": [
+   "un compte",
+   "une relation entre deux comptes",
+   "une publicité"
+  ],
+  "bonne": 1,
+  "expl": "L'arête relie deux sommets : c'est la relation déclarée entre deux comptes."
+ },
+ {
+  "enonce": "« Suivre » un compte se dessine par :",
+  "choix": [
+   "un trait sans sens",
+   "une flèche, car la relation a un sens",
+   "un point isolé"
+  ],
+  "bonne": 1,
+  "expl": "Je peux suivre quelqu'un qui ne me suit pas : la relation a un sens, le graphe est orienté."
+ },
+ {
+  "enonce": "Une demande d'ami acceptée se dessine par :",
+  "choix": [
+   "un trait, car la relation est réciproque",
+   "une flèche",
+   "deux sommets séparés"
+  ],
+  "bonne": 0,
+  "expl": "Être ami se fait dans les deux sens : un simple trait suffit, l'arête n'est pas orientée."
+ },
+ {
+  "enonce": "La page d'un club de football qui possède un compte est :",
+  "choix": [
+   "un sommet",
+   "une arête",
+   "ni l'un ni l'autre"
+  ],
+  "bonne": 0,
+  "expl": "Tout ce qui possède un compte est un sommet, personne ou organisation."
+ },
+ {
+  "enonce": "Le mot de passe du compte est :",
+  "choix": [
+   "un sommet",
+   "une arête",
+   "ni l'un ni l'autre"
+  ],
+  "bonne": 2,
+  "expl": "Ce n'est ni un compte ni une relation : il n'apparaît pas dans le graphe."
+ },
+ {
+  "enonce": "Le fil d'actualité est :",
+  "choix": [
+   "un sommet",
+   "une arête",
+   "ni l'un ni l'autre : c'est le résultat d'un calcul"
+  ],
+  "bonne": 2,
+  "expl": "La plateforme calcule le fil à partir du graphe et de l'historique de chacun."
+ },
+ {
+  "enonce": "Qu'imagine l'écrivain Frigyes Karinthy en 1929 ?",
+  "choix": [
+   "Le premier ordinateur",
+   "Que deux personnes quelconques sont reliées par une courte chaîne de connaissances",
+   "Le premier réseau social en ligne"
+  ],
+  "bonne": 1,
+  "expl": "C'est une nouvelle, pas une mesure : l'idée du petit monde existe avant d'être testée."
+ },
+ {
+  "enonce": "Dans l'expérience de Milgram (1967), les lettres arrivées ont fait en moyenne environ :",
+  "choix": [
+   "deux maillons",
+   "six maillons",
+   "soixante maillons"
+  ],
+  "bonne": 1,
+  "expl": "D'où l'expression « six degrés de séparation ». Beaucoup de lettres ne sont jamais arrivées : l'expérience suggère, elle ne prouve pas."
+ },
+ {
+  "enonce": "Qu'est-ce qui change en 1997 avec SixDegrees.com ?",
+  "choix": [
+   "Les relations sont déclarées par les utilisateurs et enregistrées par une machine",
+   "Les lettres sont envoyées par courrier électronique",
+   "Le fil d'actualité apparaît"
+  ],
+  "bonne": 0,
+  "expl": "Milgram devait reconstituer le graphe à tâtons ; désormais il est stocké et consultable."
+ },
+ {
+  "enonce": "Que change le fil d'actualité lancé par Facebook en 2006 ?",
+  "choix": [
+   "Chacun choisit l'ordre de ce qu'il voit",
+   "La plateforme choisit ce qui s'affiche, et dans quel ordre",
+   "Les publications sont affichées par ordre alphabétique"
+  ],
+  "bonne": 1,
+  "expl": "À partir de là, ce que je vois est une sélection calculée par la plateforme."
+ },
+ {
+  "enonce": "En 2011, une étude sur 721 millions de comptes mesure une distance moyenne entre deux comptes d'environ :",
+  "choix": [
+   "4,7 étapes",
+   "47 étapes",
+   "1 étape"
+  ],
+  "bonne": 0,
+  "expl": "C'est la distance dans ce réseau-là, pas dans toute l'humanité."
+ },
+ {
+  "enonce": "Deux personnes ouvrent la même application au même moment et ne voient pas la même chose. Pourquoi ?",
+  "choix": [
+   "À cause d'une panne",
+   "Parce que le fil est classé pour chaque compte à partir de son historique",
+   "Parce que les publications arrivent au hasard"
+  ],
+  "bonne": 1,
+  "expl": "Le fil n'est pas le monde : c'est une sélection calculée, différente pour chaque compte."
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>
