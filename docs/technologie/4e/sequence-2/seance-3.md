@@ -40,11 +40,11 @@ c. *(Prolongement : à la maison si le temps manque.)* En navigation privée, mo
 
 ### Activité 3 — Évaluation en ligne (20 min)
 
-J'ouvre evaluation-sequence.html depuis la page de la séquence. Dix questions, vingt minutes, correction commentée immédiate. Je recopie mon résultat ci-dessous.
+J'ouvre l'évaluation de fin de séquence depuis la page de la séquence. J'indique mon nom, mon prénom et ma classe, je réponds aux quarante questions, puis je termine : ma note s'affiche et elle est envoyée au professeur. Je recopie mon résultat ci-dessous.
 
 | Note obtenue | Bonnes réponses | La question qui m'a le plus surpris |
 | --- | --- | --- |
-| / 20 | / 10 |   |
+| / 20 | / 40 |   |
 
 ## APRÈS
 
@@ -71,3 +71,15 @@ J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la
 ### Question de la séance suivante
 
 En 3e, la même question change d'échelle : que coûte, à la société et à la planète, le système d'information dans lequel je vis ?
+
+## S'évaluer : l'évaluation de la séance
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-3.html){ .md-button .md-button--primary target=_blank }
+
+Huit questions courtes sur les notions de la séance. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Je relis la trace écrite avant de commencer.
+
+## S'évaluer : l'évaluation de la séquence
+
+[Ouvrir l'évaluation de fin de séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des quatre séances. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

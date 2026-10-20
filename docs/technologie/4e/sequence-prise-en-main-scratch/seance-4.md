@@ -124,6 +124,12 @@ Quelle sera ma prochaine mission sur le site, et quel coup de pouce m'aidera si 
 
 Huit questions sur la séance. Je réponds, puis je vérifie : la correction et une explication s'affichent sous chaque question. Je recommence autant de fois que je veux ; rien n'est envoyé.
 
+## S'évaluer : l'évaluation de la séance
+
+[Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-4.html){ .md-button .md-button--primary target=_blank }
+
+Sept questions courtes sur les notions de la séance. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Je relis la trace écrite avant de commencer.
+
 ## S'évaluer : l'évaluation de la séquence
 
 [Ouvrir l'évaluation de fin de séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }

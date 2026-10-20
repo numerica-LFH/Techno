@@ -116,3 +116,9 @@ Je relis ce que j'ai noté dans « J'observe ». J'explique maintenant ce que j'
 [Ouvrir l'évaluation de la séance :material-arrow-right:](evaluation-seance-10.html){ .md-button .md-button--primary target=_blank }
 
 Dix questions reprenant les activités et le vocabulaire de la séance. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Je relis la trace écrite avant de commencer.
+
+## S'évaluer : l'évaluation de la séquence
+
+[Ouvrir l'évaluation de fin de séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des dix séances. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur.

@@ -127,11 +127,11 @@ const questions = [
   "type": "qcm",
   "enonce": "La lumière est une grandeur :",
   "choix": [
+   "binaire",
    "analogique",
-   "numérique",
-   "binaire"
+   "numérique"
   ],
-  "bonne": 0,
+  "bonne": 1,
   "expl": "",
   "points": 1,
   "reponse": "analogique."
@@ -153,11 +153,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Une entrée numérique, elle, lit :",
   "choix": [
+   "une tension exacte",
    "0 ou 1",
-   "de 0 à 1023",
-   "une tension exacte"
+   "de 0 à 1023"
   ],
-  "bonne": 0,
+  "bonne": 1,
   "expl": "",
   "points": 1,
   "reponse": "0 ou 1."
@@ -179,11 +179,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Une valeur lue de 512 correspond à environ :",
   "choix": [
+   "0 V",
    "2,5 V",
-   "5 V",
-   "0 V"
+   "5 V"
   ],
-  "bonne": 0,
+  "bonne": 1,
   "expl": "",
   "points": 1,
   "reponse": "2,5 V."
@@ -206,8 +206,8 @@ const questions = [
   "enonce": "Dans le montage du cours, quand la lumière augmente, la valeur lue :",
   "choix": [
    "augmente",
-   "diminue",
-   "ne change pas"
+   "ne change pas",
+   "diminue"
   ],
   "bonne": 0,
   "expl": "",
@@ -218,11 +218,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Un seuil est :",
   "choix": [
-   "une valeur limite à partir de laquelle le programme change d'action",
    "un composant",
-   "une broche"
+   "une broche",
+   "une valeur limite à partir de laquelle le programme change d'action"
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "une valeur limite à partir de laquelle le programme change d'action."
@@ -231,11 +231,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Dans veilleuse-v1, la LED s'allume si :",
   "choix": [
-   "lumiere < SEUIL",
+   "lumiere = 1023",
    "lumiere > SEUIL",
-   "lumiere = 1023"
+   "lumiere < SEUIL"
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "lumiere < SEUIL."
@@ -256,11 +256,11 @@ const questions = [
   "type": "qcm",
   "enonce": "La photorésistance est :",
   "choix": [
-   "un capteur",
    "un actionneur",
-   "un microcontrôleur"
+   "un microcontrôleur",
+   "un capteur"
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "un capteur."

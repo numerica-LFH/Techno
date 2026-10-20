@@ -34,13 +34,13 @@ Les 5e ont chiffré le besoin du jardin : 6,2 L par jour. En 4e, on mesure des d
 
 [Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
 
-40 questions sur les trois séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe pendant la séance 3. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais les exercices autocorrectifs de chaque séance.
+40 questions sur les trois séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe pendant la séance 3. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'exercice autocorrectif et l'évaluation courte de chaque séance.
 
-| Séance | Exercice autocorrectif |
-|---|---|
-| 1 · Arroser sans gaspiller : je mesure un débit | [dix questions](exercices-seance-1.html) |
-| 2 · Qui décide d'arroser ? Les deux chaînes et la règle « si » | [dix questions](exercices-seance-2.html) |
-| 3 · Programmer l'arrosage avec le kit Grove, puis l'évaluation | [huit questions](exercices-seance-3.html) |
+| Séance | S'entraîner (exercice autocorrectif) | S'évaluer (évaluation courte) |
+|---|---|---|
+| 1 · Arroser sans gaspiller : je mesure un débit | [dix questions](exercices-seance-1.html) | [huit questions](evaluation-seance-1.html) |
+| 2 · Qui décide d'arroser ? Les deux chaînes et la règle « si » | [dix questions](exercices-seance-2.html) | [huit questions](evaluation-seance-2.html) |
+| 3 · Programmer l'arrosage avec le kit Grove, puis l'évaluation | [huit questions](exercices-seance-3.html) | [huit questions](evaluation-seance-3.html) |
 
 ## Le projet jardin sec
 
@@ -64,4 +64,4 @@ Chaque séance suit la même trame. **AVANT** : j'observe un document ou un obje
 du jour, puis j'écris mes hypothèses. **PENDANT** : je recherche (les activités, puis mon défi).
 **APRÈS** : je complète ce que je retiens, je reviens sur mes observations et mes hypothèses, et je
 lis la question qui ouvre la séance suivante. Chaque séance a sa série d'exercices autocorrectifs
-« S'entraîner » ; l'évaluation de fin de séquence a lieu pendant la séance 3.
+« S'entraîner » et son évaluation courte « S'évaluer », dont la note est envoyée au professeur ; l'évaluation de fin de séquence a lieu pendant la séance 3.

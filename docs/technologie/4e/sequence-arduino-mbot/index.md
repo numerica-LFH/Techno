@@ -36,6 +36,25 @@ Après le jeu vidéo, le programme quitte l'écran pour agir sur des objets rée
 | 9 | Classe entière (salle info) | [Suivre une ligne](seance-9.md) | Suiveur de ligne (valeurs 0 à 3), algorigramme, essais de puissance | [Trace écrite](trace-ecrite-seance-9.md) | [PDF](fiches/4e-arduino-mbot-seance9-eleve.pdf) |
 | 10 | Demi-groupe | [Le défi du robot livreur](seance-10.md) | Cahier des charges, compteur de livraisons, test croisé sur 20, QCM ; lien blocs et C (3e) | [Trace écrite](trace-ecrite-seance-10.md) | [PDF](fiches/4e-arduino-mbot-seance10-eleve.pdf) |
 
+## Évaluation de fin de séquence
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des dix séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe à la fin de la séquence, après la séance 10. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'évaluation courte de chaque séance.
+
+| Séance | Évaluation de la séance |
+|---|---|
+| 1 · De Scratch à Arduino | [douze questions](evaluation-seance-1.html) |
+| 2 · Une LED sur plaque d'essai | [douze questions](evaluation-seance-2.html) |
+| 3 · Un bouton pour commander | [douze questions](evaluation-seance-3.html) |
+| 4 · Le jeu « attrape la lumière » | [douze questions](evaluation-seance-4.html) |
+| 5 · Mesurer la lumière | [douze questions](evaluation-seance-5.html) |
+| 6 · Le radar de recul | [douze questions](evaluation-seance-6.html) |
+| 7 · Le robot mBot | [douze questions](evaluation-seance-7.html) |
+| 8 · Étalonner les déplacements du robot | [douze questions](evaluation-seance-8.html) |
+| 9 · Suivre une ligne | [douze questions](evaluation-seance-9.html) |
+| 10 · Le défi du robot livreur | [dix questions](evaluation-seance-10.html) |
+
 ## Les programmes de la séquence
 
 Programmes à ouvrir dans l'Arduino IDE ou à recopier dans Tinkercad :
@@ -53,4 +72,4 @@ Outils : [Tinkercad Circuits](https://www.tinkercad.com/circuits), Arduino IDE, 
 Chaque séance suit la même trame : **AVANT** (la question du jour, puis mes hypothèses ou ce que
 j'observe), **PENDANT** (je recherche : les activités, puis mon défi), **APRÈS** (ce que je
 retiens, et la question qui ouvre la séance suivante). Chaque séance se termine par une
-évaluation en ligne « S'évaluer » dont la note est envoyée au professeur.
+évaluation courte en ligne « S'évaluer » dont la note est envoyée au professeur. L'évaluation de fin de séquence reprend les thèmes de toutes les séances.

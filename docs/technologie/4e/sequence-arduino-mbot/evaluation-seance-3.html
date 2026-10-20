@@ -127,11 +127,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Une entrée numérique lit :",
   "choix": [
-   "deux états, 0 ou 1",
    "une valeur de 0 à 1023",
+   "deux états, 0 ou 1",
    "une couleur"
   ],
-  "bonne": 0,
+  "bonne": 1,
   "expl": "",
   "points": 1,
   "reponse": "deux états, 0 ou 1."
@@ -140,11 +140,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Bouton enfoncé (montage du cours), digitalRead renvoie :",
   "choix": [
-   "1 (HIGH)",
    "0 (LOW)",
-   "1023"
+   "1023",
+   "1 (HIGH)"
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "1 (HIGH)."
@@ -179,8 +179,8 @@ const questions = [
   "enonce": "Le moniteur série affiche :",
   "choix": [
    "les valeurs envoyées par la carte",
-   "le schéma du montage",
-   "la liste des composants"
+   "la liste des composants",
+   "le schéma du montage"
   ],
   "bonne": 0,
   "expl": "",
@@ -191,11 +191,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Pour envoyer une valeur au moniteur série, on écrit :",
   "choix": [
-   "Serial.println(valeur);",
+   "delay(valeur);",
    "digitalWrite(valeur);",
-   "delay(valeur);"
+   "Serial.println(valeur);"
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "Serial.println(valeur);."
@@ -217,11 +217,11 @@ const questions = [
   "type": "qcm",
   "enonce": "En langage Arduino, « si sinon » s'écrit :",
   "choix": [
+   "setup / loop",
    "if / else",
-   "for / while",
-   "setup / loop"
+   "for / while"
   ],
-  "bonne": 0,
+  "bonne": 1,
   "expl": "",
   "points": 1,
   "reponse": "if / else."
@@ -230,11 +230,11 @@ const questions = [
   "type": "qcm",
   "enonce": "Pour comparer deux valeurs dans un test, on écrit :",
   "choix": [
-   "==",
+   "=>",
    "=",
-   "=>"
+   "=="
   ],
-  "bonne": 0,
+  "bonne": 2,
   "expl": "",
   "points": 1,
   "reponse": "==."

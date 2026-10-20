@@ -22,6 +22,18 @@ On met en relation les objets et systèmes techniques avec leurs usages, on rep�
 | 2 | [Qu'est-ce qui change dans un objet qui évolue ?](seance-2.md) | Fonction technique, principe technique, design | [Trace écrite](trace-ecrite-seance-2.md) | [PDF](fiches/4e-seq1-seance2-eleve.pdf) |
 | 3 | [Avantages et inconvénients des évolutions technologiques](seance-3.md) | Numérique, intelligence artificielle, usage raisonné | [Trace écrite](trace-ecrite-seance-3.md) | [PDF](fiches/4e-seq1-seance3-eleve.pdf) |
 
+## Évaluation de fin de séquence
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des trois séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe à la fin de la séquence, après la séance 3. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'évaluation courte de chaque séance.
+
+| Séance | Évaluation de la séance |
+|---|---|
+| 1 · Des usages qui changent, des objets qui suivent | [seize questions](evaluation-seance-1.html) |
+| 2 · Qu'est-ce qui change dans un objet qui évolue ? | [seize questions](evaluation-seance-2.html) |
+| 3 · Avantages et inconvénients des évolutions technologiques | [seize questions](evaluation-seance-3.html) |
+
 ## S'entraîner
 
 [Ouvrir les exercices de la séquence :material-arrow-right:](exercices.html){ .md-button .md-button--primary target=_blank }

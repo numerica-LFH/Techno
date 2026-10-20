@@ -33,14 +33,14 @@ Un objet doit répondre aux attentes de ses utilisateurs : il est soumis à des 
 
 [Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
 
-40 questions sur les quatre séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe pendant la séance 4. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais les exercices autocorrectifs de chaque séance.
+40 questions sur les quatre séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe pendant la séance 4. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'exercice autocorrectif et l'évaluation courte de chaque séance.
 
-| Séance | Exercice autocorrectif |
-|---|---|
-| 1 · Les familles de contraintes | [dix questions](exercices-seance-1.html) |
-| 2 · La sécurité d'un jouet : la voiture télécommandée | [dix questions](exercices-seance-2.html) |
-| 3 · Décrire l'expérience de l'utilisateur : le manuel | [dix questions](exercices-seance-3.html) |
-| 4 · Bilan : concevoir une coque de smartphone, puis l'évaluation | [7 questions](exercices-seance-4.html) |
+| Séance | S'entraîner (exercice autocorrectif) | S'évaluer (évaluation courte) |
+|---|---|---|
+| 1 · Les familles de contraintes | [dix questions](exercices-seance-1.html) | [huit questions](evaluation-seance-1.html) |
+| 2 · La sécurité d'un jouet : la voiture télécommandée | [dix questions](exercices-seance-2.html) | [huit questions](evaluation-seance-2.html) |
+| 3 · Décrire l'expérience de l'utilisateur : le manuel | [dix questions](exercices-seance-3.html) | [huit questions](evaluation-seance-3.html) |
+| 4 · Bilan : concevoir une coque de smartphone, puis l'évaluation | [sept questions](exercices-seance-4.html) | [six questions](evaluation-seance-4.html) |
 
 ## Déroulé d'ensemble
 
@@ -48,4 +48,4 @@ Chaque séance suit la même trame. **AVANT** : j'observe un document ou un obje
 du jour, puis j'écris mes hypothèses. **PENDANT** : je recherche (les activités, puis mon défi).
 **APRÈS** : je complète ce que je retiens, je reviens sur mes observations et mes hypothèses, et je
 lis la question qui ouvre la séance suivante. Chaque séance a sa série d'exercices autocorrectifs
-« S'entraîner » ; l'évaluation de fin de séquence a lieu pendant la séance 4.
+« S'entraîner » et son évaluation courte « S'évaluer », dont la note est envoyée au professeur ; l'évaluation de fin de séquence a lieu pendant la séance 4.

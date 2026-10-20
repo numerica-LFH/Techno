@@ -33,6 +33,23 @@ On reconstruit, pas à pas, le jeu « La cueillette des mangues » : un panier q
 | 7 | Classe entière (salle info) | [Entraînement à la Nuit du Code](seance-7.md) | Règles du concours, planning de 6 h, sprint de 20 min | [Trace écrite](trace-ecrite-seance-7.md) | [PDF](fiches/4e-jeu-video-seance7-eleve.pdf) |
 | 8 | Demi-groupe | [Tester, améliorer et présenter son jeu](seance-8.md) | Mode d'emploi, test croisé avec la grille du jury, QCM de fin de séquence | [Trace écrite](trace-ecrite-seance-8.md) | [PDF](fiches/4e-jeu-video-seance8-eleve.pdf) |
 
+## Évaluation de fin de séquence
+
+[Ouvrir l'évaluation de la séquence :material-arrow-right:](evaluation-sequence.html){ .md-button .md-button--primary target=_blank }
+
+Quarante questions qui reprennent les thèmes des huit séances : QCM, vrai ou faux, associations, remises en ordre et réponses courtes. Elle se passe à la fin de la séquence, après la séance 8. J'indique mon nom, mon prénom et ma classe : la note s'affiche à la fin et elle est envoyée au professeur. Avant, je relis les traces écrites et je refais l'évaluation courte de chaque séance.
+
+| Séance | Évaluation de la séance |
+|---|---|
+| 1 · Qu'est-ce qui fait marcher un jeu vidéo ? | [quatorze questions](evaluation-seance-1.html) |
+| 2 · Faire bouger un lutin au clavier | [treize questions](evaluation-seance-2.html) |
+| 3 · Règles, algorithme et variables | [treize questions](evaluation-seance-3.html) |
+| 4 · Score, vies, fin de partie et chasse aux bogues | [treize questions](evaluation-seance-4.html) |
+| 5 · Comment un ordinateur trouve-t-il un visage ? | [treize questions](evaluation-seance-5.html) |
+| 6 · Le panier piloté au nez, l'écran titre dans Scratch Lab | [treize questions](evaluation-seance-6.html) |
+| 7 · Entraînement à la Nuit du Code | [treize questions](evaluation-seance-7.html) |
+| 8 · Tester, améliorer et présenter son jeu | [douze questions](evaluation-seance-8.html) |
+
 ## Scratch, Scratch Lab et la Nuit du Code
 
 Le jeu se programme dans [Scratch](https://scratch.mit.edu/). L'écran titre animé se fait dans [Scratch Lab](https://lab.scratch.mit.edu/), dans un fichier séparé. Voir aussi la page [Liens utiles](../../../ressources/liens.md) et la page [La Nuit du Code](../../../projets-etablissement/nuit-du-code.md).
@@ -42,4 +59,4 @@ Le jeu se programme dans [Scratch](https://scratch.mit.edu/). L'écran titre ani
 Chaque séance suit la même trame : **AVANT** (la question du jour, puis mes hypothèses ou ce que
 j'observe), **PENDANT** (je recherche : les activités, puis mon défi), **APRÈS** (ce que je
 retiens, et la question qui ouvre la séance suivante). Chaque séance se termine par une
-évaluation en ligne « S'évaluer » dont la note est envoyée au professeur.
+évaluation courte en ligne « S'évaluer » dont la note est envoyée au professeur. L'évaluation de fin de séquence reprend les thèmes de toutes les séances.
