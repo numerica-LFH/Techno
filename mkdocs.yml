@@ -327,6 +327,40 @@ nav:
           - "Séance 2 — Filtres et métadonnées": snt/sequence-6/seance-2.md
   - Missions Scratch:
       - missions-scratch/index.md
+      - "Avant les missions : prendre en main Scratch":
+          - "5e":
+              - technologie/5e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/5e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/5e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/5e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/5e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/5e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
+          - "4e":
+              - technologie/4e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/4e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/4e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/4e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/4e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/4e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
+          - "3e":
+              - technologie/3e/sequence-prise-en-main-scratch/index.md
+              - "Séance 1 — Scratch, un logiciel à tout faire": technologie/3e/sequence-prise-en-main-scratch/seance-1.md
+              - "Séance 2 — Ma première mission sur le site de la classe": technologie/3e/sequence-prise-en-main-scratch/seance-2.md
+              - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/3e/sequence-prise-en-main-scratch/seance-3.md
+              - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/3e/sequence-prise-en-main-scratch/seance-4.md
+              - "Traces écrites":
+                  - "Séance 1 — Scratch, un logiciel à tout faire": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-1.md
+                  - "Séance 2 — Ma première mission sur le site de la classe": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-2.md
+                  - "Séance 3 — Programmer une alarme pour surveiller la maison": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-3.md
+                  - "Séance 4 — Bilan : la maison qui s'éclaire, puis l'évaluation": technologie/3e/sequence-prise-en-main-scratch/trace-ecrite-seance-4.md
       - "Palier 1 (vert) : premiers scripts": missions-scratch/palier-1.md
       - "Palier 1 bis (rose) : je consolide les bases": missions-scratch/palier-1b.md
       - "Palier 2 (bleu) : messages, clones, blocs": missions-scratch/palier-2.md

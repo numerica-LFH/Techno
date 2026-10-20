@@ -4,6 +4,18 @@ Un parcours de missions pour apprendre à programmer avec Scratch, pas à pas, d
 
 Le même principe sert au parcours [Missions Arduino](../missions-arduino/index.md) : cinquante missions dans Tinkercad Circuits, de la 5e à la 2nde, jusqu'au kit Grove du projet jardin sec.
 
+## Avant les missions : prendre en main Scratch
+
+Quatre séances de 40 minutes préparent le parcours : programmer avec des blocs et repérer l'éditeur, réussir sa première mission sur le site (ouvrir l'exercice, enregistrer le fichier .sb3, envoyer « Où j'en suis »), programmer une alarme qui surveille une maison, puis une maison qui allume la lumière toute seule. Chaque séance a sa fiche à imprimer, sa trace écrite et un exercice autocorrectif ; une évaluation de 40 questions termine la séquence.
+
+| Classe | Séquence | Palier de départ ensuite |
+|---|---|---|
+| 5e | [Prendre en main Scratch, 5e](../technologie/5e/sequence-prise-en-main-scratch/index.md) | [Palier 1 (vert)](palier-1.md) |
+| 4e | [Prendre en main Scratch, 4e](../technologie/4e/sequence-prise-en-main-scratch/index.md) | [Palier 2 (bleu)](palier-2.md) |
+| 3e | [Prendre en main Scratch, 3e](../technologie/3e/sequence-prise-en-main-scratch/index.md) | [Palier 3 (orange)](palier-3.md) |
+
+Les deux exercices de la séquence s'ouvrent aussi directement : [l'alarme](https://turbowarp.org/editor?project_url=https://numerica-lfh.github.io/Techno/missions-scratch/exercices/alarme.sb3){ target=_blank } et [la maison](https://turbowarp.org/editor?project_url=https://numerica-lfh.github.io/Techno/missions-scratch/exercices/maison.sb3){ target=_blank }.
+
 ## Les cinq paliers
 
 | Palier | Classe de départ | Contenu | Missions |
