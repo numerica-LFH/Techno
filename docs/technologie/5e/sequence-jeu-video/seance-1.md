@@ -76,20 +76,15 @@ d\. Dans Scratch, chaque lutin a ses propres scripts. Combien de lutins compte l
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Qu'est-ce qui fait marcher un jeu vidéo ?
 
 Un jeu vidéo est un **programme**. Il **acquiert** des informations par des **entrées** (clavier, souris, caméra, micro), il les **traite**, puis il **communique** par des **sorties** (image à l'écran, son).
 
 Dans Scratch, le jeu est fait de **lutins**. Chaque lutin a ses **scripts**. Un script démarre quand un **événement** se produit, par exemple le clic sur le drapeau vert.
 
-Je complète : Le clavier est une `..........` ; l'écran et le haut-parleur sont des `..........`.
+Le clavier est une **entrée** ; l'écran et le haut-parleur sont des **sorties**.
 
-Je complète : Un script commence toujours par un bloc déclenché par un `..........`.
+Un script commence toujours par un bloc déclenché par un **événement**.
 
 #### Je reviens sur mes hypothèses
 

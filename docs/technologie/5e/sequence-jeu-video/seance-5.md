@@ -72,12 +72,7 @@ e\. Le calcul se fait dans mon navigateur. L'image de ma caméra est-elle envoy�
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-5.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Comment un ordinateur trouve-t-il un visage ?
 
 Pour l'ordinateur, une image n'est qu'un tableau de **pixels**, c'est-à-dire de nombres.
 
@@ -87,9 +82,9 @@ Un modèle peut avoir des **biais** : il se trompe plus souvent dans les situati
 
 L'image d'un visage est une **donnée personnelle**. Dans Scratch, le calcul se fait sur l'ordinateur : l'image n'est pas envoyée.
 
-Je complète : L'image de la scène compte 480 × 360 = `..........` pixels.
+L'image de la scène compte 480 × 360 = **172 800** pixels.
 
-Je complète : Un modèle entraîné surtout sur des visages bien éclairés se trompe plus souvent à contre-jour : c'est un `..........`.
+Un modèle entraîné surtout sur des visages bien éclairés se trompe plus souvent à contre-jour : c'est un **biais**.
 
 #### Je reviens sur mes hypothèses
 

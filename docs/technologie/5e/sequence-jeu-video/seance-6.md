@@ -76,12 +76,7 @@ Je teste avec et sans visage devant la caméra, puis j'enregistre **CUEILLETTE-v
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-6.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Le panier piloté au nez, l'écran titre dans Scratch Lab
 
 Une **extension** ajoute une famille de blocs. La Détection de visage allume la caméra : on règle la **transparence** de la vidéo à 100 pour la rendre invisible sans arrêter la détection.
 
@@ -89,9 +84,9 @@ Un lutin caché qui suit le nez permet au panier de lire la position du visage.
 
 Un bon jeu prévoit un **mode de secours** : si aucun visage n'est détecté, le clavier reprend la main.
 
-Je complète : Pour cacher l'image de la caméra sans arrêter la détection, je mets la transparence de la vidéo à `..........`.
+Pour cacher l'image de la caméra sans arrêter la détection, je mets la transparence de la vidéo à **100**.
 
-Je complète : Si aucun visage n'est détecté, le joueur utilise le `..........`.
+Si aucun visage n'est détecté, le joueur utilise le **clavier**.
 
 #### Retour sur mes observations
 

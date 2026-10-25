@@ -69,12 +69,7 @@ d\. Dans le script de la mangue, quel bloc Scratch correspond au losange ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Règles, algorithme et variables
 
 Un **algorithme** est une suite d'instructions précises, sans **ambiguïté**, qui résout un problème. Un ordinateur exécute exactement ce qu'on lui écrit.
 
@@ -82,9 +77,9 @@ Un **algorigramme** dessine l'algorithme : l'ovale pour le début, le rectangle 
 
 Une **variable** est une case mémoire qui porte un nom et contient une valeur qui change, comme le score ou les vies.
 
-Je complète : Dans un algorigramme, une question oui ou non se dessine dans un `..........`.
+Dans un algorigramme, une question oui ou non se dessine dans un **losange**.
 
-Je complète : Au début de la partie, la variable vies vaut `..........`.
+Au début de la partie, la variable vies vaut **3**.
 
 #### Je reviens sur mes hypothèses
 

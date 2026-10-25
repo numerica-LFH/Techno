@@ -4,25 +4,23 @@
 
     Question de la séance : *Comment écrire les règles d'un jeu pour qu'un ordinateur puisse les appliquer ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance3-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Algorithme
+### Règles, algorithme et variables
 
-Un algorithme est une suite finie d'instructions précises qui permet de résoudre un problème. Une instruction ambiguë, qu'on peut comprendre de plusieurs façons, empêche la machine d'agir : l'ordinateur exécute exactement ce qu'on lui écrit, sans deviner l'intention.
+Un **algorithme** est une suite d'instructions précises, sans **ambiguïté**, qui résout un problème. Un ordinateur exécute exactement ce qu'on lui écrit.
 
-### Algorigramme
+Un **algorigramme** dessine l'algorithme : l'ovale pour le début, le rectangle pour une action, le losange pour une question à réponse oui ou non.
 
-Un algorigramme représente un algorithme avec des symboles normalisés : l'ovale pour le début et la fin, le rectangle pour une action, le losange pour une question dont la réponse est oui ou non. Des flèches relient les symboles ; une flèche qui remonte dessine une boucle.
+Une **variable** est une case mémoire qui porte un nom et contient une valeur qui change, comme le score ou les vies.
 
-Le losange de l'algorigramme correspond au bloc « si alors » de Scratch.
+Dans un algorigramme, une question oui ou non se dessine dans un **losange**.
 
-### Variables
-
-Une variable est une case mémoire qui porte un nom et contient une valeur qui peut changer. Dans la cueillette des mangues : score (0 au départ, + 1 par mangue), vies (3 au départ, - 1 par scarabée), vitesse (5 au départ).
+Au début de la partie, la variable vies vaut **3**.
 
 ## Les mots à connaître
 

@@ -78,12 +78,7 @@ c\. Quelles sont les deux façons de finir la partie ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-4.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Score, vies, fin de partie et chasse aux bogues
 
 Une variable doit être **initialisée** : on lui donne sa valeur de départ au clic sur le drapeau vert.
 
@@ -91,9 +86,9 @@ La fin de partie est une condition : **vies < 1** ou **score > 19**. Les blocs *
 
 Un **bogue** est une erreur de programme. Pour le trouver, je **teste** ; je corrige une erreur à la fois, puis je teste à nouveau.
 
-Je complète : Au clic sur le drapeau vert, on `..........` les variables.
+Au clic sur le drapeau vert, on **initialise** les variables.
 
-Je complète : La partie est perdue quand vies < `..........`.
+La partie est perdue quand vies < **1**.
 
 #### Retour sur mes observations
 

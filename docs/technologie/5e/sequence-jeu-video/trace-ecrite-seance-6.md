@@ -4,21 +4,23 @@
 
     Question de la séance : *Comment piloter le panier avec le nez, et que faire si la caméra ne marche pas ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 6](seance-6.md).
+    Même texte que le bloc « À retenir » de la [séance 6](seance-6.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance6-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Piloter un lutin avec le visage
+### Le panier piloté au nez, l'écran titre dans Scratch Lab
 
-L'extension Détection de visage utilise la caméra. Son image recouvre l'arrière-plan : on met la transparence de la vidéo à 100 (extension Détection vidéo). L'image devient invisible, la détection continue. Si on arrête la vidéo, la détection s'arrête.
+Une **extension** ajoute une famille de blocs. La Détection de visage allume la caméra : on règle la **transparence** de la vidéo à 100 pour la rendre invisible sans arrêter la détection.
 
-Un lutin caché, le Nez, va sans arrêt à la position du nez. Le panier recopie l'abscisse x du Nez et garde son ordonnée : il reste en bas de l'écran.
+Un lutin caché qui suit le nez permet au panier de lire la position du visage.
 
-### Prévoir un mode de secours
+Un bon jeu prévoit un **mode de secours** : si aucun visage n'est détecté, le clavier reprend la main.
 
-Si la pièce est sombre ou si le joueur sort du champ, aucun visage n'est détecté. Le bloc « si un visage est détecté alors, sinon » permet de revenir au clavier. Un jeu doit rester jouable quand une entrée fait défaut.
+Pour cacher l'image de la caméra sans arrêter la détection, je mets la transparence de la vidéo à **100**.
+
+Si aucun visage n'est détecté, le joueur utilise le **clavier**.
 
 ## Les mots à connaître
 

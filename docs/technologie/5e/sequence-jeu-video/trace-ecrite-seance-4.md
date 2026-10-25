@@ -4,27 +4,23 @@
 
     Question de la séance : *Comment le jeu compte-t-il les points et sait-il que la partie est finie ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 4](seance-4.md).
+    Même texte que le bloc « À retenir » de la [séance 4](seance-4.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance4-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Initialiser les variables
+### Score, vies, fin de partie et chasse aux bogues
 
-Au clic sur le drapeau vert, la scène initialise les variables : score à 0, vies à 3, vitesse à 5. Sans initialisation, une nouvelle partie reprendrait les valeurs de la précédente.
+Une variable doit être **initialisée** : on lui donne sa valeur de départ au clic sur le drapeau vert.
 
-### Compter une seule fois
+La fin de partie est une condition : **vies < 1** ou **score > 19**. Les blocs **et**, **ou**, **non** sont des **opérateurs logiques** qui combinent des conditions.
 
-Quand la mangue touche le panier, le score augmente de 1 et la mangue repart aussitôt en haut. Si elle restait sur le panier, le test serait vrai à chaque tour de boucle et le score augmenterait sans arrêt.
+Un **bogue** est une erreur de programme. Pour le trouver, je **teste** ; je corrige une erreur à la fois, puis je teste à nouveau.
 
-### Finir la partie
+Au clic sur le drapeau vert, on **initialise** les variables.
 
-La scène attend que la condition « vies < 1 ou score > 19 » soit vraie. Elle affiche alors l'écran Perdu ou Gagné, puis « stop tout » arrête tous les scripts. « et », « ou », « non » sont des opérateurs logiques.
-
-### Tester et corriger
-
-Un bogue est une erreur de programme. On le trouve en testant, c'est-à-dire en faisant fonctionner le jeu dans une situation choisie. On corrige une erreur à la fois et on teste après chaque correction. On enregistre ensuite une nouvelle version, CUEILLETTE-v2.
+La partie est perdue quand vies < **1**.
 
 ## Les mots à connaître
 

@@ -4,23 +4,21 @@
 
     Question de la séance : *Comment un jeu vidéo sait-il ce que fait le joueur, et comment lui répond-il ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 1](seance-1.md).
+    Même texte que le bloc « À retenir » de la [séance 1](seance-1.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance1-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Un jeu vidéo est un programme
+### Qu'est-ce qui fait marcher un jeu vidéo ?
 
-Comme tout objet programmé, un jeu vidéo suit une chaîne d'information. Il acquiert des informations par des entrées : le clavier, la souris, la caméra ou le micro. Le programme les traite. Il communique ensuite un résultat par des sorties : l'image à l'écran et le son.
+Un jeu vidéo est un **programme**. Il **acquiert** des informations par des **entrées** (clavier, souris, caméra, micro), il les **traite**, puis il **communique** par des **sorties** (image à l'écran, son).
 
-Dans « La cueillette des mangues », la flèche droite est une entrée ; le panier qui se déplace et le son joué quand une mangue est attrapée sont des sorties.
+Dans Scratch, le jeu est fait de **lutins**. Chaque lutin a ses **scripts**. Un script démarre quand un **événement** se produit, par exemple le clic sur le drapeau vert.
 
-### Lutins, scripts et événements
+Le clavier est une **entrée** ; l'écran et le haut-parleur sont des **sorties**.
 
-Un projet Scratch est fait de lutins (les personnages et objets) et d'une scène (les arrière-plans). Chaque lutin possède ses scripts. Un script est une suite de blocs emboîtés.
-
-Un script démarre sur un événement : le clic sur le drapeau vert, une touche pressée, un message reçu. Le bloc qui attend l'événement est posé en haut du script, c'est le bloc chapeau.
+Un script commence toujours par un bloc déclenché par un **événement**.
 
 ## Les mots à connaître
 

@@ -4,25 +4,25 @@
 
     Question de la séance : *Comment un ordinateur peut-il trouver un visage dans l'image d'une caméra ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 5](seance-5.md).
+    Même texte que le bloc « À retenir » de la [séance 5](seance-5.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance5-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Une image est un tableau de nombres
+### Comment un ordinateur trouve-t-il un visage ?
 
-Une image numérique est faite de pixels. Chaque pixel est codé par trois nombres de 0 à 255 (rouge, vert, bleu). L'image de la scène en compte 480 × 360, soit 172 800. L'ordinateur ne « voit » pas de visage : il cherche des régularités dans ces nombres.
+Pour l'ordinateur, une image n'est qu'un tableau de **pixels**, c'est-à-dire de nombres.
 
-### L'apprentissage supervisé
+La détection de visage utilise un **modèle** entraîné par **apprentissage supervisé** : des milliers d'images étiquetées par des humains.
 
-Les règles de détection n'ont pas été écrites à la main. Un programme a été entraîné sur des milliers d'images étiquetées par des humains, « visage » ou « pas visage ». Il a ajusté ses paramètres pour se tromper le moins possible, puis il a été testé sur des images nouvelles. Le résultat est un modèle ; celui de Scratch s'appelle BlazeFace.
+Un modèle peut avoir des **biais** : il se trompe plus souvent dans les situations mal représentées dans ses exemples.
 
-### Biais et données personnelles
+L'image d'un visage est une **donnée personnelle**. Dans Scratch, le calcul se fait sur l'ordinateur : l'image n'est pas envoyée.
 
-Un modèle se trompe davantage dans les situations peu présentes dans ses exemples : pièce sombre, contre-jour, visage caché, types de visages sous-représentés. C'est un biais.
+L'image de la scène compte 480 × 360 = **172 800** pixels.
 
-L'image d'un visage est une donnée personnelle. Dans Scratch, le modèle est téléchargé une fois et le calcul se fait sur l'ordinateur : l'image n'est pas envoyée sur Internet. En classe, on n'enregistre ni ne partage aucune image.
+Un modèle entraîné surtout sur des visages bien éclairés se trompe plus souvent à contre-jour : c'est un **biais**.
 
 ## Les mots à connaître
 

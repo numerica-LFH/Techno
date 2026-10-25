@@ -4,27 +4,25 @@
 
     Question de la séance : *Comment un lutin sait-il où il est, et comment le faire bouger au clavier ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### La scène est un repère
+### Faire bouger un lutin au clavier
 
-La scène de Scratch mesure 480 pas sur 360. Le centre est le point (0 ; 0). L'abscisse x va de -240 à 240, l'ordonnée y va de -180 à 180. La position d'un lutin est donnée par ses coordonnées (x ; y).
+La position d'un lutin est donnée par ses **coordonnées** (x ; y). x augmente vers la droite, y augmente vers le haut.
 
-Pour déplacer un lutin vers la droite, on ajoute un nombre positif à x ; vers la gauche, un nombre négatif.
+Le bloc **répéter indéfiniment** est une **boucle** : il fait tester les touches pendant toute la partie.
 
-### Boucle et condition
+Le bloc **si alors** contient une **condition** : son contenu n'est exécuté que si la condition est vraie.
 
-Une boucle répète les blocs placés à l'intérieur. « Répéter indéfiniment » tourne pendant toute la partie : c'est ce qui permet de tester les touches en permanence.
+J'enregistre mon travail en **versions** numérotées : CUEILLETTE-v1, puis v2, puis v3.
 
-Une condition est un test qui vaut vrai ou faux. Le bloc « si alors » n'exécute son contenu que lorsque la condition est vraie, par exemple quand la flèche droite est pressée.
+Pour aller vers la droite, on ajoute un nombre **positif** à x.
 
-### Enregistrer par versions
-
-On enregistre le projet à chaque étape sous un nom numéroté : CUEILLETTE-v1, v2, v3. Si une modification casse le jeu, on repart de la version précédente.
+Sans la **boucle**, les flèches ne seraient testées qu'une seule fois.
 
 ## Les mots à connaître
 

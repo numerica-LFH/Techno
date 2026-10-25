@@ -78,12 +78,7 @@ b\. Pourquoi garder la dernière heure pour les tests ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-7.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Entraînement à la Nuit du Code
 
 Un projet en équipe se découpe en **tâches** précises, confiées à une personne.
 
@@ -93,9 +88,9 @@ On avance par **sprints** courts terminés par un test, et on enregistre une ver
 
 La dernière heure sert à tester, corriger et écrire le mode d'emploi.
 
-Je complète : À la Nuit du Code, on n'a pas le droit d'`..........` des scripts préparés à l'avance.
+À la Nuit du Code, on n'a pas le droit d'**importer** des scripts préparés à l'avance.
 
-Je complète : Une équipe compte `..........` élèves.
+Une équipe compte **deux ou trois** élèves.
 
 #### Je reviens sur mes hypothèses
 

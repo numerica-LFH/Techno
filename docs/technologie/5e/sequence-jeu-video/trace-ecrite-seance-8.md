@@ -4,19 +4,23 @@
 
     Question de la séance : *Comment savoir si mon jeu est bon, et comment l'améliorer ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 8](seance-8.md).
+    Même texte que le bloc « À retenir » de la [séance 8](seance-8.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance8-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Juger un jeu
+### Tester, améliorer et présenter son jeu
 
-Le jury de la Nuit du Code note quatre critères sur 5 points chacun : la jouabilité (le jeu démarre, se joue et s'arrête sans bogue), la richesse (règles, niveaux, sons), l'originalité et le respect des consignes.
+Un jeu se juge sur des **critères** : jouabilité, richesse, originalité, respect des consignes.
 
-### Mode d'emploi et test croisé
+Le **mode d'emploi** dit le but, les commandes et comment on gagne ou on perd.
 
-Le mode d'emploi dit en quelques lignes le but du jeu, les commandes, ce qu'il faut éviter et comment on gagne ou on perd. Le test croisé, par une autre équipe qui ne connaît pas le jeu, révèle ce que les auteurs ne voient plus. On en tire des améliorations, en commençant par ce qui empêche de jouer.
+Le **test croisé** montre ce que je ne vois plus dans mon propre jeu ; j'en tire des **améliorations**, en commençant par la jouabilité.
+
+La grille du jury compte quatre critères notés sur **5**, soit un total sur 20.
+
+Je corrige d'abord ce qui touche la **jouabilité**.
 
 ## Les mots à connaître
 

@@ -81,12 +81,7 @@ J'enregistre la version finale et je passe l'évaluation de fin de séquence (S'
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-8.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Tester, améliorer et présenter son jeu
 
 Un jeu se juge sur des **critères** : jouabilité, richesse, originalité, respect des consignes.
 
@@ -94,9 +89,9 @@ Le **mode d'emploi** dit le but, les commandes et comment on gagne ou on perd.
 
 Le **test croisé** montre ce que je ne vois plus dans mon propre jeu ; j'en tire des **améliorations**, en commençant par la jouabilité.
 
-Je complète : La grille du jury compte quatre critères notés sur `..........`, soit un total sur 20.
+La grille du jury compte quatre critères notés sur **5**, soit un total sur 20.
 
-Je complète : Je corrige d'abord ce qui touche la `..........`.
+Je corrige d'abord ce qui touche la **jouabilité**.
 
 #### Retour sur mes observations
 

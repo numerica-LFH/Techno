@@ -4,23 +4,25 @@
 
     Question de la séance : *Comment une équipe organise-t-elle six heures pour rendre un jeu qui marche ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 7](seance-7.md).
+    Même texte que le bloc « À retenir » de la [séance 7](seance-7.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jeu-video-seance7-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Les règles de la Nuit du Code
+### Entraînement à la Nuit du Code
 
-Dans la catégorie Scratch (de la 5e à la 3e), les équipes de deux ou trois ont six heures pour faire un jeu à partir d'un univers imposé, sans script. On n'importe pas de scripts et on ne publie pas le jeu sur scratch.mit.edu. Le jury note la jouabilité, la richesse, l'originalité et le respect des consignes, sur 5 points chacun.
+Un projet en équipe se découpe en **tâches** précises, confiées à une personne.
 
-### Organiser le travail
+Le **planning** place les tâches dans le temps ; des **jalons** permettent de vérifier l'avancement.
 
-On découpe le projet en tâches précises, confiées chacune à une personne. Le planning place ces tâches dans le temps ; les jalons sont les moments où l'on vérifie qu'une étape est finie. Certaines tâches peuvent être menées en parallèle, puis rassemblées dans le même projet.
+On avance par **sprints** courts terminés par un test, et on enregistre une version à chaque étape.
 
-### Avancer par sprints
+La dernière heure sert à tester, corriger et écrire le mode d'emploi.
 
-Un sprint est une courte période de travail avec un objectif limité, terminée par un test. On enregistre une version à chaque étape. Quand le temps manque, on simplifie : un jeu simple qui fonctionne vaut mieux qu'un jeu riche qui ne marche pas.
+À la Nuit du Code, on n'a pas le droit d'**importer** des scripts préparés à l'avance.
+
+Une équipe compte **deux ou trois** élèves.
 
 ## Les mots à connaître
 
