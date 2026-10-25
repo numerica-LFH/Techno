@@ -55,6 +55,16 @@ nav:
       - Programmation annuelle: technologie/programmation-annuelle.md
       - Objectifs et compétences: technologie/objectifs.md
       - Applications interactives: technologie/apps.md
+      - Projet jardin sec:
+          - Présentation: technologie/projet-jardin-sec/index.md
+          - Besoins et matériel: technologie/projet-jardin-sec/besoins-et-materiel.md
+          - Pas à pas SketchUp:
+              - Vue d'ensemble: technologie/projet-jardin-sec/sketchup/index.md
+              - 5e, créer le bac: technologie/projet-jardin-sec/sketchup/5e.md
+              - 4e, le bac et les espaces: technologie/projet-jardin-sec/sketchup/4e.md
+              - 3e, l'espace complet: technologie/projet-jardin-sec/sketchup/3e.md
+          - Ressources techniques: technologie/projet-jardin-sec/ressources.md
+          - Téléchargements: technologie/projet-jardin-sec/telechargements.md
       - 5e:
           - technologie/5e/index.md
           - "Séquence 1 — Des besoins aux objets techniques":
@@ -385,16 +395,6 @@ nav:
       - Club robotique: projets-etablissement/club-robotique.md
       - La Nuit du Code: projets-etablissement/nuit-du-code.md
       - Semaine du numérique: projets-etablissement/semaine-numerique.md
-  - Projet jardin sec:
-      - Présentation: technologie/projet-jardin-sec/index.md
-      - Besoins et matériel: technologie/projet-jardin-sec/besoins-et-materiel.md
-      - Pas à pas SketchUp:
-          - Vue d'ensemble: technologie/projet-jardin-sec/sketchup/index.md
-          - 5e, créer le bac: technologie/projet-jardin-sec/sketchup/5e.md
-          - 4e, le bac et les espaces: technologie/projet-jardin-sec/sketchup/4e.md
-          - 3e, l'espace complet: technologie/projet-jardin-sec/sketchup/3e.md
-      - Ressources techniques: technologie/projet-jardin-sec/ressources.md
-      - Téléchargements: technologie/projet-jardin-sec/telechargements.md
   - Programmes: programmes.md
   - Ressources:
       - Les outils: ressources/outils.md
