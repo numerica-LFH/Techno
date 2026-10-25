@@ -85,12 +85,7 @@ J'enregistre mon modèle. J'ouvre la page de la séquence et je clique sur **Év
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Modéliser la jardinière dans SketchUp, puis l'évaluation
 
 Un **modèle 3D** permet de voir, de montrer et de vérifier un objet avant de le fabriquer.
 
@@ -98,9 +93,9 @@ Dans SketchUp, on trace une face avec Rectangle, puis **Pousser/Tirer** lui donn
 
 Un **composant** se copie autant de fois qu'on veut ; une modification s'applique à toutes les copies.
 
-Je complète : L'outil qui transforme une face en volume s'appelle `..........`.
+L'outil qui transforme une face en volume s'appelle **Pousser/Tirer**.
 
-Je complète : Un objet enregistré pour être copié, dont toutes les copies changent ensemble, est un `..........`.
+Un objet enregistré pour être copié, dont toutes les copies changent ensemble, est un **composant**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

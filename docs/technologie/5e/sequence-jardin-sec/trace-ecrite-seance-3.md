@@ -4,23 +4,23 @@
 
     Question de la séance : *Pourquoi dessiner la jardinière en trois dimensions avant de la construire ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jardin-seance3-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Le modèle 3D de la jardinière
+### Modéliser la jardinière dans SketchUp, puis l'évaluation
 
-Avant de fabriquer, on représente l'objet par un modèle numérique en trois dimensions. On peut le faire tourner, le montrer, le placer dans la cour et vérifier qu'il respecte le cahier des charges.
+Un **modèle 3D** permet de voir, de montrer et de vérifier un objet avant de le fabriquer.
 
-Dans SketchUp, la jardinière se construit en quelques gestes : Rectangle pour la forme du fond, Pousser/Tirer pour lui donner un volume, puis les parois de la même façon. L'outil Mètre mesure dans le modèle.
+Dans SketchUp, on trace une face avec Rectangle, puis **Pousser/Tirer** lui donne un volume.
 
-On transforme la jardinière en composant : on peut la copier huit fois, et une modification s'applique à toutes les copies.
+Un **composant** se copie autant de fois qu'on veut ; une modification s'applique à toutes les copies.
 
-### Ce que la séquence m'a appris
+L'outil qui transforme une face en volume s'appelle **Pousser/Tirer**.
 
-Un projet commence par le besoin, que l'on mesure et que l'on chiffre (moins de 1 L par m² et par jour). On compare ensuite les solutions par des mesures (le paillage), on écrit le cahier des charges, puis on représente la solution par un modèle 3D.
+Un objet enregistré pour être copié, dont toutes les copies changent ensemble, est un **composant**.
 
 ## Les mots à connaître
 

@@ -4,25 +4,25 @@
 
     Question de la séance : *Combien d'eau faudra-t-il chaque jour pour faire vivre un jardin dans cette cour pendant la saison sèche ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 1](seance-1.md).
+    Même texte que le bloc « À retenir » de la [séance 1](seance-1.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jardin-seance1-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Mesurer avant de concevoir
+### De combien d'eau ce jardin aura-t-il besoin ?
 
-Avant de concevoir un aménagement, on relève l'espace disponible. Le couloir mesure 12 m sur 4 m, soit 48 m². La haie occupe une bande de 0,6 m et le passage de 1,2 m doit rester libre : la surface plantable est de 26,4 m².
+La cour mesure **48 m²**. Une fois la haie et le passage retirés, il reste **26,4 m²** que l'on peut planter.
 
-Pour mesurer à plusieurs, on se répartit les rôles (tenir le zéro, lire, vérifier, noter) et on compare sa mesure à une mesure de référence.
+À Tegucigalpa, la **saison sèche** va de novembre à avril : environ 180 jours avec moins de 50 mm de pluie par mois.
 
-### Le besoin en eau
+Un potager classique demanderait 5 L par m² et par jour, un jardin sec 0,8 L. Sur nos huit jardinières, on passe de 6 930 L à environ 1 109 L.
 
-À Tegucigalpa, il tombe moins de 50 mm de pluie par mois de novembre à avril : la saison sèche dure environ 180 jours. Pendant cette période, toute l'eau des plantes doit être apportée.
+Le besoin s'écrit sous forme de **contrainte** mesurable : consommer moins de 1 L par m² et par jour.
 
-Sur 7,7 m² de culture, un potager classique (5 L par m² et par jour) consommerait 6 930 L sur la saison, un jardin sec (0,8 L par m² et par jour) environ 1 109 L, soit 84 % d'eau en moins.
+Une obligation chiffrée imposée à la solution est une **contrainte**.
 
-Le besoin devient une contrainte du cahier des charges : consommer moins de 1 L par m² et par jour.
+La saison sèche dure environ **180** jours.
 
 ## Les mots à connaître
 

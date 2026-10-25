@@ -92,12 +92,7 @@ f\. J'écris le besoin sous la forme d'une contrainte mesurable.
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### De combien d'eau ce jardin aura-t-il besoin ?
 
 La cour mesure **48 m²**. Une fois la haie et le passage retirés, il reste **26,4 m²** que l'on peut planter.
 
@@ -107,9 +102,9 @@ Un potager classique demanderait 5 L par m² et par jour, un jardin sec 0,8 L. S
 
 Le besoin s'écrit sous forme de **contrainte** mesurable : consommer moins de 1 L par m² et par jour.
 
-Je complète : Une obligation chiffrée imposée à la solution est une `..........`.
+Une obligation chiffrée imposée à la solution est une **contrainte**.
 
-Je complète : La saison sèche dure environ `..........` jours.
+La saison sèche dure environ **180** jours.
 
 #### Je reviens sur mes observations et mes hypothèses
 

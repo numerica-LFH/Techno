@@ -4,25 +4,25 @@
 
     Question de la séance : *Comment garder l'eau dans la jardinière le plus longtemps possible ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-jardin-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Prouver par la mesure
+### Quelle jardinière, quelles plantes, quel paillage ?
 
-Pour savoir si le paillage économise l'eau, on a pesé trois barquettes identiques au départ et 48 h plus tard. La masse perdue correspond à l'eau évaporée (1 g d'eau = 1 mL).
+Pour prouver qu'une solution marche, on **mesure**. On ne change qu'une chose à la fois et on compare à un **témoin**.
 
-La barquette nue a perdu 70 g, celle couverte d'écorce 31 g, celle couverte de gravier 40 g. L'écorce réduit l'évaporation d'environ 56 %, le gravier d'environ 43 %.
+Un **paillage** d'écorce de 3 cm réduit l'évaporation d'environ 56 %, le gravier d'environ 43 %.
 
-Une expérience valable ne change qu'une seule chose à la fois et compare toujours à un témoin.
+Les plantes **xérophytes** (romarin, aloe vera, agave, thym) vivent avec très peu d'eau grâce à leurs feuilles petites, épaisses ou cireuses.
 
-### Choisir et écrire le cahier des charges
+Le **cahier des charges** associe à chaque fonction un critère et un niveau chiffré.
 
-Les plantes xérophytes vivent avec très peu d'eau : leurs feuilles petites, épaisses ou cireuses limitent les pertes. On en met dans sept jardinières ; une jardinière de piment sert de témoin.
+La barquette sans paillage, qui sert de comparaison, est le **témoin**.
 
-Le cahier des charges de la jardinière fixe : 25 cm de terre au minimum, 3 cm de paillage d'écorce au minimum, moins de 1 L d'eau par m² et par jour, un passage libre de 1,2 m. Chaque ligne a un critère et un niveau.
+Une plante adaptée aux climats secs est une plante **xérophyte**.
 
 ## Les mots à connaître
 

@@ -95,12 +95,7 @@ Je complète le cahier des charges de la jardinière avec les résultats des sé
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Quelle jardinière, quelles plantes, quel paillage ?
 
 Pour prouver qu'une solution marche, on **mesure**. On ne change qu'une chose à la fois et on compare à un **témoin**.
 
@@ -110,9 +105,9 @@ Les plantes **xérophytes** (romarin, aloe vera, agave, thym) vivent avec très 
 
 Le **cahier des charges** associe à chaque fonction un critère et un niveau chiffré.
 
-Je complète : La barquette sans paillage, qui sert de comparaison, est le `..........`.
+La barquette sans paillage, qui sert de comparaison, est le **témoin**.
 
-Je complète : Une plante adaptée aux climats secs est une plante `..........`.
+Une plante adaptée aux climats secs est une plante **xérophyte**.
 
 #### Je reviens sur mes observations et mes hypothèses
 
