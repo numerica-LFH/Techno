@@ -4,31 +4,19 @@
 
     Question de la séance : *Plusieurs objets techniques peuvent-ils rendre le même service, et comment les distinguer ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq1-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### La famille d'objets
+### Plusieurs objets pour un même service
 
-Une famille d'objets réunit des objets qui remplissent la même fonction d'usage, autrement dit qui rendent le même service. Ce n'est ni la forme, ni le prix, ni la marque qui définit la famille : c'est le service rendu.
+Une **famille d'objets** réunit des objets qui rendent le même service, c'est-à-dire qui ont la même **fonction d'usage**.
 
-La cafetière italienne, la cafetière thermos programmable, la machine expresso et la cafetière à piston forment une famille : toutes permettent de préparer du café. Des objets qui satisfont le même besoin n'ont donc pas forcément le même fonctionnement.
+Dans une famille, les objets se distinguent par leur **principe technique** : la façon dont l'objet assure une tâche. Exemple : pour produire de la lumière, la bougie utilise une flamme et l'ampoule un filament chauffé.
 
-### Fonction technique et principe technique
-
-Une fonction technique est une tâche que l'objet doit assurer pour rendre son service : chauffer de l'eau, produire de la lumière, ralentir un vélo, conserver des aliments.
-
-Le principe technique est la façon dont l'objet s'y prend pour assurer cette tâche. Pour la fonction « produire de la lumière », la flamme de la bougie, le filament chauffé de l'ampoule et la LED sont trois principes techniques différents.
-
-Pour ralentir un vélo, les patins qui serrent la jante et le frein à disque assurent la même fonction technique par deux principes techniques différents. Pour conserver des aliments, le froid du réfrigérateur, le salage et la mise en conserve sont trois principes techniques.
-
-### La fonction d'estime
-
-À l'intérieur d'une famille, les objets se distinguent aussi par leur fonction d'estime : le design, la forme, la taille, la couleur, la marque, tout ce qui dépend des goûts de l'utilisateur.
-
-La fonction d'estime ne se mesure pas avec un appareil, elle s'apprécie. Elle explique pourquoi deux personnes choisissent deux objets différents alors que le service rendu est identique.
+Ils se distinguent aussi par leur **fonction d'estime** : le design, la taille, la couleur, la marque, tout ce qui dépend des goûts de l'utilisateur.
 
 ## Les mots à connaître
 

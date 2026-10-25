@@ -4,31 +4,19 @@
 
     Question de la séance : *Entre le baladeur à cassette et le téléphone connecté, que s'est-il passé, et dans quel ordre ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq1-seance3-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### La lignée d'objets
+### La lignée d'un objet
 
-Une lignée d'objets est la suite chronologique des évolutions d'un objet, du plus ancien au plus récent. Tous les objets d'une lignée rendent le même service : c'est la condition pour qu'ils appartiennent à la même lignée.
+Une **lignée d'objets** est la suite des évolutions d'un objet, classée par date, du plus ancien au plus récent. Tous les objets d'une lignée rendent le même service.
 
-La lignée de l'écoute nomade se lit ainsi : le Walkman Sony à cassette en 1979, le lecteur CD Sony en 1984, le lecteur numérique RIO PMP 300 en 1998, le lecteur MP3 Apple en 2001, puis le téléphone connecté à partir de 2010.
+Une **performance** est un résultat mesurable : une autonomie en heures, un nombre de morceaux, une masse en grammes. Les performances augmentent le long d'une lignée.
 
-Le long de cette lignée, la fonction d'usage n'a pas changé : écouter de la musique. Ce qui a changé, c'est le support d'enregistrement et le nombre de morceaux transportés. Le lecteur MP3 a presque disparu parce que sa fonction a été absorbée par le téléphone connecté, qui ne sert d'ailleurs pas qu'à cela.
-
-### La performance
-
-Une performance est un résultat mesurable obtenu par un objet technique. Elle s'exprime par un nombre et une unité : douze heures d'autonomie, 180 grammes, cinq mille morceaux stockés.
-
-La couleur du boîtier ou la marque ne sont pas des performances : elles ne se mesurent pas. Le long d'une lignée, les performances augmentent généralement.
-
-### La frise chronologique
-
-Une frise chronologique montre d'un seul coup d'œil une succession d'événements dans le temps. Elle se construit en cinq gestes : choisir un début et une fin, choisir une échelle, placer les dates dans l'ordre, donner un titre, illustrer et aérer.
-
-L'échelle sert à respecter les proportions entre les durées. Avec une échelle de 5 ans pour 1 cm, une frise allant de 1979 à 2019 couvre 40 ans et mesure donc 8 cm. Sans échelle, la frise ne montre plus le rythme réel des évolutions.
+Une **frise chronologique** montre une succession d'événements dans le temps. Elle a un titre et une échelle (exemple : 5 ans = 1 cm), et elle reste lisible.
 
 ## Les mots à connaître
 

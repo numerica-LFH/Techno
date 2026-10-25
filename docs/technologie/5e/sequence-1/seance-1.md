@@ -93,22 +93,13 @@ e\. Le besoin satisfait par un clavier d'ordinateur est :
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
+##### De quoi avons-nous besoin ?
 
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
-    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md) reprend les mêmes
-    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
-    compétences évaluées. C'est elle qui se colle dans le cahier.
+Un **besoin** est un manque que l'être humain cherche à satisfaire. Il vient du corps, de la vie en groupe ou du confort. Il change selon le lieu, l'âge et le moment de la journée.
 
-Un **besoin** est un manque que l'être humain cherche à satisfaire. Nos besoins sont nombreux : certains viennent de notre corps, d'autres de la vie en groupe, d'autres du confort.
+Un **objet technique** est un objet fabriqué par l'être humain pour satisfaire un besoin.
 
-Ils changent selon le lieu où l'on vit, selon l'âge, et même selon le moment de la journée.
-
-Pour satisfaire un besoin, on utilise un **objet technique** : un objet fabriqué par l'être humain. Le service qu'il rend s'appelle sa **fonction d'usage**.
-
-Je complète : un objet technique est créé pour ......... .
-
-La fonction d'usage de la trottinette est de ......... .
+La **fonction d'usage** est le service rendu par l'objet. Elle s'écrit avec un verbe à l'infinitif : « permettre de + verbe ». Exemple : la fonction d'usage de la trottinette est de permettre de se déplacer.
 
 #### Je reviens sur mes hypothèses
 

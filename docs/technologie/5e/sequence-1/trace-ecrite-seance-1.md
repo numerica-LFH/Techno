@@ -4,31 +4,19 @@
 
     Question de la séance : *Pour vivre, l'être humain a-t-il simplement besoin d'eau et de nourriture ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 1](seance-1.md).
+    Même texte que le bloc « À retenir » de la [séance 1](seance-1.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq1-seance1-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Le besoin
+### De quoi avons-nous besoin ?
 
-Un besoin est un manque que l'être humain cherche à satisfaire. Certains besoins viennent du corps (boire, manger, dormir, se soigner), d'autres de la vie en groupe (communiquer, s'instruire), d'autres du confort et du plaisir (se distraire, se déplacer vite).
+Un **besoin** est un manque que l'être humain cherche à satisfaire. Il vient du corps, de la vie en groupe ou du confort. Il change selon le lieu, l'âge et le moment de la journée.
 
-Les besoins ne sont pas les mêmes pour tout le monde. Ils changent selon le lieu où l'on vit, selon l'âge, et même selon le moment de la journée. Un élève de Tegucigalpa et un élève d'un village de montagne n'ont pas exactement les mêmes besoins ; les miens à 12 ans ne seront pas ceux que j'aurai à 50 ans.
+Un **objet technique** est un objet fabriqué par l'être humain pour satisfaire un besoin.
 
-### L'objet technique
-
-Pour satisfaire un besoin, l'être humain fabrique un objet technique. Un objet technique est toujours fabriqué par l'homme : un pont, une perceuse, un stéthoscope en sont ; un arbre ou une rivière n'en sont pas, parce que personne ne les a conçus.
-
-Un objet technique est donc créé pour répondre à un besoin. C'est sa raison d'exister.
-
-### La fonction d'usage
-
-La fonction d'usage est le service que l'objet rend. Elle répond à la question « à quoi ça sert ? » et elle s'écrit toujours avec un verbe à l'infinitif : permettre de percer des trous, permettre de se déplacer, permettre de transmettre des informations à l'ordinateur.
-
-Attention à ne pas confondre le service rendu avec le geste de l'utilisateur. La fonction d'usage du clavier n'est pas « taper sur des touches », geste que fait la personne, mais « permettre à l'utilisateur de transmettre des informations à l'ordinateur ».
-
-Un même besoin peut être satisfait par plusieurs objets différents : le bus, le vélo et la trottinette me conduisent tous les trois au collège.
+La **fonction d'usage** est le service rendu par l'objet. Elle s'écrit avec un verbe à l'infinitif : « permettre de + verbe ». Exemple : la fonction d'usage de la trottinette est de permettre de se déplacer.
 
 ## Les mots à connaître
 

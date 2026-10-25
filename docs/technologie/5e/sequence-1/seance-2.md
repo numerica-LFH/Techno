@@ -125,20 +125,13 @@ e\. Des objets qui satisfont le même besoin ont forcément le même fonctionnem
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
+##### Plusieurs objets pour un même service
 
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
-    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md) reprend les mêmes
-    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
-    compétences évaluées. C'est elle qui se colle dans le cahier.
+Une **famille d'objets** réunit des objets qui rendent le même service, c'est-à-dire qui ont la même **fonction d'usage**.
 
-Une **famille d'objets** réunit des objets qui remplissent la même **fonction d'usage** : ils rendent le même service.
-
-À l'intérieur d'une famille, les objets se distinguent par leurs caractéristiques et par le **principe technique** retenu pour chaque fonction technique.
+Dans une famille, les objets se distinguent par leur **principe technique** : la façon dont l'objet assure une tâche. Exemple : pour produire de la lumière, la bougie utilise une flamme et l'ampoule un filament chauffé.
 
 Ils se distinguent aussi par leur **fonction d'estime** : le design, la taille, la couleur, la marque, tout ce qui dépend des goûts de l'utilisateur.
-
-Je complète : deux objets d'une même famille ont la même ......... mais pas forcément le même ......... .
 
 #### Je reviens sur mes hypothèses
 

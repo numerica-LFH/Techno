@@ -80,20 +80,13 @@ Les dix questions du QCM de la séquence 1 sont disponibles sur le site de la cl
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
+##### La lignée d'un objet
 
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent pendant
-    la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md) reprend les mêmes
-    notions rédigées et corrigées, avec les définitions exactes, les exemples datés et les
-    compétences évaluées. C'est elle qui se colle dans le cahier.
+Une **lignée d'objets** est la suite des évolutions d'un objet, classée par date, du plus ancien au plus récent. Tous les objets d'une lignée rendent le même service.
 
-Une **lignée d'objets** est la suite chronologique des évolutions d'un objet, du plus ancien au plus récent. Tous les objets d'une lignée rendent le même service.
+Une **performance** est un résultat mesurable : une autonomie en heures, un nombre de morceaux, une masse en grammes. Les performances augmentent le long d'une lignée.
 
-Une **performance** est un résultat mesurable obtenu par un objet technique : une autonomie en heures, une capacité en nombre de morceaux, une masse en grammes.
-
-Une **frise chronologique** sert à faire comprendre une succession d'événements : elle a un titre, une échelle, et elle reste lisible et aérée.
-
-Je complète : dans une lignée, les objets sont classés par ......... , et leurs performances ......... .
+Une **frise chronologique** montre une succession d'événements dans le temps. Elle a un titre et une échelle (exemple : 5 ans = 1 cm), et elle reste lisible.
 
 #### Je reviens sur mes hypothèses
 
