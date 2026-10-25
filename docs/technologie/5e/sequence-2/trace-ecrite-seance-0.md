@@ -4,21 +4,19 @@
 
     Question de la séance : *Où sont rangées toutes ces informations, et qui les fait circuler ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 0](seance-0.md).
+    Même texte que le bloc « À retenir » de la [séance 0](seance-0.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq2-seance0-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Un système d'information, c'est quoi ?
+### Qu'est-ce qu'un système d'information ?
 
 Un système d'information regroupe toutes les ressources qui permettent de collecter, de stocker, de traiter et de diffuser des informations. Un établissement scolaire en est un, comme une entreprise ou un hôpital.
 
-Une ressource est matérielle quand on peut la toucher (ordinateur, serveur, câble réseau) ou logicielle quand c'est un programme (système d'exploitation, logiciel de notes). Les règles de sécurité font aussi partie du système : sans elles, le matériel et les logiciels ne garantissent rien.
+Une ressource est **matérielle** quand on peut la toucher (ordinateur, serveur, câble réseau) ou **logicielle** quand c'est un programme (système d'exploitation, logiciel de notes). Les règles de sécurité font aussi partie du système : sans elles, le matériel et les logiciels ne garantissent rien.
 
-### Qui y accède, et à quoi ?
-
-Une seule identification donne accès à des services différents selon la personne. Un élève, sa famille et un professeur ouvrent le même espace numérique mais ne voient pas la même chose : chacun n'accède qu'à ce que ses droits d'accès autorisent.
+Une seule identification donne accès à des services différents selon la personne. Un élève, sa famille et un professeur ouvrent le même espace numérique mais ne voient pas la même chose : chacun n'accède qu'à ce que ses **droits d'accès** autorisent.
 
 ## Les mots à connaître
 

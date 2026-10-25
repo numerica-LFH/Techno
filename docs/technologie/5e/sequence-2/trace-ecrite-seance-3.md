@@ -4,17 +4,17 @@
 
     Question de la séance : *Qu'est-ce que je sais vraiment faire, maintenant ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq2-seance3-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Ce que la séquence m'a appris
+### Bilan et évaluation
 
 Un système d'information collecte, stocke, traite et diffuse des informations. Bien rangé, il fait gagner du temps : les données sont mesurées en octets, classées dans une arborescence et retrouvées grâce à leur nom et à leur extension.
 
-Mal protégé, il met en danger les personnes dont il contient les données. La cybersécurité et le RGPD sont les deux protections à retenir : l'une défend le système, l'autre défend les personnes.
+Mal protégé, il met en danger les personnes dont il contient les données. La **cybersécurité** et le **RGPD** sont les deux protections à retenir : l'une défend le système, l'autre défend les personnes.
 
 ## Les mots à connaître
 

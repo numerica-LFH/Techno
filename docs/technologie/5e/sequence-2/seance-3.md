@@ -47,14 +47,13 @@ J'ouvre l'évaluation de fin de séquence depuis la page de la séquence. J'indi
 
 ## APRÈS
 
-**Un système d'information collecte, stocke, traite et diffuse des informations. Bien rangé, il est utile ; mal protégé, il devient dangereux pour les personnes.**
+### À retenir
 
-- Ce que je retiens en premier de cette séquence : ……………………
-- Ce que je dois encore travailler : ……………………
+#### Bilan et évaluation
 
-### Ma trace écrite
+Un système d'information collecte, stocke, traite et diffuse des informations. Bien rangé, il fait gagner du temps : les données sont mesurées en octets, classées dans une arborescence et retrouvées grâce à leur nom et à leur extension.
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : système d'information, octet, arborescence, cybersécurité.
+Mal protégé, il met en danger les personnes dont il contient les données. La **cybersécurité** et le **RGPD** sont les deux protections à retenir : l'une défend le système, l'autre défend les personnes.
 
 ### Auto-évaluation
 

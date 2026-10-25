@@ -66,15 +66,17 @@ b. *(Prolongement : à la maison si le temps manque.)* Deux fichiers portent le 
 
 ## APRÈS
 
-**Les données sont classées sous forme de fichiers, rangés dans une arborescence de dossiers, et repérés par leur nom et leur extension.**
+### À retenir
 
-- L'unité de base de la mémoire numérique est …………………….
-- Un dossier qui contient d'autres dossiers forme une …………………….
-- Pour reconnaître un type de fichier, on regarde son …………………… ou son …………………….
+#### Stocker et classer les données
 
-### Ma trace écrite
+La mémoire numérique se mesure en **octets**. Chaque unité vaut mille fois la précédente : 1 Ko = 1 000 octets, 1 Mo = 1 000 Ko, 1 Go = 1 000 Mo, 1 To = 1 000 Go.
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : octet, arborescence, extension.
+Un devoir de deux pages pèse quelques dizaines de Ko, une photo quelques Mo, un film en haute définition quelques Go. Sur une clé de 64 Go, on range donc 16 000 photos de 4 Mo (64 000 Mo divisés par 4 Mo).
+
+Les données sont enregistrées sous forme de fichiers rangés dans des dossiers. Un dossier qui contient d'autres dossiers forme une **arborescence**, et le chemin affiché dans la barre d'adresse indique où se trouve un fichier.
+
+Le nom d'un fichier se termine par une **extension** (.odt, .pdf, .jpg, .mp3) qui indique son type. Deux fichiers au même nom mais d'extensions différentes ne sont pas identiques : le .odt se modifie, le .pdf garde sa mise en page.
 
 ### Question de la séance suivante
 

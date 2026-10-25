@@ -4,23 +4,21 @@
 
     Question de la séance : *Qu'est-ce qui protège mes données, et qu'est-ce qui me protège, moi ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq2-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Protéger le système
+### Sécuriser le système, protéger les personnes
 
-Un système d'information n'est pas protégé tout seul. La cybersécurité regroupe les moyens de le défendre : mots de passe longs et difficiles à deviner, droits d'accès, connexions chiffrées.
+Un système d'information n'est pas protégé tout seul. La **cybersécurité** regroupe les moyens de le défendre : mots de passe **longs** et difficiles à deviner, droits d'accès, connexions chiffrées.
 
 Le cadenas à côté de l'adresse d'un site indique que l'échange est chiffré par un certificat SSL. Il ne dit rien de l'honnêteté du site : un site frauduleux peut très bien être en https.
 
-### Protéger les personnes
-
 Une donnée personnelle permet d'identifier quelqu'un : nom, adresse électronique, voix, empreinte digitale. Une donnée seule, comme la marque d'un téléphone, devient personnelle quand on la croise avec d'autres.
 
-En Europe, le RGPD interdit d'utiliser une donnée personnelle sans le consentement de la personne concernée.
+En Europe, le **RGPD** interdit d'utiliser une donnée personnelle sans le consentement de la personne concernée.
 
 ## Les mots à connaître
 

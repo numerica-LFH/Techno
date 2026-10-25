@@ -53,15 +53,15 @@ a. Deux personnes différentes ouvrent le même service. Voient-elles la même c
 
 ## APRÈS
 
-**Un système d'information regroupe toutes les ressources, matérielles et logicielles, qui permettent de collecter, stocker, traiter et diffuser des informations.**
+### À retenir
 
-- Un établissement scolaire est un système d'information, tout comme …………………….
-- Les ressources sont soit ……………………, soit …………………….
-- Chaque utilisateur n'accède qu'à ce que ses …………………… autorisent.
+#### Qu'est-ce qu'un système d'information ?
 
-### Ma trace écrite
+Un système d'information regroupe toutes les ressources qui permettent de collecter, de stocker, de traiter et de diffuser des informations. Un établissement scolaire en est un, comme une entreprise ou un hôpital.
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : système d'information, ressource matérielle, ressource logicielle.
+Une ressource est **matérielle** quand on peut la toucher (ordinateur, serveur, câble réseau) ou **logicielle** quand c'est un programme (système d'exploitation, logiciel de notes). Les règles de sécurité font aussi partie du système : sans elles, le matériel et les logiciels ne garantissent rien.
+
+Une seule identification donne accès à des services différents selon la personne. Un élève, sa famille et un professeur ouvrent le même espace numérique mais ne voient pas la même chose : chacun n'accède qu'à ce que ses **droits d'accès** autorisent.
 
 ### Question de la séance suivante
 

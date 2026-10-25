@@ -55,15 +55,17 @@ b. *(Prolongement : à la maison si le temps manque.)* Pourquoi la marque de mon
 
 ## APRÈS
 
-**Les données d'un système d'information ne sont pas en sécurité par elles-mêmes. Il faut les protéger, et protéger d'abord les personnes qu'elles désignent.**
+### À retenir
 
-- L'ensemble des moyens de protection d'un système d'information s'appelle la …………………….
-- Un bon mot de passe est …………………… et …………………….
-- Le règlement qui protège les données personnelles en Europe est le …………………….
+#### Sécuriser le système, protéger les personnes
 
-### Ma trace écrite
+Un système d'information n'est pas protégé tout seul. La **cybersécurité** regroupe les moyens de le défendre : mots de passe **longs** et difficiles à deviner, droits d'accès, connexions chiffrées.
 
-J'écris l'essentiel avec mes mots, en trois à cinq lignes. Je la termine à la maison si le temps manque. J'emploie au moins deux des mots suivants : cybersécurité, donnée personnelle, certificat SSL.
+Le cadenas à côté de l'adresse d'un site indique que l'échange est chiffré par un certificat SSL. Il ne dit rien de l'honnêteté du site : un site frauduleux peut très bien être en https.
+
+Une donnée personnelle permet d'identifier quelqu'un : nom, adresse électronique, voix, empreinte digitale. Une donnée seule, comme la marque d'un téléphone, devient personnelle quand on la croise avec d'autres.
+
+En Europe, le **RGPD** interdit d'utiliser une donnée personnelle sans le consentement de la personne concernée.
 
 ### Question de la séance suivante
 
