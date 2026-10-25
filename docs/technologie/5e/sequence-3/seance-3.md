@@ -98,12 +98,7 @@ Pour mon défi : voici le diagramme des interacteurs d'une brosse à dents élec
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Le diagramme des interacteurs
 
 Un **interacteur** est tout ce qui est en lien avec l'objet à un moment de son **cycle de vie** : fabrication, transport, utilisation, fin de vie.
 
@@ -111,9 +106,9 @@ Le **diagramme des interacteurs** place l'objet au centre, les interacteurs auto
 
 Un interacteur peut être une personne (l'utilisateur), un autre objet (la cuillère), un élément de l'environnement (l'eau) ou une règle (le législateur).
 
-Je complète : Le schéma qui liste toutes les contraintes d'un objet s'appelle le diagramme des `..........`.
+Le schéma qui liste toutes les contraintes d'un objet s'appelle le diagramme des **interacteurs**.
 
-Je complète : Dans ce diagramme, l'objet est placé au `..........`.
+Dans ce diagramme, l'objet est placé au **centre**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

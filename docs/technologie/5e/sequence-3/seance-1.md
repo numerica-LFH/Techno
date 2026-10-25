@@ -81,12 +81,7 @@ d\. J'écris trois éléments sur lesquels le concepteur peut jouer pour rendre 
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Un objet peut-il se fabriquer comme on veut ?
 
 Pour satisfaire nos besoins, un objet doit respecter de nombreuses **contraintes**. Une contrainte est une obligation imposée à l'objet.
 
@@ -94,9 +89,9 @@ Certaines contraintes sont liées à l'**utilisation** de l'objet (vitesse, auto
 
 D'autres sont liées à l'**esthétique**, c'est-à-dire à la beauté : couleur, forme, matériau. Un objet qui ne plaît pas se vend mal.
 
-Je complète : Une `..........` est une obligation imposée à l'objet.
+Une **contrainte** est une obligation imposée à l'objet.
 
-Je complète : La couleur bleue demandée pour la trottinette est une contrainte `..........`.
+La couleur bleue demandée pour la trottinette est une contrainte **esthétique**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

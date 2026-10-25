@@ -81,20 +81,15 @@ Sur le poste, j'ouvre la page de la séquence et je clique sur **Évaluation de 
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-4.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Bilan : le robot aspirateur, puis l'évaluation
 
 L'**autonomie** est la capacité d'un objet à fonctionner seul. Elle impose de nombreuses contraintes : énergie, obstacles, passages.
 
 Le diagramme des interacteurs liste toutes les **contraintes** d'un objet à partir de ses **interacteurs**. On l'établit avant de concevoir l'objet.
 
-Je complète : Le robot doit être assez bas pour passer sous les `..........`.
+Le robot doit être assez bas pour passer sous les **meubles**.
 
-Je complète : Fonctionner seul, sans être guidé, c'est l'`..........`.
+Fonctionner seul, sans être guidé, c'est l'**autonomie**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

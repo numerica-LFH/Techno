@@ -4,23 +4,23 @@
 
     Question de la séance : *Un objet peut-il être fabriqué comme on le souhaite ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 1](seance-1.md).
+    Même texte que le bloc « À retenir » de la [séance 1](seance-1.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq3-seance1-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Un objet doit respecter des contraintes
+### Un objet peut-il se fabriquer comme on veut ?
 
-Un objet n'est pas fabriqué comme on le souhaite. Pour satisfaire le besoin de ses utilisateurs, il doit respecter de nombreuses contraintes. Une contrainte est une obligation imposée à l'objet.
+Pour satisfaire nos besoins, un objet doit respecter de nombreuses **contraintes**. Une contrainte est une obligation imposée à l'objet.
 
-Les utilisateurs n'ont pas tous les mêmes exigences : pour une trottinette, l'un veut aller vite, l'autre loin, un autre la plier. Certaines demandes s'opposent, le concepteur doit faire des choix.
+Certaines contraintes sont liées à l'**utilisation** de l'objet (vitesse, autonomie, poids transporté).
 
-### Utilisation et esthétique
+D'autres sont liées à l'**esthétique**, c'est-à-dire à la beauté : couleur, forme, matériau. Un objet qui ne plaît pas se vend mal.
 
-Les contraintes d'utilisation disent ce que l'objet doit permettre : rouler à 30 km/h, parcourir 30 km, porter 10 kg de plus, éclairer la nuit.
+Une **contrainte** est une obligation imposée à l'objet.
 
-Les contraintes esthétiques concernent la beauté de l'objet : sa couleur, sa forme, ses matériaux. Toutes les lampes éclairent, mais elles sont différentes pour plaire à des acheteurs différents.
+La couleur bleue demandée pour la trottinette est une contrainte **esthétique**.
 
 ## Les mots à connaître
 

@@ -4,21 +4,21 @@
 
     Question de la séance : *Quelles contraintes un robot aspirateur doit-il respecter pour nettoyer seul ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 4](seance-4.md).
+    Même texte que le bloc « À retenir » de la [séance 4](seance-4.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq3-seance4-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Le robot aspirateur
+### Bilan : le robot aspirateur, puis l'évaluation
 
-Le robot aspirateur nettoie en toute autonomie. Son diagramme des interacteurs relie l'objet à l'utilisateur (être simple à programmer), aux poussières (les aspirer), à la surface à nettoyer (s'adapter aux sols), aux meubles (passer dessous), à l'énergie (être autonome) et aux obstacles (les éviter).
+L'**autonomie** est la capacité d'un objet à fonctionner seul. Elle impose de nombreuses contraintes : énergie, obstacles, passages.
 
-La hauteur du robot dépend de l'espace libre sous les meubles : c'est une contrainte qui fixe une dimension de l'objet.
+Le diagramme des interacteurs liste toutes les **contraintes** d'un objet à partir de ses **interacteurs**. On l'établit avant de concevoir l'objet.
 
-### Ce que la séquence m'a appris
+Le robot doit être assez bas pour passer sous les **meubles**.
 
-Un objet doit respecter des contraintes d'utilisation, d'esthétique, de sécurité, de normes et d'environnement. Pour n'en oublier aucune, on liste ses interacteurs à toutes les étapes de son cycle de vie et on les place dans un diagramme des interacteurs.
+Fonctionner seul, sans être guidé, c'est l'**autonomie**.
 
 ## Les mots à connaître
 

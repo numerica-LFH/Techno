@@ -83,12 +83,7 @@ b\. J'écris une contrainte environnementale pour une trottinette électrique.
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Normes, sécurité et environnement
 
 Parmi les contraintes, les **normes** sont fixées par des organismes reconnus (AFNOR, ISO). Elles s'imposent à tous les fabricants. Des logos (CE, NF) le prouvent.
 
@@ -96,9 +91,9 @@ Les contraintes de **sécurité** protègent l'utilisateur (brûlure, choc élec
 
 Les contraintes environnementales obligent à préserver l'**environnement** : peu de matériaux rares, peu d'énergie, réparation, recyclage. Elles sont de plus en plus strictes.
 
-Je complète : Une `..........` est une règle fixée par un organisme reconnu, comme l'AFNOR.
+Une **norme** est une règle fixée par un organisme reconnu, comme l'AFNOR.
 
-Je complète : La poubelle barrée indique que l'objet ne se jette pas avec les ordures ménagères : c'est une contrainte liée à l'`..........`.
+La poubelle barrée indique que l'objet ne se jette pas avec les ordures ménagères : c'est une contrainte liée à l'**environnement**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

@@ -4,23 +4,23 @@
 
     Question de la séance : *Comment faire pour n'oublier aucune contrainte ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq3-seance3-trace.pdf)
 
-## Ce que je dois retenir
-
-### Les interacteurs
-
-Un interacteur est tout ce qui est en lien avec l'objet à un moment de sa vie : il agit sur l'objet en lui imposant quelque chose, ou il reçoit une action de l'objet. Il peut s'agir d'une personne, d'un autre objet, d'un élément de l'environnement (eau, air, sol) ou d'une règle (le législateur).
-
-Les interacteurs interviennent à toutes les étapes du cycle de vie : au début (emballage, transport vers le magasin), pendant l'usage (utilisateur, réseau électrique, pluie), à la fin (déchetterie, recyclage).
+## À retenir
 
 ### Le diagramme des interacteurs
 
-Il se construit en trois étapes : je représente l'objet au centre ; je place autour tous les éléments qui interagissent avec lui ; je relie chacun à l'objet et j'écris la contrainte que l'objet doit respecter. Il sert à n'oublier aucune contrainte avant de concevoir l'objet.
+Un **interacteur** est tout ce qui est en lien avec l'objet à un moment de son **cycle de vie** : fabrication, transport, utilisation, fin de vie.
 
-Exemple de la casserole : s'adapter au système de chauffe, contenir les aliments, permettre à la main de la porter, supporter la cuillère, se laver, respecter les règles du législateur.
+Le **diagramme des interacteurs** place l'objet au centre, les interacteurs autour, et écrit sur chaque liaison la contrainte à respecter. Il sert à n'en oublier aucune.
+
+Un interacteur peut être une personne (l'utilisateur), un autre objet (la cuillère), un élément de l'environnement (l'eau) ou une règle (le législateur).
+
+Le schéma qui liste toutes les contraintes d'un objet s'appelle le diagramme des **interacteurs**.
+
+Dans ce diagramme, l'objet est placé au **centre**.
 
 ## Les mots à connaître
 

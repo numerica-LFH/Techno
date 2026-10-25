@@ -4,23 +4,23 @@
 
     Question de la séance : *Existe-t-il des contraintes qui s'imposent à tous les fabricants ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-seq3-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Les normes
+### Normes, sécurité et environnement
 
-Une norme est une règle fixée par un organisme reconnu : l'AFNOR en France, l'ISO dans le monde. Elle s'impose à tous les fabricants. Elle protège les utilisateurs et facilite la vie : toutes les cartes bancaires mesurent 85,6 mm sur 54 mm et fonctionnent partout.
+Parmi les contraintes, les **normes** sont fixées par des organismes reconnus (AFNOR, ISO). Elles s'imposent à tous les fabricants. Des logos (CE, NF) le prouvent.
 
-Des logos montrent qu'un objet respecte les normes : CE pour les règles européennes de sécurité, NF pour les normes françaises.
+Les contraintes de **sécurité** protègent l'utilisateur (brûlure, choc électrique) et l'objet.
 
-### Sécurité et environnement
+Les contraintes environnementales obligent à préserver l'**environnement** : peu de matériaux rares, peu d'énergie, réparation, recyclage. Elles sont de plus en plus strictes.
 
-Les contraintes de sécurité protègent l'utilisateur (brûlure, choc électrique, court-circuit) et l'objet.
+Une **norme** est une règle fixée par un organisme reconnu, comme l'AFNOR.
 
-Les contraintes environnementales obligent à préserver la nature : peu de matériaux rares et de produits polluants, peu d'énergie consommée, un objet réparable et recyclable. La poubelle barrée rappelle que l'objet se dépose en point de collecte. Ces contraintes deviennent de plus en plus strictes.
+La poubelle barrée indique que l'objet ne se jette pas avec les ordures ménagères : c'est une contrainte liée à l'**environnement**.
 
 ## Les mots à connaître
 
