@@ -4,27 +4,23 @@
 
     Question de la séance : *Comment travailler sur une mission du site sans perdre mon travail ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 2](seance-2.md).
+    Même texte que le bloc « À retenir » de la [séance 2](seance-2.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-scratch-seance2-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Ouvrir une mission
+### Ma première mission sur le site de la classe
 
-Les missions sont sur le site de la classe, onglet Missions Scratch. Je choisis mon palier, puis la mission. Le bouton « Ouvrir l'exercice » ouvre le projet dans TurboWarp, un éditeur en ligne qui fonctionne comme Scratch 3. Les lutins et les décors sont déjà en place.
+Les missions s'ouvrent dans **TurboWarp**, un éditeur en ligne. Il ne garde rien : avant de fermer, j'**enregistre** mon projet sur l'ordinateur, dans un fichier **.sb3**.
 
-### Programmer et se débloquer
+Quand je bloque, j'ouvre les coups de pouce dans l'ordre : je réfléchis, puis les blocs, puis le squelette.
 
-Je suis le pas à pas et je teste souvent avec le drapeau vert. Si je bloque, j'ouvre les coups de pouce dans l'ordre : les questions pour réfléchir, puis les blocs à utiliser, puis le squelette du script. La rubrique « Si ça ne marche pas » aide à corriger les erreurs courantes.
+En fin de séance, je remplis « Où j'en suis » avec une **capture d'écran** : le professeur voit ma progression.
 
-Placer « aller à x: y: » au début du script, c'est initialiser : le lutin repart toujours du même endroit.
+Un projet Scratch enregistré sur l'ordinateur est un fichier **.sb3**.
 
-### Ne pas perdre son travail
-
-TurboWarp ne garde rien en ligne. Avant de fermer : Fichier, Enregistrer sur votre ordinateur. Le projet devient un fichier .sb3 dans le dossier Téléchargements. Pour le retrouver : Fichier, Charger depuis votre ordinateur.
-
-En fin de séance, je coche « J'ai réussi », je fais une capture d'écran et je remplis « Où j'en suis » en bas de la page du palier. Le professeur reçoit ma progression.
+En fin de séance, j'envoie ma progression avec une **capture d'écran**.
 
 ## Les mots à connaître
 

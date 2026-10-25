@@ -91,12 +91,7 @@ e\. Jusqu'où suis-je arrivé ? Qu'est-ce qui m'a bloqué ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-2.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Ma première mission sur le site de la classe
 
 Les missions s'ouvrent dans **TurboWarp**, un éditeur en ligne. Il ne garde rien : avant de fermer, j'**enregistre** mon projet sur l'ordinateur, dans un fichier **.sb3**.
 
@@ -104,9 +99,9 @@ Quand je bloque, j'ouvre les coups de pouce dans l'ordre : je réfléchis, puis 
 
 En fin de séance, je remplis « Où j'en suis » avec une **capture d'écran** : le professeur voit ma progression.
 
-Je complète : Un projet Scratch enregistré sur l'ordinateur est un fichier `..........`.
+Un projet Scratch enregistré sur l'ordinateur est un fichier **.sb3**.
 
-Je complète : En fin de séance, j'envoie ma progression avec une `..........`.
+En fin de séance, j'envoie ma progression avec une **capture d'écran**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

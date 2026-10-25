@@ -4,25 +4,23 @@
 
     Question de la séance : *Comment un programme peut-il surveiller une habitation et donner l'alerte ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 3](seance-3.md).
+    Même texte que le bloc « À retenir » de la [séance 3](seance-3.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-scratch-seance3-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### La structure d'un programme de surveillance
+### Programmer une alarme pour surveiller la maison
 
-Le programme commence par un événement : le clic sur le drapeau vert. Une boucle « répéter indéfiniment » refait ensuite le même test sans arrêt. Sans boucle, le test ne serait fait qu'une fois.
+Un programme de surveillance commence par un **événement** (le drapeau vert). Une **boucle** « répéter indéfiniment » refait le test sans arrêt.
 
-Le bloc « si alors » pose une condition. Si la réponse est vraie, les blocs à l'intérieur s'exécutent (la sirène sonne) ; sinon, le programme continue la boucle.
+Le bloc « si alors » pose une **condition** : ses blocs ne s'exécutent que si la réponse est vraie. Le **capteur** (webcam, souris, micro) donne l'information ; le seuil (70 %) fixe à partir de quand on réagit.
 
-### Capteur et seuil
+Un algorigramme représente le programme : le losange correspond au bloc « si alors ».
 
-Un capteur donne au programme une information sur le monde : la webcam mesure le mouvement dans une zone, la souris indique sa position, le micro mesure le volume sonore. Le seuil (ici 70 %) est la valeur à partir de laquelle le programme réagit. Un seuil trop bas provoque de fausses alertes.
+La boucle « répéter **indéfiniment** » refait le test sans arrêt.
 
-### L'algorigramme
-
-Un algorigramme dessine les étapes d'un programme : un rectangle arrondi pour le début, un losange pour une question à laquelle on répond par oui ou non, un rectangle pour une action. Le losange correspond au bloc « si alors ».
+Dans un algorigramme, le losange correspond au bloc « **si alors** ».
 
 ## Les mots à connaître
 

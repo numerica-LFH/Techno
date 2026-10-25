@@ -98,12 +98,7 @@ c\. Quel bloc de Scratch correspond au losange ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-3.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Programmer une alarme pour surveiller la maison
 
 Un programme de surveillance commence par un **événement** (le drapeau vert). Une **boucle** « répéter indéfiniment » refait le test sans arrêt.
 
@@ -111,9 +106,9 @@ Le bloc « si alors » pose une **condition** : ses blocs ne s'exécutent que si
 
 Un algorigramme représente le programme : le losange correspond au bloc « si alors ».
 
-Je complète : La boucle « répéter `..........` » refait le test sans arrêt.
+La boucle « répéter **indéfiniment** » refait le test sans arrêt.
 
-Je complète : Dans un algorigramme, le losange correspond au bloc « `..........` ».
+Dans un algorigramme, le losange correspond au bloc « **si alors** ».
 
 #### Je reviens sur mes observations et mes hypothèses
 

@@ -4,27 +4,23 @@
 
     Question de la séance : *Comment donne-t-on des ordres à un ordinateur avec Scratch ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 1](seance-1.md).
+    Même texte que le bloc « À retenir » de la [séance 1](seance-1.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-scratch-seance1-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Programmer avec des blocs
+### Scratch, un logiciel à tout faire
 
-Un programme est une suite d'instructions que l'ordinateur exécute dans l'ordre. Avec Scratch, on ne tape pas de code : chaque instruction est un bloc, et les blocs s'emboîtent pour former un script. L'ordinateur lit le script de haut en bas.
+Un **programme** est une suite d'instructions que l'ordinateur exécute dans l'ordre. Dans Scratch, chaque instruction est un **bloc** ; les blocs emboîtés forment un **script**, lu de haut en bas.
 
-Les blocs sont rangés par catégories de couleur : Mouvement (bleu), Apparence (violet), Son (rose), Événements (jaune), Contrôle (orange), Capteurs (bleu clair), Opérateurs (vert).
+La couleur d'un bloc indique sa catégorie : bleu pour le mouvement, violet pour l'apparence, jaune pour les événements, orange pour le contrôle.
 
-### L'éditeur
+Chaque **lutin** a ses scripts. Un script commence par un **événement**, par exemple le clic sur le drapeau vert.
 
-En classe, on programme dans TurboWarp, qui fonctionne comme Scratch 3 dans le navigateur. Il a six zones : les catégories, la palette des blocs, la zone des scripts, le drapeau vert et le bouton stop, la scène et la liste des lutins.
+Des blocs emboîtés les uns sous les autres forment un **script**.
 
-Un lutin est un personnage ou un objet de la scène. Chaque lutin a ses propres scripts : on clique sur sa vignette pour les voir. Un script commence par un événement, le plus souvent le clic sur le drapeau vert.
-
-### Le parcours des missions
-
-Le site de la classe propose des missions en paliers de couleur : la 5e commence au palier vert, la 4e au palier bleu, la 3e au palier orange. Pour chaque mission : je regarde le résultat attendu, j'ouvre l'exercice, je lis la consigne, je programme et je teste, j'utilise les coups de pouce si je bloque, je coche « J'ai réussi », puis je remplis « Où j'en suis » en fin de séance.
+« Quand le drapeau vert est cliqué » est un **événement** : il déclenche le script.
 
 ## Les mots à connaître
 

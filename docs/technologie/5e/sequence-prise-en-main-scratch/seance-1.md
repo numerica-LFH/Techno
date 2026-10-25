@@ -117,12 +117,7 @@ c\. Quel est mon palier de départ, et de quelle couleur est-il ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-1.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Scratch, un logiciel à tout faire
 
 Un **programme** est une suite d'instructions que l'ordinateur exécute dans l'ordre. Dans Scratch, chaque instruction est un **bloc** ; les blocs emboîtés forment un **script**, lu de haut en bas.
 
@@ -130,9 +125,9 @@ La couleur d'un bloc indique sa catégorie : bleu pour le mouvement, violet pour
 
 Chaque **lutin** a ses scripts. Un script commence par un **événement**, par exemple le clic sur le drapeau vert.
 
-Je complète : Des blocs emboîtés les uns sous les autres forment un `..........`.
+Des blocs emboîtés les uns sous les autres forment un **script**.
 
-Je complète : « Quand le drapeau vert est cliqué » est un `..........` : il déclenche le script.
+« Quand le drapeau vert est cliqué » est un **événement** : il déclenche le script.
 
 #### Je reviens sur mes observations et mes hypothèses
 

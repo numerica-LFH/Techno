@@ -89,12 +89,7 @@ b\. À quoi sert « attendre 1 secondes » après chaque changement ?
 
 #### À retenir
 
-!!! note "Deux documents, deux usages"
-
-    Ce bloc se complète en classe, à la fin de l'heure : les phrases à trous se remplissent
-    pendant la mise en commun. La [trace écrite de la séance](trace-ecrite-seance-4.md)
-    reprend les mêmes notions rédigées, avec les définitions exactes et les compétences
-    évaluées. C'est elle qui se colle dans le cahier.
+##### Bilan : la maison qui s'éclaire, puis l'évaluation
 
 Un lutin peut avoir plusieurs **costumes**. Changer de costume change son apparence : c'est ainsi qu'on simule l'éclairage de la maison.
 
@@ -102,9 +97,9 @@ Au clic sur le drapeau vert, on **initialise** : on remet la maison éteinte.
 
 Le programme réagit à un capteur : touche du clavier, volume sonore du micro, luminosité. Le **seuil** fixe la valeur à partir de laquelle il réagit.
 
-Je complète : Remettre la maison éteinte au clic sur le drapeau vert, c'est `..........`.
+Remettre la maison éteinte au clic sur le drapeau vert, c'est **initialiser**.
 
-Je complète : Pour changer l'apparence d'un lutin, on change de `..........`.
+Pour changer l'apparence d'un lutin, on change de **costume**.
 
 #### Je reviens sur mes observations et mes hypothèses
 

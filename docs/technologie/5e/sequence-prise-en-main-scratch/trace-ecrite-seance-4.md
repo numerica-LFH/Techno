@@ -4,23 +4,23 @@
 
     Question de la séance : *Comment un programme peut-il allumer la lumière d'une maison tout seul ?*
 
-    Version rédigée et corrigée du bloc « À retenir » de la [séance 4](seance-4.md).
+    Même texte que le bloc « À retenir » de la [séance 4](seance-4.md). La fiche imprimée reprend ce texte avec des trous à compléter.
 
     [Trace écrite à imprimer (PDF)](traces/5e-scratch-seance4-trace.pdf)
 
-## Ce que je dois retenir
+## À retenir
 
-### Simuler l'éclairage avec des costumes
+### Bilan : la maison qui s'éclaire, puis l'évaluation
 
-Le lutin Maison a deux costumes : maison éteinte et maison allumée. Changer de costume change l'image du lutin : c'est ainsi qu'on simule l'éclairage. Au clic sur le drapeau vert, on initialise la maison sur le costume « maison éteinte ».
+Un lutin peut avoir plusieurs **costumes**. Changer de costume change son apparence : c'est ainsi qu'on simule l'éclairage de la maison.
 
-### Réagir à un capteur
+Au clic sur le drapeau vert, on **initialise** : on remet la maison éteinte.
 
-Le programme attend une information venue d'un capteur, puis il agit. En 5e, la touche espace sert d'interrupteur ; « attendre 1 seconde » évite qu'un seul appui allume puis éteigne aussitôt.
+Le programme réagit à un capteur : touche du clavier, volume sonore du micro, luminosité. Le **seuil** fixe la valeur à partir de laquelle il réagit.
 
-### Bilan de la séquence
+Remettre la maison éteinte au clic sur le drapeau vert, c'est **initialiser**.
 
-Un programme Scratch se lance par un événement, répète ses tests dans une boucle, décide avec des conditions et agit sur la scène (son, costume, mouvement). Avant de fermer TurboWarp, on enregistre le fichier .sb3 : c'est la même méthode pour toutes les missions du site.
+Pour changer l'apparence d'un lutin, on change de **costume**.
 
 ## Les mots à connaître
 
