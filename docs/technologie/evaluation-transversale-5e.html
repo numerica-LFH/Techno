@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5e · Évaluation transversale</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+
+.partie { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--or); font-weight:700; margin:0 0 4px; }
+.ctrl { border-left:5px solid var(--bleu); font-size:.92rem; }
+.ctrl h2 { margin-bottom:6px; }
+.ctrl .ref { font-family:ui-monospace,Consolas,monospace; font-size:.78rem; color:#4a545e; background:var(--fond);
+  padding:5px 8px; border-radius:3px; display:inline-block; margin:2px 0 8px; }
+.ctrl .actif { color:var(--ok); font-weight:700; }
+.verrou #quiz { display:none; }
+.q svg.scratch { overflow:visible; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>5e · Évaluation transversale</h1>
+  <p class="sous">9 questions, 20 points. J'active le contrôle de session, j'indique mon nom et ma classe, je réponds, puis je termine : ma note sur 20 s'affiche et elle est envoyée au professeur.</p>
+</header>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="5eA" autocomplete="off"></div>
+  </div>
+</div>
+
+
+<div class="carte ctrl" id="ctrl">
+  <h2>Contrôle de session : changement de page</h2>
+  <span class="ref">Protocole CS-01 · journal de session · version 2.3</span>
+  <p>Cette évaluation enregistre chaque sortie de la page : changement d'onglet, passage à une autre fenêtre ou à une autre application. Le nombre de sorties et le temps passé hors de la page sont transmis au professeur avec la note.</p>
+  <p>L'activation est obligatoire. Les questions s'affichent après l'activation.</p>
+  <p id="ctrlEtat"><button id="activer" type="button">Activer le contrôle de session</button></p>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer" disabled>Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien · Technologie &amp; SNT · numerica-lfh.github.io/Techno · 5e · Évaluation transversale</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
+const META = {"niveau": "5e", "sequence": "Évaluation transversale", "seance": "Bilan des savoir-faire numériques", "exemple_classe": "5eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "partie": "Savoir-faire numérique · capture d'écran",
+  "enonce": "Je travaille sur un ordinateur Windows. Quelle combinaison de touches me permet de choisir une zone de l'écran et de la copier en image ?",
+  "choix": [
+   "Windows + Maj + S",
+   "Alt + F4",
+   "Windows + D",
+   "Ctrl + Alt + Suppr"
+  ],
+  "bonne": 0,
+  "points": 2,
+  "expl": "Cette combinaison ouvre l'outil de capture : je choisis la zone, l'image est copiée, je la colle avec Ctrl + V.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "Windows + Maj + S"
+ },
+ {
+  "type": "qcm",
+  "partie": "Savoir-faire numérique · adresse d'un site",
+  "enonce": "Je veux ouvrir directement le site de la classe dont je connais l'adresse. <svg role=\"img\" aria-label=\"Fenêtre d'un navigateur avec quatre zones numérotées\" viewBox=\"0 0 560 240\" style=\"max-width:560px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"12\"><rect x=\"0.5\" y=\"0.5\" width=\"559\" height=\"239\" rx=\"8\" fill=\"#dfe3ea\" stroke=\"#9aa4b2\"/><rect x=\"12\" y=\"8\" width=\"170\" height=\"30\" rx=\"8\" fill=\"#fff\"/><text x=\"52\" y=\"27\" fill=\"#3b4452\">Ma page</text><text x=\"200\" y=\"29\" fill=\"#3b4452\" font-size=\"18\">+</text><rect x=\"0\" y=\"38\" width=\"560\" height=\"38\" fill=\"#fff\"/><text x=\"14\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">←</text><text x=\"40\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">→</text><text x=\"66\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">↻</text><rect x=\"100\" y=\"44\" width=\"380\" height=\"26\" rx=\"13\" fill=\"#eef1f6\" stroke=\"#c5ccd8\"/><text x=\"140\" y=\"61\" fill=\"#70798a\">Rechercher ou saisir une adresse</text><text x=\"515\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">⋮</text><rect x=\"0\" y=\"76\" width=\"560\" height=\"24\" fill=\"#f4f6fa\"/><text x=\"32\" y=\"92\" fill=\"#3b4452\">★ Favoris</text><text x=\"120\" y=\"92\" fill=\"#3b4452\">Pronote</text><text x=\"190\" y=\"92\" fill=\"#3b4452\">Scratch</text><rect x=\"0\" y=\"100\" width=\"560\" height=\"139\" fill=\"#fff\"/><text x=\"280\" y=\"142\" text-anchor=\"middle\" fill=\"#1d3557\" font-size=\"20\" font-weight=\"700\">Moteur de recherche</text><rect x=\"130\" y=\"156\" width=\"300\" height=\"34\" rx=\"17\" fill=\"#fff\" stroke=\"#b8c0cc\"/><text x=\"172\" y=\"178\" fill=\"#70798a\">Rechercher sur le Web</text><circle cx=\"24\" cy=\"23\" r=\"10\" fill=\"#1d3557\"/><text x=\"24\" y=\"27.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">3</text><circle cx=\"118\" cy=\"57\" r=\"10\" fill=\"#1d3557\"/><text x=\"118\" y=\"61.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">1</text><circle cx=\"150\" cy=\"173\" r=\"10\" fill=\"#1d3557\"/><text x=\"150\" y=\"177.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">4</text><circle cx=\"16\" cy=\"88\" r=\"10\" fill=\"#1d3557\"/><text x=\"16\" y=\"92.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">2</text></svg>Dans quelle zone j'écris l'adresse du site ?",
+  "choix": [
+   "la zone 3",
+   "la zone 2",
+   "la zone 4",
+   "la zone 1"
+  ],
+  "bonne": 3,
+  "points": 2,
+  "expl": "L'adresse s'écrit dans la barre d'adresse, en haut de la fenêtre. Le champ au milieu de la page cherche des mots, il n'ouvre pas un site.",
+  "consigne": "Je regarde le schéma et je choisis une zone.",
+  "reponse": "la zone 1"
+ },
+ {
+  "type": "texte",
+  "partie": "Savoir-faire numérique · écrire une adresse",
+  "enonce": "J'écris l'adresse du site de la classe de technologie.",
+  "acceptees": [
+   "numerica lfh github io"
+  ],
+  "reponse": "numerica-lfh.github.io/Techno (avec ou sans https:// devant).",
+  "points": 2,
+  "placeholder": "adresse du site",
+  "expl": "L'adresse complète est https://numerica-lfh.github.io/Techno/.",
+  "consigne": "J'écris ma réponse."
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Voici un script. Le lutin laisse une trace avec son stylo. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 245 200\" width=\"245\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><path d=\"M8,22 C8,22 26,8 58,8 C90,8 106,22 106,22 Z\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><rect x=\"8\" y=\"20\" width=\"212.2\" height=\"28\" rx=\"3\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><text x=\"18.0\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">quand</text><rect x=\"59.0\" y=\"24\" width=\"102.8\" height=\"20\" rx=\"10.0\" fill=\"#fff\" stroke=\"#CC9900\"/><text x=\"66.0\" y=\"39.0\" fill=\"#575E75\" font-weight=\"600\">drapeau vert</text><text x=\"165.8\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">cliqué</text><rect x=\"8\" y=\"48\" width=\"229.2\" height=\"32\" rx=\"3\" fill=\"#0FBD8C\" stroke=\"#0B8E69\"/><text x=\"18.0\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">stylo en position d&#x27;écriture</text><rect x=\"8\" y=\"80\" width=\"201.2\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"18.0\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">répéter</text><rect x=\"73.8\" y=\"84\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"80.8\" y=\"101.0\" fill=\"#575E75\" font-weight=\"600\">4</text><text x=\"99.2\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">fois</text><rect x=\"8\" y=\"110\" width=\"18\" height=\"68\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"112\" width=\"153.0\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"36.0\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">avancer de</text><rect x=\"114.0\" y=\"116\" width=\"28.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"121.0\" y=\"133.0\" fill=\"#575E75\" font-weight=\"600\">80</text><text x=\"146.8\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">pas</text><rect x=\"26\" y=\"144\" width=\"175.2\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"36.0\" y=\"165.0\" fill=\"#fff\" font-weight=\"600\">tourner de</text><rect x=\"114.0\" y=\"148\" width=\"28.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"121.0\" y=\"165.0\" fill=\"#575E75\" font-weight=\"600\">90</text><text x=\"146.8\" y=\"165.0\" fill=\"#fff\" font-weight=\"600\">degrés</text><rect x=\"8\" y=\"176\" width=\"201.2\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/></svg>Quelle forme dessine-t-il ?",
+  "choix": [
+   "un carré",
+   "un triangle",
+   "un cercle",
+   "une ligne droite"
+  ],
+  "bonne": 0,
+  "points": 2,
+  "expl": "Il avance de 80 pas puis tourne de 90 degrés, quatre fois : quatre côtés égaux et quatre angles droits.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "un carré"
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Je clique sur le drapeau vert avec ce script. Rien ne se passe. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 278 80\" width=\"278\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><rect x=\"8\" y=\"8\" width=\"153.0\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"18.0\" y=\"29.0\" fill=\"#fff\" font-weight=\"600\">avancer de</text><rect x=\"96.0\" y=\"12\" width=\"28.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"103.0\" y=\"29.0\" fill=\"#575E75\" font-weight=\"600\">10</text><text x=\"128.8\" y=\"29.0\" fill=\"#fff\" font-weight=\"600\">pas</text><rect x=\"8\" y=\"40\" width=\"261.8\" height=\"32\" rx=\"3\" fill=\"#9966FF\" stroke=\"#774DCB\"/><text x=\"18.0\" y=\"61.0\" fill=\"#fff\" font-weight=\"600\">dire</text><rect x=\"51.6\" y=\"44\" width=\"65.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#774DCB\"/><text x=\"58.6\" y=\"61.0\" fill=\"#575E75\" font-weight=\"600\">Bonjour</text><text x=\"121.4\" y=\"61.0\" fill=\"#fff\" font-weight=\"600\">pendant</text><rect x=\"177.2\" y=\"44\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#774DCB\"/><text x=\"184.2\" y=\"61.0\" fill=\"#575E75\" font-weight=\"600\">2</text><text x=\"202.6\" y=\"61.0\" fill=\"#fff\" font-weight=\"600\">secondes</text></svg>Pourquoi ?",
+  "choix": [
+   "il manque un bloc de départ, comme « quand drapeau vert cliqué »",
+   "le lutin est trop petit",
+   "il faut répéter le script plus de fois",
+   "le nombre de pas est trop petit"
+  ],
+  "bonne": 0,
+  "points": 2,
+  "expl": "Un script commence par un bloc événement. Sans lui, le drapeau vert ne lance rien.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "il manque un bloc de départ, comme « quand drapeau vert cliqué »"
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Le lutin regarde vers la droite. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 228 232\" width=\"228\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><path d=\"M8,22 C8,22 26,8 58,8 C90,8 106,22 106,22 Z\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><rect x=\"8\" y=\"20\" width=\"212.2\" height=\"28\" rx=\"3\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><text x=\"18.0\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">quand</text><rect x=\"59.0\" y=\"24\" width=\"102.8\" height=\"20\" rx=\"10.0\" fill=\"#fff\" stroke=\"#CC9900\"/><text x=\"66.0\" y=\"39.0\" fill=\"#575E75\" font-weight=\"600\">drapeau vert</text><text x=\"165.8\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">cliqué</text><rect x=\"8\" y=\"48\" width=\"161.6\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"18.0\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">aller à x:</text><rect x=\"96.0\" y=\"52\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"103.0\" y=\"69.0\" fill=\"#575E75\" font-weight=\"600\">0</text><text x=\"121.4\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">y:</text><rect x=\"140.2\" y=\"52\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"147.2\" y=\"69.0\" fill=\"#575E75\" font-weight=\"600\">0</text><rect x=\"8\" y=\"80\" width=\"186.4\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"18.0\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">répéter</text><rect x=\"73.8\" y=\"84\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"80.8\" y=\"101.0\" fill=\"#575E75\" font-weight=\"600\">3</text><text x=\"99.2\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">fois</text><rect x=\"8\" y=\"110\" width=\"18\" height=\"68\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"112\" width=\"153.0\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"36.0\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">avancer de</text><rect x=\"114.0\" y=\"116\" width=\"28.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"121.0\" y=\"133.0\" fill=\"#575E75\" font-weight=\"600\">20</text><text x=\"146.8\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">pas</text><rect x=\"26\" y=\"144\" width=\"160.4\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"36.0\" y=\"165.0\" fill=\"#fff\" font-weight=\"600\">attendre</text><rect x=\"99.2\" y=\"148\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"106.2\" y=\"165.0\" fill=\"#575E75\" font-weight=\"600\">1</text><text x=\"124.6\" y=\"165.0\" fill=\"#fff\" font-weight=\"600\">seconde</text><rect x=\"8\" y=\"176\" width=\"186.4\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"8\" y=\"192\" width=\"119.4\" height=\"32\" rx=\"3\" fill=\"#9966FF\" stroke=\"#774DCB\"/><text x=\"18.0\" y=\"213.0\" fill=\"#fff\" font-weight=\"600\">dire</text><rect x=\"51.6\" y=\"196\" width=\"65.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#774DCB\"/><text x=\"58.6\" y=\"213.0\" fill=\"#575E75\" font-weight=\"600\">Terminé</text></svg>Quelle est la valeur de x du lutin quand il dit « Terminé » ?",
+  "choix": [
+   "3",
+   "23",
+   "20",
+   "60"
+  ],
+  "bonne": 3,
+  "points": 2,
+  "expl": "Trois fois 20 pas : 3 × 20 = 60. L'attente d'une seconde ne change pas la position.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "60"
+ },
+ {
+  "type": "qcm",
+  "partie": "Défi de logique, type concours Castor",
+  "enonce": "Un castor veut aller de l'étang 1 à l'étang 6. Les traits sont des canaux. <svg role=\"img\" aria-label=\"Plan des étangs et des canaux\" viewBox=\"0 0 400 210\" style=\"max-width:420px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"13\"><line x1=\"40\" y1=\"105\" x2=\"130\" y2=\"40\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"40\" y1=\"105\" x2=\"130\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"130\" y1=\"40\" x2=\"130\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"130\" y1=\"40\" x2=\"260\" y2=\"40\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"130\" y1=\"170\" x2=\"260\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"260\" y1=\"40\" x2=\"360\" y2=\"105\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"260\" y1=\"170\" x2=\"360\" y2=\"105\" stroke=\"#457b9d\" stroke-width=\"3\"/><line x1=\"260\" y1=\"40\" x2=\"260\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><circle cx=\"40\" cy=\"105\" r=\"17\" fill=\"#b07d1a\"/><text x=\"40\" y=\"110\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">1</text><circle cx=\"130\" cy=\"40\" r=\"17\" fill=\"#1d3557\"/><text x=\"130\" y=\"45\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">2</text><circle cx=\"130\" cy=\"170\" r=\"17\" fill=\"#1d3557\"/><text x=\"130\" y=\"175\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">3</text><circle cx=\"260\" cy=\"40\" r=\"17\" fill=\"#1d3557\"/><text x=\"260\" y=\"45\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">4</text><circle cx=\"260\" cy=\"170\" r=\"17\" fill=\"#1d3557\"/><text x=\"260\" y=\"175\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">5</text><circle cx=\"360\" cy=\"105\" r=\"17\" fill=\"#b07d1a\"/><text x=\"360\" y=\"110\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">6</text></svg>Quel est le plus petit nombre de canaux qu'il doit traverser ?",
+  "choix": [
+   "5",
+   "4",
+   "2",
+   "3"
+  ],
+  "bonne": 3,
+  "points": 2,
+  "expl": "Par exemple 1, 2, 4, 6 : trois canaux. Aucun chemin n'en demande moins.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "3"
+ },
+ {
+  "type": "qcm",
+  "partie": "Défi de logique, type concours Castor",
+  "enonce": "Un panneau affiche un nombre avec quatre lampes. Chaque lampe allumée apporte la valeur écrite au-dessus d'elle ; les lampes éteintes apportent 0. <svg role=\"img\" aria-label=\"Lampes avec leur valeur\" viewBox=\"0 0 220 100\" style=\"max-width:220px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"14\"><text x=\"35\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">8</text><circle cx=\"35\" cy=\"58\" r=\"19\" fill=\"#ffd23f\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"85\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">4</text><circle cx=\"85\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"135\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">2</text><circle cx=\"135\" cy=\"58\" r=\"19\" fill=\"#ffd23f\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"185\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">1</text><circle cx=\"185\" cy=\"58\" r=\"19\" fill=\"#ffd23f\" stroke=\"#6b7681\" stroke-width=\"2\"/></svg>Quel nombre le panneau affiche-t-il ?",
+  "choix": [
+   "14",
+   "13",
+   "11",
+   "8"
+  ],
+  "bonne": 2,
+  "points": 3,
+  "expl": "8 + 2 + 1 = 11.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "11"
+ },
+ {
+  "type": "assoc",
+  "partie": "SketchUp",
+  "enonce": "Je relie chaque outil de SketchUp à son rôle.",
+  "paires": [
+   {
+    "terme": "Rectangle (touche R)",
+    "definition": "dessine une face rectangulaire"
+   },
+   {
+    "terme": "Pousser/Tirer (touche P)",
+    "definition": "donne du volume à une face"
+   },
+   {
+    "terme": "Mètre (touche T)",
+    "definition": "mesure une longueur"
+   }
+  ],
+  "points": 3,
+  "expl": "",
+  "consigne": "Je relie chaque terme à sa définition.",
+  "reponse": "Rectangle (touche R) = dessine une face rectangulaire · Pousser/Tirer (touche P) = donne du volume à une face · Mètre (touche T) = mesure une longueur"
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = (q.partie ? '<div class="partie">' + q.partie + '</div>' : '') + '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">choisir</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">n°</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch(URL_ENVOI, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  revenirPage();
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    (max === 20 ? r.obtenus + " / 20" : r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>");
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " · " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Sorties de la page": ctrl.sorties,
+    "Temps hors page (s)": Math.round(ctrl.hors / 1000),
+    "Durée de la session (min)": Math.round((Date.now() - ctrl.debut) / 600) / 100,
+    "Détail par question": r.detail.join("  ") + "  | sorties : " + ctrl.sorties + " | hors page : " + Math.round(ctrl.hors / 1000) + " s"
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = !ctrl.actif;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+
+const ctrl = { actif: false, sorties: 0, hors: 0, debut: 0, sortie: 0 };
+function majCtrl() {
+  document.getElementById("ctrlEtat").innerHTML =
+    '<span class="actif">Contrôle actif</span> · sorties de la page : ' + ctrl.sorties +
+    ' · temps hors page : ' + Math.round(ctrl.hors / 1000) + ' s';
+}
+function sortirPage() {
+  if (!ctrl.actif || corrige || ctrl.sortie) return;
+  ctrl.sortie = Date.now(); ctrl.sorties++; majCtrl();
+}
+function revenirPage() {
+  if (ctrl.sortie) { ctrl.hors += Date.now() - ctrl.sortie; ctrl.sortie = 0; majCtrl(); }
+}
+document.addEventListener("visibilitychange", () => { document.hidden ? sortirPage() : revenirPage(); });
+window.addEventListener("blur", sortirPage);
+window.addEventListener("focus", revenirPage);
+document.getElementById("activer").addEventListener("click", () => {
+  ctrl.actif = true; ctrl.debut = Date.now();
+  document.body.classList.remove("verrou");
+  document.getElementById("terminer").disabled = false;
+  majCtrl();
+  document.getElementById("quiz").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+document.body.classList.add("verrou");
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>
