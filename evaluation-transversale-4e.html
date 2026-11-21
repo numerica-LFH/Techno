@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4e · Évaluation transversale</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --or:#b07d1a; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:780px; margin:0 auto; padding:24px 18px 40px; }
+header { border-bottom:3px solid var(--or); padding-bottom:10px; margin-bottom:18px; }
+.etiquette { display:inline-block; background:var(--or); color:#fff; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:3px; margin-bottom:8px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; margin:0; }
+.carte { background:#fff; border:1px solid #d3dae1; border-radius:6px; padding:16px; margin-bottom:18px; }
+.carte h2 { font-size:1rem; margin:0 0 10px; color:var(--bleu); }
+.champs { display:flex; gap:12px; flex-wrap:wrap; }
+.champ { flex:1 1 200px; }
+.champ label { display:block; font-size:.85rem; color:#4a545e; margin-bottom:4px; padding:0; border:0; background:none; }
+.champ input, .champ select { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; background:#fff; }
+.champ input.manque { border-color:var(--ko); background:#fdeceb; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span.num { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.q h2 span.pts { float:right; font-weight:400; font-size:.8rem; color:#7a838d; }
+.consigne { font-size:.85rem; color:#5a646e; margin:0 0 8px; }
+label.choix { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label.choix:hover { background:var(--fond); }
+label.choix.juste { border-color:var(--ok); background:#e8f5ee; }
+label.choix.faux { border-color:var(--ko); background:#fdeceb; }
+label.choix input { margin-right:8px; }
+.paire { display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap; }
+.paire .terme { flex:0 0 190px; font-weight:600; }
+.paire select { flex:1 1 260px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.paire select.juste { border-color:var(--ok); background:#e8f5ee; }
+.paire select.faux { border-color:var(--ko); background:#fdeceb; }
+.rang { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.rang select { flex:0 0 70px; padding:7px 9px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:.95rem; font-family:inherit; background:#fff; }
+.rang span { flex:1 1 auto; }
+input.libre { width:100%; padding:8px 10px; border:1px solid #c2ccd6; border-radius:4px;
+  font-size:1rem; font-family:inherit; }
+input.libre.juste { border-color:var(--ok); background:#e8f5ee; }
+input.libre.faux { border-color:var(--ko); background:#fdeceb; }
+.expl { display:none; margin-top:9px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--or);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; font-family:inherit; cursor:pointer; }
+button.second { background:#6b7681; }
+button:disabled { background:#a8b1ba; cursor:default; }
+#etat { font-weight:700; color:var(--bleu); }
+#bilan { display:none; background:#fff; border:1px solid #d3dae1; border-top:5px solid var(--or);
+  border-radius:6px; padding:18px; margin-bottom:18px; }
+#bilan.vu { display:block; }
+#bilan h2 { margin:0 0 8px; color:var(--bleu); font-size:1.15rem; }
+.note { font-size:2rem; font-weight:700; color:var(--bleu); }
+.note small { font-size:1rem; font-weight:400; color:#4a545e; }
+.envoi { margin-top:12px; padding:9px 12px; border-radius:4px; font-size:.92rem; }
+.envoi.attente { background:#fff6e0; border:1px solid #e2c675; }
+.envoi.ok { background:#e8f5ee; border:1px solid #8ec7a8; }
+.envoi.ko { background:#fdeceb; border:1px solid #e0a09b; }
+.envoi a { color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+@media print { .barre { position:static; } }
+
+.partie { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--or); font-weight:700; margin:0 0 4px; }
+.ctrl { border-left:5px solid var(--bleu); font-size:.92rem; }
+.ctrl h2 { margin-bottom:6px; }
+.ctrl .ref { font-family:ui-monospace,Consolas,monospace; font-size:.78rem; color:#4a545e; background:var(--fond);
+  padding:5px 8px; border-radius:3px; display:inline-block; margin:2px 0 8px; }
+.ctrl .actif { color:var(--ok); font-weight:700; }
+.verrou #quiz { display:none; }
+.q svg.scratch { overflow:visible; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <span class="etiquette">S'évaluer</span>
+  <h1>4e · Évaluation transversale</h1>
+  <p class="sous">9 questions, 20 points. J'active le contrôle de session, j'indique mon nom et ma classe, je réponds, puis je termine : ma note sur 20 s'affiche et elle est envoyée au professeur.</p>
+</header>
+
+<div class="carte">
+  <h2>Qui remet cette évaluation ?</h2>
+  <div class="champs">
+    <div class="champ"><label for="nom">Nom de famille</label>
+      <input id="nom" type="text" autocomplete="family-name"></div>
+    <div class="champ"><label for="prenom">Prénom</label>
+      <input id="prenom" type="text" autocomplete="given-name"></div>
+    <div class="champ"><label for="classe">Classe</label>
+      <input id="classe" type="text" placeholder="4eA" autocomplete="off"></div>
+  </div>
+</div>
+
+
+<div class="carte ctrl" id="ctrl">
+  <h2>Contrôle de session : changement de page</h2>
+  <span class="ref">Protocole CS-01 · journal de session · version 2.3</span>
+  <p>Cette évaluation enregistre chaque sortie de la page : changement d'onglet, passage à une autre fenêtre ou à une autre application. Le nombre de sorties et le temps passé hors de la page sont transmis au professeur avec la note.</p>
+  <p>L'activation est obligatoire. Les questions s'affichent après l'activation.</p>
+  <p id="ctrlEtat"><button id="activer" type="button">Activer le contrôle de session</button></p>
+</div>
+
+<div id="bilan">
+  <h2>Ma note</h2>
+  <p id="nomBilan"></p>
+  <p class="note" id="laNote"></p>
+  <p class="sous">La correction et les explications sont affichées sous chaque question.</p>
+  <div class="envoi" id="envoi"></div>
+</div>
+
+<div id="quiz"></div>
+</div>
+
+<div class="barre">
+  <span id="etat">Non corrigé</span>
+  <span>
+    <button id="terminer" disabled>Terminer, voir ma note et l'envoyer</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+
+<div class="wrap"><footer>Lycée franco-hondurien · Technologie &amp; SNT · numerica-lfh.github.io/Techno · 4e · Évaluation transversale</footer></div>
+
+<script>
+
+const CIBLE = "numerica@liceofranco.org";
+const URL_ENVOI = "https://script.google.com/macros/s/AKfycbzcci8gsqn9-S4POXNfiriuP4ymF54N0DN5xSHce67B8LJhhm8JfGmD8141H-rB-PtdJg/exec";
+const META = {"niveau": "4e", "sequence": "Évaluation transversale", "seance": "Bilan des savoir-faire numériques", "exemple_classe": "4eA"};
+const questions = [
+ {
+  "type": "qcm",
+  "partie": "Savoir-faire numérique · capture d'écran",
+  "enonce": "Je travaille sur un Mac. Quelle combinaison me permet de choisir une zone de l'écran et de la copier dans le presse-papiers, pour la coller ensuite avec Cmd + V ?",
+  "choix": [
+   "Cmd + Tab",
+   "Cmd + Maj + 4 seulement, qui enregistre un fichier sur le bureau",
+   "Cmd + Ctrl + Maj + 4",
+   "Cmd + Q"
+  ],
+  "bonne": 2,
+  "points": 2,
+  "expl": "Avec Ctrl en plus, l'image est copiée et prête à être collée, par exemple dans le formulaire « Où j'en suis ».",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "Cmd + Ctrl + Maj + 4"
+ },
+ {
+  "type": "qcm",
+  "partie": "Savoir-faire numérique · adresse d'un site",
+  "enonce": "Je tape l'adresse d'un site pour l'ouvrir sans passer par un moteur de recherche. <svg role=\"img\" aria-label=\"Fenêtre d'un navigateur avec quatre zones numérotées\" viewBox=\"0 0 560 240\" style=\"max-width:560px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"12\"><rect x=\"0.5\" y=\"0.5\" width=\"559\" height=\"239\" rx=\"8\" fill=\"#dfe3ea\" stroke=\"#9aa4b2\"/><rect x=\"12\" y=\"8\" width=\"170\" height=\"30\" rx=\"8\" fill=\"#fff\"/><text x=\"52\" y=\"27\" fill=\"#3b4452\">Ma page</text><text x=\"200\" y=\"29\" fill=\"#3b4452\" font-size=\"18\">+</text><rect x=\"0\" y=\"38\" width=\"560\" height=\"38\" fill=\"#fff\"/><text x=\"14\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">←</text><text x=\"40\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">→</text><text x=\"66\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">↻</text><rect x=\"100\" y=\"44\" width=\"380\" height=\"26\" rx=\"13\" fill=\"#eef1f6\" stroke=\"#c5ccd8\"/><text x=\"140\" y=\"61\" fill=\"#70798a\">Rechercher ou saisir une adresse</text><text x=\"515\" y=\"63\" fill=\"#3b4452\" font-size=\"16\">⋮</text><rect x=\"0\" y=\"76\" width=\"560\" height=\"24\" fill=\"#f4f6fa\"/><text x=\"32\" y=\"92\" fill=\"#3b4452\">★ Favoris</text><text x=\"120\" y=\"92\" fill=\"#3b4452\">Pronote</text><text x=\"190\" y=\"92\" fill=\"#3b4452\">Scratch</text><rect x=\"0\" y=\"100\" width=\"560\" height=\"139\" fill=\"#fff\"/><text x=\"280\" y=\"142\" text-anchor=\"middle\" fill=\"#1d3557\" font-size=\"20\" font-weight=\"700\">Moteur de recherche</text><rect x=\"130\" y=\"156\" width=\"300\" height=\"34\" rx=\"17\" fill=\"#fff\" stroke=\"#b8c0cc\"/><text x=\"172\" y=\"178\" fill=\"#70798a\">Rechercher sur le Web</text><circle cx=\"24\" cy=\"23\" r=\"10\" fill=\"#1d3557\"/><text x=\"24\" y=\"27.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">2</text><circle cx=\"118\" cy=\"57\" r=\"10\" fill=\"#1d3557\"/><text x=\"118\" y=\"61.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">4</text><circle cx=\"150\" cy=\"173\" r=\"10\" fill=\"#1d3557\"/><text x=\"150\" y=\"177.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">1</text><circle cx=\"16\" cy=\"88\" r=\"10\" fill=\"#1d3557\"/><text x=\"16\" y=\"92.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"13\" font-weight=\"700\">3</text></svg>Dans quelle zone dois-je écrire ?",
+  "choix": [
+   "la zone 3",
+   "la zone 2",
+   "la zone 1",
+   "la zone 4"
+  ],
+  "bonne": 3,
+  "points": 2,
+  "expl": "La barre d'adresse envoie directement vers le site. Le champ au milieu de la page lance une recherche de mots.",
+  "consigne": "Je regarde le schéma et je choisis une zone.",
+  "reponse": "la zone 4"
+ },
+ {
+  "type": "texte",
+  "partie": "Savoir-faire numérique · écrire une adresse",
+  "enonce": "J'écris l'adresse complète du site de la classe de technologie, sans oublier le nom du site après le premier trait oblique.",
+  "acceptees": [
+   "numerica lfh github io techno"
+  ],
+  "reponse": "numerica-lfh.github.io/Techno",
+  "points": 2,
+  "placeholder": "adresse du site",
+  "expl": "Le nom du site est « numerica-lfh.github.io », la page d'accueil est dans le dossier « Techno ».",
+  "consigne": "J'écris ma réponse."
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Voici un script. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 255 200\" width=\"255\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><path d=\"M8,22 C8,22 26,8 58,8 C90,8 106,22 106,22 Z\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><rect x=\"8\" y=\"20\" width=\"212.2\" height=\"28\" rx=\"3\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><text x=\"18.0\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">quand</text><rect x=\"59.0\" y=\"24\" width=\"102.8\" height=\"20\" rx=\"10.0\" fill=\"#fff\" stroke=\"#CC9900\"/><text x=\"66.0\" y=\"39.0\" fill=\"#575E75\" font-weight=\"600\">drapeau vert</text><text x=\"165.8\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">cliqué</text><rect x=\"8\" y=\"48\" width=\"154.2\" height=\"32\" rx=\"3\" fill=\"#FF8C1A\" stroke=\"#DB6E00\"/><text x=\"18.0\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">mettre</text><rect x=\"66.4\" y=\"52\" width=\"51.0\" height=\"24\" rx=\"12.0\" fill=\"#FF8C1A\" stroke=\"#DB6E00\"/><text x=\"73.4\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">score</text><text x=\"121.4\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">à</text><rect x=\"132.8\" y=\"52\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#DB6E00\"/><text x=\"139.8\" y=\"69.0\" fill=\"#575E75\" font-weight=\"600\">1</text><rect x=\"8\" y=\"80\" width=\"239.4\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"18.0\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">répéter</text><rect x=\"73.8\" y=\"84\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"80.8\" y=\"101.0\" fill=\"#575E75\" font-weight=\"600\">3</text><text x=\"99.2\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">fois</text><rect x=\"8\" y=\"110\" width=\"18\" height=\"36\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"112\" width=\"213.4\" height=\"32\" rx=\"3\" fill=\"#FF8C1A\" stroke=\"#DB6E00\"/><text x=\"36.0\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">mettre</text><rect x=\"84.4\" y=\"116\" width=\"51.0\" height=\"24\" rx=\"12.0\" fill=\"#FF8C1A\" stroke=\"#DB6E00\"/><text x=\"91.4\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">score</text><text x=\"139.4\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">à</text><rect x=\"150.8\" y=\"116\" width=\"80.6\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#DB6E00\"/><text x=\"157.8\" y=\"133.0\" fill=\"#575E75\" font-weight=\"600\">score × 2</text><rect x=\"8\" y=\"144\" width=\"239.4\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"8\" y=\"160\" width=\"104.6\" height=\"32\" rx=\"3\" fill=\"#9966FF\" stroke=\"#774DCB\"/><text x=\"18.0\" y=\"181.0\" fill=\"#fff\" font-weight=\"600\">dire</text><rect x=\"51.6\" y=\"164\" width=\"51.0\" height=\"24\" rx=\"12.0\" fill=\"#FF8C1A\" stroke=\"#DB6E00\"/><text x=\"58.6\" y=\"181.0\" fill=\"#fff\" font-weight=\"600\">score</text></svg>Que dit le lutin à la fin ?",
+  "choix": [
+   "3",
+   "6",
+   "7",
+   "8"
+  ],
+  "bonne": 3,
+  "points": 2,
+  "expl": "score vaut 1, puis 2, puis 4, puis 8.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "8"
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Je lance ce script et je ne touche pas au clavier. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 358 184\" width=\"358\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><path d=\"M8,22 C8,22 26,8 58,8 C90,8 106,22 106,22 Z\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><rect x=\"8\" y=\"20\" width=\"212.2\" height=\"28\" rx=\"3\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><text x=\"18.0\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">quand</text><rect x=\"59.0\" y=\"24\" width=\"102.8\" height=\"20\" rx=\"10.0\" fill=\"#fff\" stroke=\"#CC9900\"/><text x=\"66.0\" y=\"39.0\" fill=\"#575E75\" font-weight=\"600\">drapeau vert</text><text x=\"165.8\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">cliqué</text><rect x=\"8\" y=\"48\" width=\"341.8\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"18.0\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">répéter indéfiniment</text><rect x=\"8\" y=\"78\" width=\"18\" height=\"84\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"80\" width=\"315.8\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"36.0\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">si</text><polygon points=\"54.8,96.0 63.8,84 281.8,84 290.8,96.0 281.8,108 63.8,108\" fill=\"#fff\" stroke=\"#389438\"/><text x=\"61.8\" y=\"101.0\" fill=\"#575E75\" font-weight=\"600\">touche flèche droite pressée ?</text><text x=\"294.8\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">alors</text><rect x=\"26\" y=\"110\" width=\"18\" height=\"36\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"44\" y=\"112\" width=\"145.6\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"54.0\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">avancer de</text><rect x=\"132.0\" y=\"116\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"139.0\" y=\"133.0\" fill=\"#575E75\" font-weight=\"600\">5</text><text x=\"157.4\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">pas</text><rect x=\"26\" y=\"144\" width=\"315.8\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"8\" y=\"160\" width=\"341.8\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/></svg>Que fait le lutin ?",
+  "choix": [
+   "le script s'arrête tout de suite",
+   "il avance quand même",
+   "il reste immobile, car la condition est fausse",
+   "il recule"
+  ],
+  "bonne": 2,
+  "points": 2,
+  "expl": "Le bloc « avancer » ne s'exécute que si la touche flèche droite est pressée.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "il reste immobile, car la condition est fausse"
+ },
+ {
+  "type": "qcm",
+  "partie": "Scratch · logique des blocs",
+  "enonce": "Je regarde ce script. <svg class=\"scratch\" role=\"img\" aria-label=\"Script Scratch\" viewBox=\"0 0 228 216\" width=\"228\" style=\"max-width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Helvetica Neue,Helvetica,Arial,sans-serif\" font-size=\"13\"><path d=\"M8,22 C8,22 26,8 58,8 C90,8 106,22 106,22 Z\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><rect x=\"8\" y=\"20\" width=\"212.2\" height=\"28\" rx=\"3\" fill=\"#FFBF00\" stroke=\"#CC9900\"/><text x=\"18.0\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">quand</text><rect x=\"59.0\" y=\"24\" width=\"102.8\" height=\"20\" rx=\"10.0\" fill=\"#fff\" stroke=\"#CC9900\"/><text x=\"66.0\" y=\"39.0\" fill=\"#575E75\" font-weight=\"600\">drapeau vert</text><text x=\"165.8\" y=\"39.0\" fill=\"#fff\" font-weight=\"600\">cliqué</text><rect x=\"8\" y=\"48\" width=\"208.6\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"18.0\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">répéter</text><rect x=\"73.8\" y=\"52\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"80.8\" y=\"69.0\" fill=\"#575E75\" font-weight=\"600\">3</text><text x=\"99.2\" y=\"69.0\" fill=\"#fff\" font-weight=\"600\">fois</text><rect x=\"8\" y=\"78\" width=\"18\" height=\"116\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"80\" width=\"179.0\" height=\"32\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><text x=\"36.0\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">répéter</text><rect x=\"91.8\" y=\"84\" width=\"21.4\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#CF8B17\"/><text x=\"98.8\" y=\"101.0\" fill=\"#575E75\" font-weight=\"600\">2</text><text x=\"117.2\" y=\"101.0\" fill=\"#fff\" font-weight=\"600\">fois</text><rect x=\"26\" y=\"110\" width=\"18\" height=\"36\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"44\" y=\"112\" width=\"153.0\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"54.0\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">avancer de</text><rect x=\"132.0\" y=\"116\" width=\"28.8\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"139.0\" y=\"133.0\" fill=\"#575E75\" font-weight=\"600\">10</text><text x=\"164.8\" y=\"133.0\" fill=\"#fff\" font-weight=\"600\">pas</text><rect x=\"26\" y=\"144\" width=\"179.0\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/><rect x=\"26\" y=\"160\" width=\"182.6\" height=\"32\" rx=\"3\" fill=\"#4C97FF\" stroke=\"#3373CC\"/><text x=\"36.0\" y=\"181.0\" fill=\"#fff\" font-weight=\"600\">tourner de</text><rect x=\"114.0\" y=\"164\" width=\"36.2\" height=\"24\" rx=\"12.0\" fill=\"#fff\" stroke=\"#3373CC\"/><text x=\"121.0\" y=\"181.0\" fill=\"#575E75\" font-weight=\"600\">120</text><text x=\"154.2\" y=\"181.0\" fill=\"#fff\" font-weight=\"600\">degrés</text><rect x=\"8\" y=\"192\" width=\"208.6\" height=\"16\" rx=\"3\" fill=\"#FFAB19\" stroke=\"#CF8B17\"/></svg>Combien de pas le lutin fait-il au total ?",
+  "choix": [
+   "20",
+   "60",
+   "120",
+   "30"
+  ],
+  "bonne": 1,
+  "points": 2,
+  "expl": "Chaque tour de la grande boucle avance de 2 × 10 = 20 pas ; 3 tours : 60 pas.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "60"
+ },
+ {
+  "type": "qcm",
+  "partie": "Défi de logique, type concours Castor",
+  "enonce": "Les nombres sont les durées, en minutes, pour traverser chaque canal. <svg role=\"img\" aria-label=\"Plan des étangs et des canaux\" viewBox=\"0 0 400 210\" style=\"max-width:420px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"13\"><line x1=\"40\" y1=\"105\" x2=\"130\" y2=\"40\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"74.0\" y=\"62.5\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"85.0\" y=\"77.5\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">4</text><line x1=\"40\" y1=\"105\" x2=\"130\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"74.0\" y=\"127.5\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"85.0\" y=\"142.5\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">2</text><line x1=\"130\" y1=\"40\" x2=\"130\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"119.0\" y=\"95.0\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"130.0\" y=\"110.0\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">1</text><line x1=\"130\" y1=\"40\" x2=\"260\" y2=\"40\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"184.0\" y=\"30.0\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"195.0\" y=\"45.0\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">5</text><line x1=\"130\" y1=\"170\" x2=\"260\" y2=\"40\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"184.0\" y=\"95.0\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"195.0\" y=\"110.0\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">8</text><line x1=\"130\" y1=\"170\" x2=\"260\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"184.0\" y=\"160.0\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"195.0\" y=\"175.0\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">3</text><line x1=\"260\" y1=\"40\" x2=\"260\" y2=\"170\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"249.0\" y=\"95.0\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"260.0\" y=\"110.0\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">1</text><line x1=\"260\" y1=\"40\" x2=\"360\" y2=\"105\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"299.0\" y=\"62.5\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"310.0\" y=\"77.5\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">2</text><line x1=\"260\" y1=\"170\" x2=\"360\" y2=\"105\" stroke=\"#457b9d\" stroke-width=\"3\"/><rect x=\"299.0\" y=\"127.5\" width=\"22\" height=\"20\" rx=\"4\" fill=\"#fff\" stroke=\"#b07d1a\"/><text x=\"310.0\" y=\"142.5\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">6</text><circle cx=\"40\" cy=\"105\" r=\"17\" fill=\"#b07d1a\"/><text x=\"40\" y=\"110\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">A</text><circle cx=\"130\" cy=\"40\" r=\"17\" fill=\"#1d3557\"/><text x=\"130\" y=\"45\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">B</text><circle cx=\"130\" cy=\"170\" r=\"17\" fill=\"#1d3557\"/><text x=\"130\" y=\"175\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">C</text><circle cx=\"260\" cy=\"40\" r=\"17\" fill=\"#1d3557\"/><text x=\"260\" y=\"45\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">D</text><circle cx=\"260\" cy=\"170\" r=\"17\" fill=\"#1d3557\"/><text x=\"260\" y=\"175\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">E</text><circle cx=\"360\" cy=\"105\" r=\"17\" fill=\"#b07d1a\"/><text x=\"360\" y=\"110\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"700\">F</text></svg>Quelle est la durée minimale pour aller de A à F ?",
+  "choix": [
+   "12 minutes",
+   "11 minutes",
+   "8 minutes",
+   "9 minutes"
+  ],
+  "bonne": 2,
+  "points": 2,
+  "expl": "A, C, E, D, F : 2 + 3 + 1 + 2 = 8. Le chemin qui a le moins de canaux n'est pas le plus rapide.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "8 minutes"
+ },
+ {
+  "type": "qcm",
+  "partie": "Défi de logique, type concours Castor",
+  "enonce": "Un panneau affiche un nombre avec six lampes. Chaque lampe allumée apporte la valeur écrite au-dessus d'elle. <svg role=\"img\" aria-label=\"Lampes avec leur valeur\" viewBox=\"0 0 320 100\" style=\"max-width:320px;width:100%;height:auto;display:block;margin:6px 0 10px\" font-family=\"Segoe UI,Helvetica,Arial,sans-serif\" font-size=\"14\"><text x=\"35\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">32</text><circle cx=\"35\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"85\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">16</text><circle cx=\"85\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"135\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">8</text><circle cx=\"135\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"185\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">4</text><circle cx=\"185\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"235\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">2</text><circle cx=\"235\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/><text x=\"285\" y=\"22\" text-anchor=\"middle\" fill=\"#14181d\" font-weight=\"700\">1</text><circle cx=\"285\" cy=\"58\" r=\"19\" fill=\"#e8ebef\" stroke=\"#6b7681\" stroke-width=\"2\"/></svg>Quelles lampes dois-je allumer pour afficher 37 ?",
+  "choix": [
+   "16 + 4 + 2",
+   "32 + 8 + 2",
+   "32 + 4 + 1",
+   "32 + 8 + 1"
+  ],
+  "bonne": 2,
+  "points": 3,
+  "expl": "32 + 4 + 1 = 37.",
+  "consigne": "Je choisis une seule réponse.",
+  "reponse": "32 + 4 + 1"
+ },
+ {
+  "type": "assoc",
+  "partie": "SketchUp",
+  "enonce": "Je relie chaque action sur la vue 3D de SketchUp au geste qui la réalise.",
+  "paires": [
+   {
+    "terme": "tourner autour du modèle",
+    "definition": "appuyer sur la molette et déplacer la souris"
+   },
+   {
+    "terme": "déplacer la vue sans tourner",
+    "definition": "Maj + molette enfoncée et déplacer la souris"
+   },
+   {
+    "terme": "rapprocher ou éloigner",
+    "definition": "rouler la molette"
+   }
+  ],
+  "points": 3,
+  "expl": "",
+  "consigne": "Je relie chaque terme à sa définition.",
+  "reponse": "tourner autour du modèle = appuyer sur la molette et déplacer la souris · déplacer la vue sans tourner = Maj + molette enfoncée et déplacer la souris · rapprocher ou éloigner = rouler la molette"
+ }
+];
+
+const zone = document.getElementById("quiz");
+const etat = document.getElementById("etat");
+const bilan = document.getElementById("bilan");
+let corrige = false;
+
+function norm(s) {
+  return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+function ech(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function melange(n) {
+  const t = Array.from({ length: n }, (_, i) => i);
+  for (let i = t.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [t[i], t[j]] = [t[j], t[i]];
+  }
+  return t;
+}
+
+function construire() {
+  zone.innerHTML = "";
+  corrige = false;
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = (q.partie ? '<div class="partie">' + q.partie + '</div>' : '') + '<h2><span class="num">' + (i + 1) + '.</span>' + q.enonce +
+            '<span class="pts">' + q.points + (q.points > 1 ? " points" : " point") + '</span></h2>';
+    if (q.consigne) h += '<p class="consigne">' + q.consigne + '</p>';
+
+    if (q.type === "qcm" || q.type === "vf") {
+      q.choix.forEach((c, j) => {
+        h += '<label class="choix" data-i="' + i + '" data-j="' + j + '">' +
+             '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+      });
+    } else if (q.type === "assoc") {
+      const ordre = q.melange || melange(q.paires.length);
+      q.melange = ordre;
+      q.paires.forEach((p, j) => {
+        let opts = '<option value="-1">choisir</option>';
+        ordre.forEach(k => {
+          opts += '<option value="' + k + '">' + ech(q.paires[k].definition) + '</option>';
+        });
+        h += '<div class="paire"><span class="terme">' + p.terme + '</span>' +
+             '<select data-i="' + i + '" data-j="' + j + '">' + opts + '</select></div>';
+      });
+    } else if (q.type === "ordre") {
+      const ordre = q.melange || melange(q.elements.length);
+      q.melange = ordre;
+      let opts = '<option value="-1">n°</option>';
+      for (let k = 1; k <= q.elements.length; k++) opts += '<option value="' + k + '">' + k + '</option>';
+      ordre.forEach(k => {
+        h += '<div class="rang"><select data-i="' + i + '" data-k="' + k + '">' + opts + '</select>' +
+             '<span>' + q.elements[k] + '</span></div>';
+      });
+    } else if (q.type === "texte") {
+      h += '<input class="libre" type="text" data-i="' + i + '" ' +
+           'placeholder="' + ech(q.placeholder || "Ma réponse") + '" autocomplete="off">';
+    }
+
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' + q.reponse +
+         (q.expl ? " " + q.expl : "") + '</div>';
+    d.innerHTML = h;
+    zone.appendChild(d);
+  });
+}
+
+function evaluer() {
+  let obtenus = 0;
+  const detail = [];
+  questions.forEach((q, i) => {
+    let pts = 0;
+    if (q.type === "qcm" || q.type === "vf") {
+      const coche = document.querySelector('input[name="q' + i + '"]:checked');
+      document.querySelectorAll('label.choix[data-i="' + i + '"]').forEach(l => {
+        l.classList.remove("juste", "faux");
+        const j = Number(l.dataset.j);
+        if (j === q.bonne) l.classList.add("juste");
+        else if (coche && Number(coche.value) === j) l.classList.add("faux");
+      });
+      if (coche && Number(coche.value) === q.bonne) pts = q.points;
+    } else if (q.type === "assoc") {
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const j = Number(s.dataset.j);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === j) { s.classList.add("juste"); pts += 1; }
+        else s.classList.add("faux");
+        s.disabled = true;
+      });
+    } else if (q.type === "ordre") {
+      let tout = true;
+      document.querySelectorAll('select[data-i="' + i + '"]').forEach(s => {
+        const k = Number(s.dataset.k);
+        s.classList.remove("juste", "faux");
+        if (Number(s.value) === k + 1) s.classList.add("juste");
+        else { s.classList.add("faux"); tout = false; }
+        s.disabled = true;
+      });
+      if (tout) pts = q.points;
+    } else if (q.type === "texte") {
+      const champ = document.querySelector('input.libre[data-i="' + i + '"]');
+      const rep = norm(champ.value);
+      const bon = rep.length > 0 && q.acceptees.some(a => rep.indexOf(norm(a)) !== -1);
+      champ.classList.remove("juste", "faux");
+      champ.classList.add(bon ? "juste" : "faux");
+      champ.readOnly = true;
+      if (bon) pts = q.points;
+    }
+    obtenus += pts;
+    document.getElementById("e" + i).classList.add("vu");
+    detail.push((i + 1) + ") " + pts + "/" + q.points);
+  });
+  return { obtenus: obtenus, detail: detail };
+}
+
+function total() {
+  return questions.reduce((s, q) => s + q.points, 0);
+}
+
+function envoyer(donnees) {
+  const boite = document.getElementById("envoi");
+  boite.className = "envoi attente";
+  boite.textContent = "Envoi du résultat au professeur…";
+  fetch(URL_ENVOI, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(donnees)
+  })
+  .then(r => r.json())
+  .then(r => {
+    if (r && (r.success === true || r.success === "true")) {
+      boite.className = "envoi ok";
+      boite.textContent = "Résultat envoyé au professeur. Rien d'autre à faire.";
+    } else { throw new Error("refus"); }
+  })
+  .catch(() => {
+    boite.className = "envoi ko";
+    const sujet = encodeURIComponent(donnees._subject);
+    const corps = encodeURIComponent(
+      Object.keys(donnees).filter(k => k.charAt(0) !== "_")
+        .map(k => k + " : " + donnees[k]).join("\n"));
+    boite.innerHTML = "L'envoi automatique n'a pas abouti. " +
+      '<a href="mailto:' + CIBLE + "?subject=" + sujet + "&body=" + corps +
+      '">Envoyer le résultat depuis ma messagerie</a>.';
+  });
+}
+
+function terminer() {
+  if (corrige) return;
+  const nom = document.getElementById("nom");
+  const prenom = document.getElementById("prenom");
+  const classe = document.getElementById("classe");
+  let manque = false;
+  [nom, prenom, classe].forEach(c => {
+    c.classList.remove("manque");
+    if (!c.value.trim()) { c.classList.add("manque"); manque = true; }
+  });
+  if (manque) {
+    etat.textContent = "Nom, prénom et classe sont obligatoires.";
+    nom.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  corrige = true;
+  revenirPage();
+  document.getElementById("terminer").disabled = true;
+  try {
+    localStorage.setItem("lfh_eleve", JSON.stringify({
+      nom: nom.value.trim(), prenom: prenom.value.trim(), classe: classe.value.trim() }));
+  } catch (e) {}
+
+  const r = evaluer();
+  const max = total();
+  const sur20 = Math.round(r.obtenus / max * 200) / 10;
+  etat.textContent = "Note : " + r.obtenus + " / " + max;
+  bilan.classList.add("vu");
+  document.getElementById("nomBilan").textContent =
+    prenom.value.trim() + " " + nom.value.trim().toUpperCase() + " · " + classe.value.trim();
+  document.getElementById("laNote").innerHTML =
+    (max === 20 ? r.obtenus + " / 20" : r.obtenus + " / " + max + ' <small>soit ' + String(sur20).replace(".", ",") + " / 20</small>");
+  bilan.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  envoyer({
+    _subject: "Évaluation " + META.niveau + " " + META.seance + " · " +
+              nom.value.trim().toUpperCase() + " " + prenom.value.trim(),
+    _template: "table",
+    _captcha: "false",
+    "Nom": nom.value.trim().toUpperCase(),
+    "Prénom": prenom.value.trim(),
+    "Classe": classe.value.trim(),
+    "Niveau": META.niveau,
+    "Séquence": META.sequence,
+    "Séance": META.seance,
+    "Note": r.obtenus + " / " + max,
+    "Note sur 20": String(sur20).replace(".", ","),
+    "Date": new Date().toLocaleString("fr-FR"),
+    "Sorties de la page": ctrl.sorties,
+    "Temps hors page (s)": Math.round(ctrl.hors / 1000),
+    "Durée de la session (min)": Math.round((Date.now() - ctrl.debut) / 600) / 100,
+    "Détail par question": r.detail.join("  ") + "  | sorties : " + ctrl.sorties + " | hors page : " + Math.round(ctrl.hors / 1000) + " s"
+  });
+}
+
+function recommencer() {
+  construire();
+  bilan.classList.remove("vu");
+  document.getElementById("terminer").disabled = !ctrl.actif;
+  etat.textContent = "Non corrigé";
+  document.getElementById("envoi").className = "envoi";
+  document.getElementById("envoi").textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+try {
+  const s = JSON.parse(localStorage.getItem("lfh_eleve") || "null");
+  if (s) {
+    document.getElementById("nom").value = s.nom || "";
+    document.getElementById("prenom").value = s.prenom || "";
+    document.getElementById("classe").value = s.classe || "";
+  }
+} catch (e) {}
+
+
+const ctrl = { actif: false, sorties: 0, hors: 0, debut: 0, sortie: 0 };
+function majCtrl() {
+  document.getElementById("ctrlEtat").innerHTML =
+    '<span class="actif">Contrôle actif</span> · sorties de la page : ' + ctrl.sorties +
+    ' · temps hors page : ' + Math.round(ctrl.hors / 1000) + ' s';
+}
+function sortirPage() {
+  if (!ctrl.actif || corrige || ctrl.sortie) return;
+  ctrl.sortie = Date.now(); ctrl.sorties++; majCtrl();
+}
+function revenirPage() {
+  if (ctrl.sortie) { ctrl.hors += Date.now() - ctrl.sortie; ctrl.sortie = 0; majCtrl(); }
+}
+document.addEventListener("visibilitychange", () => { document.hidden ? sortirPage() : revenirPage(); });
+window.addEventListener("blur", sortirPage);
+window.addEventListener("focus", revenirPage);
+document.getElementById("activer").addEventListener("click", () => {
+  ctrl.actif = true; ctrl.debut = Date.now();
+  document.body.classList.remove("verrou");
+  document.getElementById("terminer").disabled = false;
+  majCtrl();
+  document.getElementById("quiz").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+document.body.classList.add("verrou");
+document.getElementById("terminer").addEventListener("click", terminer);
+document.getElementById("recommencer").addEventListener("click", recommencer);
+construire();
+
+</script>
+</body>
+</html>
