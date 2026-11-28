@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet. De la réalité à la 3D, architectes en herbe - Technologie LFH</title>
+<meta name="description" content="Technologie 5e, thème 3 du programme. Quatre séances de 55 minutes, en groupes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "5e",
+  "titre": "Projet. De la réalité à la 3D, architectes en herbe",
+  "sousTitre": "Technologie 5e, thème 3 du programme. Quatre séances de 55 minutes, en groupes.",
+  "question": "Comment passer d'un espace réel à sa maquette numérique à l'échelle ?",
+  "retour": "../technologie/5e/",
+  "competences": "Compétences T3.1 imaginer, concevoir et réaliser une solution, et T3.2 valider par des simulations ou des protocoles de tests. CRCN domaine 3, création de contenu numérique.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Ce qu'est une échelle et ce qu'est une cote."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Les mesures utiles d'un espace avant de le dessiner."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "L'écart entre le croquis, le relevé et le modèle."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Modéliser une salle du lycée en 2D puis en 3D et la présenter."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "La mission",
+      "html": "\n<p>Chaque groupe choisit un espace réel du lycée, le mesure, le dessine à l'échelle, puis le\nreconstruit en trois dimensions avec un logiciel de plan.</p>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Groupe 1</b>La salle de classe</div>\n<div class=\"app-vignette\"><b>Groupe 2</b>La salle des professeurs</div>\n<div class=\"app-vignette\"><b>Groupe 3</b>Le bureau de la vie scolaire</div>\n<div class=\"app-vignette\"><b>Groupe 4</b>Le hall de l'administration</div>\n</div>\n<div class=\"app-encadre\">\n<p><b>Livrables attendus.</b> Un relevé papier coté, un plan 2D à l'échelle, une vue 3D, et une\nprésentation orale de trois minutes devant la classe.</p>\n</div>\n"
+    },
+    {
+      "titre": "Étape 1. Relever les mesures",
+      "html": "\n<p>Une heure. On mesure avant de dessiner, jamais l'inverse.</p>\n<h3>Le protocole</h3>\n<div class=\"app-encadre\">\n<p>1. Faire d'abord un croquis à main levée, sans souci de proportion.<br>\n2. Repérer sur ce croquis les longueurs à mesurer, et leur donner un numéro.<br>\n3. Mesurer chaque longueur deux fois, par deux personnes différentes.<br>\n4. Noter la valeur en centimètres, jamais en pas ni en carreaux.<br>\n5. Faire la somme des longueurs partielles d'un mur et la comparer à la mesure totale du mur.</p>\n</div>\n<h3>Ce qu'il faut relever</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Élément</th><th>Mesures à prendre</th></tr>\n<tr><td>Chaque mur</td><td>Longueur totale, hauteur sous plafond</td></tr>\n<tr><td>Chaque porte</td><td>Largeur, hauteur, distance au coin le plus proche, sens d'ouverture</td></tr>\n<tr><td>Chaque fenêtre</td><td>Largeur, hauteur, hauteur d'allège</td></tr>\n<tr><td>Mobilier fixe</td><td>Encombrement au sol et distance aux murs</td></tr>\n</table>\n</div>\n<div class=\"app-encadre\">\n<p><b>Contrôle.</b> Si la somme des mesures partielles s'écarte de plus de 2 cm de la mesure totale,\non recommence. Un écart accepté ici devient une erreur impossible à rattraper à l'étape 3.</p>\n</div>\n"
+    },
+    {
+      "titre": "Étape 2. Le croquis à l'échelle",
+      "html": "\n<p>Une échelle est un rapport entre la longueur dessinée et la longueur réelle.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Échelle</th><th>1 cm sur le papier vaut</th><th>Usage</th></tr>\n<tr><td>1:20</td><td>20 cm</td><td>Un meuble, une pièce très petite</td></tr>\n<tr><td>1:50</td><td>50 cm</td><td>Une salle de classe sur une feuille A3</td></tr>\n<tr><td>1:100</td><td>1 m</td><td>Un étage entier</td></tr>\n</table>\n</div>\n<h3>Deux calculs à savoir faire</h3>\n<div class=\"app-encadre\">\n<p><b>Du réel vers le papier.</b> Un mur de 7,20 m à l'échelle 1:50 : 720 ÷ 50 = 14,4 cm.<br>\n<b>Du papier vers le réel.</b> Un segment de 9 cm à l'échelle 1:50 : 9 × 50 = 450 cm, soit 4,50 m.</p>\n</div>\n<p>Sur le plan, chaque longueur porte sa <b>cote</b> : la valeur réelle écrite au-dessus d'une ligne\nde cote. On cote toujours la réalité, jamais la mesure du dessin.</p>\n"
+    },
+    {
+      "titre": "Étape 3. Le modèle 3D",
+      "html": "\n<p>Deux heures. On travaille à l'échelle 1:1, c'est-à-dire en dimensions réelles, et le logiciel se\ncharge de l'affichage.</p>\n<div class=\"app-encadre\">\n<p>1. Régler l'unité du projet en mètres avant toute chose.<br>\n2. Tracer le contour des murs en saisissant les longueurs au clavier, pas à la souris.<br>\n3. Donner la hauteur sous plafond.<br>\n4. Percer les ouvertures : portes et fenêtres, aux distances relevées.<br>\n5. Placer le mobilier fixe.<br>\n6. Produire trois vues : le plan coté, une perspective extérieure, une vue intérieure.</p>\n</div>\n<h3>Grille d'évaluation, sur 10 points</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Critère</th><th>Points</th></tr>\n<tr><td>Relevé complet, coté, vérifié</td><td>/ 3</td></tr>\n<tr><td>Croquis à l'échelle, cotes justes</td><td>/ 2</td></tr>\n<tr><td>Modèle 3D conforme au relevé</td><td>/ 3</td></tr>\n<tr><td>Présentation orale claire, vocabulaire exact</td><td>/ 2</td></tr>\n</table>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "À l'échelle 1:50, un mur réel de 6 m se dessine sur :",
+          "choix": [
+            "3 cm",
+            "12 cm",
+            "30 cm"
+          ],
+          "bonne": 1,
+          "explication": "600 cm ÷ 50 = 12 cm."
+        },
+        {
+          "enonce": "Sur un plan à l'échelle 1:100, un segment de 4,5 cm représente :",
+          "choix": [
+            "4,50 m",
+            "45 cm",
+            "450 m"
+          ],
+          "bonne": 0,
+          "explication": "4,5 × 100 = 450 cm, soit 4,50 m."
+        },
+        {
+          "enonce": "Une cote portée sur un plan indique :",
+          "choix": [
+            "La longueur mesurée sur le papier",
+            "La longueur réelle de l'élément",
+            "L'échelle du dessin"
+          ],
+          "bonne": 1,
+          "explication": "On cote toujours la réalité. C'est ce qui permet de changer d'échelle sans refaire les mesures."
+        },
+        {
+          "enonce": "Pourquoi mesurer chaque longueur deux fois, par deux personnes ?",
+          "choix": [
+            "Pour aller plus vite",
+            "Pour détecter une erreur de lecture avant qu'elle se propage",
+            "Parce que le mètre est imprécis"
+          ],
+          "bonne": 1,
+          "explication": "Une erreur de relevé se retrouve dans le croquis, puis dans le modèle, et devient très coûteuse à corriger."
+        },
+        {
+          "enonce": "Dans le logiciel, on saisit les longueurs au clavier plutôt qu'à la souris parce que :",
+          "choix": [
+            "C'est plus rapide",
+            "La souris ne permet pas la précision au centimètre",
+            "Le logiciel l'exige"
+          ],
+          "bonne": 1,
+          "explication": "Le tracé à la souris donne une valeur approchée. La saisie clavier fixe la cote exacte."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Croquis</b></td><td>Dessin à main levée, sans respect des proportions, qui sert à porter les mesures</td></tr>\n<tr><td><b>Échelle</b></td><td>Rapport entre la longueur dessinée et la longueur réelle</td></tr>\n<tr><td><b>Cote</b></td><td>Valeur réelle écrite sur le plan au-dessus d'une ligne de cote</td></tr>\n<tr><td><b>Échelle 1:1</b></td><td>Dimensions réelles saisies dans le logiciel</td></tr>\n<tr><td><b>Allège</b></td><td>Hauteur entre le sol et le bas de la fenêtre</td></tr>\n</table>\n</div>\n<p>Le projet met en pratique la démarche du thème 3 : un besoin, des contraintes relevées sur le\nterrain, une solution produite, puis vérifiée par comparaison avec la réalité.</p>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

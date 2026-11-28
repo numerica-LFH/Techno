@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Positionnement CRCN - Technologie LFH</title>
+<meta name="description" content="Se situer sur les 16 competences du cadre de reference des competences numeriques avant de passer les campagnes PIX.">
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  :root { --seuil: #9aa0b4; --alerte-texte: #a15c00; }
+  @media (prefers-color-scheme: dark) {
+    :root { --seuil: #6b7186; --alerte-texte: #ffb74d; }
+  }
+  .pos-grille { display: grid; gap: .5rem; }
+  .pos-ligne {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .4rem 1rem;
+    align-items: center;
+    border: 1px solid var(--trait);
+    border-radius: 10px;
+    padding: .55rem .75rem;
+    background: var(--carte);
+  }
+  .pos-intitule { font-size: .92rem; }
+  .pos-intitule b { color: var(--primaire); margin-right: .35rem; }
+  .pos-intitule small { display: block; color: var(--texte-doux); font-size: .78rem; }
+  .pos-choix { display: flex; gap: .25rem; }
+  .pos-choix label {
+    border: 1px solid var(--trait);
+    border-radius: 8px;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: .82rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .pos-choix input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .pos-choix label:hover { border-color: var(--primaire); }
+  .pos-choix label:has(input:checked),
+  .pos-choix label.coche {
+    background: var(--primaire);
+    border-color: var(--primaire);
+    color: #fff;
+    font-weight: 700;
+  }
+  .pos-choix label:has(input:focus-visible),
+  .pos-choix label.focus { outline: 2px solid var(--primaire); outline-offset: 2px; }
+
+  .pos-legende { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; color: var(--texte-doux); font-size: .82rem; margin: .6rem 0 1rem; }
+
+  /* Graphique en barres, serie unique : la longueur porte la valeur */
+  .pos-graphe { display: grid; gap: 2px; margin: .8rem 0 0; }
+  .pos-barre-ligne {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr) 8.5rem;
+    align-items: center;
+    gap: .6rem;
+    padding: 2px 0;
+  }
+  .pos-barre-nom { font-size: .8rem; color: var(--texte-doux); }
+  .pos-barre-nom b { color: var(--texte); font-weight: 600; }
+  .pos-piste {
+    position: relative;
+    height: 14px;
+    background: var(--trait);
+    border-radius: 4px;
+  }
+  .pos-piste span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--primaire);
+    border-radius: 4px;
+    transition: width .3s ease;
+  }
+  .pos-piste i {
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    width: 2px;
+    border-radius: 1px;
+    background: var(--seuil);
+  }
+  .pos-valeur {
+    font-size: .78rem;
+    color: var(--texte-doux);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .pos-valeur em { font-style: normal; color: var(--alerte-texte); font-weight: 600; }
+  .pos-seuil-legende { color: var(--alerte-texte); font-weight: 600; }
+
+  .pos-jauges { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .7rem; margin: 1rem 0; }
+  .pos-jauge { border: 1px solid var(--trait); border-radius: var(--rayon); padding: .7rem .8rem; background: var(--fond); }
+  .pos-jauge b { display: block; font-size: .82rem; margin-bottom: .4rem; }
+  .pos-jauge .pos-piste { height: 10px; }
+  .pos-jauge small { color: var(--texte-doux); font-size: .76rem; }
+
+  .pos-verdict { font-size: 1rem; }
+  .pos-verdict strong { font-size: 1.25rem; }
+
+  @media (max-width: 720px) {
+    .pos-ligne { grid-template-columns: 1fr; }
+    .pos-barre-ligne { grid-template-columns: 9rem minmax(0, 1fr) 4.5rem; }
+    .pos-barre-nom { font-size: .74rem; }
+  }
+  @media print {
+    .pos-choix label:has(input:checked),
+    .pos-choix label.coche { border-width: 3px; }
+  }
+</style>
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript.</p></noscript>
+
+<header class="app-entete">
+  <div class="app-entete-interne">
+    <a class="app-retour" href="../pix/">← Retour à la rubrique PIX</a>
+    <span class="app-niveau">CRCN</span>
+    <span class="app-titre-court">Se situer sur les 16 compétences</span>
+    <div class="app-outils">
+      <button type="button" class="app-bouton-outil" id="btn-lecture" aria-pressed="false">Lecture facilitée</button>
+      <button type="button" class="app-bouton-outil" id="btn-imprimer">Imprimer</button>
+    </div>
+  </div>
+</header>
+
+<main class="app-contenu">
+  <section class="app-carte">
+    <h1>Se situer sur les 16 compétences</h1>
+    <p class="app-sous-titre">Cadre de référence des compétences numériques. Cinq minutes, seize questions.</p>
+    <div class="app-question">
+      <span class="etiquette">À quoi sert cette page</span>
+      <p>Par où commencer pour progresser sur PIX ?</p>
+    </div>
+    <p>Cet outil ne remplace pas PIX et ne donne aucune note. Il sert à repérer les compétences
+    laissées de côté, celles qui font qu'un profil reste en dessous du seuil de certifiabilité.
+    Les réponses restent dans ce navigateur, rien n'est envoyé.</p>
+    <div class="pos-legende" aria-hidden="true">
+      <span><b>0</b> jamais fait</span>
+      <span><b>1</b> avec de l'aide</span>
+      <span><b>2</b> seul, parfois</span>
+      <span><b>3</b> seul</span>
+      <span><b>4</b> je peux l'expliquer à quelqu'un</span>
+    </div>
+  </section>
+
+  <form id="formulaire">
+    <section class="app-carte">
+      <h2>Le questionnaire</h2>
+      <div class="pos-grille" id="questions"></div>
+      <div class="app-actions">
+        <button type="submit" class="app-bouton">Voir mon profil</button>
+        <button type="button" class="app-bouton secondaire" id="btn-vider">Tout effacer</button>
+      </div>
+    </section>
+  </form>
+
+  <section class="app-carte" id="resultats" hidden>
+    <h2>Mon profil</h2>
+    <p class="pos-verdict" id="verdict"></p>
+
+    <h3>Par domaine</h3>
+    <div class="pos-jauges" id="jauges"></div>
+
+    <h3>Par compétence</h3>
+    <p style="color:var(--texte-doux);font-size:.85rem">
+      Le trait vertical marque le niveau 1, seuil compté pour la certifiabilité. Les compétences
+      signalées <em class="pos-seuil-legende" style="font-style:normal">à travailler</em>
+      sont celles qui restent en dessous.
+    </p>
+    <div class="pos-graphe" id="graphe"></div>
+
+    <h3>Par où commencer</h3>
+    <div id="conseils"></div>
+
+    <h3>Le détail, sous forme de tableau</h3>
+    <div class="app-tableau-defilant">
+      <table id="tableau"><thead><tr><th>Code</th><th>Compétence</th><th>Domaine</th><th>Niveau déclaré</th><th>À revoir dans</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+</main>
+
+<footer class="app-pied">
+  Lycée franco-hondurien de Tegucigalpa. Intitulés du cadre de référence des compétences numériques,
+  arrêté du 30 août 2019. Le seuil de certifiabilité est de cinq compétences au niveau 1.
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var DOMAINES = [
+    { id: 1, nom: "Information et données" },
+    { id: 2, nom: "Communication et collaboration" },
+    { id: 3, nom: "Création de contenus" },
+    { id: 4, nom: "Protection et sécurité" },
+    { id: 5, nom: "Environnement numérique" }
+  ];
+
+  var COMPETENCES = [
+    { code: "1.1", d: 1, nom: "Mener une recherche et une veille d'information",
+      question: "Je sais trouver une information fiable et vérifier d'où elle vient.",
+      revoir: "Veille technologique, 5e chapitre 1 et 3e chapitre 1" },
+    { code: "1.2", d: 1, nom: "Gérer des données",
+      question: "Je sais organiser mes fichiers dans des dossiers et retrouver un document six mois plus tard.",
+      revoir: "Données et stockage, 5e chapitre 7" },
+    { code: "1.3", d: 1, nom: "Traiter des données",
+      question: "Je sais trier, filtrer et calculer dans un tableau de données.",
+      revoir: "Données numériques, 5e chapitre 7 et 4e chapitre 5" },
+    { code: "2.1", d: 2, nom: "Interagir",
+      question: "Je sais écrire un message adapté à mon destinataire dans un outil scolaire.",
+      revoir: "Espace de travail de la classe" },
+    { code: "2.2", d: 2, nom: "Partager et publier",
+      question: "Je sais partager un document en choisissant qui peut le voir et le modifier.",
+      revoir: "Rendus de projet, 4e chapitre 7" },
+    { code: "2.3", d: 2, nom: "Collaborer",
+      question: "Je sais travailler à plusieurs sur un même document sans écraser le travail des autres.",
+      revoir: "Projet de groupe, 5e chapitre 9 et 3e chapitre 6" },
+    { code: "2.4", d: 2, nom: "S'insérer dans le monde numérique",
+      question: "Je sais expliquer ce qu'une plateforme fait de mes données et de mon attention.",
+      revoir: "Évolutions et société, 4e chapitre 1 et SNT réseaux sociaux" },
+    { code: "3.1", d: 3, nom: "Développer des documents textuels",
+      question: "Je sais mettre en forme un document long avec des titres et une structure.",
+      revoir: "Dossier de projet, 3e chapitre 6" },
+    { code: "3.2", d: 3, nom: "Développer des documents multimédia",
+      question: "Je sais produire une image, un plan ou un modèle 3D pour illustrer mon travail.",
+      revoir: "Modélisation, 5e chapitre 9 et 4e chapitre 7" },
+    { code: "3.3", d: 3, nom: "Adapter les documents à leur finalité",
+      question: "Je sais adapter un document selon qu'il sera lu, projeté ou imprimé.",
+      revoir: "Présentation orale, SNT projet final" },
+    { code: "3.4", d: 3, nom: "Programmer",
+      question: "Je sais écrire un programme avec une condition et une boucle, et le corriger quand il rate.",
+      revoir: "Programmation, 5e chapitre 5, 4e chapitres 2 et 4, 3e chapitres 3 et 7" },
+    { code: "4.1", d: 4, nom: "Sécuriser l'environnement numérique",
+      question: "Je sais choisir un mot de passe solide et reconnaître une tentative d'arnaque.",
+      revoir: "Réseaux et sécurité, 5e chapitre 8 et 3e chapitre 4" },
+    { code: "4.2", d: 4, nom: "Protéger les données personnelles et la vie privée",
+      question: "Je sais quelles traces je laisse et comment régler mes paramètres de confidentialité.",
+      revoir: "Traces numériques, 3e chapitre 4 et SNT photographie" },
+    { code: "4.3", d: 4, nom: "Protéger la santé, le bien-être et l'environnement",
+      question: "Je sais estimer l'impact d'un usage numérique et limiter ce qui me fatigue.",
+      revoir: "Cycle de vie et écoconception, 4e chapitre 7 et 3e chapitre 6" },
+    { code: "5.1", d: 5, nom: "Résoudre des problèmes techniques",
+      question: "Quand quelque chose ne marche pas, je sais chercher la cause au lieu de tout recommencer.",
+      revoir: "Diagnostic de panne, 5e chapitre 4 et 4e chapitre 3" },
+    { code: "5.2", d: 5, nom: "Évoluer dans un environnement numérique",
+      question: "Je sais me connecter, accéder aux serveurs et brancher un périphérique sans aide.",
+      revoir: "Réseaux informatiques, 5e chapitre 8" }
+  ];
+
+  var CLE = "techno-pix-positionnement";
+  var MAX = 4;
+
+  function el(t, c, x) { var n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; }
+  function lire(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function ecrire(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+
+  /* Outils d'en-tete */
+  var btnLecture = document.getElementById("btn-lecture");
+  btnLecture.addEventListener("click", function () {
+    var actif = document.body.classList.toggle("lecture-facilitee");
+    btnLecture.setAttribute("aria-pressed", actif ? "true" : "false");
+    ecrire("techno-lecture-facilitee", actif ? "1" : "0");
+  });
+  if (lire("techno-lecture-facilitee") === "1") {
+    document.body.classList.add("lecture-facilitee");
+    btnLecture.setAttribute("aria-pressed", "true");
+  }
+  document.getElementById("btn-imprimer").addEventListener("click", function () { window.print(); });
+
+  /* Questionnaire */
+  var zone = document.getElementById("questions");
+  COMPETENCES.forEach(function (c, i) {
+    var ligne = el("div", "pos-ligne");
+    var intitule = el("div", "pos-intitule");
+    var code = el("b", null, c.code);
+    intitule.appendChild(code);
+    intitule.appendChild(document.createTextNode(c.nom));
+    intitule.appendChild(el("small", null, c.question));
+    ligne.appendChild(intitule);
+
+    var choix = el("div", "pos-choix");
+    choix.setAttribute("role", "group");
+    choix.setAttribute("aria-label", c.code + " " + c.nom);
+    for (var n = 0; n <= MAX; n++) {
+      var label = el("label");
+      var input = document.createElement("input");
+      input.type = "radio";
+      input.name = "c" + i;
+      input.value = String(n);
+      input.setAttribute("aria-label", "Niveau " + n);
+      label.appendChild(input);
+      label.appendChild(el("span", null, String(n)));
+      choix.appendChild(label);
+    }
+    ligne.appendChild(choix);
+    zone.appendChild(ligne);
+  });
+
+  /* Marquage des cases cochees, pour les navigateurs sans :has() */
+  zone.addEventListener("change", function (e) {
+    var groupe = e.target.closest(".pos-choix");
+    if (!groupe) { return; }
+    Array.prototype.forEach.call(groupe.querySelectorAll("label"), function (l) {
+      l.classList.toggle("coche", l.querySelector("input").checked);
+    });
+  });
+  zone.addEventListener("focusin", function (e) {
+    if (e.target.type === "radio") { e.target.parentNode.classList.add("focus"); }
+  });
+  zone.addEventListener("focusout", function (e) {
+    if (e.target.type === "radio") { e.target.parentNode.classList.remove("focus"); }
+  });
+
+  function rafraichirCoches() {
+    Array.prototype.forEach.call(zone.querySelectorAll(".pos-choix label"), function (l) {
+      l.classList.toggle("coche", l.querySelector("input").checked);
+    });
+  }
+
+  /* Restauration */
+  var sauvegarde = lire(CLE);
+  if (sauvegarde) {
+    try {
+      JSON.parse(sauvegarde).forEach(function (v, i) {
+        if (v === null) { return; }
+        var champ = document.querySelector('input[name="c' + i + '"][value="' + v + '"]');
+        if (champ) { champ.checked = true; }
+      });
+    } catch (e) {}
+  }
+  rafraichirCoches();
+
+  function valeurs() {
+    return COMPETENCES.map(function (c, i) {
+      var choisi = document.querySelector('input[name="c' + i + '"]:checked');
+      return choisi ? Number(choisi.value) : null;
+    });
+  }
+
+  function barre(valeur) {
+    var piste = el("div", "pos-piste");
+    var remplissage = el("span");
+    remplissage.style.width = Math.round((valeur / MAX) * 100) + "%";
+    piste.appendChild(remplissage);
+    var repere = el("i");
+    repere.style.left = Math.round((1 / MAX) * 100) + "%";
+    piste.appendChild(repere);
+    return piste;
+  }
+
+  function afficher() {
+    var v = valeurs();
+    var remplies = v.filter(function (x) { return x !== null; }).length;
+    var niveaux = v.map(function (x) { return x === null ? 0 : x; });
+    var auMoins1 = niveaux.filter(function (x) { return x >= 1; }).length;
+
+    var resultats = document.getElementById("resultats");
+    resultats.hidden = false;
+
+    var verdict = document.getElementById("verdict");
+    verdict.innerHTML = "";
+    verdict.appendChild(document.createTextNode("J'ai répondu à " + remplies + " questions sur 16. "));
+    var forte = el("strong", null, auMoins1 + " compétences sur 16");
+    verdict.appendChild(forte);
+    verdict.appendChild(document.createTextNode(
+      auMoins1 >= 5
+        ? " sont au niveau 1 ou au-dessus. Le seuil de cinq compétences pour être certifiable est atteint."
+        : " sont au niveau 1 ou au-dessus. Il en faut cinq pour être certifiable, il en manque " + (5 - auMoins1) + "."
+    ));
+
+    /* Jauges par domaine */
+    var jauges = document.getElementById("jauges");
+    jauges.innerHTML = "";
+    DOMAINES.forEach(function (d) {
+      var index = COMPETENCES.map(function (c, i) { return c.d === d.id ? i : -1; }).filter(function (i) { return i >= 0; });
+      var somme = index.reduce(function (t, i) { return t + niveaux[i]; }, 0);
+      var moyenne = somme / index.length;
+      var carte = el("div", "pos-jauge");
+      carte.appendChild(el("b", null, d.id + ". " + d.nom));
+      carte.appendChild(barre(moyenne));
+      carte.appendChild(el("small", null, "Moyenne " + moyenne.toFixed(1).replace(".", ",") + " sur 4 (" + index.length + " compétences)"));
+      jauges.appendChild(carte);
+    });
+
+    /* Barres par competence */
+    var graphe = document.getElementById("graphe");
+    graphe.innerHTML = "";
+    COMPETENCES.forEach(function (c, i) {
+      var ligne = el("div", "pos-barre-ligne");
+      var nom = el("div", "pos-barre-nom");
+      nom.appendChild(el("b", null, c.code + " "));
+      nom.appendChild(document.createTextNode(c.nom));
+      nom.title = c.nom;
+      ligne.appendChild(nom);
+      ligne.appendChild(barre(niveaux[i]));
+      var valeur = el("div", "pos-valeur");
+      valeur.appendChild(document.createTextNode(niveaux[i] + " / 4 "));
+      if (niveaux[i] < 1) { valeur.appendChild(el("em", null, "à travailler")); }
+      ligne.appendChild(valeur);
+      graphe.appendChild(ligne);
+    });
+
+    /* Conseils */
+    var ordre = COMPETENCES.map(function (c, i) { return { c: c, n: niveaux[i] }; })
+      .sort(function (a, b) { return a.n - b.n; })
+      .slice(0, 3);
+    var conseils = document.getElementById("conseils");
+    conseils.innerHTML = "";
+    var liste = el("ol");
+    ordre.forEach(function (o) {
+      var item = el("li");
+      item.appendChild(el("b", null, o.c.code + " " + o.c.nom + ". "));
+      item.appendChild(document.createTextNode("Niveau déclaré " + o.n + " sur 4. À revoir dans : " + o.c.revoir + "."));
+      liste.appendChild(item);
+    });
+    conseils.appendChild(liste);
+    var note = el("p");
+    note.style.color = "var(--texte-doux)";
+    note.style.fontSize = ".85rem";
+    note.textContent = "Ces trois compétences sont celles où le profil est le plus bas. Les reprendre fait remonter le profil plus vite que de retravailler ce qui est déjà acquis.";
+    conseils.appendChild(note);
+
+    /* Tableau */
+    var corps = document.querySelector("#tableau tbody");
+    corps.innerHTML = "";
+    COMPETENCES.forEach(function (c, i) {
+      var tr = el("tr");
+      [c.code, c.nom, DOMAINES[c.d - 1].nom, v[i] === null ? "non renseigné" : niveaux[i] + " / 4", c.revoir]
+        .forEach(function (t) { tr.appendChild(el("td", null, t)); });
+      corps.appendChild(tr);
+    });
+
+    ecrire(CLE, JSON.stringify(v));
+    resultats.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  document.getElementById("formulaire").addEventListener("submit", function (e) {
+    e.preventDefault();
+    afficher();
+  });
+
+  document.getElementById("btn-vider").addEventListener("click", function () {
+    document.getElementById("formulaire").reset();
+    rafraichirCoches();
+    document.getElementById("resultats").hidden = true;
+    ecrire(CLE, "[]");
+  });
+}());
+</script>
+</body>
+</html>

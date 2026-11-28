@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNT · Séquence 2 · Séance 1 : mesurer un graphe · Exercices</title>
+<style>
+:root { --bleu:#1d3557; --bleu2:#457b9d; --fond:#f2f5f8; --ok:#1b7d4f; --ko:#b3261e; }
+* { box-sizing:border-box; }
+body { font-family:"Segoe UI",system-ui,Helvetica,Arial,sans-serif; margin:0; background:#eef1f4;
+  color:#14181d; line-height:1.5; }
+.wrap { max-width:760px; margin:0 auto; padding:24px 18px 60px; }
+header { border-bottom:3px solid var(--bleu); padding-bottom:10px; margin-bottom:18px; }
+h1 { font-size:1.45rem; margin:0 0 4px; color:var(--bleu); }
+.sous { color:#4a545e; font-size:.95rem; }
+.q { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu2);
+  border-radius:6px; padding:14px 16px; margin-bottom:14px; }
+.q h2 { font-size:1rem; margin:0 0 10px; font-weight:600; }
+.q h2 span { color:var(--bleu2); font-weight:700; margin-right:6px; }
+.illus { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 10px; padding:8px 10px;
+  background:var(--fond); border-radius:5px; }
+pre.graphe { background:#fff; border:1px solid #d3dae1; border-left:4px solid var(--bleu); border-radius:6px; padding:10px 14px; font-size:.9rem; overflow-x:auto; margin:0 0 16px; }
+.illus svg { width:64px !important; height:64px !important; }
+label { display:block; padding:7px 10px; border:1px solid #d3dae1; border-radius:4px;
+  margin-bottom:6px; cursor:pointer; background:#fbfcfd; }
+label:hover { background:var(--fond); }
+label.juste { border-color:var(--ok); background:#e8f5ee; }
+label.faux { border-color:var(--ko); background:#fdeceb; }
+input { margin-right:8px; }
+.expl { display:none; margin-top:8px; padding:9px 11px; background:var(--fond);
+  border-left:3px solid var(--bleu2); font-size:.92rem; }
+.expl.vu { display:block; }
+.barre { position:sticky; bottom:0; background:#fff; border-top:2px solid var(--bleu);
+  padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+button { background:var(--bleu); color:#fff; border:0; border-radius:5px; padding:10px 18px;
+  font-size:1rem; cursor:pointer; }
+button.second { background:#6b7681; }
+#score { font-weight:700; color:var(--bleu); }
+footer { margin-top:26px; font-size:.8rem; color:#7a838d; border-top:1px solid #d3dae1; padding-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SNT · Séquence 2 : les réseaux sociaux</h1>
+  <p class="sous"><b>Séance 1 : mesurer un graphe</b> · 13 questions à correction immédiate. Je réponds, je vérifie,
+  je recommence autant de fois que nécessaire. Le score ne compte pas dans la moyenne et n'est envoyé à personne.</p>
+</header>
+<pre class="graphe">Ana - Bruno      Ana - Carla      Bruno - Diego    Carla - Diego
+Diego - Elsa     Elsa - Fabio     Elsa - Hugo      Fabio - Gabriela
+Gabriela - Hugo</pre>
+<div id="quiz"></div>
+</div>
+<div class="barre">
+  <span id="score">Non corrigé</span>
+  <span>
+    <button id="corriger">Vérifier mes réponses</button>
+    <button id="recommencer" class="second">Recommencer</button>
+  </span>
+</div>
+<div class="wrap"><footer>Lycée franco-hondurien · Technologie &amp; SNT ·
+numerica-lfh.github.io/Techno · SNT · Séquence 2 · Exercices</footer></div>
+<script>
+const questions = [
+ {
+  "enonce": "Combien ce graphe compte-t-il de sommets et d'arêtes ?",
+  "choix": [
+   "8 sommets et 9 arêtes",
+   "9 sommets et 8 arêtes",
+   "8 sommets et 8 arêtes"
+  ],
+  "bonne": 0,
+  "expl": "Huit prénoms, neuf lignes de relations."
+ },
+ {
+  "enonce": "Quel est le degré de Diego ?",
+  "choix": [
+   "2",
+   "3",
+   "4"
+  ],
+  "bonne": 1,
+  "expl": "Diego est relié à Bruno, Carla et Elsa."
+ },
+ {
+  "enonce": "Quel est le degré de Fabio ?",
+  "choix": [
+   "1",
+   "2",
+   "3"
+  ],
+  "bonne": 1,
+  "expl": "Fabio est relié à Elsa et à Gabriela."
+ },
+ {
+  "enonce": "Quels sommets ont le plus grand degré ?",
+  "choix": [
+   "Ana et Hugo",
+   "Diego et Elsa",
+   "Tous ont le même degré"
+  ],
+  "bonne": 1,
+  "expl": "Diego et Elsa ont chacun trois relations ; tous les autres en ont deux."
+ },
+ {
+  "enonce": "Quelle est la distance entre Ana et Diego ?",
+  "choix": [
+   "1",
+   "2",
+   "3"
+  ],
+  "bonne": 1,
+  "expl": "Ana, Bruno, Diego (ou Ana, Carla, Diego) : deux arêtes."
+ },
+ {
+  "enonce": "Quelle est la distance entre Ana et Hugo ?",
+  "choix": [
+   "3",
+   "4",
+   "5"
+  ],
+  "bonne": 1,
+  "expl": "Ana, Bruno, Diego, Elsa, Hugo : quatre arêtes, et aucun chemin plus court."
+ },
+ {
+  "enonce": "Quelle est la distance entre Bruno et Gabriela ?",
+  "choix": [
+   "3",
+   "4",
+   "5"
+  ],
+  "bonne": 1,
+  "expl": "Bruno, Diego, Elsa, Fabio, Gabriela (ou par Hugo) : quatre arêtes."
+ },
+ {
+  "enonce": "Quelle est la distance entre Elsa et Gabriela ?",
+  "choix": [
+   "1",
+   "2",
+   "3"
+  ],
+  "bonne": 1,
+  "expl": "Elsa, Fabio, Gabriela, ou Elsa, Hugo, Gabriela : deux arêtes."
+ },
+ {
+  "enonce": "La distance entre deux sommets, c'est :",
+  "choix": [
+   "le nombre d'arêtes du premier chemin trouvé",
+   "le nombre d'arêtes du plus court chemin",
+   "le nombre de sommets du graphe"
+  ],
+  "bonne": 1,
+  "expl": "C'est un minimum : il faut vérifier qu'aucun chemin plus court n'existe."
+ },
+ {
+  "enonce": "Quel est le diamètre de ce graphe ?",
+  "choix": [
+   "4",
+   "5",
+   "9"
+  ],
+  "bonne": 1,
+  "expl": "La plus grande distance est 5, par exemple entre Ana et Gabriela."
+ },
+ {
+  "enonce": "Si on supprime Diego, que devient le réseau ?",
+  "choix": [
+   "Rien ne change",
+   "Il se coupe en deux groupes qui ne peuvent plus se joindre",
+   "Ana devient isolée"
+  ],
+  "bonne": 1,
+  "expl": "Ana, Bruno et Carla d'un côté ; Elsa, Fabio, Gabriela et Hugo de l'autre. Diego est un sommet pont."
+ },
+ {
+  "enonce": "Et si on supprime Elsa à la place de Diego ?",
+  "choix": [
+   "Le réseau reste d'un seul tenant",
+   "Le réseau se coupe aussi en deux",
+   "Seul Hugo est isolé"
+  ],
+  "bonne": 1,
+  "expl": "L'arête Diego-Elsa est le seul lien entre les deux groupes : Elsa est, elle aussi, un sommet pont."
+ },
+ {
+  "enonce": "Une plateforme suggère des « amis d'amis ». Elle propose les comptes situés à distance :",
+  "choix": [
+   "1",
+   "2",
+   "5"
+  ],
+  "bonne": 1,
+  "expl": "Distance 1 : mes contacts. Distance 2 : les contacts de mes contacts."
+ }
+];
+const quiz = document.getElementById("quiz");
+
+function construire() {
+  quiz.innerHTML = "";
+  questions.forEach((q, i) => {
+    const d = document.createElement("div");
+    d.className = "q";
+    let h = '<h2><span>' + (i + 1) + '.</span>' + q.enonce + '</h2>';
+    if (q.illus) h += '<div class="illus">' + q.illus + '</div>';
+    q.choix.forEach((c, j) => {
+      h += '<label data-i="' + i + '" data-j="' + j + '">' +
+           '<input type="radio" name="q' + i + '" value="' + j + '">' + c + '</label>';
+    });
+    h += '<div class="expl" id="e' + i + '"><strong>Réponse : </strong>' +
+         q.choix[q.bonne] + '. ' + q.expl + '</div>';
+    d.innerHTML = h;
+    quiz.appendChild(d);
+  });
+}
+
+function corriger() {
+  let bons = 0;
+  questions.forEach((q, i) => {
+    const coche = document.querySelector('input[name="q' + i + '"]:checked');
+    document.querySelectorAll('label[data-i="' + i + '"]').forEach(l => {
+      l.classList.remove("juste", "faux");
+      const j = Number(l.dataset.j);
+      if (j === q.bonne) l.classList.add("juste");
+      else if (coche && Number(coche.value) === j) l.classList.add("faux");
+    });
+    document.getElementById("e" + i).classList.add("vu");
+    if (coche && Number(coche.value) === q.bonne) bons++;
+  });
+  document.getElementById("score").textContent =
+    "Score : " + bons + " / " + questions.length;
+}
+
+document.getElementById("corriger").addEventListener("click", corriger);
+document.getElementById("recommencer").addEventListener("click", () => {
+  construire();
+  document.getElementById("score").textContent = "Non corrigé";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+construire();
+</script>
+</body>
+</html>

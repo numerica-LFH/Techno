@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapitre 4. Algorithmique et robot mBot - Technologie LFH</title>
+<meta name="description" content="Technologie 4e, thèmes 2 et 3 du programme. Six séances de 55 minutes.">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">Cette page a besoin de JavaScript. La version imprimable de la fiche est disponible sur la page du chapitre.</p></noscript>
+<script>
+window.CHAPITRE = {
+  "niveau": "4e",
+  "titre": "Chapitre 4. Algorithmique et robot mBot",
+  "sousTitre": "Technologie 4e, thèmes 2 et 3 du programme. Six séances de 55 minutes.",
+  "question": "Comment expliquer à un robot ce qu'il doit faire, sans aucune ambiguïté ?",
+  "retour": "../technologie/4e/",
+  "competences": "Compétences T2.3 comprendre et modifier un programme, T3.3 concevoir, écrire, tester et mettre au point un programme, et T3.2 valider par un protocole de tests.",
+  "objectifs": [
+    {
+      "verbe": "Comprendre",
+      "texte": "Ce qu'est un algorithme et pourquoi il doit être précis."
+    },
+    {
+      "verbe": "Identifier",
+      "texte": "Les capteurs du robot mBot et l'information que chacun fournit."
+    },
+    {
+      "verbe": "Analyser",
+      "texte": "Un logigramme fourni, y repérer et corriger l'erreur."
+    },
+    {
+      "verbe": "Appliquer",
+      "texte": "Faire suivre une ligne au robot, puis résoudre un labyrinthe simple."
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Je recherche",
+      "html": "\n<p>Une recette de cuisine, les règles d'un jeu, les étapes pour se laver les mains : ce sont des\nalgorithmes. Un être humain complète les trous tout seul. Un robot, non.</p>\n<div class=\"app-encadre\">\n<p><b>Expérience.</b> J'écris la marche à suivre pour aller de la porte de la salle jusqu'au tableau.\nUn camarade l'exécute au pied de la lettre, sans rien deviner. Combien d'instructions manquaient ?</p>\n</div>\n"
+    },
+    {
+      "titre": "Qu'est-ce qu'un algorithme ?",
+      "html": "\n<p>Un <b>algorithme</b> est une suite finie d'instructions non ambiguës qui, à partir de données\nd'entrée, produit un résultat.</p>\n<div class=\"app-grille\">\n<div class=\"app-vignette\"><b>Finie</b>Il se termine. Une boucle qui ne s'arrête jamais n'est pas un algorithme correct.</div>\n<div class=\"app-vignette\"><b>Non ambiguë</b>Chaque instruction n'a qu'une seule interprétation possible.</div>\n<div class=\"app-vignette\"><b>Ordonnée</b>L'ordre des instructions change le résultat.</div>\n</div>\n<h3>Les trois structures de base</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Structure</th><th>À quoi elle sert</th><th>Exemple avec le robot</th></tr>\n<tr><td>Séquence</td><td>Faire les actions l'une après l'autre</td><td>Avancer, puis tourner, puis s'arrêter</td></tr>\n<tr><td>Condition</td><td>Choisir selon une information</td><td>Si un obstacle est détecté, alors tourner</td></tr>\n<tr><td>Boucle</td><td>Répéter tant qu'une condition est vraie</td><td>Tant que la ligne est visible, continuer à la suivre</td></tr>\n</table>\n</div>\n"
+    },
+    {
+      "titre": "Le logigramme",
+      "html": "\n<p>Le <b>logigramme</b> représente un algorithme par un schéma. Chaque forme a un sens fixe.</p>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Forme</th><th>Sens</th></tr>\n<tr><td>Ovale</td><td>Début ou fin</td></tr>\n<tr><td>Rectangle</td><td>Une action</td></tr>\n<tr><td>Losange</td><td>Une question à réponse oui ou non</td></tr>\n<tr><td>Parallélogramme</td><td>Une entrée ou une sortie</td></tr>\n<tr><td>Flèche</td><td>L'ordre d'enchaînement</td></tr>\n</table>\n</div>\n<div class=\"app-encadre\">\n<p><b>Deux règles.</b> Un losange a toujours exactement deux sorties, étiquetées oui et non. Tout\nchemin doit finir par atteindre un ovale de fin, sinon le robot reste bloqué.</p>\n</div>\n<h3>Un logigramme à corriger</h3>\n<p>Le logigramme suivant est censé faire avancer le robot jusqu'à un mur, puis l'arrêter.</p>\n<div class=\"app-encadre\">\n<p>Début → Avancer → « Obstacle détecté ? » → si non : Arrêter → Fin<br>\nLe losange n'a pas de sortie pour le cas oui.</p>\n</div>\n<p>Deux erreurs à repérer : la sortie manquante du losange, et l'inversion du test. Le robot doit\ns'arrêter quand la réponse est <b>oui</b>, et boucler vers « Avancer » quand elle est <b>non</b>.</p>\n"
+    },
+    {
+      "titre": "Le robot mBot",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Élément</th><th>Type</th><th>Information ou action</th></tr>\n<tr><td>Capteur suiveur de ligne</td><td>Entrée</td><td>Deux cellules qui répondent noir ou blanc</td></tr>\n<tr><td>Capteur à ultrasons</td><td>Entrée</td><td>Distance à l'obstacle, en centimètres</td></tr>\n<tr><td>Capteur de lumière</td><td>Entrée</td><td>Luminosité ambiante</td></tr>\n<tr><td>Récepteur infrarouge</td><td>Entrée</td><td>Ordres de la télécommande</td></tr>\n<tr><td>Deux moteurs</td><td>Sortie</td><td>Vitesse et sens de chaque roue</td></tr>\n<tr><td>LED et buzzer</td><td>Sortie</td><td>Signaler un état</td></tr>\n</table>\n</div>\n<h3>Suivre une ligne : les quatre cas</h3>\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Cellule gauche</th><th>Cellule droite</th><th>Situation</th><th>Action</th></tr>\n<tr><td>Noir</td><td>Noir</td><td>Bien centré sur la ligne</td><td>Avancer tout droit</td></tr>\n<tr><td>Noir</td><td>Blanc</td><td>Le robot dérive vers la droite</td><td>Corriger vers la gauche</td></tr>\n<tr><td>Blanc</td><td>Noir</td><td>Le robot dérive vers la gauche</td><td>Corriger vers la droite</td></tr>\n<tr><td>Blanc</td><td>Blanc</td><td>Ligne perdue</td><td>S'arrêter ou chercher</td></tr>\n</table>\n</div>\n<div class=\"app-encadre\">\n<p><b>Réglage.</b> Une correction trop forte fait zigzaguer le robot, une correction trop faible lui\nfait perdre la ligne dans les virages. On trouve la bonne valeur par essais successifs, en notant\nchaque essai. C'est ce qu'on appelle une mise au point.</p>\n</div>\n"
+    },
+    {
+      "titre": "Je m'entraîne",
+      "quiz": [
+        {
+          "enonce": "Dans un logigramme, le losange représente :",
+          "choix": [
+            "Une action",
+            "Une question à réponse oui ou non",
+            "La fin du programme"
+          ],
+          "bonne": 1,
+          "explication": "L'action est un rectangle, la fin est un ovale."
+        },
+        {
+          "enonce": "Un losange doit toujours avoir :",
+          "choix": [
+            "Une seule sortie",
+            "Exactement deux sorties",
+            "Autant de sorties que nécessaire"
+          ],
+          "bonne": 1,
+          "explication": "Une sortie oui et une sortie non. Une sortie manquante bloque le robot."
+        },
+        {
+          "enonce": "Les deux cellules du suiveur de ligne voient blanc et blanc. Cela signifie :",
+          "choix": [
+            "Le robot est centré",
+            "Le robot a perdu la ligne",
+            "Le robot dérive à droite"
+          ],
+          "bonne": 1,
+          "explication": "Noir et noir signifie centré. Une seule cellule sur le noir signifie que le robot dérive."
+        },
+        {
+          "enonce": "Le capteur à ultrasons fournit :",
+          "choix": [
+            "Une distance",
+            "Une couleur",
+            "Une vitesse"
+          ],
+          "bonne": 0,
+          "explication": "Il mesure le temps de retour d'une onde et en déduit une distance."
+        },
+        {
+          "enonce": "Un algorithme qui ne se termine jamais est :",
+          "choix": [
+            "Acceptable si le robot fonctionne",
+            "Incorrect, un algorithme doit être fini",
+            "Plus rapide"
+          ],
+          "bonne": 1,
+          "explication": "La finitude fait partie de la définition d'un algorithme."
+        },
+        {
+          "enonce": "Le robot zigzague fortement en suivant la ligne. Il faut :",
+          "choix": [
+            "Augmenter la correction",
+            "Diminuer la correction",
+            "Changer de capteur"
+          ],
+          "bonne": 1,
+          "explication": "Une correction trop forte fait dépasser la consigne à chaque fois."
+        },
+        {
+          "enonce": "Avant de programmer, on écrit le logigramme parce que :",
+          "choix": [
+            "C'est demandé par le professeur",
+            "Il oblige à rendre chaque étape explicite avant de coder",
+            "Il remplace les tests"
+          ],
+          "bonne": 1,
+          "explication": "Le logigramme fait apparaître les cas oubliés, ce que le code masque souvent."
+        }
+      ]
+    },
+    {
+      "titre": "Ce que je retiens",
+      "html": "\n<div class=\"app-tableau-defilant\">\n<table>\n<tr><th>Mot</th><th>Définition à retenir</th></tr>\n<tr><td><b>Algorithme</b></td><td>Suite finie d'instructions non ambiguës qui produit un résultat</td></tr>\n<tr><td><b>Logigramme</b></td><td>Représentation graphique d'un algorithme</td></tr>\n<tr><td><b>Séquence, condition, boucle</b></td><td>Les trois structures de base</td></tr>\n<tr><td><b>Capteur</b></td><td>Il fournit une information au programme</td></tr>\n<tr><td><b>Actionneur</b></td><td>Il exécute l'action décidée par le programme</td></tr>\n<tr><td><b>Mise au point</b></td><td>Série d'essais notés pour régler un paramètre</td></tr>\n</table>\n</div>\n<h3>Le défi final</h3>\n<p>Faire suivre une ligne au robot sur un parcours complet, puis lui faire résoudre un labyrinthe\nsimple avec la règle de la main droite. Le logigramme est rendu avant le programme.</p>\n"
+    }
+  ]
+};
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>
